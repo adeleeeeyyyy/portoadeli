@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adeli Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/profile.jpg" style="border-radius: 25%;" alt="Adly" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Adly Fahreza">Adly Fahreza</h1>
+
+          <p class="title">Web developer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:richard@example.com" class="contact-link">mitsuhaadly@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+12133522795" class="contact-link">+62 8517-9518-681</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="2008-02-29">February 29, 2008</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Indonesia</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://github.com/Mitsuhamiyamizu213" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://instagram.com/adeleeeeyyyy" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+ 
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">Tentang saya</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            Saya adalah siswa SMK pada jurusan Rekayasa Perangkat Lunak atau Software Engineering. Saya memiliki minat yang besar terhadap teknologi, terutama teknologi perangkat lunak.
+          </p>
+
+          <p>
+          Saya memiliki minat yang besar terhadap teknologi, terutama teknologi perangkat lunak. Saya memiliki keahlian dalam bidang Keamanan Siber atau Cyber Security sebagai seorang Penetration Tester, Vulnerability Researcher, dan Application security. Saya juga memiliki keahlian dalam membangun website sebagai Fullstack Developer.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">Apa yang saya lakukan</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web development</h4>
+
+                <p class="service-item-text">
+                  High-quality development of sites at the professional level.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/cyber.png" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Cyber Security</h4>
+
+                <p class="service-item-text">
+                protecting internet-connected systems such as hardware, software and data from cyberthreats.
+                </p>
+              </div>
+
+            </li>
+
+         </section>
+
+   <header>
+          <h2 class="h2 article-title">Projek</h2>
+        </header>
+
+        <section class="projects">
+
+      <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/New Project 12 [BBD8FF8].png" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Linux dotfiles</h3>
+
+                <p class="project-category">Linux dotfiles for customizing and enchanting looks of linux operating system</p>
+
+              </a>
+            </li>
+
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/New Project 14 [9C07239].png" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">OSINT TOOLS</h3>
+
+                <p class="project-category">Osint tools for gathering social information.
+                </p>
+
+              </a>
+            </li>
+
+
+        </section>
+
+      </article>
+
+      <br>
+
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Pendidikan</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">SDIT Amelia</h4>
+
+              <span>2014 - 2016</span>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">MI Nurul Huda</h4>
+
+              <span>2016 - 2018</span>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">MI Tarbiyatul Aulad</h4>
+
+              <span>2018 - 2020</span>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">SMP PGRI 1 Cibinong</h4>
+
+              <span>2020 - 2023</span>
+
+            </li>
+
+
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Pengalaman organisasi dan pelatihan</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">web server • devaccto TKJ</h4>
+
+              <span>September 2023 - Sekarang</span>
+
+              <p class="timeline-text">
+               Mengikuti permbelajaran mengenai setup Web Server menggunakan sistern operasi Linux (Debian 11). saya telah memperoleh pemahaman yang lebih mendalam mengenai konfigurasi dan pengelolaan server. Dengan pengetahuan ini, saya siap untuk mengimplementasikan dan mengelola Web Server dengan lebih efisien dan profesional. Terima kasih atas kesempatan untuk memperluas pengetahuan saya dalam bidang ini.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Devaccto RPL • SMK PLUS PELITA NUSANTARA</h4>
+
+              <span>Juli 2023 - Sekarang</span>
+
+              <p class="timeline-text">
+                • Sebagai Wakil Ketua Devaccto RPL, saya bertanggung jawab dalam mengoordinasikan anggota dan memberikan dukungan kepada yang menghadapi kesulitan
+
+• Saya aktif terlibat dalam berbagai kegiatan dan tugas yang terkait dengan Rekayasa Perangkat Lunak di Devaccto
+
+• Saya turut berperan dalam pengembangan proyek-proyek yang dilaksanakan oleh Devaccto RPL
+
+• Kemampuan saya bekerja sama dengan rekan di Devaccto RPL telah menghasilkan proyek proyek yang membenkan manfaat bagi semua anggota
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">DevFest 2023 • Google Developer Group Depok</h4>
+
+              <span>Des, 03, 2023</span>
+
+              <p class="timeline-text">
+                Kegiatan sharing yang diselenggarakan oleh para anggota GDG Depok membahas topik-topik yang relevan dengan perkembangan teknologi terkini, antara lain Firebase, PalmAI, Flutter, Keras, TensorFlow, View Transition API, dan Amper. Acara tersebut merupakan wadah bagi para profesional dan penggiat teknologi untuk saling berbagi pengetahuan dan pengalaman guna meningkatkan pemahaman dan keterampilan dalam bidang teknologi informasi. Diharapkan kegiatan ini dapat memberikan manfaat yang besar bagi para peserta serta mendukung perkembangan industri teknologi di Indonesia.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Ethical Hacking Class • jadihacker.id</h4>
+
+              <span>April 2024 - Sekarang</span>
+
+              <p class="timeline-text">
+              Saya mengikuti kelas Certified Ethical Hacking yang mempelajari berbagai topik penting seperti Sniffing, Hacking Web Servers, Social Engineering, Vulnerability Analysis, Scanning Networks Enumeration, dan Denial-Of-Service. Materi-materi ini sangat penting untuk memahami dan menguasai teknik-teknik keamanan informasi yang diperlukan dalam dunia profesional.
+              </p>
+
+ 
+            </li>
+
+           
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">AWS Back-end Academy   •  AWS Training and Certification </h4>
+
+              <span>Mei 2024 - Sekarang</span>
+
+              <p class="timeline-text">
+             Pengalaman saya dalam mengikuti program beasiswa untuk meningkatkan kompetensi di bidang pengembangan Back-End dari Amazon Web Services (AWS) telah menjadi landasan kuat dalam penguasaan saya terhadap alat-alat kunci dalam platform AWS untuk keperluan komputasi awan dan aspek lainnya. Melalui program ini, saya tidak hanya memperdalam pemahaman konseptual, tetapi juga mengasah keterampilan praktis dalam penerapan teknologi AWS yang relevan dalam proyek-proyek pengembangan Back-End.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+      </article>
+
+          <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+    
+ 
+ 
+ <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+
+</html>
