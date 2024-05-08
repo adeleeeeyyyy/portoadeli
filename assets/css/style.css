@@ -306,7 +306,10 @@ main {
   min-width: 259px;
 }
 
-
+cv {
+  text-color: black;
+  background-color: #FFDB6E;
+}
 
 
 
