@@ -23,6 +23,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Include the Dark theme -->
+<link rel="stylesheet" href="@sweetalert2/theme-dark/dark.css">
+
+<script src="sweetalert2/dist/sweetalert2.min.js"></script>
 </head>
 
 <body>
@@ -358,59 +362,13 @@
         </section>
 
       </article>
-
-          <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
-
-    </div>
-
     <!--contact-->
 
         <section class="contact-form">
 
           <h2 class="h2 article-title">Contact Form</h2>
 
-          <form action="#" class="form">
+          <form action="#" class="form" id="send">
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" id="name" required>
@@ -420,14 +378,13 @@
 
             <textarea name="message" class="form-input" placeholder="Your Message" id="message" required></textarea>
 
-            <button class="form-btn" type="submit">
+            <button class="form-btn" type="submit" id="butt" onclick="sendMail()">
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
           </form>
         </section>
     </div>
-<div>
   </main>
     
  
@@ -448,6 +405,33 @@
    })();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  $("#butt").click(function (e){
+    e.preventDefault();
+    const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 2000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+
+    $("form#send").find('input').val('');
+    //$("form#send").find('input:email').val('');
+    //$("form#send").find('textarea').val('');
+    $("#send").find('input')[0].focus()
+    $("#send").find('textarea')[0].focus()
+  }
+});
+Toast.fire({
+  icon: "success",
+  title: "Komentar terkirim!"
+});
+  })
 </script>
 
 
