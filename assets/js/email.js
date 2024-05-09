@@ -9,3 +9,7 @@ function sendMail(){
   
   )
 }
+
+function tes() {
+  alert("tes")
+}

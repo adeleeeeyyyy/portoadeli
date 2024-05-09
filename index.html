@@ -368,7 +368,7 @@
 
           <h2 class="h2 article-title">Contact Form</h2>
 
-          <form action="#" class="form" id="send">
+          <form action="#" class="form" id="myForm" name="myForm">
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" id="name" required>
@@ -378,7 +378,7 @@
 
             <textarea name="message" class="form-input" placeholder="Your Message" id="message" required></textarea>
 
-            <button class="form-btn" type="submit" id="butt" onclick="sendMail()">
+            <button class="form-btn" type="submit" id="sendButton">
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
@@ -408,30 +408,38 @@
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-  $("#butt").click(function (e){
-    e.preventDefault();
+$(document).ready(function() {
+    $("#myForm").submit(function(event) {
+        event.preventDefault(); // mencegah default action submit form (refresh halaman)
+
+        var name = $("#name").val();
+        var email = $("#email").val();
+
+        if (name === "" || email === "") {
+            alert("Tolong isi form");
+        } else {
+           sendMail();
     const Toast = Swal.mixin({
-  toast: true,
-  position: "top-end",
-  showConfirmButton: false,
-  timer: 2000,
-  timerProgressBar: true,
-  didOpen: (toast) => {
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
     toast.onmouseenter = Swal.stopTimer;
     toast.onmouseleave = Swal.resumeTimer;
-
-    $("form#send").find('input').val('');
-    //$("form#send").find('input:email').val('');
-    //$("form#send").find('textarea').val('');
-    $("#send").find('input')[0].focus()
-    $("#message").val('');
   }
 });
 Toast.fire({
   icon: "success",
   title: "Komentar terkirim!"
 });
-  })
+          $("form#myForm").find('input').val('');
+          $("#myForm").find('input')[0].focus();
+          $("#message").val('');      
+        }
+    });
+});
 </script>
 
 
