@@ -16,7 +16,7 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
   <!--
     - google font link
   -->
@@ -420,14 +420,14 @@
 
             <textarea name="message" class="form-input" placeholder="Your Message" id="message" required></textarea>
 
-            <button class="form-btn" type="submit" onclick="sendMail()">
+            <button class="form-btn" type="submit">
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
           </form>
         </section>
     </div>
-
+<div>
   </main>
     
  
@@ -447,12 +447,17 @@
       });
    })();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+</script>
+
+
   <!--
     - ionicon link
   -->
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 
 
 </body>
