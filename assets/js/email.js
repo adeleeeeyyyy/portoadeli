@@ -6,7 +6,7 @@ function sendMail(){
   }
   
   emailjs.send('service_2enydma', 'template_1jjpxd1', parms).then(
-  
+    console.log("email terkirim mas bro")
   )
 }
 
