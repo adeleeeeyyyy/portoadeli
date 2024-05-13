@@ -536,6 +536,11 @@
                 var name = $("#name").val();
 
                 var email = $("#email").val();
+                var value = this.value.replace(/\s/g, ''); // Menghapus spasi
+                var maxLength = 50; // Panjang maksimum
+                if (value.length > maxLength) {
+                    this.value = value.substring(0, maxLength);
+                }
 
                 if (name === "" && email === "") {
 
