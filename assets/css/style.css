@@ -24,7 +24,7 @@
   /* gradient */
 
 .main-content {
-	height: 100vh;
+	height: 100%;
 }
 
   --bg-gradient-onyx: linear-gradient(
