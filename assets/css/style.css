@@ -1136,7 +1136,7 @@ cv {
   border-radius: 16px;
   margin-bottom: 30px;
   border: 1px solid var(--jet);
-  overflow: hidden;
+/*   overflow: hiddden; */
 }
 
 .mapbox figure { height: 100%; }
