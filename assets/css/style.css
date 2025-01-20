@@ -22,6 +22,8 @@
    */
 
   /* gradient */
+
+
   .stats {
     display: flex;
     flex-wrap: wrap; /* Membuat konten berpindah baris jika ruang tidak cukup */
