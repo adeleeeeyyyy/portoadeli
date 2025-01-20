@@ -22,6 +22,11 @@
    */
 
   /* gradient */
+.first-stats {
+  display: flex;
+  gap: 5rem;
+}
+
 
 .main-content {
 	height: 150%;
