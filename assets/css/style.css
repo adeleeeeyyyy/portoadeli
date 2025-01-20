@@ -22,10 +22,43 @@
    */
 
   /* gradient */
-.first-stats {
-  display: flex;
-  gap: 5rem;
-}
+  .stats {
+    display: flex;
+    flex-wrap: wrap; /* Membuat konten berpindah baris jika ruang tidak cukup */
+    gap: 1rem; /* Jarak antar elemen */
+    justify-content: center; /* Pusatkan konten */
+  }
+  
+  
+  .first-stats, .second-stats {
+    display: flex;
+    flex-direction: column; /* Tumpuk gambar vertikal */
+    align-items: center; /* Pusatkan gambar */
+  }
+  
+  .first-stats img, .second-stats img {
+    max-width: 100%; /* Pastikan gambar tidak melebihi lebar kontainer */
+    height: auto; /* Pertahankan rasio aspek gambar */
+  }
+  
+  /* Media Query untuk Layar Kecil */
+  @media (max-width: 768px) {
+    .stats {
+      flex-direction: column; /* Tampilkan semua elemen dalam satu kolom */
+      align-items: center; /* Pusatkan elemen */
+    }
+  }
+  
+  /* Media Query untuk Layar Sangat Kecil (ponsel) */
+  @media (max-width: 480px) {
+    img {
+      height: auto;
+      max-width: 100%; /* Sesuaikan lebar gambar dengan layar */
+    }
+  }
+  
+
+
 
 
 .main-content {
