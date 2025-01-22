@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Chat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./assets/images/icons8-circled-a-100.png" type="image/x-icon">
+</head>
+<body class="bg-gradient-to-br from-pink-300 to-violet-600 h-screen flex justify-center items-center">
+    <div class="bg-white/20 backdrop-blur-lg w-[24rem] p-6 rounded-lg shadow-lg text-center border border-white/30">
+        <h1 class="text-2xl font-bold text-white mb-4">Send Me Anonymous Messages</h1>
+        <p class="text-sm text-white/80 mb-6">Feel free to share anything! It's completely anonymous.</p>
+        <form action="#" method="POST" class="space-y-4">
+            <textarea 
+                name="message" 
+                placeholder="Write your anonymous message here..." 
+                class="w-full h-[8rem] p-4 rounded-lg border border-white/40 bg-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-pink-300"
+                required
+            ></textarea>
+            <button 
+                type="submit" 
+                class="w-full bg-pink-500 text-white py-2 rounded-lg font-semibold hover:bg-pink-600 transition duration-300">
+                Send Message
+            </button>
+        </form>
+    </div>
+</body>
+</html>
