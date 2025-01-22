@@ -3,6 +3,10 @@
       {
         "source": "/anonymous",
         "destination": "/anonymous.html"
+      },
+      {
+        "source": "/dashboard",
+        "destination": "/dashboard.html"
       }
     ]
   }
