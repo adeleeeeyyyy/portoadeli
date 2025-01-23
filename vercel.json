@@ -8,13 +8,6 @@
         "source": "/dashboard",
         "destination": "/dashboard.html"
       }
-    ],
-    "redirects": [
-      {
-        "source": "/(.*)",
-        "destination": "/page-not-found.html",
-        "statusCode": 404
-      }
     ]
   }
   
