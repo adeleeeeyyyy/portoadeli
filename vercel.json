@@ -7,11 +7,14 @@
       {
         "source": "/dashboard",
         "destination": "/dashboard.html"
-      },
-      {
-        "source": "/*",
-        "destination": "page-not-found.html"
       }
-    ]
+    ],
+    "redirects": [
+    {
+      "source": "/*",
+      "destination": "/page-not-found.html",
+      "statusCode": 404
+    }
+  ]
   }
   
