@@ -2,11 +2,11 @@
     "rewrites": [
       {
         "source": "/anonymous",
-        "destination": "/anonymous.html"
+        "destination": "/pages/anonymous.html"
       },
       {
         "source": "/dashboard",
-        "destination": "/dashboard.html"
+        "destination": "/pages/dashboard.html"
       }
     ]
   }
