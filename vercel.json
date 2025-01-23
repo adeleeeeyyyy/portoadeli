@@ -2,16 +2,16 @@
     "rewrites": [
       {
         "source": "/anonymous",
-        "destination": "/anonymous.html"
+        "destination": "/pages/anonymous.html"
       },
       {
         "source": "/dashboard",
-        "destination": "/dashboard.html"
+        "destination": "/pages/dashboard.html"
       }
     ],
     "redirects": [
       {
-        "source": "/*",
+        "source": "/(.*)",
         "destination": "/page-not-found.html",
         "statusCode": 404
       }
