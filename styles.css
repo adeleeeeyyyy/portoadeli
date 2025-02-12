@@ -1,0 +1,33 @@
+/* styles.css */
+
+/* Gaya teks dan reset */
+
+::selection {
+    background: rgba(0, 0, 0, 0); /* Tambahkan efek warna ringan */
+    color: inherit;
+  }
+
+/* styles.css */
+
+/* Gaya reset dan teks */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    position: relative;
+  }
+  
+  /* Garis bawah kustom */
+  .custom-underline {
+    position: absolute;
+    height: 2px;
+    background-color: #3498db;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease, left 0.2s ease, width 0.2s ease;
+  }
+  
