@@ -45,47 +45,62 @@ var swiper = new Swiper(".swiper-license", {
     }
   });
   
-document.addEventListener("DOMContentLoaded", function () {
-    AOS.init({
-      duration: 800, // Durasi animasi dalam ms
-      easing: "ease-in-out", // Jenis animasi
-      once: true, // Animasi hanya terjadi sekali
-    });
-  });
-
   document.addEventListener("DOMContentLoaded", function () {
     AOS.init({
-      duration: 500,
-      easing: "ease-in-out",
-      once: false, // Pastikan `once` diatur ke false agar bisa muncul & menghilang
+        duration: 800, // Durasi animasi
+        easing: "ease-in-out",
+        once: false, // Agar animasi bisa terjadi berulang
     });
-  
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("opacity-100");
-          entry.target.classList.remove("opacity-0");
-        } else {
-          entry.target.classList.add("opacity-0");
-          entry.target.classList.remove("opacity-100");
-        }
-      });
-    }, { threshold: 0.4 }); // 20% elemen terlihat, baru trigger
-  
-    document.querySelectorAll(".aos-item").forEach((el) => observer.observe(el));
-  });
-  
-  function license(){
-    window.location.href='https://www.cloudskillsboost.google/public_profiles/1a744bc0-1f9e-4bd6-83b8-f34a243393c3'
-}
 
-document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("about");
+    const openModal = document.getElementById("showAbout");
+    const closeModal = document.getElementById("closeAbout");
+    const personalInfo = document.getElementById("personal-info");
+
+    openModal.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+
+        setTimeout(() => {
+            modal.classList.remove("translate-y-full");
+
+            setTimeout(() => {
+                AOS.refreshHard();
+                console.log("AOS refreshed");
+            }, 50);
+        }, 50);
+    });
+
+    closeModal.addEventListener("click", () => {
+        modal.classList.add("translate-y-full");
+
+        setTimeout(() => {
+            modal.classList.add("hidden");
+        }, 700);
+    });
+
+    // FIX 2: Perbaiki IntersectionObserver agar tidak bentrok dengan AOS
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("opacity-100");
+                entry.target.classList.remove("opacity-0");
+            } else {
+                entry.target.classList.remove("opacity-100");
+                entry.target.classList.add("opacity-0");
+            }
+        });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll(".observer-item").forEach((el) => observer.observe(el));
+
+    // FIX 3: Pastikan Lenis tidak mengganggu AOS
     const lenis = new Lenis();
-  
+
     function raf(time) {
-      lenis.raf(time * 0.5);
-      requestAnimationFrame(raf);
+        lenis.raf(time * 0.5);
+        requestAnimationFrame(raf);
+        AOS.refresh(); // Paksa AOS membaca ulang elemen setelah smooth scroll
     }
-  
+
     requestAnimationFrame(raf);
-  });
+});
