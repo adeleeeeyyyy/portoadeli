@@ -1,0 +1,36 @@
+body {
+    font-family: 'Nunito';
+    letter-spacing: 0.1cap;
+    background-color: #F7F7F7;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+.layout-container {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: black !important;
+}
+
+
+/* Saat dihover */
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    color: #e65100; /* Warna lebih gelap saat hover */
+}
+
+.swiper-pagination-bullet {
+    background: black !important; /* Ubah warna bullet */
+    opacity: 0.5; /* Transparansi */
+}
+.swiper-pagination-bullet-active {
+    background: black !important; /* Ubah warna bullet aktif */
+    opacity: 1;
+}

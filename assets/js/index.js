@@ -1,14 +1,14 @@
 var swiper = new Swiper(".swiper-license", {
-    slidesPerView: 1.2,  // Pastikan tidak melebihi batas
+    slidesPerView: 3,  // Pastikan tidak melebihi batas
     spaceBetween: 20,    // Jarak antar slide
     loop: true,          // Loop infinite
     grabCursor: true,    // Cursor tangan untuk drag
     freeMode: false,     // Hindari scroll bebas
     centeredSlides: true, // Selalu di tengah
-    autoplay: {
-        delay: 0, // Geser otomatis tiap 3 detik
-        disableOnInteraction: false, // Tetap autoplay meski user interaksi
-    },
+    // autoplay: {
+    //     delay: 0, // Geser otomatis tiap 3 detik
+    //     disableOnInteraction: false, // Tetap autoplay meski user interaksi
+    // },
     speed: 3000, // Kecepatan transisi
     pagination: {
         el: ".swiper-pagination",
@@ -59,7 +59,8 @@ var swiper = new Swiper(".swiper-license", {
 
     openModal.addEventListener("click", () => {
         modal.classList.remove("hidden");
-
+        document.body.style.overflow = "hidden";
+        
         setTimeout(() => {
             modal.classList.remove("translate-y-full");
 
@@ -77,6 +78,8 @@ var swiper = new Swiper(".swiper-license", {
             modal.classList.add("hidden");
         }, 700);
     });
+
+    
 
     // FIX 2: Perbaiki IntersectionObserver agar tidak bentrok dengan AOS
     const observer = new IntersectionObserver((entries) => {
