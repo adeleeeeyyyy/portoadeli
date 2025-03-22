@@ -28,11 +28,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-
+    <style>
+        .layout-container {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+    </style>
 </head>
 <body class="p-0">
     <!-- Header section -->
-    <header class=" hidden md:block z-50 top-0 left-0 p-4 w-full ">
+    <header class=" hidden md:block z-50 top-0 left-0 p-4 w-full">
         <nav class="px-4 py-4 max-h-20 w-full flex bg-[#cccccc] shadow-[5px_5px_0px_0px_rgba(0,0,0)] border-4 border-black items-center space-x-4 justify-between">
                 <img src="assets/images/icons8-old-computer-96.webp" width="50" height="50" alt="Computer Logo" class="w-8 border border-black p-[0.5px] rounded-md ">
                 <ul class="flex justify-around gap-5 text-xl font-bold">
@@ -179,126 +187,128 @@
 <!-- end about card -->
     <!-- Main Section -->
    
-        <main class="md:flex w-full hidden h-screen justify-around items-center bg-[#F8F8F8] px-4 pb-10 lg:h-[742px]">
-            <div class="basis-1/2 flex-col items-center">
-                <h2 class="text-[10rem] mb-[-6rem] font-bold">Hello.</h2>
-                <h2 class="text-[10rem] font-bold">I'm Adeli.</h2>
-                <p class="text-wrap mb-5">I am a vocational school student majoring in <a class="underline" href="https://en.wikipedia.org/wiki/Software_engineering" target="_blank">Software Engineering</a>. I have a great interest in technology, especially software technology.
-                    <br>
-                    I have expertise in the field of Cyber ​​Security as a Penetration Tester, Vulnerability Researcher, and Application security. I also have expertise in building websites as a Fullstack Developer.</p>
-                <button class="bg-[#cccccc] p-4 py-2 border-[3.5px] border-black shadow-[5px_5px_0px_0px_rgba(0,0,0)]" aria-label="Download My Cv" id="showAbout">About me</button>
-            </div>
-            <div class=" pt-4">
-                <img width="100" height="100" src="assets/images/8196354.webp" alt="computer" class="w-[30rem]"/>
-            </div>
-            <!-- Social media -->
-            <div class="absolute -bottom-[8.5rem] hidden md:block" id="quick-links">
-                <h2 class="font-extrabold text-3xl">Fun Labs</h2>
-                <ul class="flex font-bold shadow-[5px_5px_0px_0px_rgba(0,0,0)]">
-                    <a href="https://www.instagram.com/adeleeeeyyyy/" rel="nofollow" target="_blank">
-                        <li class="px-4 py-4 bg-[#cccccc] border-4 border-black flex justify-between items-center gap-24 right-3">Instagram<img loading="lazy" src="assets/images/arrow-box.webp" class="w-5 h-5 color-black" alt=""></li>
-                    </a>
-                    <a href="https://github.com/adeleeeeyyyy" rel="nofollow" target="_blank">
-                        <li class="px-4 py-4 bg-[#cccccc] border-t-4 border-b-4 border-black gap-24 justify-between flex items-center">GitHub<img loading="lazy" src="assets/images/arrow-box.webp" class="w-5 h-5 color-black" alt=""></li>
-                    </a>
-                    <a href="https://linkedin.com/in/adly-fahreza" target="_blank">
-                        <li class="px-4 py-4 bg-[#cccccc] border-4 border-black flex gap-24 justify-between  items-center">LinkedIn<img loading="lazy" src="assets/images/arrow-box.webp" class="w-5 h-5 color-black" alt=""></li>
-                    </a>
-        
-                </ul>
-            </div>
-        </main>
-    </div>
-
-    <!-- Projects section -->
-    <section class="md:flex flex-col hidden justify-center py-10 gap-6 items-center w-full h-screen bg-[#cccccc] px-10 border-y-4 border-black" id="projects">
-        <!-- Carousel (60%) -->
-         <h2 class="font-bold text-6xl mb-5">Projects</h2>
-        <div class="w-full h-auto flex gap-4 items-stretch">
-            <div class="w-[70%] h-full">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide ">
-                            <div class="swiper-slide w-[35rem] h-[25rem] bg-black border-4  overflow-hidden relative shadow-[5px_5px_0px_0px_rgba(0,0,0)]">
-                                <header class="flex items-center justify-between p-3 px-6 w-full bg-[#cccccc] border-b-4 border-black">
-                                    <div class="flex gap-2">
-                                        <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
-                                        <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
-                                    </div>
-                                    <p class="font-extrabold text-black absolute left-1/2 transform -translate-x-1/2">
-                                        2020-05-12-Project 1
-                                    </p>
-                                </header>
-                                <div class="w-full h-[30rem] overflow-hidden border-b-4 border-black p-5 bg-[#F8F8F8]">
-                                    <img loading="lazy" src="assets/images/New Project 12 [BBD8FF8].webp" class="w-full h-full object-cover" alt="Linux Dotfile">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide ">
-                            <div class="swiper-slide w-[35rem] h-[25rem] bg-black border-4 border-black overflow-hidden relative lg:">
-                                <header class="flex items-center justify-between p-3 px-6 w-full bg-[#cccccc] border-b-4 border-black">
-                                    <div class="flex gap-2">
-                                        <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
-                                        <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
-                                    </div>
-                                    <p class="font-extrabold text-black absolute left-1/2 transform -translate-x-1/2">
-                                        2020-05-12-Project 1
-                                    </p>
-                                </header>
-                                <div class="w-full h-[30rem] overflow-hidden border-b-4 border-black p-5 bg-[#F8F8F8]">
-                                    <img loading="lazy" src="assets/images/New Project 12 [BBD8FF8].webp" class="w-full h-full object-cover" alt="Linux Dotfile">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide ">
-                            <div class="swiper-slide w-[35rem] h-[25rem] bg-black border-4 border-black overflow-hidden relative lg:">
-                                <header class="flex items-center justify-between p-3 px-6 w-full bg-[#cccccc] border-b-4 border-black">
-                                    <div class="flex gap-2">
-                                        <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
-                                        <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
-                                    </div>
-                                    <p class="font-extrabold text-black absolute left-1/2 transform -translate-x-1/2">
-                                        2020-05-12-Project 1
-                                    </p>
-                                </header>
-                                <div class="w-full h-[30rem] overflow-hidden border-b-4 border-black p-5 bg-[#F8F8F8]">
-                                    <img loading="lazy" src="assets/images/New Project 12 [BBD8FF8].webp" class="w-full h-full object-cover" alt="Linux Dotfile">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Navigasi -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
+        <div class="layout-container">
+            <main class="md:flex w-full hidden h-screen justify-around items-center bg-[#F8F8F8] px-4 pb-10 lg:h-[742px]">
+                <div class="basis-1/2 flex-col items-center">
+                    <h2 class="text-[10rem] mb-[-6rem] font-bold">Hello.</h2>
+                    <h2 class="text-[10rem] font-bold">I'm Adeli.</h2>
+                    <p class="text-wrap mb-5">I am a vocational school student majoring in <a class="underline" href="https://en.wikipedia.org/wiki/Software_engineering" target="_blank">Software Engineering</a>. I have a great interest in technology, especially software technology.
+                        <br>
+                        I have expertise in the field of Cyber ​​Security as a Penetration Tester, Vulnerability Researcher, and Application security. I also have expertise in building websites as a Fullstack Developer.</p>
+                    <button class="bg-[#cccccc] p-4 py-2 border-[3.5px] border-black shadow-[5px_5px_0px_0px_rgba(0,0,0)]" aria-label="Download My Cv" id="showAbout">About me</button>
                 </div>
-            </div>
-            <!-- Deskripsi (40%) -->
-            <div class="w-[30%] border-4 border-black  flex flex-col overflow-hidden relative bg-[#F8F8F8] shadow-[5px_5px_0px_0px_rgba(0,0,0)]">
-                <header class="flex items-center justify-between p-3 px-6 w-full bg-[#cccccc] border-b-4 border-black">
-                    <div class="flex gap-2">
-                        <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
-                        <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
-                    </div>
-                    <p class="font-extrabold text-black absolute left-1/2 transform -translate-x-1/2">
-                        Project Description
-                    </p>
-                </header>
-                <div class="px-4">
-                    <div class="overflow-hidden">
-                        <div id="descriptionProject" class="mt-2 space-y-2 overflow-hidden">
-                            <p class="text-gray-600"><span>Project Name</span>Linux DotFiles</p>
+                <div class=" pt-4">
+                    <img width="100" height="100" src="assets/images/8196354.webp" alt="computer" class="w-[30rem]"/>
+                </div>
+                <!-- Social media -->
+                <div class="absolute -bottom-[8.5rem] hidden md:block" id="quick-links">
+                    <h2 class="font-extrabold text-3xl">Fun Labs</h2>
+                    <ul class="flex font-bold shadow-[5px_5px_0px_0px_rgba(0,0,0)]">
+                        <a href="https://www.instagram.com/adeleeeeyyyy/" rel="nofollow" target="_blank">
+                            <li class="px-4 py-4 bg-[#cccccc] border-4 border-black flex justify-between items-center gap-24 right-3">Instagram<img loading="lazy" src="assets/images/arrow-box.webp" class="w-5 h-5 color-black" alt=""></li>
+                        </a>
+                        <a href="https://github.com/adeleeeeyyyy" rel="nofollow" target="_blank">
+                            <li class="px-4 py-4 bg-[#cccccc] border-t-4 border-b-4 border-black gap-24 justify-between flex items-center">GitHub<img loading="lazy" src="assets/images/arrow-box.webp" class="w-5 h-5 color-black" alt=""></li>
+                        </a>
+                        <a href="https://linkedin.com/in/adly-fahreza" target="_blank">
+                            <li class="px-4 py-4 bg-[#cccccc] border-4 border-black flex gap-24 justify-between  items-center">LinkedIn<img loading="lazy" src="assets/images/arrow-box.webp" class="w-5 h-5 color-black" alt=""></li>
+                        </a>
+            
+                    </ul>
+                </div>
+            </main>
+                </div>
+            
+                <!-- Projects section -->
+                <section class="md:flex flex-col hidden justify-center py-10 gap-6 items-center w-full h-screen bg-[#cccccc] px-10 border-y-4 border-black" id="projects">
+            <!-- Carousel (60%) -->
+             <h2 class="font-bold text-6xl mb-5">Projects</h2>
+            <div class="w-full h-auto flex gap-4 items-stretch">
+                <div class="w-[70%] h-full">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide ">
+                                <div class="swiper-slide w-[35rem] h-[25rem] bg-black border-4  overflow-hidden relative shadow-[5px_5px_0px_0px_rgba(0,0,0)]">
+                                    <header class="flex items-center justify-between p-3 px-6 w-full bg-[#cccccc] border-b-4 border-black">
+                                        <div class="flex gap-2">
+                                            <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
+                                            <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
+                                        </div>
+                                        <p class="font-extrabold text-black absolute left-1/2 transform -translate-x-1/2">
+                                            2020-05-12-Project 1
+                                        </p>
+                                    </header>
+                                    <div class="w-full h-[30rem] overflow-hidden border-b-4 border-black p-5 bg-[#F8F8F8]">
+                                        <img loading="lazy" src="assets/images/New Project 12 [BBD8FF8].webp" class="w-full h-full object-cover" alt="Linux Dotfile">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide ">
+                                <div class="swiper-slide w-[35rem] h-[25rem] bg-black border-4 border-black overflow-hidden relative lg:">
+                                    <header class="flex items-center justify-between p-3 px-6 w-full bg-[#cccccc] border-b-4 border-black">
+                                        <div class="flex gap-2">
+                                            <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
+                                            <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
+                                        </div>
+                                        <p class="font-extrabold text-black absolute left-1/2 transform -translate-x-1/2">
+                                            2020-05-12-Project 1
+                                        </p>
+                                    </header>
+                                    <div class="w-full h-[30rem] overflow-hidden border-b-4 border-black p-5 bg-[#F8F8F8]">
+                                        <img loading="lazy" src="assets/images/New Project 12 [BBD8FF8].webp" class="w-full h-full object-cover" alt="Linux Dotfile">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide ">
+                                <div class="swiper-slide w-[35rem] h-[25rem] bg-black border-4 border-black overflow-hidden relative lg:">
+                                    <header class="flex items-center justify-between p-3 px-6 w-full bg-[#cccccc] border-b-4 border-black">
+                                        <div class="flex gap-2">
+                                            <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
+                                            <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
+                                        </div>
+                                        <p class="font-extrabold text-black absolute left-1/2 transform -translate-x-1/2">
+                                            2020-05-12-Project 1
+                                        </p>
+                                    </header>
+                                    <div class="w-full h-[30rem] overflow-hidden border-b-4 border-black p-5 bg-[#F8F8F8]">
+                                        <img loading="lazy" src="assets/images/New Project 12 [BBD8FF8].webp" class="w-full h-full object-cover" alt="Linux Dotfile">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <button class="p-2 border-4 border-black font-bold absolute bottom-5 bg-[#cccccc] shadow-[5px_5px_0px_0px_rgba(0,0,0)]">
-                            Show More
-                        </button>
+                        <!-- Navigasi -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
+                <!-- Deskripsi (40%) -->
+                <div class="w-[30%] border-4 border-black  flex flex-col overflow-hidden relative bg-[#F8F8F8] shadow-[5px_5px_0px_0px_rgba(0,0,0)]">
+                    <header class="flex items-center justify-between p-3 px-6 w-full bg-[#cccccc] border-b-4 border-black">
+                        <div class="flex gap-2">
+                            <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
+                            <div class="w-4 h-4 rounded-full bg-[#F8F8F8] border-[3px] border-black"></div>
+                        </div>
+                        <p class="font-extrabold text-black absolute left-1/2 transform -translate-x-1/2">
+                            Project Description
+                        </p>
+                    </header>
+                    <div class="px-4">
+                        <div class="overflow-hidden">
+                            <div id="descriptionProject" class="mt-2 space-y-2 overflow-hidden">
+                                <p class="text-gray-600"><span>Project Name</span>Linux DotFiles</p>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="p-2 border-4 border-black font-bold absolute bottom-5 bg-[#cccccc] shadow-[5px_5px_0px_0px_rgba(0,0,0)]">
+                                Show More
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
+                </section>
         </div>
-    </section>
     
     <!-- end projects -->
 
@@ -345,8 +355,8 @@
                                         Google Cloud Skill Badge
                                     </p>
                                 </header>
-                                <div class="w-full h-fit overflow-hidden border-b-4 border-black p-5  bg-[#F8F8F8]">
-                                    <img loading="lazy" src="assets/images/certificates/certificate_1.webp" class="w-full h-full object-cover border-4 border-black" alt="Linux Dotfile">
+                                <div class="w-full h-fit overflow-hidden  p-5 rounded-md bg-[#F8F8F8] flex justify-center">
+                                    <img loading="lazy" src="assets/images/certificates/certificate_1.webp" width="" class="w-[80%] h-full object-cover" alt="Linux Dotfile">
                                 </div>
                             </div>
                         </div>
@@ -361,8 +371,8 @@
                                         Google Cloud Skill Badge
                                     </p>
                                 </header>
-                                <div class="w-full h-fit overflow-hidden border-b-4 border-black p-5 bg-[#F8F8F8]">
-                                    <img loading="lazy" src="assets/images/certificates/certificate_2.webp" widh class="w-full h-full object-cover border-4 border-black" alt="Linux Dotfile">
+                                <div class="w-full h-fit overflow-hidden border-b-4 border-black p-5 bg-[#F8F8F8] flex justify-center">
+                                    <img loading="lazy" src="assets/images/certificates/certificate_2.webp" width="80%" class="w-[80%] h-full object-cover " alt="Linux Dotfile">
                                 </div>
                             </div>
                         </div>
@@ -377,8 +387,8 @@
                                         Google Cloud Skill Badge
                                     </p>
                                 </header>
-                                <div class="w-full h-fit overflow-hidden border-b-4 border-black p-5 bg-[#F8F8F8]">
-                                    <img loading="lazy" src="assets/images/certificates/certificate_3.webp" class="w-full h-full object-cover border-4 border-black" alt="Linux Dotfile">
+                                <div class="w-full h-fit overflow-hidden border-b-4 border-black p-5 bg-[#F8F8F8] flex justify-center">
+                                    <img loading="lazy" src="assets/images/certificates/certificate_3.webp" width="80%" class="w-[80%] h-full object-cover" alt="Linux Dotfile">
                                 </div>
                             </div>
                         </div>
