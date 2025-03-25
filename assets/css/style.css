@@ -16,6 +16,14 @@ body {
     min-height: 100vh;
 }
 
+@media (max-width: 768px) {
+    .layout-container {
+        display: none;
+    }
+}
+
+
+
 .swiper-button-next, .swiper-button-prev {
     color: black !important;
 }
