@@ -18,7 +18,7 @@ body {
 
 @media (max-width: 768px) {
     .layout-container {
-        display: none;
+        display: none !important;
     }
 }
 
