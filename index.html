@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adly Fahreza Personal Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'DM Sans', sans-serif; }
+        .neo-shadow { box-shadow: 8px 8px 0px #000; }
+        .neo-shadow-sm { box-shadow: 4px 4px 0px #000; }
+        .neo-shadow-hover:hover { box-shadow: 12px 12px 0px #000; transform: translate(-2px, -2px); }
+    </style>
+</head>
+<body class="bg-white text-gray-900 leading-relaxed">
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white border-b-4 border-black z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">Adly Fahreza</h1>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="font-bold hover:text-amber-600 transition-colors">About</a>
+                    <a href="#projects" class="font-bold hover:text-amber-600 transition-colors">Projects</a>
+                    <a href="#certificates" class="font-bold hover:text-amber-600 transition-colors">Certificates</a>
+                    <a href="#tools" class="font-bold hover:text-amber-600 transition-colors">Tools</a>
+                    <a href="#contact" class="font-bold hover:text-amber-600 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-yellow-200 rounded-3xl p-12 neo-shadow border-4 border-black">
+                <h1 class="text-6xl md:text-8xl font-bold text-red-800 mb-6">
+                    Software<br>Engineer
+                </h1>
+                <p class="text-xl text-black max-w-2xl mb-8">
+                    I design, develop, test, and maintain the software. I make sure the software is reliable, stable, and secure. I also make sure the software is efficient, scalable, and easy to use. I work closely with cross-functional teams to identify and prioritize project requirements. I make sure the software is delivered on time and within budget. I write clean, efficient, and well-documented code. I also participate in code reviews and contribute to the improvement of the engineering team.
+                </p>
+                <button class="bg-white text-black px-8 py-4 rounded-2xl font-bold text-lg border-2  hover:shadow-[7px_7px_0px_0px_rgba(0,0,0,1)] shadow-none hover:-translate-y-[7px] hover:-translate-x-[7px] border-black transition-all duration-200 transition-all duration-200">
+                    View My Work
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold mb-12">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-gray-50 rounded-3xl p-8 neo-shadow border-4 border-black">
+                    <h3 class="text-2xl font-bold mb-4">Who I Am</h3>
+                    <p class="text-lg leading-relaxed">
+                        I am a vocational school student majoring in <a href="https://en.wikipedia.org/wiki/Software_engineering" class="font-bold underline text-xl">Software Engineering.</a> I have a great interest in technology, especially software technology.
+                        
+                    </p>
+                </div>
+                <div class="bg-indigo-600 text-white rounded-3xl p-8 neo-shadow border-4 border-black">
+                    <h3 class="text-2xl font-bold mb-4">What I Do</h3>
+                    <p class="text-lg leading-relaxed">
+                        I have expertise in the field of System Administration, with experience in server management and infrastructure deployment. I also have expertise in building websites as a Fullstack Developer.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold mb-12">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl p-6 neo-shadow border-4 border-black neo-shadow-hover transition-all duration-200">
+                    <!-- Hero Icon + Hover Effect -->
+                    <div class="bg-yellow-200 rounded-2xl h-48 mb-6 flex flex-col items-center justify-center relative group overflow-hidden">
+                        <!-- Icon -->
+                        <span class="text-5xl transition-transform absolute duration-300 group-hover:-translate-y-10">
+                            <img width="50" height="50" src="https://img.icons8.com/ios/50/rebalance-portfolio.png" alt="rebalance-portfolio"/>                    
+                        </span>
+                
+                        <!-- Button (hidden by default) -->
+                        <a href="https://your-project-link.com" target="_blank"
+                           class="mt-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-black text-white text-sm font-bold px-4 py-2 rounded-xl border-2 border-black">
+                           🔗 View Project
+                        </a>
+                    </div>
+                
+                    <!-- Project Title -->
+                    <h3 class="text-xl font-bold mb-3">Synctributor</h3>
+                    <p class="text-gray-600 mb-4">Github organization ranker</p>
+                
+                    <!-- Tech stack badges -->
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-bold">HTML</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-bold">Tailwind</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold">Github</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 neo-shadow border-4 border-black neo-shadow-hover transition-all duration-600">
+                    <!-- Hero Icon + Hover Effect -->
+                    <div class="bg-blue-200 rounded-2xl h-48 mb-6 flex flex-col items-center justify-center relative group overflow-hidden">
+                        <!-- Icon -->
+                        <span class="text-5xl transition-transform duration-300 absolute group-hover:-translate-y-10">
+                            <img width="50" height="50" src="https://img.icons8.com/windows/50/attendance-mark.png" alt="attendance-mark"/>                        
+                        </span>
+                
+                        <!-- Button (hidden by default) -->
+                        <a href="https://your-project-link.com" target="_blank"
+                           class="mt-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-600 bg-black text-white text-sm font-bold px-4 py-2 rounded-xl border-2 border-black">
+                           🔗 View Project
+                        </a>
+                    </div>
+                
+                    <!-- Project Title -->
+                    <h3 class="text-xl font-bold mb-3">Trabsen</h3>
+                    <p class="text-gray-600 mb-4">Face recognition and GPS tracker based attendance system</p>
+                
+                    <!-- Tech stack badges -->
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-bold">Laravel</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">Nuxt</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold">MySQL</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-bold">Edan</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 neo-shadow border-4 border-black neo-shadow-hover transition-all duration-200">
+                    <div class="bg-green-200 rounded-2xl h-48 mb-6 flex items-center justify-center">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Brand Identity</h3>
+                    <p class="text-gray-600 mb-4">Complete visual identity for tech startup</p>
+                    <div class="flex gap-2">
+                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-bold">Branding</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-bold">Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold mb-12">Certificates</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-amber-600 text-white rounded-3xl p-8 neo-shadow border-4 border-black">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-white text-amber-600 rounded-2xl p-3 mr-4">
+                            <span class="text-2xl">🏆</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">AWS Certified Developer</h3>
+                            <p class="text-amber-100">Amazon Web Services • 2023</p>
+                        </div>
+                    </div>
+                    <p class="text-amber-100">
+                        Certified in developing and maintaining applications on AWS platform
+                    </p>
+                </div>
+
+                <div class="bg-indigo-600 text-white rounded-3xl p-8 neo-shadow border-4 border-black">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-white text-indigo-600 rounded-2xl p-3 mr-4">
+                            <span class="text-2xl">📜</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Google UX Design Certificate</h3>
+                            <p class="text-indigo-100">Google • 2023</p>
+                        </div>
+                    </div>
+                    <p class="text-indigo-100">
+                        Professional certificate in user experience design and research
+                    </p>
+                </div>
+
+                <div class="bg-green-600 text-white rounded-3xl p-8 neo-shadow border-4 border-black">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-white text-green-600 rounded-2xl p-3 mr-4">
+                            <span class="text-2xl">⚛️</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">React Developer Certification</h3>
+                            <p class="text-green-100">Meta • 2022</p>
+                        </div>
+                    </div>
+                    <p class="text-green-100">
+                        Advanced React development and modern JavaScript practices
+                    </p>
+                </div>
+
+                <div class="bg-purple-600 text-white rounded-3xl p-8 neo-shadow border-4 border-black">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-white text-purple-600 rounded-2xl p-3 mr-4">
+                            <span class="text-2xl">🔒</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Cybersecurity Fundamentals</h3>
+                            <p class="text-purple-100">IBM • 2022</p>
+                        </div>
+                    </div>
+                    <p class="text-purple-100">
+                        Security best practices and threat prevention strategies
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="py-20 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold mb-12">Tools & Technologies</h2>
+            
+            <!-- Frontend Tools -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6">Frontend Development</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">⚛️</div>
+                        <p class="font-bold text-sm">React</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">🟢</div>
+                        <p class="font-bold text-sm">Vue.js</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">📱</div>
+                        <p class="font-bold text-sm">React Native</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">🎨</div>
+                        <p class="font-bold text-sm">Tailwind</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">📝</div>
+                        <p class="font-bold text-sm">TypeScript</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">⚡</div>
+                        <p class="font-bold text-sm">Vite</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Tools -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-6">Backend Development</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">🟢</div>
+                        <p class="font-bold text-sm">Node.js</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">🐍</div>
+                        <p class="font-bold text-sm">Python</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">🗄️</div>
+                        <p class="font-bold text-sm">PostgreSQL</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">🍃</div>
+                        <p class="font-bold text-sm">MongoDB</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">🔥</div>
+                        <p class="font-bold text-sm">Firebase</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">📊</div>
+                        <p class="font-bold text-sm">GraphQL</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design & Other Tools -->
+            <div>
+                <h3 class="text-2xl font-bold mb-6">Design & Other Tools</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">🎨</div>
+                        <p class="font-bold text-sm">Figma</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">🐙</div>
+                        <p class="font-bold text-sm">Git</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">🐳</div>
+                        <p class="font-bold text-sm">Docker</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">☁️</div>
+                        <p class="font-bold text-sm">AWS</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">⚡</div>
+                        <p class="font-bold text-sm">Vercel</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-4 neo-shadow-sm border-2 border-black text-center neo-shadow-hover transition-all duration-200">
+                        <div class="text-3xl mb-2">📱</div>
+                        <p class="font-bold text-sm">Adobe XD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold mb-12">Let's Work Together</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-black text-white rounded-3xl p-8 neo-shadow border-4 border-black">
+                    <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-4">📧</span>
+                            <span class="text-lg">alex@example.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-4">📱</span>
+                            <span class="text-lg">+1 (555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-4">🌐</span>
+                            <span class="text-lg">linkedin.com/in/alexjohnson</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl p-8 neo-shadow border-4 border-black">
+                    <form class="space-y-6">
+                        <div>
+                            <input type="text" placeholder="Your Name" 
+                                   class="w-full p-4 rounded-2xl border-2 border-black font-bold focus:outline-none focus:ring-4 focus:ring-amber-200">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" 
+                                   class="w-full p-4 rounded-2xl border-2 border-black font-bold focus:outline-none focus:ring-4 focus:ring-amber-200">
+                        </div>
+                        <div>
+                            <textarea placeholder="Your Message" rows="4" 
+                                      class="w-full p-4 rounded-2xl border-2 border-black font-bold focus:outline-none focus:ring-4 focus:ring-amber-200"></textarea>
+                        </div>
+                        <button type="submit" 
+                                class="w-full bg-amber-600 text-white py-4 rounded-2xl font-bold text-lg neo-shadow-sm neo-shadow-hover transition-all duration-200">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-4">Alex Johnson</h3>
+            <p class="text-gray-400 mb-6">Creative Developer & Designer</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-2xl hover:text-amber-600 transition-colors">🐦</a>
+                <a href="#" class="text-2xl hover:text-amber-600 transition-colors">💼</a>
+                <a href="#" class="text-2xl hover:text-amber-600 transition-colors">📷</a>
+                <a href="#" class="text-2xl hover:text-amber-600 transition-colors">🐙</a>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800">
+                <p class="text-gray-400">© 2024 Alex Johnson. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
