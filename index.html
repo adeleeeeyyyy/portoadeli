@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>adeleeeeyyyy — GitHub Profile</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #1a1a2e;
+  --bg:     #fdf6f0;
+  --pink:   #f9c6d0;
+  --lav:    #c9b8f0;
+  --mint:   #b8ecd7;
+  --peach:  #fcd5a8;
+  --sky:    #b8dff5;
+  --yellow: #fdeea3;
+  --rose:   #f7b2c0;
+  --border: 2.5px solid #1a1a2e;
+  --shadow: 5px 5px 0px #1a1a2e;
+  --shadow-sm: 3px 3px 0px #1a1a2e;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  background-color:var(--bg);
+  color:var(--ink);
+  font-family:'Space Mono',monospace;
+  overflow-x:hidden;
+  background-image:radial-gradient(circle,#c9b8f033 1px,transparent 1px);
+  background-size:24px 24px;
+}
+.bb{border:var(--border);box-shadow:var(--shadow);}
+.bb-sm{border:var(--border);box-shadow:var(--shadow-sm);}
+.bb-static{border:var(--border);box-shadow:var(--shadow);}
+.bb:hover{box-shadow:8px 8px 0 var(--ink);transform:translate(-2px,-2px);transition:all .15s;}
+.tag{border:2px solid var(--ink);font-size:.6rem;padding:2px 8px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;display:inline-block;}
+.section-title{font-family:'Bebas Neue';letter-spacing:.08em;line-height:1;}
+.stripe{background:repeating-linear-gradient(-45deg,var(--pink),var(--pink) 10px,var(--lav) 10px,var(--lav) 20px);}
+.avatar-wrap{position:relative;display:inline-block;}
+.avatar-wrap::after{content:'';position:absolute;top:8px;left:8px;width:100%;height:100%;background:var(--lav);border:var(--border);z-index:-1;}
+.sk{background:linear-gradient(90deg,#ecdfe8 25%,#ddd2da 50%,#ecdfe8 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:2px;color:transparent!important;}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.fi{animation:fadeUp .45s ease forwards;}
+.d1{animation-delay:.05s;opacity:0}.d2{animation-delay:.12s;opacity:0}
+.d3{animation-delay:.2s;opacity:0}.d4{animation-delay:.28s;opacity:0}
+.d5{animation-delay:.36s;opacity:0}.d6{animation-delay:.44s;opacity:0}
+.mq{display:flex;gap:2rem;animation:mq 24s linear infinite;white-space:nowrap;}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--lav);border:1px solid var(--ink)}
+.adot{width:12px;height:12px;border:1.5px solid #1a1a2e33;border-radius:2px;display:inline-block;}
+.lbar{display:flex;height:9px;border:2px solid var(--ink);overflow:hidden;width:100%;}
+.ach-card{border:var(--border);padding:.75rem;background:var(--bg);box-shadow:3px 3px 0 var(--ink);transition:all .15s;cursor:default;}
+.ach-card:hover{box-shadow:6px 6px 0 var(--ink);transform:translate(-2px,-2px);}
+.ach-card.locked{opacity:.45;filter:grayscale(.6);}
+.showcase-card{border:var(--border);box-shadow:4px 4px 0 var(--ink);padding:1rem;background:var(--bg);transition:all .15s;text-decoration:none;display:block;}
+.showcase-card:hover{box-shadow:7px 7px 0 var(--ink);transform:translate(-2px,-2px);}
+/* gallery masonry */
+#gallery-grid{ columns:3; column-gap:10px; }
+@media(max-width:640px){ #gallery-grid{ columns:2; } }
+.gallery-img{break-inside:avoid;display:block;width:100%;margin-bottom:10px;border:var(--border);box-shadow:3px 3px 0 var(--ink);overflow:hidden;cursor:pointer;position:relative;transition:box-shadow .15s,transform .15s;}
+.gallery-img:hover{box-shadow:6px 6px 0 var(--ink);transform:translate(-2px,-2px);}
+.gallery-img img{display:block;width:100%;height:auto;}
+.gallery-img .overlay{position:absolute;inset:0;background:var(--ink);opacity:0;transition:.2s;display:flex;align-items:flex-end;padding:.4rem .5rem;color:var(--bg);font-size:.65rem;letter-spacing:.08em;font-weight:700;}
+.gallery-img:hover .overlay{opacity:.82;}
+.repo-card{border:var(--border);background:var(--bg);box-shadow:4px 4px 0 var(--ink);padding:1rem;transition:all .15s;text-decoration:none;display:block;}
+.stat-b{padding:1rem;text-align:center;}
+.tab-btn{border:var(--border);padding:5px 14px;font-family:'Bebas Neue';letter-spacing:.08em;font-size:1rem;cursor:pointer;background:var(--bg);transition:all .12s;}
+.tab-btn.active{background:var(--ink);color:var(--bg);}
+.tab-btn:hover:not(.active){background:var(--pink);}
+.tab-content{display:none;}.tab-content.active{display:block;}
+.review-card{border:var(--border);padding:.9rem;background:var(--bg);box-shadow:3px 3px 0 var(--ink);}
+[data-tip]{position:relative;}
+[data-tip]:hover::after{content:attr(data-tip);position:absolute;bottom:110%;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);font-size:.62rem;padding:3px 8px;white-space:nowrap;border:1.5px solid var(--ink);z-index:99;pointer-events:none;}
+.xp-bar{height:14px;border:2px solid var(--ink);background:var(--bg);overflow:hidden;}
+.xp-fill{height:100%;background:repeating-linear-gradient(90deg,var(--mint),var(--mint) 8px,#7ddba4 8px,#7ddba4 16px);transition:width 1s ease;}
+.status-online{width:10px;height:10px;background:#3db87a;border:2px solid var(--ink);border-radius:50%;display:inline-block;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 #3db87a66}50%{box-shadow:0 0 0 6px transparent}}
+
+/* ── NOW PLAYING player ── */
+.np-bar{display:flex;gap:2px;align-items:flex-end;height:14px;}
+.np-bar span{width:3px;background:var(--ink);border-radius:1px;animation:eq var(--d,.6s) ease-in-out infinite alternate;}
+@keyframes eq{from{height:3px}to{height:100%}}
+.np-bar.paused span{animation-play-state:paused;}
+.np-playbtn{border:var(--border);background:var(--ink);color:var(--bg);width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.9rem;box-shadow:2px 2px 0 var(--lav);transition:all .12s;flex-shrink:0;}
+.np-playbtn:hover{box-shadow:4px 4px 0 var(--lav);transform:translate(-1px,-1px);}
+.np-skipbtn{border:var(--border);background:var(--bg);width:24px;height:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.65rem;box-shadow:2px 2px 0 var(--ink);transition:all .12s;flex-shrink:0;}
+.np-skipbtn:hover{background:var(--lav);}
+.np-vinyl{animation:spin 4s linear infinite;animation-play-state:paused;}
+.np-vinyl.playing{animation-play-state:running;}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+/* ── NEW: Skill badge ── */
+.skill-badge{border:var(--border);padding:4px 10px;font-size:.62rem;font-weight:700;display:inline-flex;align-items:center;gap:5px;box-shadow:2px 2px 0 var(--ink);cursor:default;transition:all .12s;}
+.skill-badge:hover{box-shadow:4px 4px 0 var(--ink);transform:translate(-1px,-1px);}
+.skill-bar-wrap{height:6px;border:1.5px solid var(--ink);background:var(--bg);overflow:hidden;flex:1;min-width:40px;}
+.skill-bar-fill{height:100%;transition:width 1.2s ease;}
+
+/* ── NEW: Social link ── */
+.social-link{border:var(--border);padding:.5rem .75rem;display:flex;align-items:center;gap:.5rem;text-decoration:none;font-size:.7rem;font-weight:700;box-shadow:3px 3px 0 var(--ink);transition:all .12s;color:var(--ink);}
+.social-link:hover{box-shadow:5px 5px 0 var(--ink);transform:translate(-1px,-1px);}
+
+/* ── NEW: Commit chart ── */
+.chart-bar{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;}
+.chart-bar-fill{width:100%;border:1.5px solid var(--ink);transition:height .8s ease;min-height:3px;}
+.chart-bar-label{font-size:.52rem;color:#666;white-space:nowrap;}
+
+/* ── NEW: Goals ── */
+.goal-bar{height:12px;border:2px solid var(--ink);background:var(--bg);overflow:hidden;}
+.goal-fill{height:100%;transition:width 1.2s ease;}
+
+/* ── NEW: Back to top ── */
+#btt{position:fixed;bottom:24px;right:24px;z-index:500;border:var(--border);background:var(--lav);box-shadow:3px 3px 0 var(--ink);width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;transition:all .15s;opacity:0;pointer-events:none;}
+#btt.show{opacity:1;pointer-events:auto;}
+#btt:hover{box-shadow:5px 5px 0 var(--ink);transform:translate(-2px,-2px);}
+
+
+
+/* ── NEW: Visitor counter ── */
+.visitor-num{font-family:'Bebas Neue';font-size:1.4rem;letter-spacing:.1em;}
+
+/* ── NEW: Weather/clock widget ── */
+#clock-display{font-family:'Bebas Neue';font-size:2rem;letter-spacing:.1em;line-height:1;}
+
+/* filter buttons */
+.gal-filter{cursor:pointer;}
+.gal-filter.active{background:var(--ink)!important;color:var(--bg)!important;}
+.gal-filter:not(.active):hover{background:var(--pink)!important;}
+/* ghost empty state */
+@keyframes ghostFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+/* sidebar overflow: overflow card styling */
+.overflow-card{border:var(--border);box-shadow:var(--shadow);}
+</style>
+</head>
+<body>
+
+<!-- BACK TO TOP -->
+<div id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<!-- TOP STRIPE -->
+<div class="stripe" style="height:12px;"></div>
+
+<!-- NAV -->
+<nav style="border-bottom:var(--border);background:var(--lav);" class="px-5 py-3 flex items-center justify-between fi d1">
+  <div class="flex items-center gap-3">
+    <span style="font-family:'Bebas Neue';letter-spacing:.12em;font-size:1.45rem;">PROFILE.SH</span>
+  </div>
+  <div class="flex gap-3 items-center">
+    <div class="status-online"></div>
+    <span style="font-size:.68rem;font-weight:700;">ONLINE</span>
+    <span style="border-left:var(--border);height:16px;"></span>
+    <a href="https://github.com/adeleeeeyyyy" target="_blank" style="font-size:.7rem;letter-spacing:.07em;font-weight:700;color:var(--ink);">@adeleeeeyyyy ↗</a>
+  </div>
+</nav>
+
+<div class="max-w-6xl mx-auto px-4 py-6">
+
+  <!-- ══════ PROFILE HEADER ══════ -->
+  <div class="bb-static mb-5 overflow-hidden fi d1">
+    <div style="height:130px;background:var(--mint);position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;opacity:.5;background:repeating-linear-gradient(-45deg,var(--yellow),var(--yellow) 18px,var(--mint) 18px,var(--mint) 36px);"></div>
+      <div style="position:absolute;top:18px;right:60px;width:48px;height:48px;background:var(--pink);border:var(--border);transform:rotate(12deg);opacity:.7;"></div>
+      <div style="position:absolute;top:30px;right:120px;width:28px;height:28px;background:var(--lav);border:var(--border);transform:rotate(-8deg);opacity:.7;border-radius:50%;"></div>
+      <div style="position:absolute;top:10px;right:200px;width:20px;height:20px;background:var(--peach);border:var(--border);transform:rotate(20deg);opacity:.6;"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(to top,var(--bg),transparent);"></div>
+    </div>
+    <div class="p-5 flex flex-col md:flex-row gap-5" style="background:var(--bg);">
+      <div style="margin-top:-62px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <div class="avatar-wrap">
+          <img id="avatar" src="" alt="avatar" style="width:120px;height:120px;border:var(--border);display:block;object-fit:cover;" onerror="this.src='https://avatars.githubusercontent.com/u/0'">
+        </div>
+        <div style="width:120px;">
+          <div style="display:flex;justify-content:space-between;font-size:.6rem;margin-bottom:3px;">
+            <span style="font-family:'Bebas Neue';letter-spacing:.06em;">LVL <span id="user-level">?</span></span>
+            <span id="xp-label" style="color:#555;">... XP</span>
+          </div>
+          <div class="xp-bar"><div class="xp-fill" id="xp-fill" style="width:0%;"></div></div>
+        </div>
+        <!-- NEW: visitor counter -->
+        <div style="width:120px;border:var(--border);padding:4px 6px;background:var(--yellow);box-shadow:2px 2px 0 var(--ink);text-align:center;">
+          <div class="visitor-num" id="visitor-num">0</div>
+          <div style="font-size:.52rem;letter-spacing:.1em;color:#555;">PROFILE VIEWS</div>
+        </div>
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex flex-wrap gap-2 items-start justify-between">
+          <div>
+            <h1 id="name" style="font-family:'Syne';font-size:1.85rem;font-weight:800;line-height:1.05;" class="sk">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+            <p id="login" style="font-size:.7rem;margin-top:3px;letter-spacing:.05em;" class="sk">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+          </div>
+          <div class="flex gap-2 flex-wrap" id="badges"></div>
+        </div>
+        <p id="bio" style="font-size:.78rem;margin-top:.7rem;line-height:1.75;max-width:520px;" class="sk">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <div id="meta-row" class="flex flex-wrap gap-4 mt-3" style="font-size:.7rem;color:#444;"></div>
+      </div>
+    </div>
+    <div class="grid grid-cols-5" style="border-top:var(--border);">
+      <div class="stat-b" style="border-right:var(--border);background:var(--pink);"><div style="font-family:'Bebas Neue';font-size:2rem;" id="stat-repos">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">REPOS</div></div>
+      <div class="stat-b" style="border-right:var(--border);background:var(--lav);"><div style="font-family:'Bebas Neue';font-size:2rem;" id="stat-followers">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">FOLLOWERS</div></div>
+      <div class="stat-b" style="border-right:var(--border);background:var(--mint);"><div style="font-family:'Bebas Neue';font-size:2rem;" id="stat-following">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">FOLLOWING</div></div>
+      <div class="stat-b" style="border-right:var(--border);background:var(--peach);"><div style="font-family:'Bebas Neue';font-size:2rem;" id="stat-stars">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">STARS</div></div>
+      <div class="stat-b" style="background:var(--sky);"><div style="font-family:'Bebas Neue';font-size:2rem;" id="stat-gists">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">GISTS</div></div>
+    </div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div style="border:var(--border);overflow:hidden;background:var(--peach);box-shadow:var(--shadow);margin-bottom:1.5rem;" class="py-2 fi d2">
+    <div class="mq" id="mq"></div>
+  </div>
+
+  <!-- ══════ MAIN LAYOUT ══════ -->
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-5">
+
+    <!-- ─── LEFT SIDEBAR ─────────── -->
+    <div class="lg:col-span-1 flex flex-col gap-4" id="sidebar">
+
+      <!-- NEW: CLOCK & DATE -->
+      <div class="bb p-4 fi d2" style="background:var(--pink);">
+        <div class="section-title text-xl mb-2">✦ LOCAL TIME</div>
+        <div id="clock-display">--:--:--</div>
+        <div id="date-display" style="font-size:.65rem;color:#555;margin-top:2px;letter-spacing:.04em;"></div>
+        <div style="margin-top:.5rem;display:flex;gap:.4rem;flex-wrap:wrap;" id="tz-info"></div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="bb p-4 fi d2" style="background:var(--yellow);">
+        <div class="section-title text-xl mb-3">✦ LANGUAGES</div>
+        <div id="lang-list" class="flex flex-col gap-1">
+          <div class="sk" style="height:1rem;width:80%;"></div>
+          <div class="sk" style="height:1rem;width:62%;"></div>
+          <div class="sk" style="height:1rem;width:73%;"></div>
+        </div>
+      </div>
+
+      <!-- NOW PLAYING — music player, locked -->
+      <div class="bb p-4 fi d3" id="np-widget" style="background:var(--mint);">
+        <div class="section-title text-xl mb-3">✦ NOW PLAYING</div>
+
+        <!-- Album art -->
+        <div style="position:relative;width:100%;aspect-ratio:1/1;border:var(--border);box-shadow:4px 4px 0 var(--ink);overflow:hidden;background:var(--lav);margin-bottom:.75rem;">
+          <img id="np-art-img" src="album.jpg" alt="album art"
+               style="width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.style.display='none';document.getElementById('np-art-fallback').style.display='flex'">
+          <!-- fallback when no album.jpg -->
+          <div id="np-art-fallback" style="display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;background:var(--lav);">
+            <div class="np-vinyl playing" id="np-vinyl-icon" style="width:64px;height:64px;border:var(--border);border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;">
+              <div style="width:20px;height:20px;border-radius:50%;background:var(--lav);border:2px solid var(--bg);"></div>
+            </div>
+          </div>
+          <!-- overlay: playing indicator -->
+          <div id="np-overlay" style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,#1a1a2ecc,transparent);padding:.5rem .6rem;display:flex;align-items:center;gap:.4rem;">
+            <div class="np-bar" id="np-bars">
+              <span style="--d:.4s"></span><span style="--d:.55s"></span>
+              <span style="--d:.7s"></span><span style="--d:.45s"></span>
+              <span style="--d:.6s"></span>
+            </div>
+            <span id="np-status" style="font-size:.52rem;color:#fff;font-weight:700;letter-spacing:.08em;">PLAYING</span>
+          </div>
+        </div>
+
+        <!-- Song info -->
+        <div style="margin-bottom:.6rem;">
+          <div id="np-title" style="font-family:'Syne';font-weight:800;font-size:.95rem;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Song Title</div>
+          <div id="np-artist" style="font-size:.65rem;color:#555;margin-top:2px;">Artist Name</div>
+        </div>
+
+        <!-- Progress bar (click to seek) -->
+        <div id="np-progress-wrap" style="height:6px;border:2px solid var(--ink);background:var(--bg);overflow:hidden;cursor:pointer;margin-bottom:.35rem;" onclick="npSeek(event)">
+          <div id="np-progress" style="height:100%;background:var(--ink);width:0%;transition:width .5s linear;pointer-events:none;"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:.55rem;color:#777;margin-bottom:.65rem;">
+          <span id="np-cur">0:00</span><span id="np-dur">0:00</span>
+        </div>
+
+        <!-- Controls -->
+        <div style="display:flex;align-items:center;justify-content:center;gap:.5rem;">
+          <div class="np-skipbtn" onclick="npPrev()" title="Prev">⏮</div>
+          <div class="np-playbtn" id="np-playbtn" onclick="npToggle()">▶</div>
+          <div class="np-skipbtn" onclick="npNext()" title="Next">⏭</div>
+        </div>
+
+        <!-- Track list indicator dots -->
+        <div style="display:flex;justify-content:center;gap:4px;margin-top:.6rem;" id="np-dots"></div>
+      </div>
+
+      <!-- ACTIVITY HEATMAP -->
+      <div class="bb p-4 fi d3" style="background:var(--mint);">
+        <div class="section-title text-xl mb-3">✦ ACTIVITY</div>
+        <div id="activity-grid" class="flex flex-wrap gap-1"></div>
+        <div class="flex gap-1 mt-2 items-center" style="font-size:.58rem;color:#555;">
+          <span>less</span>
+          <div class="adot" style="background:#f0ece8;"></div>
+          <div class="adot" style="background:#c9f0da;"></div>
+          <div class="adot" style="background:#7ddba4;"></div>
+          <div class="adot" style="background:#3db87a;"></div>
+          <span>more</span>
+        </div>
+      </div>
+
+      <!-- NEW: SOCIAL LINKS -->
+      <div class="bb p-4 fi d4" style="background:var(--peach);">
+        <div class="section-title text-xl mb-3">✦ SOCIALS</div>
+        <div class="flex flex-col gap-2" id="social-links">
+          <a href="https://github.com/adeleeeeyyyy" target="_blank" class="social-link" style="background:var(--bg);">
+            <span style="font-size:1rem;">🐙</span> GitHub
+          </a>
+          <a href="https://linkedin.com/in/adly-fahreza" class="social-link" style="background:var(--pink);" id="social-linkedin">
+            <span style="font-size:1rem;">💼</span> LinkedIn
+          </a>
+          <a href="https://instagram.com/adeleeeeyyyy" target="_blank" class="social-link" style="background:var(--mint);" id="social-instagram">
+            <span style="font-size:1rem;">📸</span> Instagram
+          </a>
+          <a href="https://adeli.synchronizeteams.com" class="social-link" style="background:var(--yellow);" id="social-website">
+            <span style="font-size:1rem;">🌐</span> Website
+          </a>
+        </div>
+        <!-- <button onclick="openSocialEdit()" class="tag" style="margin-top:.6rem;cursor:pointer;background:var(--bg);width:100%;text-align:center;">✎ EDIT LINKS</button> -->
+      </div>
+
+    </div><!-- end sidebar -->
+
+    <!-- ─── MAIN CONTENT ──────────── -->
+    <div class="lg:col-span-3 flex flex-col gap-5" id="main-col">
+
+      <!-- TABS -->
+      <div class="fi d2">
+        <div class="flex gap-2 flex-wrap mb-4">
+          <button class="tab-btn active" onclick="switchTab('showcase')">SHOWCASE</button>
+          <button class="tab-btn" onclick="switchTab('repos')">REPOSITORIES</button>
+          <button class="tab-btn" onclick="switchTab('achievements')">ACHIEVEMENTS</button>
+          <button class="tab-btn" onclick="switchTab('gallery')">GALLERY</button>
+          <button class="tab-btn" onclick="switchTab('activity')">ACTIVITY</button>
+          <button class="tab-btn" onclick="switchTab('skills')">SKILLS</button>
+        </div>
+
+        <!-- TAB: SHOWCASE -->
+        <div id="tab-showcase" class="tab-content active">
+          <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">PINNED — TOP REPOSITORIES BY STARS</div>
+          <div id="showcase-grid" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div class="sk" style="height:110px;"></div><div class="sk" style="height:110px;"></div>
+            <div class="sk" style="height:110px;"></div><div class="sk" style="height:110px;"></div>
+          </div>
+        </div>
+
+        <!-- TAB: REPOS -->
+        <div id="tab-repos" class="tab-content">
+          <div class="flex items-center justify-between mb-3">
+            <div style="font-size:.7rem;color:#555;letter-spacing:.05em;">ALL PUBLIC REPOSITORIES — SORTED BY STARS</div>
+            <a href="https://github.com/adeleeeeyyyy?tab=repositories" target="_blank" class="tag" style="background:var(--lav);">VIEW ALL ↗</a>
+          </div>
+          <div id="repos-grid" class="flex flex-col gap-2">
+            <div class="sk" style="height:88px;"></div><div class="sk" style="height:88px;"></div><div class="sk" style="height:88px;"></div>
+          </div>
+        </div>
+
+        <!-- TAB: ACHIEVEMENTS -->
+        <div id="tab-achievements" class="tab-content">
+          <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">GITHUB ACHIEVEMENTS — BASED ON YOUR ACTIVITY</div>
+          <div id="ach-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
+          <div style="margin-top:1.5rem;">
+            <div style="font-family:'Bebas Neue';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">ACHIEVEMENT PROGRESS</div>
+            <div id="ach-progress" class="flex flex-col gap-3"></div>
+          </div>
+        </div>
+
+        <!-- TAB: GALLERY -->
+        <div id="tab-gallery" class="tab-content">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem;">
+            <div style="font-size:.7rem;color:#555;letter-spacing:.05em;">MY GALLERY — <span id="gallery-count">...</span> PHOTOS</div>
+            <div id="gallery-filters" class="flex gap-1 flex-wrap"></div>
+          </div>
+          <div id="gallery-grid">
+            <div class="sk" style="height:100px;margin-bottom:8px;"></div>
+            <div class="sk" style="height:140px;margin-bottom:8px;"></div>
+            <div class="sk" style="height:100px;margin-bottom:8px;"></div>
+          </div>
+          <div id="gallery-empty" style="display:none;border:var(--border);padding:2rem;text-align:center;background:var(--yellow);box-shadow:var(--shadow);">
+            <div style="font-size:2rem;margin-bottom:.5rem;">📂</div>
+            <div style="font-family:'Bebas Neue';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.5rem;">GALLERY KOSONG</div>
+            <p style="font-size:.72rem;color:#555;line-height:1.7;">Jalankan <code style="background:var(--ink);color:var(--bg);padding:1px 6px;">python generate_gallery.py</code> setelah taruh foto di <code style="background:var(--ink);color:var(--bg);padding:1px 6px;">gallery/</code></p>
+          </div>
+        </div>
+
+        <!-- TAB: ACTIVITY -->
+        <div id="tab-activity" class="tab-content">
+          <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">RECENT PUBLIC EVENTS</div>
+          <div id="events-list" class="flex flex-col gap-2">
+            <div class="sk" style="height:48px;"></div><div class="sk" style="height:48px;"></div><div class="sk" style="height:48px;"></div>
+          </div>
+        </div>
+
+        <!-- TAB: SKILLS ── NEW -->
+        <div id="tab-skills" class="tab-content">
+          <div style="font-size:.7rem;color:#555;margin-bottom:1rem;letter-spacing:.05em;">TECH STACK & PROFICIENCY</div>
+
+          <!-- Skills by category -->
+          <div id="skills-container" class="flex flex-col gap-5">
+            <!-- Frontend -->
+            <div>
+              <div style="font-family:'Bebas Neue';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem;">
+                <span style="border:var(--border);padding:1px 8px;background:var(--pink);font-size:.85rem;">FRONTEND</span>
+              </div>
+              <div class="flex flex-col gap-2" id="skills-frontend"></div>
+            </div>
+            <div>
+              <div style="font-family:'Bebas Neue';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">
+                <span style="border:var(--border);padding:1px 8px;background:var(--lav);font-size:.85rem;">BACKEND</span>
+              </div>
+              <div class="flex flex-col gap-2" id="skills-backend"></div>
+            </div>
+            <div>
+              <div style="font-family:'Bebas Neue';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">
+                <span style="border:var(--border);padding:1px 8px;background:var(--mint);font-size:.85rem;">TOOLS & DEVOPS</span>
+              </div>
+              <div class="flex flex-col gap-2" id="skills-tools"></div>
+            </div>
+          </div>
+
+          <!-- Tech badge cloud -->
+          <div style="margin-top:1.5rem;">
+            <div style="font-family:'Bebas Neue';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">TECH BADGES</div>
+            <div class="flex flex-wrap gap-2" id="tech-badges"></div>
+          </div>
+
+          <!-- Goals / Roadmap -->
+          <div style="margin-top:1.5rem;">
+            <div style="font-family:'Bebas Neue';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">🎯 LEARNING GOALS</div>
+            <div class="flex flex-col gap-3" id="goals-list"></div>
+          </div>
+
+          <button onclick="openSkillEdit()" class="tag" style="margin-top:1rem;cursor:pointer;background:var(--yellow);font-size:.65rem;padding:4px 12px;">✎ CUSTOMIZE SKILLS</button>
+        </div>
+
+      </div>
+
+      <!-- COMMIT ACTIVITY CHART -->
+      <div class="bb p-4 fi d3" style="background:var(--bg);">
+        <div class="flex items-center justify-between mb-3">
+          <div class="section-title text-2xl">COMMIT ACTIVITY</div>
+          <span class="tag" style="background:var(--sky);" id="commit-chart-tag">LAST 14 DAYS</span>
+        </div>
+        <!-- chart area -->
+        <div id="commit-chart-wrap">
+          <div style="display:flex;align-items:flex-end;gap:4px;height:80px;padding-top:4px;" id="commit-chart"></div>
+          <div style="display:flex;gap:4px;margin-top:4px;" id="commit-chart-labels"></div>
+        </div>
+        <!-- ghost empty state -->
+        <div id="commit-empty" style="display:none;text-align:center;padding:1.5rem 1rem;">
+          <div id="ghost-anim" style="font-size:2.8rem;line-height:1;margin-bottom:.4rem;animation:ghostFloat 2.5s ease-in-out infinite;">👻</div>
+          <div style="font-family:'Bebas Neue';font-size:1.2rem;letter-spacing:.1em;color:#aaa;">THERE'S NOTHING HERE</div>
+          <div style="font-size:.62rem;color:#bbb;margin-top:.25rem;">no recent commits found</div>
+        </div>
+      </div>
+
+      <!-- SPOTLIGHT -->
+      <div class="bb p-4 fi d4" style="background:var(--pink);">
+        <div class="flex items-center justify-between mb-3">
+          <div class="section-title text-2xl">★ SPOTLIGHT REPO</div>
+          <span class="tag" style="background:var(--yellow);">MOST STARRED</span>
+        </div>
+        <div id="spotlight" class="sk" style="height:80px;border-radius:0;"></div>
+      </div>
+
+      <!-- CONTRIBUTION CALENDAR -->
+      <div class="bb p-4 fi d5" style="background:var(--bg);" id="cal-wrap">
+        <div class="flex items-center justify-between mb-3">
+          <div class="section-title text-2xl">CONTRIBUTION CALENDAR</div>
+          <span id="contrib-label" class="tag" style="background:var(--mint);">loading...</span>
+        </div>
+        <div style="overflow-x:auto;">
+          <div class="flex gap-1 pb-1" id="cal-weeks" style="min-width:600px;"></div>
+        </div>
+        <div id="cal-months" class="flex gap-0 mt-1" style="min-width:600px;font-size:.58rem;color:#888;overflow-x:auto;"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="border-top:var(--border);background:var(--lav);margin-top:3rem;" class="px-6 py-4 flex items-center justify-between">
+  <span style="font-size:.6rem;color:#555;letter-spacing:.06em;">POWERED BY GITHUB API · NEO BRUTALISM · 2025</span>
+  <div class="flex items-center gap-2">
+    <div class="status-online"></div>
+    <span style="font-family:'Bebas Neue';letter-spacing:.1em;font-size:1.1rem;">adeleeeeyyyy ✦</span>
+  </div>
+</div>
+<div class="stripe" style="height:10px;"></div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" style="display:none;position:fixed;inset:0;background:#1a1a2ecc;z-index:1000;align-items:center;justify-content:center;cursor:pointer;" onclick="this.style.display='none'">
+  <div style="border:var(--border);box-shadow:8px 8px 0 var(--ink);max-width:80vw;max-height:80vh;overflow:hidden;background:var(--bg);padding:.5rem;">
+    <img id="lb-img" src="" style="max-width:100%;max-height:75vh;display:block;">
+    <div id="lb-cap" style="font-size:.7rem;padding:.5rem 0 0;font-weight:700;"></div>
+  </div>
+</div>
+
+<!-- SOCIAL EDIT MODAL -->
+<div id="social-modal" style="display:none;position:fixed;inset:0;background:#1a1a2e99;z-index:1001;align-items:center;justify-content:center;">
+  <div style="border:var(--border);box-shadow:var(--shadow);background:var(--bg);padding:1.25rem;width:320px;max-width:90vw;">
+    <div style="font-family:'Bebas Neue';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">EDIT SOCIAL LINKS</div>
+    <div class="flex flex-col gap-2">
+      <input class="gb-input" id="se-linkedin" placeholder="LinkedIn URL...">
+      <input class="gb-input" id="se-twitter" placeholder="Twitter/X URL...">
+      <input class="gb-input" id="se-instagram" placeholder="Instagram URL...">
+      <input class="gb-input" id="se-website" placeholder="Website URL...">
+      <div style="display:flex;gap:.5rem;margin-top:.25rem;">
+        <button class="gb-btn" style="flex:1;" onclick="saveSocialEdit()">SAVE</button>
+        <button class="gb-btn" style="flex:1;background:var(--bg);color:var(--ink);box-shadow:3px 3px 0 var(--ink);" onclick="document.getElementById('social-modal').style.display='none'">CANCEL</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL EDIT MODAL -->
+<div id="skill-modal" style="display:none;position:fixed;inset:0;background:#1a1a2e99;z-index:1001;align-items:center;justify-content:center;">
+  <div style="border:var(--border);box-shadow:var(--shadow);background:var(--bg);padding:1.25rem;width:360px;max-width:90vw;max-height:90vh;overflow-y:auto;">
+    <div style="font-family:'Bebas Neue';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">CUSTOMIZE SKILLS</div>
+    <div style="font-size:.68rem;color:#555;margin-bottom:.75rem;">Format: "SkillName,level(0-100),category"<br>Category: frontend | backend | tools</div>
+    <textarea id="skill-edit-area" style="width:100%;border:var(--border);font-family:'Space Mono';font-size:.65rem;padding:.5rem;height:200px;background:var(--bg);resize:vertical;outline:none;" placeholder="HTML,90,frontend&#10;CSS,85,frontend&#10;JavaScript,80,frontend&#10;Python,75,backend&#10;Git,90,tools"></textarea>
+    <div style="display:flex;gap:.5rem;margin-top:.5rem;">
+      <button class="gb-btn" style="flex:1;" onclick="saveSkillEdit()">SAVE</button>
+      <button class="gb-btn" style="flex:1;background:var(--bg);color:var(--ink);box-shadow:3px 3px 0 var(--ink);" onclick="document.getElementById('skill-modal').style.display='none'">CANCEL</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const USERNAME = 'adeleeeeyyyy';
+const API = 'https://api.github.com';
+const LANG_COLORS = {
+  JavaScript:'#f1e05a',TypeScript:'#2b7489',Python:'#3572A5',HTML:'#e34c26',
+  CSS:'#563d7c',Java:'#b07219',Go:'#00ADD8',Rust:'#dea584','C++':'#f34b7d',
+  'C#':'#178600',Ruby:'#701516',Swift:'#ffac45',Kotlin:'#A97BFF',PHP:'#4F5D95',
+  Shell:'#89e051',Vue:'#41b883',Dart:'#00B4AB',SCSS:'#c6538c',default:'#aaa'
+};
+const LC = l => LANG_COLORS[l] || LANG_COLORS.default;
+const HOVERS = ['var(--pink)','var(--lav)','var(--mint)','var(--peach)','var(--sky)','var(--yellow)'];
+const EV_BG  = ['var(--pink)','var(--yellow)','var(--sky)','var(--mint)','var(--lav)','var(--peach)'];
+
+const ACHIEVEMENTS = [
+  {id:'first-repo',icon:'🌱',name:'First Commit',   desc:'Created first repository',    color:'var(--mint)',  check:u=>u.public_repos>=1},
+  {id:'10-repos',  icon:'📦',name:'Hoarder',        desc:'Own 10+ repositories',         color:'var(--peach)',check:u=>u.public_repos>=10},
+  {id:'50-repos',  icon:'🗄️',name:'Collector',      desc:'Own 50+ repositories',         color:'var(--yellow)',check:u=>u.public_repos>=50},
+  {id:'follower10',icon:'👥',name:'Popular',         desc:'10+ followers',                color:'var(--lav)',  check:u=>u.followers>=10},
+  {id:'follower50',icon:'🌟',name:'Influencer',      desc:'50+ followers',                color:'var(--pink)', check:u=>u.followers>=50},
+  {id:'veteran',   icon:'🏅',name:'Veteran',         desc:'Account > 2 years old',        color:'var(--sky)',  check:u=>(Date.now()-new Date(u.created_at))>6.3e10},
+  {id:'og',        icon:'👴',name:'OG Dev',          desc:'Account > 5 years old',        color:'var(--peach)',check:u=>(Date.now()-new Date(u.created_at))>1.577e11},
+  {id:'has-bio',   icon:'✍️',name:'Storyteller',     desc:'Wrote a bio',                  color:'var(--mint)', check:u=>!!u.bio},
+  {id:'has-blog',  icon:'🔗',name:'Has a Website',   desc:'Linked a personal site',       color:'var(--lav)',  check:u=>!!u.blog},
+  {id:'hireable',  icon:'💼',name:'Open to Work',    desc:'Marked as hireable',           color:'var(--yellow)',check:u=>!!u.hireable},
+  {id:'gists',     icon:'📝',name:'Gist Master',     desc:'Has public gists',             color:'var(--sky)',  check:u=>u.public_gists>0},
+  {id:'stargazer', icon:'⭐',name:'Star Collector',  desc:'10+ stars across repos',       color:'var(--pink)', check:(u,r)=>r.reduce((s,x)=>s+x.stargazers_count,0)>=10},
+];
+
+/* ── DEFAULT SKILLS DATA ── */
+const DEFAULT_SKILLS = [
+  'HTML,90,frontend','CSS,85,frontend','JavaScript,80,frontend','TypeScript,70,frontend','React,75,frontend',
+  'Node.js,70,backend','Python,75,backend','SQL,65,backend','REST API,80,backend',
+  'Git,90,tools','Docker,60,tools','Linux,75,tools','Figma,70,tools','VS Code,95,tools'
+];
+
+const DEFAULT_GOALS = [
+  {label:'Learn Rust',pct:30,color:'var(--peach)'},
+  {label:'100 GitHub Stars',pct:15,color:'var(--pink)'},
+  {label:'Ship a SaaS product',pct:45,color:'var(--lav)'},
+  {label:'Master System Design',pct:60,color:'var(--mint)'},
+  {label:'Contribute to OSS',pct:25,color:'var(--sky)'},
+];
+
+const TECH_BADGES = [
+  {name:'React',color:'var(--sky)',emoji:'⚛'},
+  {name:'Node.js',color:'var(--mint)',emoji:'🟢'},
+  {name:'Python',color:'var(--yellow)',emoji:'🐍'},
+  {name:'TypeScript',color:'var(--lav)',emoji:'📘'},
+  {name:'Docker',color:'var(--sky)',emoji:'🐳'},
+  {name:'Git',color:'var(--peach)',emoji:'🌿'},
+  {name:'Linux',color:'var(--pink)',emoji:'🐧'},
+  {name:'Figma',color:'var(--lav)',emoji:'🎨'},
+  {name:'SQL',color:'var(--mint)',emoji:'🗄'},
+  {name:'REST',color:'var(--yellow)',emoji:'🔌'},
+  {name:'VS Code',color:'var(--sky)',emoji:'💙'},
+  {name:'GitHub',color:'var(--bg)',emoji:'🐙'},
+];
+
+/* ══════════════════════════════
+   GITHUB API — cached fetch (localStorage, TTL 1 hour)
+   Key: "ghc::" + url  →  { data, exp }
+══════════════════════════════ */
+const CACHE_TTL = 60 * 60 * 1000; // 1 hour in ms
+
+async function get(url){
+  const key = 'ghc::' + url;
+  // 1. Try cache
+  try{
+    const raw = localStorage.getItem(key);
+    if(raw){
+      const {data, exp} = JSON.parse(raw);
+      if(Date.now() < exp) return data;        // cache hit ✓
+      localStorage.removeItem(key);            // expired, evict
+    }
+  }catch{ localStorage.removeItem(key); }
+
+  // 2. Cache miss → fetch
+  const res = await fetch(url, {headers:{Accept:'application/vnd.github.v3+json'}});
+  if(!res.ok) throw res;
+  const data = await res.json();
+
+  // 3. Store in cache
+  try{
+    localStorage.setItem(key, JSON.stringify({data, exp: Date.now() + CACHE_TTL}));
+  }catch(e){
+    // localStorage full — evict oldest gh cache entries and retry once
+    if(e.name === 'QuotaExceededError'){
+      const ghKeys = Object.keys(localStorage).filter(k => k.startsWith('ghc::'));
+      // sort by exp ascending, remove oldest half
+      ghKeys
+        .map(k => { try{ return {k, exp: JSON.parse(localStorage.getItem(k)).exp}; }catch{ return {k, exp:0}; }})
+        .sort((a,b) => a.exp - b.exp)
+        .slice(0, Math.max(1, Math.floor(ghKeys.length / 2)))
+        .forEach(({k}) => localStorage.removeItem(k));
+      try{ localStorage.setItem(key, JSON.stringify({data, exp: Date.now() + CACHE_TTL})); }catch{}
+    }
+  }
+  return data;
+}
+
+/* Helper: manually bust all GitHub cache (call from console: bustCache()) */
+function bustCache(){
+  Object.keys(localStorage).filter(k=>k.startsWith('ghc::')).forEach(k=>localStorage.removeItem(k));
+  console.log('GitHub API cache cleared. Reload to refetch.');
+}
+
+/* Show cache status in console on load */
+function logCacheStatus(){
+  const keys = Object.keys(localStorage).filter(k=>k.startsWith('ghc::'));
+  const now = Date.now();
+  const live = keys.filter(k=>{ try{ return JSON.parse(localStorage.getItem(k)).exp > now; }catch{return false;} });
+  console.log(`%c[GH Cache] ${live.length} live / ${keys.length} total entries. Call bustCache() to clear.`, 'color:#9060b0;font-weight:bold;');
+}
+function ago(d){const m=Math.floor((Date.now()-new Date(d))/60000);if(m<60)return m+'m ago';const h=Math.floor(m/60);if(h<24)return h+'h ago';return Math.floor(h/24)+'d ago';}
+function etype(t){return {PushEvent:'⬆',CreateEvent:'✦',IssuesEvent:'◉',PullRequestEvent:'⇄',WatchEvent:'★',ForkEvent:'⑂',IssueCommentEvent:'💬',ReleaseEvent:'🚀'}[t]||'◆';}
+function edesc(e){
+  const rn=e.repo.name.split('/')[1];
+  const r=`<a href="https://github.com/${e.repo.name}" target="_blank" style="font-weight:700;text-decoration:underline;">${rn}</a>`;
+  switch(e.type){
+    case 'PushEvent':return `Pushed ${e.payload.commits?.length||1} commit(s) to ${r}`;
+    case 'CreateEvent':return `Created ${e.payload.ref_type} ${e.payload.ref?`<b>${e.payload.ref}</b>`:''} in ${r}`;
+    case 'IssuesEvent':return `${e.payload.action} issue in ${r}`;
+    case 'PullRequestEvent':return `${e.payload.action} PR in ${r}`;
+    case 'WatchEvent':return `Starred ${r}`;
+    case 'ForkEvent':return `Forked ${r}`;
+    case 'IssueCommentEvent':return `Commented on issue in ${r}`;
+    case 'ReleaseEvent':return `Released <b>${e.payload.release?.tag_name}</b> in ${r}`;
+    default:return `${e.type.replace('Event','')} in ${r}`;
+  }
+}
+function calcLevel(u,repos){
+  const stars=repos.reduce((s,r)=>s+r.stargazers_count,0);
+  const xp=u.public_repos*10+u.followers*15+u.following*3+stars*25+u.public_gists*5+Math.floor((Date.now()-new Date(u.created_at))/3.156e10)*20;
+  const level=Math.floor(Math.sqrt(xp/50));
+  const xpFL=level*level*50,xpFN=(level+1)*(level+1)*50;
+  return {level,xp,pct:Math.min(100,Math.round((xp-xpFL)/(xpFN-xpFL)*100))};
+}
+
+/* ── TAB ── */
+function switchTab(id){
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>{
+    const n=['showcase','repos','achievements','gallery','activity','skills'];
+    b.classList.toggle('active',n[i]===id);
+  });
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+}
+
+/* ── LIGHTBOX ── */
+function openLB(src,cap){
+  document.getElementById('lb-img').src=src;
+  document.getElementById('lb-cap').textContent=cap;
+  document.getElementById('lightbox').style.display='flex';
+}
+
+/* ══════════════════════════════
+   NEW: CLOCK
+══════════════════════════════ */
+function startClock(){
+  function tick(){
+    const now=new Date();
+    document.getElementById('clock-display').textContent=now.toLocaleTimeString('en-US',{hour12:false});
+    document.getElementById('date-display').textContent=now.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    const tz=Intl.DateTimeFormat().resolvedOptions().timeZone;
+    document.getElementById('tz-info').innerHTML=`<span class="tag" style="background:var(--bg);font-size:.52rem;">${tz}</span>`;
+  }
+  tick();
+  setInterval(tick,1000);
+}
+
+/* ══════════════════════════════
+   NEW: VISITOR COUNTER
+══════════════════════════════ */
+function initVisitorCounter(){
+  let count=parseInt(localStorage.getItem('profile_visits')||'0')+1;
+  localStorage.setItem('profile_visits',count);
+  // animate count up
+  let cur=0;
+  const target=count;
+  const step=Math.max(1,Math.floor(target/30));
+  const el=document.getElementById('visitor-num');
+  const t=setInterval(()=>{
+    cur=Math.min(cur+step,target);
+    el.textContent=cur.toLocaleString();
+    if(cur>=target)clearInterval(t);
+  },40);
+}
+
+/* ══════════════════════════════
+   NOW PLAYING — locked music player
+   To customize: edit NP_TRACKS below.
+   album art: put album.jpg (or per-track) next to index.html
+══════════════════════════════ */
+const NP_TRACKS = [
+  { title: 'Song Title',    artist: 'Artist Name',  art: 'album.jpg',   dur: 227 },
+  // add more tracks here:
+  // { title: 'Another Song', artist: 'Other Artist', art: 'album2.jpg',  dur: 180 },
+];
+
+let npIdx = 0;
+let npSec = 0;
+let npPlaying = true;
+let npTimer = null;
+
+function npCurrent(){ return NP_TRACKS[npIdx % NP_TRACKS.length]; }
+
+function npRender(){
+  const t = npCurrent();
+  const artImg = document.getElementById('np-art-img');
+  const fallback = document.getElementById('np-art-fallback');
+  artImg.src = t.art;
+  artImg.style.display = 'block';
+  fallback.style.display = 'none';
+  artImg.onerror = ()=>{ artImg.style.display='none'; fallback.style.display='flex'; };
+  document.getElementById('np-title').textContent = t.title;
+  document.getElementById('np-artist').textContent = t.artist;
+  document.getElementById('np-dur').textContent = npFmt(t.dur);
+  // dots
+  const dots = document.getElementById('np-dots');
+  if(NP_TRACKS.length > 1){
+    dots.innerHTML = NP_TRACKS.map((_,i)=>
+      `<div style="width:6px;height:6px;border-radius:50%;border:1.5px solid var(--ink);background:${i===npIdx?'var(--ink)':'transparent'};transition:background .2s;"></div>`
+    ).join('');
+  }
+}
+
+function npFmt(s){ return `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`; }
+
+function npTick(){
+  if(!npPlaying) return;
+  const t = npCurrent();
+  npSec++;
+  if(npSec >= t.dur){ npSec = 0; npNext(); return; }
+  const pct = npSec / t.dur * 100;
+  document.getElementById('np-progress').style.width = pct + '%';
+  document.getElementById('np-cur').textContent = npFmt(npSec);
+}
+
+function npToggle(){
+  npPlaying = !npPlaying;
+  document.getElementById('np-playbtn').textContent = npPlaying ? '⏸' : '▶';
+  document.getElementById('np-status').textContent = npPlaying ? 'PLAYING' : 'PAUSED';
+  document.getElementById('np-bars').classList.toggle('paused', !npPlaying);
+  const vinyl = document.getElementById('np-vinyl-icon');
+  if(vinyl) vinyl.classList.toggle('playing', npPlaying);
+}
+
+function npNext(){
+  npIdx = (npIdx + 1) % NP_TRACKS.length;
+  npSec = 0;
+  document.getElementById('np-progress').style.width = '0%';
+  npRender();
+}
+function npPrev(){
+  if(npSec > 3){ npSec = 0; document.getElementById('np-progress').style.width='0%'; return; }
+  npIdx = (npIdx - 1 + NP_TRACKS.length) % NP_TRACKS.length;
+  npSec = 0;
+  document.getElementById('np-progress').style.width = '0%';
+  npRender();
+}
+function npSeek(e){
+  const wrap = document.getElementById('np-progress-wrap');
+  const rect = wrap.getBoundingClientRect();
+  const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+  npSec = Math.floor(pct * npCurrent().dur);
+  document.getElementById('np-progress').style.width = (pct*100) + '%';
+  document.getElementById('np-cur').textContent = npFmt(npSec);
+}
+function initNp(){
+  npRender();
+  document.getElementById('np-playbtn').textContent = '⏸';
+  setInterval(npTick, 1000);
+}
+
+/* ══════════════════════════════
+   NEW: SOCIAL LINKS
+══════════════════════════════ */
+function loadSocials(){
+  try{
+    const s=JSON.parse(localStorage.getItem('social_links')||'{}');
+    if(s.linkedin) document.getElementById('social-linkedin').href=s.linkedin;
+    if(s.twitter)  document.getElementById('social-twitter').href=s.twitter;
+    if(s.instagram)document.getElementById('social-instagram').href=s.instagram;
+    if(s.website)  document.getElementById('social-website').href=s.website;
+  }catch{}
+}
+function openSocialEdit(){
+  try{
+    const s=JSON.parse(localStorage.getItem('social_links')||'{}');
+    document.getElementById('se-linkedin').value=s.linkedin||'';
+    document.getElementById('se-twitter').value=s.twitter||'';
+    document.getElementById('se-instagram').value=s.instagram||'';
+    document.getElementById('se-website').value=s.website||'';
+  }catch{}
+  document.getElementById('social-modal').style.display='flex';
+}
+function saveSocialEdit(){
+  const s={
+    linkedin:document.getElementById('se-linkedin').value,
+    twitter:document.getElementById('se-twitter').value,
+    instagram:document.getElementById('se-instagram').value,
+    website:document.getElementById('se-website').value,
+  };
+  localStorage.setItem('social_links',JSON.stringify(s));
+  loadSocials();
+  document.getElementById('social-modal').style.display='none';
+}
+
+/* ══════════════════════════════
+   NEW: SKILLS
+══════════════════════════════ */
+const SKILL_COLORS=['var(--pink)','var(--lav)','var(--mint)','var(--peach)','var(--sky)','var(--yellow)'];
+function parseSkills(){
+  try{
+    const raw=localStorage.getItem('skills_data');
+    return (raw?raw.split('\n'):DEFAULT_SKILLS).filter(l=>l.trim()).map(l=>{
+      const[name,pct,cat]=l.split(',');
+      return{name:name?.trim(),pct:parseInt(pct)||50,cat:(cat||'tools').trim()};
+    }).filter(s=>s.name);
+  }catch{return[];}
+}
+function renderSkills(){
+  const skills=parseSkills();
+  const cats={frontend:[],backend:[],tools:[]};
+  skills.forEach(s=>{ if(cats[s.cat]) cats[s.cat].push(s); else cats.tools.push(s); });
+  ['frontend','backend','tools'].forEach(cat=>{
+    const el=document.getElementById('skills-'+cat);
+    if(!el)return;
+    el.innerHTML=cats[cat].map((s,i)=>`
+      <div style="display:flex;align-items:center;gap:.6rem;">
+        <div style="font-size:.7rem;font-weight:700;width:90px;flex-shrink:0;">${s.name}</div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-fill" data-pct="${s.pct}" style="width:0%;background:${SKILL_COLORS[i%SKILL_COLORS.length]};border-right:1.5px solid var(--ink);"></div>
+        </div>
+        <div style="font-size:.65rem;color:#555;width:30px;text-align:right;flex-shrink:0;">${s.pct}%</div>
+      </div>`).join('');
+  });
+  // animate bars
+  setTimeout(()=>{
+    document.querySelectorAll('.skill-bar-fill').forEach(el=>{
+      el.style.width=el.dataset.pct+'%';
+    });
+  },200);
+
+  // tech badges
+  document.getElementById('tech-badges').innerHTML=TECH_BADGES.map(b=>
+    `<span class="skill-badge" style="background:${b.color};">${b.emoji} ${b.name}</span>`
+  ).join('');
+
+  // goals
+  document.getElementById('goals-list').innerHTML=DEFAULT_GOALS.map(g=>`
+    <div>
+      <div style="display:flex;justify-content:space-between;font-size:.68rem;margin-bottom:3px;">
+        <span><b>${g.label}</b></span>
+        <span style="color:#555;">${g.pct}%</span>
+      </div>
+      <div class="goal-bar">
+        <div class="goal-fill" data-pct="${g.pct}" style="width:0%;background:${g.color};"></div>
+      </div>
+    </div>`).join('');
+  setTimeout(()=>{
+    document.querySelectorAll('.goal-fill').forEach(el=>{el.style.width=el.dataset.pct+'%';});
+  },300);
+}
+function openSkillEdit(){
+  const raw=localStorage.getItem('skills_data')||DEFAULT_SKILLS.join('\n');
+  document.getElementById('skill-edit-area').value=raw;
+  document.getElementById('skill-modal').style.display='flex';
+}
+function saveSkillEdit(){
+  localStorage.setItem('skills_data',document.getElementById('skill-edit-area').value);
+  renderSkills();
+  document.getElementById('skill-modal').style.display='none';
+}
+
+
+/* ══════════════════════════════
+   COMMIT CHART — fetch from ALL repos with batching
+   GitHub unauthenticated: 60 req/hr, so we batch 8 at a time
+   with a small delay between batches to stay safe
+══════════════════════════════ */
+async function buildCommitChart(allRepos){
+  const chart   = document.getElementById('commit-chart');
+  const labelsEl= document.getElementById('commit-chart-labels');
+  const wrap    = document.getElementById('commit-chart-wrap');
+  const empty   = document.getElementById('commit-empty');
+  const tag     = document.getElementById('commit-chart-tag');
+
+  // Show loading state
+  tag.textContent = 'LOADING...';
+  chart.innerHTML = '<div style="font-size:.65rem;color:#aaa;padding:.5rem 0;">fetching commits from all repos...</div>';
+
+  const DAYS    = 14;
+  const counts  = new Array(DAYS).fill(0);
+  const today   = new Date(); today.setHours(23,59,59,999);
+  const since   = new Date(today - (DAYS-1)*864e5); since.setHours(0,0,0,0);
+
+  // Filter out forks to save requests (forks unlikely to have owner commits)
+  const ownRepos = allRepos.filter(r => !r.fork);
+
+  // Batch fetch: 8 repos at a time
+  const BATCH = 8;
+  for(let i = 0; i < ownRepos.length; i += BATCH){
+    const batch = ownRepos.slice(i, i + BATCH);
+    await Promise.allSettled(batch.map(async repo=>{
+      try{
+        const commits = await get(
+          `${API}/repos/${USERNAME}/${repo.name}/commits?author=${USERNAME}&since=${since.toISOString()}&per_page=100`
+        );
+        if(!Array.isArray(commits)) return;
+        commits.forEach(c=>{
+          const d = new Date(c.commit?.author?.date); d.setHours(0,0,0,0);
+          const diff = Math.round((today - d)/864e5);
+          if(diff >= 0 && diff < DAYS) counts[DAYS-1-diff]++;
+        });
+      }catch{}
+    }));
+    // small pause between batches to respect rate limits
+    if(i + BATCH < ownRepos.length) await new Promise(r=>setTimeout(r, 300));
+  }
+
+  const total = counts.reduce((a,b)=>a+b,0);
+  tag.textContent = total + ' COMMITS / 14D';
+
+  if(total === 0){
+    wrap.style.display  = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+  wrap.style.display  = '';
+  empty.style.display = 'none';
+
+  const max = Math.max(...counts, 1);
+  const dayNames = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+  chart.innerHTML = counts.map((c,i)=>{
+    const date = new Date(today); date.setDate(date.getDate()-(DAYS-1-i));
+    const h = Math.max(3, Math.round(c/max*72));
+    const bg = c===0 ? '#e8e4dc' : HOVERS[i%HOVERS.length];
+    return `<div class="chart-bar" data-tip="${c} commit${c!==1?'s':''}">
+      <div class="chart-bar-fill" style="height:${h}px;background:${bg};"></div>
+    </div>`;
+  }).join('');
+  labelsEl.innerHTML = counts.map((_,i)=>{
+    const date = new Date(today); date.setDate(date.getDate()-(DAYS-1-i));
+    return `<div style="flex:1;text-align:center;font-size:.5rem;color:#888;">${dayNames[date.getDay()]}</div>`;
+  }).join('');
+}
+
+/* ══════════════════════════════
+   SIDEBAR OVERFLOW — move excess sidebar items into main column
+   Runs after all content is loaded
+══════════════════════════════ */
+function checkSidebarOverflow(){
+  const sidebar  = document.getElementById('sidebar');
+  const mainCol  = document.getElementById('main-col');
+  if(!sidebar || !mainCol) return;
+  // only on desktop (lg: 1024px+)
+  if(window.innerWidth < 1024) return;
+
+  const mainBottom   = mainCol.getBoundingClientRect().bottom;
+  const sidebarItems = Array.from(sidebar.children);
+
+  sidebarItems.forEach(item=>{
+    const itemBottom = item.getBoundingClientRect().bottom;
+    if(itemBottom > mainBottom + 40){
+      // move this card into main column, before contribution calendar
+      item.style.marginTop = '0';
+      const cal = document.getElementById('cal-wrap');
+      if(cal) mainCol.insertBefore(item, cal);
+      else mainCol.appendChild(item);
+    }
+  });
+}
+
+/* ══════════════════════════════
+   CONTRIBUTION CALENDAR
+══════════════════════════════ */
+function buildCalendar(){
+  const weeks=document.getElementById('cal-weeks');
+  const bg=['#f0ece8','#d4f7e4','#7ddba4','#3db87a','#1a9155'];
+  const WEEKS=52;const today=new Date();
+  let monthMap={};let html='';
+  for(let w=0;w<WEEKS;w++){
+    html+='<div style="display:flex;flex-direction:column;gap:2px;">';
+    for(let d=0;d<7;d++){
+      const date=new Date(today);date.setDate(date.getDate()-((WEEKS-1-w)*7+(6-d)));
+      const lvl=Math.floor(Math.random()*5);
+      if(d===0)monthMap[w]=date.toLocaleDateString('en',{month:'short'});
+      html+=`<div class="adot" style="background:${bg[lvl]};"></div>`;
+    }
+    html+='</div>';
+  }
+  weeks.innerHTML=html;
+  let prev='';let mhtml='';
+  for(let w=0;w<WEEKS;w++){
+    const m=monthMap[w]||'';
+    if(m!==prev){mhtml+=`<div style="min-width:${(WEEKS-w)*14}px;max-width:56px;">${m}</div>`;prev=m;}
+  }
+  document.getElementById('cal-months').innerHTML=mhtml;
+  const total=Array.from(weeks.querySelectorAll('.adot')).filter(d=>d.style.background!=='rgb(240, 236, 232)').length;
+  document.getElementById('contrib-label').textContent=total+' contributions this year';
+}
+
+/* ══════════════════════════════
+   GALLERY
+══════════════════════════════ */
+let ALL_GALLERY_IMAGES=[];
+function renderGallery(images){
+  const grid=document.getElementById('gallery-grid');
+  const empty=document.getElementById('gallery-empty');
+  if(!images.length){grid.style.display='none';empty.style.display='block';return;}
+  grid.style.display='';empty.style.display='none';
+  grid.innerHTML=images.map((img,i)=>`
+    <div class="gallery-img" style="background:${HOVERS[i%HOVERS.length]};" onclick="openLB('${img.src}','${img.title}')">
+      <img src="${img.src}" alt="${img.title}" loading="lazy"
+           onerror="this.style.display='none';this.parentElement.querySelector('.img-fallback').style.display='flex'">
+      <div class="overlay">${img.title.toUpperCase()} ↗</div>
+      <div class="img-fallback" style="display:none;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;text-align:center;min-height:80px;">
+        <div style="font-size:1.5rem;">🖼️</div>
+        <div style="font-size:.62rem;font-weight:700;margin-top:4px;">${img.title}</div>
+      </div>
+    </div>`).join('');
+}
+function filterGallery(cat){
+  document.querySelectorAll('.gal-filter').forEach(b=>b.classList.toggle('active',b.dataset.cat===cat));
+  renderGallery(cat==='all'?ALL_GALLERY_IMAGES:ALL_GALLERY_IMAGES.filter(i=>i.category===cat));
+}
+async function loadGallery(){
+  const countEl=document.getElementById('gallery-count');
+  const filtersEl=document.getElementById('gallery-filters');
+  try{
+    const res=await fetch('gallery.json');
+    if(!res.ok)throw new Error();
+    const data=await res.json();
+    ALL_GALLERY_IMAGES=data.images||[];
+    countEl.textContent=ALL_GALLERY_IMAGES.length;
+    const cats=['all',...(data.categories||[])];
+    filtersEl.innerHTML=cats.map(cat=>
+      `<button class="gal-filter tag" data-cat="${cat}"
+        style="cursor:pointer;background:${cat==='all'?'var(--ink)':'var(--bg)'};color:${cat==='all'?'var(--bg)':'var(--ink)'};"
+        onclick="filterGallery('${cat}')">${cat.toUpperCase()}</button>`
+    ).join('');
+    renderGallery(ALL_GALLERY_IMAGES);
+  }catch{
+    countEl.textContent='0';
+    document.getElementById('gallery-grid').style.display='none';
+    document.getElementById('gallery-empty').style.display='block';
+  }
+}
+
+/* ══════════════════════════════
+   ACHIEVEMENTS
+══════════════════════════════ */
+function buildAchievements(u,repos){
+  document.getElementById('ach-grid').innerHTML=ACHIEVEMENTS.map(a=>{
+    const ok=a.check(u,repos);
+    return `<div class="ach-card ${ok?'':'locked'}" data-tip="${a.desc}" style="background:${ok?a.color:'var(--bg)'};">
+      <div style="font-size:1.8rem;margin-bottom:6px;">${a.icon}</div>
+      <div style="font-family:'Syne';font-weight:800;font-size:.78rem;line-height:1.2;">${a.name}</div>
+      <div style="font-size:.6rem;color:#555;margin-top:3px;line-height:1.4;">${a.desc}</div>
+      ${ok?'<div class="tag" style="margin-top:6px;font-size:.5rem;background:var(--ink);color:var(--bg);">UNLOCKED ✓</div>':'<div style="font-size:.6rem;color:#888;margin-top:4px;">🔒 LOCKED</div>'}
+    </div>`;
+  }).join('');
+  const progressItems=[
+    {label:'Follower count',cur:u.followers,target:50,unit:'followers',color:'var(--pink)'},
+    {label:'Public repos',cur:u.public_repos,target:50,unit:'repos',color:'var(--lav)'},
+    {label:'Stars earned',cur:repos.reduce((s,r)=>s+r.stargazers_count,0),target:100,unit:'stars',color:'var(--yellow)'},
+    {label:'Public gists',cur:u.public_gists,target:10,unit:'gists',color:'var(--mint)'},
+  ];
+  document.getElementById('ach-progress').innerHTML=progressItems.map(p=>`
+    <div>
+      <div style="display:flex;justify-content:space-between;font-size:.68rem;margin-bottom:4px;">
+        <span><b>${p.label}</b></span><span style="color:#555;">${p.cur} / ${p.target} ${p.unit}</span>
+      </div>
+      <div style="border:var(--border);height:14px;background:var(--bg);overflow:hidden;">
+        <div style="height:100%;width:${Math.min(100,p.cur/p.target*100).toFixed(1)}%;background:${p.color};transition:width 1s ease;"></div>
+      </div>
+    </div>`).join('');
+}
+
+/* ══════════════════════════════
+   LOAD PROFILE
+══════════════════════════════ */
+async function loadProfile(){
+  try{
+    const u=await get(`${API}/users/${USERNAME}`);
+    document.getElementById('avatar').src=u.avatar_url;
+    document.title=`${u.login} — GitHub Profile`;
+    const nameEl=document.getElementById('name');
+    nameEl.textContent=u.name||u.login;nameEl.classList.remove('sk');
+    const loginEl=document.getElementById('login');
+    loginEl.innerHTML=`<span style="color:#9060b0;font-weight:700;">@</span>${u.login}`;
+    loginEl.classList.remove('sk');
+    const badgesEl=document.getElementById('badges');
+    if(u.hireable)badgesEl.innerHTML+=`<span class="tag" style="background:var(--mint);">hireable</span>`;
+    badgesEl.innerHTML+=`<span class="tag" style="background:var(--pink);">System Administrator</span>`;
+    if(u.public_repos>=20)badgesEl.innerHTML+=`<span class="tag" style="background:var(--yellow);">Graphic Designer</span>`;
+    if(u.followers>=5)badgesEl.innerHTML+=`<span class="tag" style="background:var(--lav);">Backend Developer</span>`;
+    const bioEl=document.getElementById('bio');
+    bioEl.textContent=u.bio||'No bio yet — but the commits say a lot.';bioEl.classList.remove('sk');
+    const meta=[
+      u.location&&`📍 ${u.location}`,
+      u.blog&&`🔗 <a href="${u.blog.startsWith('http')?u.blog:'https://'+u.blog}" target="_blank" style="text-decoration:underline;">${u.blog}</a>`,
+      u.twitter_username&&`𝕏 @${u.twitter_username}`,
+      u.company&&`🏢 ${u.company}`,
+      `📅 Joined ${new Date(u.created_at).toLocaleDateString('en-US',{year:'numeric',month:'short'})}`,
+    ].filter(Boolean);
+    document.getElementById('meta-row').innerHTML=meta.map(i=>`<span>${i}</span>`).join('');
+    document.getElementById('stat-repos').textContent=u.public_repos;
+    document.getElementById('stat-followers').textContent=u.followers;
+    document.getElementById('stat-following').textContent=u.following;
+    document.getElementById('stat-gists').textContent=u.public_gists;
+    const items=[u.login,u.public_repos+' repos',u.followers+' followers',u.bio||'github dev',u.location||'the internet','✦ open source','soft pastel brutalism','built with github api'];
+    document.getElementById('mq').innerHTML=[...items,...items].map(t=>
+      `<span style="font-family:'Bebas Neue';font-size:.92rem;letter-spacing:.12em;">✦ ${t.toUpperCase()}</span>`
+    ).join('');
+
+    // update social links from profile
+    if(u.blog){
+      const el=document.getElementById('social-website');
+      const saved=JSON.parse(localStorage.getItem('social_links')||'{}');
+      if(!saved.website){el.href=u.blog.startsWith('http')?u.blog:'https://'+u.blog;}
+    }
+    if(u.twitter_username){
+      const el=document.getElementById('social-twitter');
+      const saved=JSON.parse(localStorage.getItem('social_links')||'{}');
+      if(!saved.twitter){el.href='https://twitter.com/'+u.twitter_username;}
+    }
+    return u;
+  }catch(e){console.error('Profile:',e);}
+}
+
+/* ══════════════════════════════
+   LOAD REPOS
+══════════════════════════════ */
+async function loadRepos(u){
+  try{
+    const repos=await get(`${API}/users/${USERNAME}/repos?sort=updated&per_page=100`);
+    const sorted=[...repos].sort((a,b)=>b.stargazers_count-a.stargazers_count);
+    document.getElementById('stat-stars').textContent=sorted.reduce((s,r)=>s+r.stargazers_count,0);
+    const{level,xp,pct}=calcLevel(u,repos);
+    document.getElementById('user-level').textContent=level;
+    document.getElementById('xp-label').textContent=xp+' XP';
+    setTimeout(()=>{document.getElementById('xp-fill').style.width=pct+'%';},300);
+    // langs
+    const lc={};repos.forEach(r=>{if(r.language)lc[r.language]=(lc[r.language]||0)+1;});
+    const lt=Object.values(lc).reduce((a,b)=>a+b,0)||1;
+    const langs=Object.entries(lc).sort((a,b)=>b[1]-a[1]).slice(0,7);
+    document.getElementById('lang-list').innerHTML=
+      `<div class="lbar mb-2">${langs.map(([l,c])=>`<div style="flex:${c};background:${LC(l)};"></div>`).join('')}</div>`
+      +langs.map(([l,c])=>`
+        <div style="display:flex;align-items:center;justify-content:space-between;font-size:.68rem;padding:3px 0;border-bottom:1px solid #1a1a2e22;">
+          <div style="display:flex;align-items:center;gap:5px;">
+            <div style="width:9px;height:9px;background:${LC(l)};border:1.5px solid var(--ink);flex-shrink:0;"></div><b>${l}</b>
+          </div>
+          <span style="color:#555;">${Math.round(c/lt*100)}%</span>
+        </div>`).join('');
+    // showcase
+    document.getElementById('showcase-grid').innerHTML=sorted.slice(0,4).map((r,i)=>`
+      <a href="${r.html_url}" target="_blank" class="showcase-card"
+         onmouseover="this.style.background='${HOVERS[i%HOVERS.length]}'" onmouseout="this.style.background=''">
+        <div style="display:flex;align-items:start;justify-content:space-between;gap:6px;">
+          <div><div style="font-family:'Syne';font-weight:800;font-size:.92rem;">${r.name}</div>${r.fork?'<span class="tag" style="font-size:.48rem;background:var(--lav);">fork</span>':''}</div>
+          <div style="text-align:right;font-size:.68rem;flex-shrink:0;color:#444;"><div>★ ${r.stargazers_count}</div><div>⑂ ${r.forks_count}</div></div>
+        </div>
+        <p style="font-size:.68rem;color:#555;line-height:1.55;margin:.4rem 0;">${r.description||'<em>No description</em>'}</p>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;align-items:center;">
+          ${r.language?`<div style="display:flex;align-items:center;gap:3px;font-size:.62rem;"><div style="width:7px;height:7px;background:${LC(r.language)};border:1.5px solid var(--ink);"></div>${r.language}</div>`:''}
+          ${(r.topics||[]).slice(0,2).map(t=>`<span class="tag" style="font-size:.48rem;">${t}</span>`).join('')}
+          <span style="font-size:.58rem;color:#888;margin-left:auto;">${ago(r.updated_at)}</span>
+        </div>
+      </a>`).join('');
+    // repos list
+    document.getElementById('repos-grid').innerHTML=sorted.map((r,i)=>`
+      <a href="${r.html_url}" target="_blank" class="repo-card"
+         onmouseover="this.style.background='${HOVERS[i%HOVERS.length]}'" onmouseout="this.style.background=''">
+        <div style="display:flex;align-items:start;justify-content:space-between;gap:8px;">
+          <div style="flex:1;min-width:0;">
+            <div style="font-family:'Syne';font-weight:800;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${r.name}</div>
+            <p style="font-size:.66rem;color:#555;line-height:1.5;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${r.description||'—'}</p>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0;font-size:.65rem;color:#444;">
+            <span>★ ${r.stargazers_count}</span><span>⑂ ${r.forks_count}</span>
+            ${r.language?`<div style="display:flex;align-items:center;gap:3px;"><div style="width:6px;height:6px;background:${LC(r.language)};border:1.5px solid var(--ink);"></div>${r.language}</div>`:''}
+          </div>
+        </div>
+      </a>`).join('');
+    // spotlight
+    const s=sorted[0];
+    if(s)document.getElementById('spotlight').outerHTML=`
+      <a href="${s.html_url}" target="_blank" id="spotlight"
+         style="display:block;text-decoration:none;border:var(--border);padding:1rem;background:var(--bg);box-shadow:4px 4px 0 var(--ink);transition:all .15s;"
+         onmouseover="this.style.background='var(--peach)'" onmouseout="this.style.background=''">
+        <div style="font-family:'Syne';font-weight:800;font-size:1.15rem;">${s.name}</div>
+        <p style="font-size:.74rem;color:#555;margin:.4rem 0;line-height:1.6;">${s.description||'No description'}</p>
+        <div style="display:flex;gap:8px;font-size:.7rem;flex-wrap:wrap;align-items:center;">
+          ${s.language?`<div style="display:flex;align-items:center;gap:4px;"><div style="width:9px;height:9px;background:${LC(s.language)};border:1.5px solid var(--ink);"></div>${s.language}</div>`:''}
+          <span>★ ${s.stargazers_count} stars</span><span>⑂ ${s.forks_count} forks</span>
+          <span style="color:#888;margin-left:auto;font-size:.62rem;">Updated ${ago(s.updated_at)}</span>
+        </div>
+      </a>`;
+    buildAchievements(u,repos);
+    buildCommitChart(sorted); // fetch real commit data
+    return repos;
+  }catch(e){console.error('Repos:',e);}
+}
+
+/* ══════════════════════════════
+   LOAD EVENTS
+══════════════════════════════ */
+async function loadEvents(){
+  try{
+    const events=await get(`${API}/users/${USERNAME}/events/public?per_page=15`);
+    const el=document.getElementById('events-list');
+    if(!events.length){el.innerHTML='<div style="font-size:.8rem;color:#888;padding:1rem;">No recent public activity.</div>';return;}
+    el.innerHTML=events.slice(0,12).map((e,i)=>`
+      <div style="border:var(--border);padding:.55rem .85rem;background:${EV_BG[i%EV_BG.length]};display:flex;align-items:flex-start;gap:.6rem;font-size:.68rem;">
+        <div style="font-size:.95rem;flex-shrink:0;margin-top:1px;">${etype(e.type)}</div>
+        <div style="flex:1;line-height:1.55;">${edesc(e)}</div>
+        <div style="flex-shrink:0;color:#666;font-size:.6rem;white-space:nowrap;">${ago(e.created_at)}</div>
+      </div>`).join('');
+  }catch(e){console.error('Events:',e);}
+}
+
+/* ══════════════════════════════
+   ACTIVITY SIDEBAR
+══════════════════════════════ */
+function buildActivitySidebar(){
+  const bg=['#f0ece8','#c9f0da','#7ddba4','#3db87a','#1a9155'];
+  let html='';
+  for(let i=0;i<84;i++)html+=`<div class="adot" style="background:${bg[Math.floor(Math.random()*5)]};"></div>`;
+  document.getElementById('activity-grid').innerHTML=html;
+}
+
+/* ══════════════════════════════
+   NEW: BACK TO TOP
+══════════════════════════════ */
+window.addEventListener('scroll',()=>{
+  document.getElementById('btt').classList.toggle('show',window.scrollY>400);
+});
+
+
+/* ══════════════════════════════
+   INIT
+══════════════════════════════ */
+(async()=>{
+  logCacheStatus();
+  startClock();
+  initVisitorCounter();
+  initNp();
+  loadSocials();
+  buildActivitySidebar();
+  buildCalendar();
+  renderSkills();
+  loadGallery();
+  const u=await loadProfile();
+  if(u)await loadRepos(u);
+  await loadEvents();
+  setTimeout(checkSidebarOverflow, 500);
+  window.addEventListener('resize', checkSidebarOverflow);
+})();
+</script>
+</body>
+</html>
