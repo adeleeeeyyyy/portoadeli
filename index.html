@@ -116,9 +116,10 @@ body{
 .goal-fill{height:100%;transition:width 1.2s ease;}
 
 /* ── NEW: Back to top ── */
-#btt{position:fixed;bottom:24px;right:24px;z-index:500;border:var(--border);background:var(--lav);box-shadow:3px 3px 0 var(--ink);width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;transition:all .15s;opacity:0;pointer-events:none;}
+#btt{position:fixed;bottom:24px;right:24px;z-index:9999;border:1px solid #cbd5e1;background:var(--bg);box-shadow:var(--shadow-sm);border-radius:12px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;transition:all .3s ease;opacity:0;pointer-events:none;}
 #btt.show{opacity:1;pointer-events:auto;}
-#btt:hover{box-shadow:5px 5px 0 var(--ink);transform:translate(-2px,-2px);}
+#btt:hover{box-shadow:var(--shadow);transform:translateY(-2px);}
+@media(max-width:640px){ #btt{bottom:16px;right:16px;width:40px;height:40px;} }
 
 
 
@@ -150,7 +151,7 @@ body{
 <nav style="border-bottom:var(--border);background:var(--lav);" class="px-5 py-3 flex items-center justify-between fi d1">
   <div class="flex items-center gap-3">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:inline;margin-right:2px;" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-    <span style="font-family:'Outfit';letter-spacing:.12em;font-size:1.45rem;margin-left:4px;">PROFILE</span>
+    <span id="nav-title" style="font-family:'Space Mono', monospace;letter-spacing:.05em;font-size:1.1rem;margin-left:4px;font-weight:700;color:var(--ink);"></span>
   </div>
   <div class="flex gap-3 items-center">
     <div class="status-online"></div>
@@ -180,11 +181,7 @@ body{
           </div>
           <div class="xp-bar"><div class="xp-fill" id="xp-fill" style="width:0%;"></div></div>
         </div>
-        <!-- NEW: visitor counter -->
-        <div style="width:120px;border:var(--border);padding:4px 6px;background:var(--yellow);box-shadow:2px 2px 0 var(--ink);text-align:center;">
-          <div class="visitor-num" id="visitor-num">0</div>
-          <div style="font-size:.52rem;letter-spacing:.1em;color:#555;">PROFILE VIEWS</div>
-        </div>
+
       </div>
       <div class="flex-1 min-w-0">
         <div class="flex flex-wrap gap-2 items-start justify-between">
@@ -563,12 +560,8 @@ body{
 </div>
 
 <!-- FOOTER -->
-<div style="border-top:var(--border);background:var(--lav);margin-top:3rem;" class="px-6 py-4 flex items-center justify-between">
-  <span style="font-size:.6rem;color:#555;letter-spacing:.06em;">POWERED BY GITHUB API · NEO BRUTALISM · 2025</span>
-  <div class="flex items-center gap-2">
-    <div class="status-online"></div>
-    <span style="font-family:'Outfit';letter-spacing:.1em;font-size:1.1rem;">adeleeeeyyyy ✦</span>
-  </div>
+<div style="border-top:var(--border);background:var(--lav);margin-top:3rem;" class="px-6 py-4 flex items-center justify-center">
+  <span style="font-family:'Space Mono', monospace; letter-spacing:.05em; font-size:1.1rem; font-weight:700; color:var(--ink);">adeleeeeyyyy ★</span>
 </div>
 <div class="stripe" style="height:10px;"></div>
 
@@ -1121,7 +1114,7 @@ function renderGallery(images, animateNow=false){
   grid.style.display='';empty.style.display='none';
   grid.innerHTML=images.map((img,i)=>`
     <div class="gallery-img ${animateNow?'run-anim':''}" style="background:${HOVERS[i%HOVERS.length]};${animateNow?`animation-delay:${i*200}ms;`:''}" onclick="openLB('${img.src}','${img.title}')">
-      <img src="${img.src}" alt="${img.title}" loading="lazy"
+      <img src="${img.src}" alt="${img.title}"
            onerror="this.style.display='none';this.parentElement.querySelector('.img-fallback').style.display='flex'">
       <div class="overlay">${img.title.toUpperCase()} ↗</div>
       <div class="img-fallback" style="display:none;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;text-align:center;min-height:80px;">
@@ -1141,8 +1134,9 @@ function startTerminal(tabId){
   const selectors = ['.showcase-card', '.repo-card', '.ach-card', '.event-item', '.skill-row', '.skill-badge', '.gallery-img', '.tag', '#skills-container > div', '#ach-progress > div'];
   const childs = document.querySelectorAll(selectors.map(s => `#${tabId}-content-wrap ${s}`).join(', '));
   if(childs.length > 0) {
+    const delayStep = (tabId === 'gallery') ? 200 : 120;
     childs.forEach((el, i) => {
-      el.style.animationDelay = `${i * 120}ms`;
+      el.style.animationDelay = `${i * delayStep}ms`;
       el.classList.add('run-anim');
     });
   } else {
@@ -1403,7 +1397,22 @@ let offlineData = null;
   logCacheStatus();
   initMatrix();
   startClock();
-  initVisitorCounter();
+  
+  const tStr = "./profile.sh";
+  let tIdx = 0;
+  const nTitle = document.getElementById('nav-title');
+  if(nTitle) {
+    const typeTitle = () => {
+      if(tIdx <= tStr.length) {
+        nTitle.textContent = tStr.slice(0, tIdx) + (tIdx < tStr.length ? '_' : '');
+        tIdx++;
+        setTimeout(typeTitle, 150);
+      } else {
+        setInterval(() => nTitle.textContent = tStr + (nTitle.textContent.endsWith('_') ? ' ' : '_'), 500);
+      }
+    };
+    setTimeout(typeTitle, 300);
+  }
   // initNp();
   loadSocials();
   buildActivitySidebar();
