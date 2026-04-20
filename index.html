@@ -6,40 +6,41 @@
 <title>adeleeeeyyyy — GitHub Profile</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink:    #1a1a2e;
-  --bg:     #fdf6f0;
-  --pink:   #f9c6d0;
-  --lav:    #c9b8f0;
-  --mint:   #b8ecd7;
-  --peach:  #fcd5a8;
-  --sky:    #b8dff5;
-  --yellow: #fdeea3;
-  --rose:   #f7b2c0;
-  --border: 2.5px solid #1a1a2e;
-  --shadow: 5px 5px 0px #1a1a2e;
-  --shadow-sm: 3px 3px 0px #1a1a2e;
+  --ink:    #0f172a;
+  --bg:     #f4f4f5;
+  --pink:   #ffffff;
+  --lav:    #ffffff;
+  --mint:   #ffffff;
+  --peach:  #ffffff;
+  --sky:    #ffffff;
+  --yellow: #ffffff;
+  --rose:   #ffffff;
+  --border: 1px solid #e4e4e7;
+  --shadow: 0 4px 12px rgba(0,0,0,0.03);
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.02);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{
   background-color:var(--bg);
   color:var(--ink);
-  font-family:'Space Mono',monospace;
+  font-family:'Inter', sans-serif;
   overflow-x:hidden;
   background-image:radial-gradient(circle,#c9b8f033 1px,transparent 1px);
   background-size:24px 24px;
 }
-.bb{border:var(--border);box-shadow:var(--shadow);}
-.bb-sm{border:var(--border);box-shadow:var(--shadow-sm);}
-.bb-static{border:var(--border);box-shadow:var(--shadow);}
-.bb:hover{box-shadow:8px 8px 0 var(--ink);transform:translate(-2px,-2px);transition:all .15s;}
-.tag{border:2px solid var(--ink);font-size:.6rem;padding:2px 8px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;display:inline-block;}
-.section-title{font-family:'Bebas Neue';letter-spacing:.08em;line-height:1;}
+.bb{border:var(--border);box-shadow:var(--shadow);border-radius:12px;}
+.bb-sm{border:var(--border);box-shadow:var(--shadow-sm);border-radius:12px;}
+.bb-static{border:var(--border);box-shadow:var(--shadow);border-radius:12px;}
+.bb:hover{box-shadow:0 8px 24px rgba(0,0,0,0.06);transform:translateY(-2px);transition:all .3s ease;}
+.tag{border:var(--border);border-radius:12px;font-size:.65rem;padding:4px 10px;font-weight:500;letter-spacing:0.02em;text-transform:uppercase;display:inline-block;background:#fff;}
+.section-title{font-family:'Outfit';letter-spacing:.08em;line-height:1;}
 .stripe{background:repeating-linear-gradient(-45deg,var(--pink),var(--pink) 10px,var(--lav) 10px,var(--lav) 20px);}
 .avatar-wrap{position:relative;display:inline-block;}
-.avatar-wrap::after{content:'';position:absolute;top:8px;left:8px;width:100%;height:100%;background:var(--lav);border:var(--border);z-index:-1;}
+.avatar-wrap img { border-radius: 50%; box-shadow: 0 4px 16px rgba(0,0,0,0.06); border: 4px solid #fff; }
+.avatar-wrap::after{content:none;}
 .sk{background:linear-gradient(90deg,#ecdfe8 25%,#ddd2da 50%,#ecdfe8 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:2px;color:transparent!important;}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
@@ -52,34 +53,35 @@ body{
 ::-webkit-scrollbar{width:5px;height:5px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--lav);border:1px solid var(--ink)}
-.adot{width:12px;height:12px;border:1.5px solid #1a1a2e33;border-radius:2px;display:inline-block;}
+.adot{width:12px;height:12px;border:1.5px solid #00000018;border-radius:4px;display:inline-block;}
 .lbar{display:flex;height:9px;border:2px solid var(--ink);overflow:hidden;width:100%;}
-.ach-card{border:var(--border);padding:.75rem;background:var(--bg);box-shadow:3px 3px 0 var(--ink);transition:all .15s;cursor:default;}
-.ach-card:hover{box-shadow:6px 6px 0 var(--ink);transform:translate(-2px,-2px);}
+.ach-card{border:var(--border);border-radius:12px;padding:1rem;background:var(--bg);box-shadow:var(--shadow);transition:all .15s;cursor:default;}
+.ach-card:hover{box-shadow:0 6px 16px rgba(0,0,0,0.05);transform:translateY(-2px);}
 .ach-card.locked{opacity:.45;filter:grayscale(.6);}
-.showcase-card{border:var(--border);box-shadow:4px 4px 0 var(--ink);padding:1rem;background:var(--bg);transition:all .15s;text-decoration:none;display:block;}
-.showcase-card:hover{box-shadow:7px 7px 0 var(--ink);transform:translate(-2px,-2px);}
+.showcase-card{border:var(--border);border-radius:12px;box-shadow:var(--shadow);padding:1.25rem;background:var(--bg);transition:all .15s;text-decoration:none;display:block;}
+.showcase-card:hover{box-shadow:0 6px 16px rgba(0,0,0,0.05);transform:translateY(-2px);}
 /* gallery masonry */
 #gallery-grid{ columns:3; column-gap:10px; }
 @media(max-width:640px){ #gallery-grid{ columns:2; } }
-.gallery-img{break-inside:avoid;display:block;width:100%;margin-bottom:10px;border:var(--border);box-shadow:3px 3px 0 var(--ink);overflow:hidden;cursor:pointer;position:relative;transition:box-shadow .15s,transform .15s;}
-.gallery-img:hover{box-shadow:6px 6px 0 var(--ink);transform:translate(-2px,-2px);}
+@keyframes popUp { 0% { opacity: 0; transform: translateY(40px) scale(0.96); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+.gallery-img{break-inside:avoid;display:block;width:100%;margin-bottom:12px;border:var(--border);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;cursor:pointer;position:relative;transition:all .3s ease;}
+.run-anim{animation:popUp 0.8s cubic-bezier(0.2, 0.8, 0.05, 1) both !important;}
+.gallery-img:hover{box-shadow:0 8px 24px rgba(0,0,0,0.08);transform:translateY(-2px);}
 .gallery-img img{display:block;width:100%;height:auto;}
-.gallery-img .overlay{position:absolute;inset:0;background:var(--ink);opacity:0;transition:.2s;display:flex;align-items:flex-end;padding:.4rem .5rem;color:var(--bg);font-size:.65rem;letter-spacing:.08em;font-weight:700;}
-.gallery-img:hover .overlay{opacity:.82;}
-.repo-card{border:var(--border);background:var(--bg);box-shadow:4px 4px 0 var(--ink);padding:1rem;transition:all .15s;text-decoration:none;display:block;}
+.gallery-img .overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);opacity:0;transition:opacity .3s ease;display:flex;align-items:flex-end;padding:.75rem .75rem;color:#fff;font-size:.7rem;letter-spacing:.02em;font-weight:500;}
+.gallery-img:hover .overlay{opacity:1;}
+.repo-card{border:var(--border);background:var(--bg);box-shadow:var(--shadow);border-radius:12px;padding:1.25rem;transition:all .25s ease;text-decoration:none;display:block;}
 .stat-b{padding:1rem;text-align:center;}
-.tab-btn{border:var(--border);padding:5px 14px;font-family:'Bebas Neue';letter-spacing:.08em;font-size:1rem;cursor:pointer;background:var(--bg);transition:all .12s;}
-.tab-btn.active{background:var(--ink);color:var(--bg);}
+.tab-btn{border:var(--border);padding:8px 16px;font-family:'Outfit', sans-serif;letter-spacing:0.02em;font-size:0.9rem;font-weight:500;border-radius:999px;cursor:pointer;background:#fff;transition:all .2s ease;margin-bottom:6px;}.tab-btn.active{background:var(--ink);color:var(--bg);}
 .tab-btn:hover:not(.active){background:var(--pink);}
 .tab-content{display:none;}.tab-content.active{display:block;}
-.review-card{border:var(--border);padding:.9rem;background:var(--bg);box-shadow:3px 3px 0 var(--ink);}
+.review-card{border:var(--border);padding:1rem;background:var(--bg);box-shadow:var(--shadow);border-radius:12px;}
 [data-tip]{position:relative;}
 [data-tip]:hover::after{content:attr(data-tip);position:absolute;bottom:110%;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);font-size:.62rem;padding:3px 8px;white-space:nowrap;border:1.5px solid var(--ink);z-index:99;pointer-events:none;}
-.xp-bar{height:14px;border:2px solid var(--ink);background:var(--bg);overflow:hidden;}
-.xp-fill{height:100%;background:repeating-linear-gradient(90deg,var(--mint),var(--mint) 8px,#7ddba4 8px,#7ddba4 16px);transition:width 1s ease;}
-.status-online{width:10px;height:10px;background:#3db87a;border:2px solid var(--ink);border-radius:50%;display:inline-block;animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 #3db87a66}50%{box-shadow:0 0 0 6px transparent}}
+.xp-bar{height:6px;width:100%;background:#e4e4e7;border-radius:99px;overflow:hidden;}
+.xp-fill{height:100%;background:repeating-linear-gradient(90deg,var(--ink),var(--ink) 8px,#64748b 8px,#64748b 16px);transition:width 1s ease;}
+.status-online{width:10px;height:10px;background:#64748b;border:2px solid var(--ink);border-radius:50%;display:inline-block;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(100,116,139,0.4)}50%{box-shadow:0 0 0 6px transparent}}
 
 /* ── NOW PLAYING player ── */
 .np-bar{display:flex;gap:2px;align-items:flex-end;height:14px;}
@@ -95,14 +97,14 @@ body{
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 
 /* ── NEW: Skill badge ── */
-.skill-badge{border:var(--border);padding:4px 10px;font-size:.62rem;font-weight:700;display:inline-flex;align-items:center;gap:5px;box-shadow:2px 2px 0 var(--ink);cursor:default;transition:all .12s;}
-.skill-badge:hover{box-shadow:4px 4px 0 var(--ink);transform:translate(-1px,-1px);}
-.skill-bar-wrap{height:6px;border:1.5px solid var(--ink);background:var(--bg);overflow:hidden;flex:1;min-width:40px;}
-.skill-bar-fill{height:100%;transition:width 1.2s ease;}
+.skill-badge{border:var(--border);border-radius:8px;padding:6px 12px;font-size:.65rem;font-weight:500;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow-sm);cursor:default;transition:all .25s ease;}
+.skill-badge:hover{box-shadow:0 4px 12px rgba(0,0,0,0.05);transform:translateY(-2px);}
+.skill-bar-wrap{height:8px;border:var(--border);background:var(--bg);overflow:hidden;flex:1;min-width:40px;border-radius:999px;}
+.skill-bar-fill{height:100%;transition:width 1.2s ease;border-radius:999px;}
 
 /* ── NEW: Social link ── */
-.social-link{border:var(--border);padding:.5rem .75rem;display:flex;align-items:center;gap:.5rem;text-decoration:none;font-size:.7rem;font-weight:700;box-shadow:3px 3px 0 var(--ink);transition:all .12s;color:var(--ink);}
-.social-link:hover{box-shadow:5px 5px 0 var(--ink);transform:translate(-1px,-1px);}
+.social-link{border:var(--border);border-radius:8px;padding:.6rem .8rem;display:flex;align-items:center;gap:.6rem;text-decoration:none;font-size:.75rem;font-weight:500;box-shadow:var(--shadow-sm);transition:all .25s ease;color:var(--ink);}
+.social-link:hover{box-shadow:0 4px 12px rgba(0,0,0,0.05);transform:translateY(-2px);}
 
 /* ── NEW: Commit chart ── */
 .chart-bar{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;}
@@ -121,10 +123,10 @@ body{
 
 
 /* ── NEW: Visitor counter ── */
-.visitor-num{font-family:'Bebas Neue';font-size:1.4rem;letter-spacing:.1em;}
+.visitor-num{font-family:'Outfit';font-size:1.4rem;letter-spacing:.1em;}
 
 /* ── NEW: Weather/clock widget ── */
-#clock-display{font-family:'Bebas Neue';font-size:2rem;letter-spacing:.1em;line-height:1;}
+#clock-display{font-family:'Outfit';font-size:2rem;letter-spacing:.1em;line-height:1;}
 
 /* filter buttons */
 .gal-filter{cursor:pointer;}
@@ -147,7 +149,8 @@ body{
 <!-- NAV -->
 <nav style="border-bottom:var(--border);background:var(--lav);" class="px-5 py-3 flex items-center justify-between fi d1">
   <div class="flex items-center gap-3">
-    <span style="font-family:'Bebas Neue';letter-spacing:.12em;font-size:1.45rem;">PROFILE.SH</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:inline;margin-right:2px;" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+    <span style="font-family:'Outfit';letter-spacing:.12em;font-size:1.45rem;margin-left:4px;">PROFILE</span>
   </div>
   <div class="flex gap-3 items-center">
     <div class="status-online"></div>
@@ -161,11 +164,8 @@ body{
 
   <!-- ══════ PROFILE HEADER ══════ -->
   <div class="bb-static mb-5 overflow-hidden fi d1">
-    <div style="height:130px;background:var(--mint);position:relative;overflow:hidden;">
-      <div style="position:absolute;inset:0;opacity:.5;background:repeating-linear-gradient(-45deg,var(--yellow),var(--yellow) 18px,var(--mint) 18px,var(--mint) 36px);"></div>
-      <div style="position:absolute;top:18px;right:60px;width:48px;height:48px;background:var(--pink);border:var(--border);transform:rotate(12deg);opacity:.7;"></div>
-      <div style="position:absolute;top:30px;right:120px;width:28px;height:28px;background:var(--lav);border:var(--border);transform:rotate(-8deg);opacity:.7;border-radius:50%;"></div>
-      <div style="position:absolute;top:10px;right:200px;width:20px;height:20px;background:var(--peach);border:var(--border);transform:rotate(20deg);opacity:.6;"></div>
+    <div style="height:140px;background:linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);position:relative;overflow:hidden;border-bottom:1px solid #e4e4e7;">
+      <canvas id="cmatrix" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.6;"></canvas>
       <div style="position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(to top,var(--bg),transparent);"></div>
     </div>
     <div class="p-5 flex flex-col md:flex-row gap-5" style="background:var(--bg);">
@@ -175,7 +175,7 @@ body{
         </div>
         <div style="width:120px;">
           <div style="display:flex;justify-content:space-between;font-size:.6rem;margin-bottom:3px;">
-            <span style="font-family:'Bebas Neue';letter-spacing:.06em;">LVL <span id="user-level">?</span></span>
+            <span style="font-family:'Outfit';letter-spacing:.06em;">LVL <span id="user-level">?</span></span>
             <span id="xp-label" style="color:#555;">... XP</span>
           </div>
           <div class="xp-bar"><div class="xp-fill" id="xp-fill" style="width:0%;"></div></div>
@@ -189,7 +189,7 @@ body{
       <div class="flex-1 min-w-0">
         <div class="flex flex-wrap gap-2 items-start justify-between">
           <div>
-            <h1 id="name" style="font-family:'Syne';font-size:1.85rem;font-weight:800;line-height:1.05;" class="sk">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+            <h1 id="name" style="font-family:'Outfit';font-size:1.85rem;font-weight:800;line-height:1.05;" class="sk">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
             <p id="login" style="font-size:.7rem;margin-top:3px;letter-spacing:.05em;" class="sk">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
           </div>
           <div class="flex gap-2 flex-wrap" id="badges"></div>
@@ -199,11 +199,11 @@ body{
       </div>
     </div>
     <div class="grid grid-cols-5" style="border-top:var(--border);">
-      <div class="stat-b" style="border-right:var(--border);background:var(--pink);"><div style="font-family:'Bebas Neue';font-size:2rem;" id="stat-repos">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">REPOS</div></div>
-      <div class="stat-b" style="border-right:var(--border);background:var(--lav);"><div style="font-family:'Bebas Neue';font-size:2rem;" id="stat-followers">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">FOLLOWERS</div></div>
-      <div class="stat-b" style="border-right:var(--border);background:var(--mint);"><div style="font-family:'Bebas Neue';font-size:2rem;" id="stat-following">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">FOLLOWING</div></div>
-      <div class="stat-b" style="border-right:var(--border);background:var(--peach);"><div style="font-family:'Bebas Neue';font-size:2rem;" id="stat-stars">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">STARS</div></div>
-      <div class="stat-b" style="background:var(--sky);"><div style="font-family:'Bebas Neue';font-size:2rem;" id="stat-gists">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">GISTS</div></div>
+      <div class="stat-b" style="border-right:var(--border);background:var(--pink);"><div style="font-family:'Outfit';font-size:2rem;" id="stat-repos">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">REPOS</div></div>
+      <div class="stat-b" style="border-right:var(--border);background:var(--lav);"><div style="font-family:'Outfit';font-size:2rem;" id="stat-followers">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">FOLLOWERS</div></div>
+      <div class="stat-b" style="border-right:var(--border);background:var(--mint);"><div style="font-family:'Outfit';font-size:2rem;" id="stat-following">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">FOLLOWING</div></div>
+      <div class="stat-b" style="border-right:var(--border);background:var(--peach);"><div style="font-family:'Outfit';font-size:2rem;" id="stat-stars">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">STARS</div></div>
+      <div class="stat-b" style="background:var(--sky);"><div style="font-family:'Outfit';font-size:2rem;" id="stat-gists">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">GISTS</div></div>
     </div>
   </div>
 
@@ -236,56 +236,8 @@ body{
         </div>
       </div>
 
-      <!-- NOW PLAYING — music player, locked -->
-      <div class="bb p-4 fi d3" id="np-widget" style="background:var(--mint);">
-        <div class="section-title text-xl mb-3">✦ NOW PLAYING</div>
-
-        <!-- Album art -->
-        <div style="position:relative;width:100%;aspect-ratio:1/1;border:var(--border);box-shadow:4px 4px 0 var(--ink);overflow:hidden;background:var(--lav);margin-bottom:.75rem;">
-          <img id="np-art-img" src="album.jpg" alt="album art"
-               style="width:100%;height:100%;object-fit:cover;display:block;"
-               onerror="this.style.display='none';document.getElementById('np-art-fallback').style.display='flex'">
-          <!-- fallback when no album.jpg -->
-          <div id="np-art-fallback" style="display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;background:var(--lav);">
-            <div class="np-vinyl playing" id="np-vinyl-icon" style="width:64px;height:64px;border:var(--border);border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;">
-              <div style="width:20px;height:20px;border-radius:50%;background:var(--lav);border:2px solid var(--bg);"></div>
-            </div>
-          </div>
-          <!-- overlay: playing indicator -->
-          <div id="np-overlay" style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,#1a1a2ecc,transparent);padding:.5rem .6rem;display:flex;align-items:center;gap:.4rem;">
-            <div class="np-bar" id="np-bars">
-              <span style="--d:.4s"></span><span style="--d:.55s"></span>
-              <span style="--d:.7s"></span><span style="--d:.45s"></span>
-              <span style="--d:.6s"></span>
-            </div>
-            <span id="np-status" style="font-size:.52rem;color:#fff;font-weight:700;letter-spacing:.08em;">PLAYING</span>
-          </div>
-        </div>
-
-        <!-- Song info -->
-        <div style="margin-bottom:.6rem;">
-          <div id="np-title" style="font-family:'Syne';font-weight:800;font-size:.95rem;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Song Title</div>
-          <div id="np-artist" style="font-size:.65rem;color:#555;margin-top:2px;">Artist Name</div>
-        </div>
-
-        <!-- Progress bar (click to seek) -->
-        <div id="np-progress-wrap" style="height:6px;border:2px solid var(--ink);background:var(--bg);overflow:hidden;cursor:pointer;margin-bottom:.35rem;" onclick="npSeek(event)">
-          <div id="np-progress" style="height:100%;background:var(--ink);width:0%;transition:width .5s linear;pointer-events:none;"></div>
-        </div>
-        <div style="display:flex;justify-content:space-between;font-size:.55rem;color:#777;margin-bottom:.65rem;">
-          <span id="np-cur">0:00</span><span id="np-dur">0:00</span>
-        </div>
-
-        <!-- Controls -->
-        <div style="display:flex;align-items:center;justify-content:center;gap:.5rem;">
-          <div class="np-skipbtn" onclick="npPrev()" title="Prev">⏮</div>
-          <div class="np-playbtn" id="np-playbtn" onclick="npToggle()">▶</div>
-          <div class="np-skipbtn" onclick="npNext()" title="Next">⏭</div>
-        </div>
-
-        <!-- Track list indicator dots -->
-        <div style="display:flex;justify-content:center;gap:4px;margin-top:.6rem;" id="np-dots"></div>
-      </div>
+      <!-- NOW PLAYING WIDGET REMOVED -->
+      <div id="np-widget" style="display:none;"></div>
 
       <!-- ACTIVITY HEATMAP -->
       <div class="bb p-4 fi d3" style="background:var(--mint);">
@@ -293,10 +245,10 @@ body{
         <div id="activity-grid" class="flex flex-wrap gap-1"></div>
         <div class="flex gap-1 mt-2 items-center" style="font-size:.58rem;color:#555;">
           <span>less</span>
-          <div class="adot" style="background:#f0ece8;"></div>
-          <div class="adot" style="background:#c9f0da;"></div>
-          <div class="adot" style="background:#7ddba4;"></div>
-          <div class="adot" style="background:#3db87a;"></div>
+          <div class="adot" style="background:#f1f5f9;"></div>
+          <div class="adot" style="background:#cbd5e1;"></div>
+          <div class="adot" style="background:#94a3b8;"></div>
+          <div class="adot" style="background:#64748b;"></div>
           <span>more</span>
         </div>
       </div>
@@ -306,16 +258,16 @@ body{
         <div class="section-title text-xl mb-3">✦ SOCIALS</div>
         <div class="flex flex-col gap-2" id="social-links">
           <a href="https://github.com/adeleeeeyyyy" target="_blank" class="social-link" style="background:var(--bg);">
-            <span style="font-size:1rem;">🐙</span> GitHub
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> GitHub
           </a>
           <a href="https://linkedin.com/in/adly-fahreza" class="social-link" style="background:var(--pink);" id="social-linkedin">
-            <span style="font-size:1rem;">💼</span> LinkedIn
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> LinkedIn
           </a>
           <a href="https://instagram.com/adeleeeeyyyy" target="_blank" class="social-link" style="background:var(--mint);" id="social-instagram">
-            <span style="font-size:1rem;">📸</span> Instagram
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> Instagram
           </a>
           <a href="https://adeli.synchronizeteams.com" class="social-link" style="background:var(--yellow);" id="social-website">
-            <span style="font-size:1rem;">🌐</span> Website
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Website
           </a>
         </div>
         <!-- <button onclick="openSocialEdit()" class="tag" style="margin-top:.6rem;cursor:pointer;background:var(--bg);width:100%;text-align:center;">✎ EDIT LINKS</button> -->
@@ -339,122 +291,251 @@ body{
 
         <!-- TAB: SHOWCASE -->
         <div id="tab-showcase" class="tab-content active">
-          <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">PINNED — TOP REPOSITORIES BY STARS</div>
-          <div id="showcase-grid" class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div class="sk" style="height:110px;"></div><div class="sk" style="height:110px;"></div>
-            <div class="sk" style="height:110px;"></div><div class="sk" style="height:110px;"></div>
+          <div id="showcase-run-wrap" style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
+            <!-- Terminal Header -->
+            <div style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
+              <div style="display:flex; gap:8px;">
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+              </div>
+              <button onclick="startTerminal('showcase')" style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
+                RUN
+              </button>
+            </div>
+            <!-- Terminal Body -->
+            <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
+              <div style="color:#64748b;font-size:.85rem;">Last login: <script>document.write(new Date().toDateString())</script> on console</div>
+              <div style="margin-top:1rem;">
+                <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/showcase</span>$ <span style="color:var(--ink);">./showcase.sh</span><span style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
+              </div>
+              <div id="showcase-content-wrap" style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+                  <div style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">✔ Showcase pinned repositories loaded.</div>
+                </div>
+                <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">PINNED — TOP REPOSITORIES BY STARS</div>
+                <div id="showcase-grid" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div class="sk" style="height:110px;"></div><div class="sk" style="height:110px;"></div>
+                  <div class="sk" style="height:110px;"></div><div class="sk" style="height:110px;"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- TAB: REPOS -->
         <div id="tab-repos" class="tab-content">
-          <div class="flex items-center justify-between mb-3">
-            <div style="font-size:.7rem;color:#555;letter-spacing:.05em;">ALL PUBLIC REPOSITORIES — SORTED BY STARS</div>
-            <a href="https://github.com/adeleeeeyyyy?tab=repositories" target="_blank" class="tag" style="background:var(--lav);">VIEW ALL ↗</a>
-          </div>
-          <div id="repos-grid" class="flex flex-col gap-2">
-            <div class="sk" style="height:88px;"></div><div class="sk" style="height:88px;"></div><div class="sk" style="height:88px;"></div>
+          <div id="repos-run-wrap" style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
+            <!-- Terminal Header -->
+            <div style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
+              <div style="display:flex; gap:8px;">
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+              </div>
+              <button onclick="startTerminal('repos')" style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
+                RUN
+              </button>
+            </div>
+            <!-- Terminal Body -->
+            <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
+              <div style="color:#64748b;font-size:.85rem;">Last login: <script>document.write(new Date().toDateString())</script> on console</div>
+              <div style="margin-top:1rem;">
+                <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/repos</span>$ <span style="color:var(--ink);">./list_repos.sh</span><span style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
+              </div>
+              <div id="repos-content-wrap" style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+                  <div style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">✔ All public repositories loaded.</div>
+                </div>
+                <div class="flex items-center justify-between mb-3">
+                  <div style="font-size:.7rem;color:#555;letter-spacing:.05em;">ALL PUBLIC REPOSITORIES — SORTED BY STARS</div>
+                  <a href="https://github.com/adeleeeeyyyy?tab=repositories" target="_blank" class="tag" style="background:var(--lav);">VIEW ALL ↗</a>
+                </div>
+                <div id="repos-grid" class="flex flex-col gap-2">
+                  <div class="sk" style="height:88px;"></div><div class="sk" style="height:88px;"></div><div class="sk" style="height:88px;"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- TAB: ACHIEVEMENTS -->
         <div id="tab-achievements" class="tab-content">
-          <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">GITHUB ACHIEVEMENTS — BASED ON YOUR ACTIVITY</div>
-          <div id="ach-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
-          <div style="margin-top:1.5rem;">
-            <div style="font-family:'Bebas Neue';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">ACHIEVEMENT PROGRESS</div>
-            <div id="ach-progress" class="flex flex-col gap-3"></div>
+          <div id="achievements-run-wrap" style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
+            <!-- Terminal Header -->
+            <div style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
+              <div style="display:flex; gap:8px;">
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+              </div>
+              <button onclick="startTerminal('achievements')" style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
+                RUN
+              </button>
+            </div>
+            <!-- Terminal Body -->
+            <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
+              <div style="color:#64748b;font-size:.85rem;">Last login: <script>document.write(new Date().toDateString())</script> on console</div>
+              <div style="margin-top:1rem;">
+                <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/achievements</span>$ <span style="color:var(--ink);">./achievements.sh</span><span style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
+              </div>
+              <div id="achievements-content-wrap" style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+                  <div style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">✔ Achievements system initialized.</div>
+                </div>
+                <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">GITHUB ACHIEVEMENTS — BASED ON YOUR ACTIVITY</div>
+                <div id="ach-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
+                <div style="margin-top:1.5rem;">
+                  <div style="font-family:'Outfit';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">ACHIEVEMENT PROGRESS</div>
+                  <div id="ach-progress" class="flex flex-col gap-3"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- TAB: GALLERY -->
         <div id="tab-gallery" class="tab-content">
-          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem;">
-            <div style="font-size:.7rem;color:#555;letter-spacing:.05em;">MY GALLERY — <span id="gallery-count">...</span> PHOTOS</div>
-            <div id="gallery-filters" class="flex gap-1 flex-wrap"></div>
+          <div id="gallery-run-wrap" style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
+            <!-- Terminal Header -->
+            <div style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
+              <div style="display:flex; gap:8px;">
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+              </div>
+              <button onclick="startTerminal('gallery')" style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.background='#334155';this.style.transform='scale(1.05)'" onmouseout="this.style.background='var(--ink)';this.style.transform='scale(1)'">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                RUN
+              </button>
+            </div>
+            <!-- Terminal Body -->
+            <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
+              <div style="color:#64748b;font-size:.85rem;">Last login: <script>document.write(new Date().toDateString())</script> on console</div>
+              <div style="margin-top:1rem;">
+                <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/gallery</span>$ <span style="color:var(--ink);">./gallery.sh</span><span style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
+              </div>
+              <div id="gallery-content-wrap" style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+                  <div style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">✔ <span id="gallery-count">...</span> media objects retrieved.</div>
+                  <div id="gallery-filters" class="flex gap-1 flex-wrap"></div>
+                </div>
+                <div id="gallery-grid">
+                  <div class="sk" style="height:100px;margin-bottom:8px;"></div>
+                  <div class="sk" style="height:140px;margin-bottom:8px;"></div>
+                  <div class="sk" style="height:100px;margin-bottom:8px;"></div>
+                </div>
+                <div id="gallery-empty" style="display:none;border:var(--border);padding:2rem;text-align:center;background:var(--yellow);box-shadow:var(--shadow);">
+                  Something broke loading the gallery :(
+                </div>
+              </div>
+            </div>
           </div>
-          <div id="gallery-grid">
-            <div class="sk" style="height:100px;margin-bottom:8px;"></div>
-            <div class="sk" style="height:140px;margin-bottom:8px;"></div>
-            <div class="sk" style="height:100px;margin-bottom:8px;"></div>
-          </div>
-          <div id="gallery-empty" style="display:none;border:var(--border);padding:2rem;text-align:center;background:var(--yellow);box-shadow:var(--shadow);">
-            <div style="font-size:2rem;margin-bottom:.5rem;">📂</div>
-            <div style="font-family:'Bebas Neue';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.5rem;">GALLERY KOSONG</div>
-            <p style="font-size:.72rem;color:#555;line-height:1.7;">Jalankan <code style="background:var(--ink);color:var(--bg);padding:1px 6px;">python generate_gallery.py</code> setelah taruh foto di <code style="background:var(--ink);color:var(--bg);padding:1px 6px;">gallery/</code></p>
-          </div>
+          <style>@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }</style>
         </div>
 
         <!-- TAB: ACTIVITY -->
         <div id="tab-activity" class="tab-content">
-          <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">RECENT PUBLIC EVENTS</div>
-          <div id="events-list" class="flex flex-col gap-2">
-            <div class="sk" style="height:48px;"></div><div class="sk" style="height:48px;"></div><div class="sk" style="height:48px;"></div>
+          <div id="activity-run-wrap" style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
+            <!-- Terminal Header -->
+            <div style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
+              <div style="display:flex; gap:8px;">
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+              </div>
+              <button onclick="startTerminal('activity')" style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
+                RUN
+              </button>
+            </div>
+            <!-- Terminal Body -->
+            <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
+              <div style="color:#64748b;font-size:.85rem;">Last login: <script>document.write(new Date().toDateString())</script> on console</div>
+              <div style="margin-top:1rem;">
+                <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/activity</span>$ <span style="color:var(--ink);">./activity.sh</span><span style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
+              </div>
+              <div id="activity-content-wrap" style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+                  <div style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">✔ Recent public events fetched.</div>
+                </div>
+                <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">RECENT PUBLIC EVENTS</div>
+                <div id="events-list" class="flex flex-col gap-2">
+                  <div class="sk" style="height:48px;"></div><div class="sk" style="height:48px;"></div><div class="sk" style="height:48px;"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- TAB: SKILLS ── NEW -->
         <div id="tab-skills" class="tab-content">
-          <div style="font-size:.7rem;color:#555;margin-bottom:1rem;letter-spacing:.05em;">TECH STACK & PROFICIENCY</div>
+          <div id="skills-run-wrap" style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
+            <!-- Terminal Header -->
+            <div style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
+              <div style="display:flex; gap:8px;">
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
+              </div>
+              <button onclick="startTerminal('skills')" style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
+                RUN
+              </button>
+            </div>
+            <!-- Terminal Body -->
+            <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
+              <div style="color:#64748b;font-size:.85rem;">Last login: <script>document.write(new Date().toDateString())</script> on console</div>
+              <div style="margin-top:1rem;">
+                <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/skills</span>$ <span style="color:var(--ink);">./skills.sh</span><span style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
+              </div>
+              <div id="skills-content-wrap" style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+                  <div style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">✔ Tech stack and proficiencies mapped.</div>
+                </div>
+                <div style="font-size:.7rem;color:#555;margin-bottom:1rem;letter-spacing:.05em;">TECH STACK & PROFICIENCY</div>
 
-          <!-- Skills by category -->
-          <div id="skills-container" class="flex flex-col gap-5">
-            <!-- Frontend -->
-            <div>
-              <div style="font-family:'Bebas Neue';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem;">
-                <span style="border:var(--border);padding:1px 8px;background:var(--pink);font-size:.85rem;">FRONTEND</span>
+                <!-- Skills by category -->
+                <div id="skills-container" class="flex flex-col gap-5">
+                  <!-- Frontend -->
+                  <div>
+                    <div style="font-family:'Outfit';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem;">
+                      <span style="border:var(--border);border-radius:6px;padding:2px 10px;background:#f8fafc;font-size:.85rem;">FRONTEND</span>
+                    </div>
+                    <div class="flex flex-col gap-2" id="skills-frontend"></div>
+                  </div>
+                  <div>
+                    <div style="font-family:'Outfit';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">
+                      <span style="border:var(--border);border-radius:6px;padding:2px 10px;background:#f8fafc;font-size:.85rem;">BACKEND</span>
+                    </div>
+                    <div class="flex flex-col gap-2" id="skills-backend"></div>
+                  </div>
+                  <div>
+                    <div style="font-family:'Outfit';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">
+                      <span style="border:var(--border);border-radius:6px;padding:2px 10px;background:#f8fafc;font-size:.85rem;">TOOLS & DEVOPS</span>
+                    </div>
+                    <div class="flex flex-col gap-2" id="skills-tools"></div>
+                  </div>
+                </div>
+
+                <!-- Tech badge cloud -->
+                <div style="margin-top:1.5rem;">
+                  <div style="font-family:'Outfit';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">TECH BADGES</div>
+                  <div class="flex flex-wrap gap-2" id="tech-badges"></div>
+                </div>
+
+                <!-- Goals / Roadmap -->
+                <div id="goals-list" style="display:none;"></div>
               </div>
-              <div class="flex flex-col gap-2" id="skills-frontend"></div>
-            </div>
-            <div>
-              <div style="font-family:'Bebas Neue';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">
-                <span style="border:var(--border);padding:1px 8px;background:var(--lav);font-size:.85rem;">BACKEND</span>
-              </div>
-              <div class="flex flex-col gap-2" id="skills-backend"></div>
-            </div>
-            <div>
-              <div style="font-family:'Bebas Neue';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">
-                <span style="border:var(--border);padding:1px 8px;background:var(--mint);font-size:.85rem;">TOOLS & DEVOPS</span>
-              </div>
-              <div class="flex flex-col gap-2" id="skills-tools"></div>
             </div>
           </div>
-
-          <!-- Tech badge cloud -->
-          <div style="margin-top:1.5rem;">
-            <div style="font-family:'Bebas Neue';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">TECH BADGES</div>
-            <div class="flex flex-wrap gap-2" id="tech-badges"></div>
-          </div>
-
-          <!-- Goals / Roadmap -->
-          <div style="margin-top:1.5rem;">
-            <div style="font-family:'Bebas Neue';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">🎯 LEARNING GOALS</div>
-            <div class="flex flex-col gap-3" id="goals-list"></div>
-          </div>
-
-          <button onclick="openSkillEdit()" class="tag" style="margin-top:1rem;cursor:pointer;background:var(--yellow);font-size:.65rem;padding:4px 12px;">✎ CUSTOMIZE SKILLS</button>
         </div>
 
       </div>
 
-      <!-- COMMIT ACTIVITY CHART -->
-      <div class="bb p-4 fi d3" style="background:var(--bg);">
-        <div class="flex items-center justify-between mb-3">
-          <div class="section-title text-2xl">COMMIT ACTIVITY</div>
-          <span class="tag" style="background:var(--sky);" id="commit-chart-tag">LAST 14 DAYS</span>
-        </div>
-        <!-- chart area -->
-        <div id="commit-chart-wrap">
-          <div style="display:flex;align-items:flex-end;gap:4px;height:80px;padding-top:4px;" id="commit-chart"></div>
-          <div style="display:flex;gap:4px;margin-top:4px;" id="commit-chart-labels"></div>
-        </div>
-        <!-- ghost empty state -->
-        <div id="commit-empty" style="display:none;text-align:center;padding:1.5rem 1rem;">
-          <div id="ghost-anim" style="font-size:2.8rem;line-height:1;margin-bottom:.4rem;animation:ghostFloat 2.5s ease-in-out infinite;">👻</div>
-          <div style="font-family:'Bebas Neue';font-size:1.2rem;letter-spacing:.1em;color:#aaa;">THERE'S NOTHING HERE</div>
-          <div style="font-size:.62rem;color:#bbb;margin-top:.25rem;">no recent commits found</div>
-        </div>
-      </div>
+      <!-- COMMIT ACTIVITY CHART REMOVED -->
+      <div id="commit-chart" style="display:none;"></div>
+      <div id="commit-chart-labels" style="display:none;"></div>
+      <div id="commit-chart-tag" style="display:none;"></div>
+      <div id="commit-empty" style="display:none;"></div>
 
       <!-- SPOTLIGHT -->
       <div class="bb p-4 fi d4" style="background:var(--pink);">
@@ -462,7 +543,7 @@ body{
           <div class="section-title text-2xl">★ SPOTLIGHT REPO</div>
           <span class="tag" style="background:var(--yellow);">MOST STARRED</span>
         </div>
-        <div id="spotlight" class="sk" style="height:80px;border-radius:0;"></div>
+        <div id="spotlight" class="sk" style="height:80px;border-radius:12px;"></div>
       </div>
 
       <!-- CONTRIBUTION CALENDAR -->
@@ -486,7 +567,7 @@ body{
   <span style="font-size:.6rem;color:#555;letter-spacing:.06em;">POWERED BY GITHUB API · NEO BRUTALISM · 2025</span>
   <div class="flex items-center gap-2">
     <div class="status-online"></div>
-    <span style="font-family:'Bebas Neue';letter-spacing:.1em;font-size:1.1rem;">adeleeeeyyyy ✦</span>
+    <span style="font-family:'Outfit';letter-spacing:.1em;font-size:1.1rem;">adeleeeeyyyy ✦</span>
   </div>
 </div>
 <div class="stripe" style="height:10px;"></div>
@@ -502,7 +583,7 @@ body{
 <!-- SOCIAL EDIT MODAL -->
 <div id="social-modal" style="display:none;position:fixed;inset:0;background:#1a1a2e99;z-index:1001;align-items:center;justify-content:center;">
   <div style="border:var(--border);box-shadow:var(--shadow);background:var(--bg);padding:1.25rem;width:320px;max-width:90vw;">
-    <div style="font-family:'Bebas Neue';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">EDIT SOCIAL LINKS</div>
+    <div style="font-family:'Outfit';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">EDIT SOCIAL LINKS</div>
     <div class="flex flex-col gap-2">
       <input class="gb-input" id="se-linkedin" placeholder="LinkedIn URL...">
       <input class="gb-input" id="se-twitter" placeholder="Twitter/X URL...">
@@ -519,9 +600,9 @@ body{
 <!-- SKILL EDIT MODAL -->
 <div id="skill-modal" style="display:none;position:fixed;inset:0;background:#1a1a2e99;z-index:1001;align-items:center;justify-content:center;">
   <div style="border:var(--border);box-shadow:var(--shadow);background:var(--bg);padding:1.25rem;width:360px;max-width:90vw;max-height:90vh;overflow-y:auto;">
-    <div style="font-family:'Bebas Neue';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">CUSTOMIZE SKILLS</div>
+    <div style="font-family:'Outfit';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">CUSTOMIZE SKILLS</div>
     <div style="font-size:.68rem;color:#555;margin-bottom:.75rem;">Format: "SkillName,level(0-100),category"<br>Category: frontend | backend | tools</div>
-    <textarea id="skill-edit-area" style="width:100%;border:var(--border);font-family:'Space Mono';font-size:.65rem;padding:.5rem;height:200px;background:var(--bg);resize:vertical;outline:none;" placeholder="HTML,90,frontend&#10;CSS,85,frontend&#10;JavaScript,80,frontend&#10;Python,75,backend&#10;Git,90,tools"></textarea>
+    <textarea id="skill-edit-area" style="width:100%;border:var(--border);font-family:'Inter';font-size:.65rem;padding:.5rem;height:200px;background:var(--bg);resize:vertical;outline:none;" placeholder="HTML,90,frontend&#10;CSS,85,frontend&#10;JavaScript,80,frontend&#10;Python,75,backend&#10;Git,90,tools"></textarea>
     <div style="display:flex;gap:.5rem;margin-top:.5rem;">
       <button class="gb-btn" style="flex:1;" onclick="saveSkillEdit()">SAVE</button>
       <button class="gb-btn" style="flex:1;background:var(--bg);color:var(--ink);box-shadow:3px 3px 0 var(--ink);" onclick="document.getElementById('skill-modal').style.display='none'">CANCEL</button>
@@ -840,7 +921,7 @@ function saveSocialEdit(){
 /* ══════════════════════════════
    NEW: SKILLS
 ══════════════════════════════ */
-const SKILL_COLORS=['var(--pink)','var(--lav)','var(--mint)','var(--peach)','var(--sky)','var(--yellow)'];
+const SKILL_COLORS=['#d1d5db','#cbd5e1','#94a3b8','#a1a1aa','#e4e4e7','#e2e8f0'];
 function parseSkills(){
   try{
     const raw=localStorage.getItem('skills_data');
@@ -857,25 +938,22 @@ function renderSkills(){
   ['frontend','backend','tools'].forEach(cat=>{
     const el=document.getElementById('skills-'+cat);
     if(!el)return;
-    el.innerHTML=cats[cat].map((s,i)=>`
-      <div style="display:flex;align-items:center;gap:.6rem;">
-        <div style="font-size:.7rem;font-weight:700;width:90px;flex-shrink:0;">${s.name}</div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-fill" data-pct="${s.pct}" style="width:0%;background:${SKILL_COLORS[i%SKILL_COLORS.length]};border-right:1.5px solid var(--ink);"></div>
-        </div>
-        <div style="font-size:.65rem;color:#555;width:30px;text-align:right;flex-shrink:0;">${s.pct}%</div>
-      </div>`).join('');
+    el.innerHTML=cats[cat].map((s,i)=>{
+      let lvl = 'BEGINNER';
+      let c = '#10b981';
+      if(s.pct >= 80) { lvl = 'ADVANCED'; c = '#ef4444'; }
+      else if(s.pct >= 60) { lvl = 'INTERMEDIATE'; c = '#f59e0b'; }
+      return `<div class="skill-row" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f1f5f9;">
+        <div style="font-size:.85rem;font-weight:700;color:var(--ink);">${s.name}</div>
+        <div style="font-size:.7rem;font-family:'Space Mono', monospace;font-weight:700;color:${c};letter-spacing:.05em;">${lvl}</div>
+      </div>`;
+    }).join('');
   });
-  // animate bars
-  setTimeout(()=>{
-    document.querySelectorAll('.skill-bar-fill').forEach(el=>{
-      el.style.width=el.dataset.pct+'%';
-    });
-  },200);
 
   // tech badges
+  const techSvg = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:inline;margin-right:4px;margin-bottom:1px;" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`;
   document.getElementById('tech-badges').innerHTML=TECH_BADGES.map(b=>
-    `<span class="skill-badge" style="background:${b.color};">${b.emoji} ${b.name}</span>`
+    `<span class="skill-badge" style="background:${b.color};border-radius:999px;">${techSvg} ${b.name}</span>`
   ).join('');
 
   // goals
@@ -1008,7 +1086,7 @@ function checkSidebarOverflow(){
 ══════════════════════════════ */
 function buildCalendar(){
   const weeks=document.getElementById('cal-weeks');
-  const bg=['#f0ece8','#d4f7e4','#7ddba4','#3db87a','#1a9155'];
+  const bg=['#f1f5f9','#cbd5e1','#94a3b8','#64748b','#475569'];
   const WEEKS=52;const today=new Date();
   let monthMap={};let html='';
   for(let w=0;w<WEEKS;w++){
@@ -1036,13 +1114,13 @@ function buildCalendar(){
    GALLERY
 ══════════════════════════════ */
 let ALL_GALLERY_IMAGES=[];
-function renderGallery(images){
+function renderGallery(images, animateNow=false){
   const grid=document.getElementById('gallery-grid');
   const empty=document.getElementById('gallery-empty');
   if(!images.length){grid.style.display='none';empty.style.display='block';return;}
   grid.style.display='';empty.style.display='none';
   grid.innerHTML=images.map((img,i)=>`
-    <div class="gallery-img" style="background:${HOVERS[i%HOVERS.length]};" onclick="openLB('${img.src}','${img.title}')">
+    <div class="gallery-img ${animateNow?'run-anim':''}" style="background:${HOVERS[i%HOVERS.length]};${animateNow?`animation-delay:${i*200}ms;`:''}" onclick="openLB('${img.src}','${img.title}')">
       <img src="${img.src}" alt="${img.title}" loading="lazy"
            onerror="this.style.display='none';this.parentElement.querySelector('.img-fallback').style.display='flex'">
       <div class="overlay">${img.title.toUpperCase()} ↗</div>
@@ -1054,9 +1132,24 @@ function renderGallery(images){
 }
 function filterGallery(cat){
   document.querySelectorAll('.gal-filter').forEach(b=>b.classList.toggle('active',b.dataset.cat===cat));
-  renderGallery(cat==='all'?ALL_GALLERY_IMAGES:ALL_GALLERY_IMAGES.filter(i=>i.category===cat));
+  renderGallery(cat==='all'?ALL_GALLERY_IMAGES:ALL_GALLERY_IMAGES.filter(i=>i.category===cat), true);
 }
-async function loadGallery(){
+function startTerminal(tabId){
+  const btn = document.querySelector(`#${tabId}-run-wrap button`);
+  if(btn) { btn.disabled = true; btn.style.opacity = '0.5'; btn.style.cursor = 'not-allowed'; }
+  document.getElementById(`${tabId}-content-wrap`).style.display='block';
+  const selectors = ['.showcase-card', '.repo-card', '.ach-card', '.event-item', '.skill-row', '.skill-badge', '.gallery-img', '.tag', '#skills-container > div', '#ach-progress > div'];
+  const childs = document.querySelectorAll(selectors.map(s => `#${tabId}-content-wrap ${s}`).join(', '));
+  if(childs.length > 0) {
+    childs.forEach((el, i) => {
+      el.style.animationDelay = `${i * 120}ms`;
+      el.classList.add('run-anim');
+    });
+  } else {
+    document.getElementById(`${tabId}-content-wrap`).classList.add('run-anim');
+  }
+}
+async function preloadGallery(){
   const countEl=document.getElementById('gallery-count');
   const filtersEl=document.getElementById('gallery-filters');
   try{
@@ -1087,7 +1180,7 @@ function buildAchievements(u,repos){
     const ok=a.check(u,repos);
     return `<div class="ach-card ${ok?'':'locked'}" data-tip="${a.desc}" style="background:${ok?a.color:'var(--bg)'};">
       <div style="font-size:1.8rem;margin-bottom:6px;">${a.icon}</div>
-      <div style="font-family:'Syne';font-weight:800;font-size:.78rem;line-height:1.2;">${a.name}</div>
+      <div style="font-family:'Outfit';font-weight:800;font-size:.78rem;line-height:1.2;">${a.name}</div>
       <div style="font-size:.6rem;color:#555;margin-top:3px;line-height:1.4;">${a.desc}</div>
       ${ok?'<div class="tag" style="margin-top:6px;font-size:.5rem;background:var(--ink);color:var(--bg);">UNLOCKED ✓</div>':'<div style="font-size:.6rem;color:#888;margin-top:4px;">🔒 LOCKED</div>'}
     </div>`;
@@ -1114,7 +1207,7 @@ function buildAchievements(u,repos){
 ══════════════════════════════ */
 async function loadProfile(){
   try{
-    const u=await get(`${API}/users/${USERNAME}`);
+    const u=offlineData ? offlineData.profile : await get(`${API}/users/${USERNAME}`);
     document.getElementById('avatar').src=u.avatar_url;
     document.title=`${u.login} — GitHub Profile`;
     const nameEl=document.getElementById('name');
@@ -1129,12 +1222,13 @@ async function loadProfile(){
     if(u.followers>=5)badgesEl.innerHTML+=`<span class="tag" style="background:var(--lav);">Backend Developer</span>`;
     const bioEl=document.getElementById('bio');
     bioEl.textContent=u.bio||'No bio yet — but the commits say a lot.';bioEl.classList.remove('sk');
+    const svgIcon = (path) => `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;margin-right:2px;vertical-align:-1px;"><path d="${path}"></path></svg>`;
     const meta=[
-      u.location&&`📍 ${u.location}`,
-      u.blog&&`🔗 <a href="${u.blog.startsWith('http')?u.blog:'https://'+u.blog}" target="_blank" style="text-decoration:underline;">${u.blog}</a>`,
-      u.twitter_username&&`𝕏 @${u.twitter_username}`,
-      u.company&&`🏢 ${u.company}`,
-      `📅 Joined ${new Date(u.created_at).toLocaleDateString('en-US',{year:'numeric',month:'short'})}`,
+      u.location&&`<span style="display:flex;align-items:center;">${svgIcon("M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z")} ${u.location}</span>`,
+      u.blog&&`<span style="display:flex;align-items:center;">${svgIcon("M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71 M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71")} <a href="${u.blog.startsWith('http')?u.blog:'https://'+u.blog}" target="_blank" style="text-decoration:underline;">${u.blog}</a></span>`,
+      u.twitter_username&&`<span style="display:flex;align-items:center;">${svgIcon("M4 4l11.73 11.73 M4 20L20 4")} @${u.twitter_username}</span>`,
+      u.company&&`<span style="display:flex;align-items:center;">${svgIcon("M3 21h18 M9 8h1 M9 12h1 M9 16h1 M14 8h1 M14 12h1 M14 16h1 M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16")} ${u.company}</span>`,
+      `<span style="display:flex;align-items:center;">${svgIcon("M3 4h18v18H3z M16 2v4 M8 2v4 M3 10h18")} Joined ${new Date(u.created_at).toLocaleDateString('en-US',{year:'numeric',month:'short'})}</span>`,
     ].filter(Boolean);
     document.getElementById('meta-row').innerHTML=meta.map(i=>`<span>${i}</span>`).join('');
     document.getElementById('stat-repos').textContent=u.public_repos;
@@ -1143,7 +1237,7 @@ async function loadProfile(){
     document.getElementById('stat-gists').textContent=u.public_gists;
     const items=[u.login,u.public_repos+' repos',u.followers+' followers',u.bio||'github dev',u.location||'the internet','✦ open source','soft pastel brutalism','built with github api'];
     document.getElementById('mq').innerHTML=[...items,...items].map(t=>
-      `<span style="font-family:'Bebas Neue';font-size:.92rem;letter-spacing:.12em;">✦ ${t.toUpperCase()}</span>`
+      `<span style="font-family:'Outfit';font-size:.92rem;letter-spacing:.12em;">✦ ${t.toUpperCase()}</span>`
     ).join('');
 
     // update social links from profile
@@ -1166,7 +1260,7 @@ async function loadProfile(){
 ══════════════════════════════ */
 async function loadRepos(u){
   try{
-    const repos=await get(`${API}/users/${USERNAME}/repos?sort=updated&per_page=100`);
+    const repos=offlineData ? offlineData.repos : await get(`${API}/users/${USERNAME}/repos?sort=updated&per_page=100`);
     const sorted=[...repos].sort((a,b)=>b.stargazers_count-a.stargazers_count);
     document.getElementById('stat-stars').textContent=sorted.reduce((s,r)=>s+r.stargazers_count,0);
     const{level,xp,pct}=calcLevel(u,repos);
@@ -1191,7 +1285,7 @@ async function loadRepos(u){
       <a href="${r.html_url}" target="_blank" class="showcase-card"
          onmouseover="this.style.background='${HOVERS[i%HOVERS.length]}'" onmouseout="this.style.background=''">
         <div style="display:flex;align-items:start;justify-content:space-between;gap:6px;">
-          <div><div style="font-family:'Syne';font-weight:800;font-size:.92rem;">${r.name}</div>${r.fork?'<span class="tag" style="font-size:.48rem;background:var(--lav);">fork</span>':''}</div>
+          <div><div style="font-family:'Outfit';font-weight:800;font-size:.92rem;">${r.name}</div>${r.fork?'<span class="tag" style="font-size:.48rem;background:var(--lav);">fork</span>':''}</div>
           <div style="text-align:right;font-size:.68rem;flex-shrink:0;color:#444;"><div>★ ${r.stargazers_count}</div><div>⑂ ${r.forks_count}</div></div>
         </div>
         <p style="font-size:.68rem;color:#555;line-height:1.55;margin:.4rem 0;">${r.description||'<em>No description</em>'}</p>
@@ -1207,7 +1301,7 @@ async function loadRepos(u){
          onmouseover="this.style.background='${HOVERS[i%HOVERS.length]}'" onmouseout="this.style.background=''">
         <div style="display:flex;align-items:start;justify-content:space-between;gap:8px;">
           <div style="flex:1;min-width:0;">
-            <div style="font-family:'Syne';font-weight:800;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${r.name}</div>
+            <div style="font-family:'Outfit';font-weight:800;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${r.name}</div>
             <p style="font-size:.66rem;color:#555;line-height:1.5;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${r.description||'—'}</p>
           </div>
           <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0;font-size:.65rem;color:#444;">
@@ -1220,9 +1314,9 @@ async function loadRepos(u){
     const s=sorted[0];
     if(s)document.getElementById('spotlight').outerHTML=`
       <a href="${s.html_url}" target="_blank" id="spotlight"
-         style="display:block;text-decoration:none;border:var(--border);padding:1rem;background:var(--bg);box-shadow:4px 4px 0 var(--ink);transition:all .15s;"
-         onmouseover="this.style.background='var(--peach)'" onmouseout="this.style.background=''">
-        <div style="font-family:'Syne';font-weight:800;font-size:1.15rem;">${s.name}</div>
+         style="display:block;text-decoration:none;border:var(--border);border-radius:12px;padding:1.25rem;background:var(--bg);box-shadow:var(--shadow);transition:all .25s ease;"
+         onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.06)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
+        <div style="font-family:'Outfit';font-weight:800;font-size:1.15rem;">${s.name}</div>
         <p style="font-size:.74rem;color:#555;margin:.4rem 0;line-height:1.6;">${s.description||'No description'}</p>
         <div style="display:flex;gap:8px;font-size:.7rem;flex-wrap:wrap;align-items:center;">
           ${s.language?`<div style="display:flex;align-items:center;gap:4px;"><div style="width:9px;height:9px;background:${LC(s.language)};border:1.5px solid var(--ink);"></div>${s.language}</div>`:''}
@@ -1231,7 +1325,7 @@ async function loadRepos(u){
         </div>
       </a>`;
     buildAchievements(u,repos);
-    buildCommitChart(sorted); // fetch real commit data
+    // buildCommitChart(sorted); // fetch real commit data
     return repos;
   }catch(e){console.error('Repos:',e);}
 }
@@ -1241,14 +1335,14 @@ async function loadRepos(u){
 ══════════════════════════════ */
 async function loadEvents(){
   try{
-    const events=await get(`${API}/users/${USERNAME}/events/public?per_page=15`);
+    const events=offlineData ? offlineData.events : await get(`${API}/users/${USERNAME}/events/public?per_page=15`);
     const el=document.getElementById('events-list');
     if(!events.length){el.innerHTML='<div style="font-size:.8rem;color:#888;padding:1rem;">No recent public activity.</div>';return;}
     el.innerHTML=events.slice(0,12).map((e,i)=>`
-      <div style="border:var(--border);padding:.55rem .85rem;background:${EV_BG[i%EV_BG.length]};display:flex;align-items:flex-start;gap:.6rem;font-size:.68rem;">
-        <div style="font-size:.95rem;flex-shrink:0;margin-top:1px;">${etype(e.type)}</div>
+      <div style="border:var(--border);border-radius:12px;box-shadow:var(--shadow-sm);margin-bottom:8px;padding:.75rem 1rem;background:${EV_BG[i%EV_BG.length]};display:flex;align-items:flex-start;gap:.75rem;font-size:.7rem;">
+        <div style="font-size:1rem;flex-shrink:0;margin-top:2px;">${etype(e.type)}</div>
         <div style="flex:1;line-height:1.55;">${edesc(e)}</div>
-        <div style="flex-shrink:0;color:#666;font-size:.6rem;white-space:nowrap;">${ago(e.created_at)}</div>
+        <div style="flex-shrink:0;color:#666;font-size:.65rem;white-space:nowrap;">${ago(e.created_at)}</div>
       </div>`).join('');
   }catch(e){console.error('Events:',e);}
 }
@@ -1257,7 +1351,7 @@ async function loadEvents(){
    ACTIVITY SIDEBAR
 ══════════════════════════════ */
 function buildActivitySidebar(){
-  const bg=['#f0ece8','#c9f0da','#7ddba4','#3db87a','#1a9155'];
+  const bg=['#f1f5f9','#cbd5e1','#94a3b8','#64748b','#475569'];
   let html='';
   for(let i=0;i<84;i++)html+=`<div class="adot" style="background:${bg[Math.floor(Math.random()*5)]};"></div>`;
   document.getElementById('activity-grid').innerHTML=html;
@@ -1271,19 +1365,51 @@ window.addEventListener('scroll',()=>{
 });
 
 
+function initMatrix() {
+  const canvas = document.getElementById('cmatrix');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const resize = () => { canvas.width = canvas.parentElement.offsetWidth; canvas.height = canvas.parentElement.offsetHeight; };
+  resize();
+  const chars = '01ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ'.split('');
+  const fontSize = 14;
+  const columns = canvas.width / fontSize;
+  const drops = Array(Math.ceil(columns)).fill(canvas.height); 
+  setInterval(() => {
+    ctx.fillStyle = 'rgba(248, 250, 252, 0.15)'; 
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'rgba(71, 85, 105, 0.4)'; 
+    ctx.font = fontSize + 'px monospace';
+    for(let i = 0; i < drops.length; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if(drops[i] * fontSize > canvas.height && Math.random() > 0.95) drops[i] = 0;
+      drops[i]++;
+    }
+  }, 45);
+  window.addEventListener('resize', resize);
+}
+
 /* ══════════════════════════════
    INIT
 ══════════════════════════════ */
+let offlineData = null;
 (async()=>{
+  try {
+    const res = await fetch('github_data.json?v='+Date.now());
+    if(res.ok) offlineData = await res.json();
+  } catch(e) { console.log('Offline data not active'); }
+  
   logCacheStatus();
+  initMatrix();
   startClock();
   initVisitorCounter();
-  initNp();
+  // initNp();
   loadSocials();
   buildActivitySidebar();
   buildCalendar();
   renderSkills();
-  loadGallery();
+  preloadGallery();
   const u=await loadProfile();
   if(u)await loadRepos(u);
   await loadEvents();
