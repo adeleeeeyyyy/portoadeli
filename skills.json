@@ -1,0 +1,38 @@
+{
+  "skills": [
+    { "name": "HTML", "pct": 90, "cat": "frontend" },
+    { "name": "CSS", "pct": 85, "cat": "frontend" },
+    { "name": "JavaScript", "pct": 80, "cat": "frontend" },
+    { "name": "TypeScript", "pct": 70, "cat": "frontend" },
+    { "name": "React", "pct": 75, "cat": "frontend" },
+    { "name": "Node.js", "pct": 70, "cat": "backend" },
+    { "name": "Python", "pct": 75, "cat": "backend" },
+    { "name": "SQL", "pct": 65, "cat": "backend" },
+    { "name": "REST API", "pct": 80, "cat": "backend" },
+    { "name": "Git", "pct": 90, "cat": "tools" },
+    { "name": "Docker", "pct": 60, "cat": "tools" },
+    { "name": "Linux", "pct": 75, "cat": "tools" },
+    { "name": "Figma", "pct": 70, "cat": "tools" },
+    { "name": "VS Code", "pct": 95, "cat": "tools" }
+  ],
+  "goals": [
+    { "label": "Learn Rust", "pct": 30, "color": "var(--peach)" },
+    { "label": "100 GitHub Stars", "pct": 15, "color": "var(--pink)" },
+    { "label": "Ship a SaaS product", "pct": 45, "color": "var(--lav)" },
+    { "label": "Master System Design", "pct": 60, "color": "var(--mint)" },
+    { "label": "Contribute to OSS", "pct": 25, "color": "var(--sky)" }
+  ],
+  "tech_badges": [
+    { "name": "GO", "color": "var(--sky)", "icon": "go", "desc": "High-performance language for scalable backend systems." },
+    { "name": "Nuxt", "color": "var(--mint)", "icon": "nuxt", "desc": "Intuitive Vue framework for buildling fast, SEO-friendly web apps." },
+    { "name": "Python", "color": "var(--yellow)", "icon": "python", "desc": "Versatile language used for AI, Data Science, and rapid scripting." },
+    { "name": "TypeScript", "color": "var(--lav)", "icon": "typescript", "desc": "JavaScript with syntax for types, making code robust and scalable." },
+    { "name": "Docker", "color": "var(--sky)", "icon": "docker", "desc": "Containerization platform to build, ship, and run apps anywhere." },
+    { "name": "Git", "color": "var(--peach)", "icon": "git", "desc": "Distributed version control to track changes and collaborate." },
+    { "name": "Linux", "color": "var(--pink)", "icon": "linux", "desc": "Open-source kernel, the backbone of servers and cloud infra." },
+    { "name": "Figma", "color": "var(--lav)", "icon": "figma", "desc": "Collaborative interface design tool for high-fidelity prototyping." },
+    { "name": "SQL", "color": "var(--mint)", "icon": "mysql", "desc": "Standard language for managing and querying relational databases." },
+    { "name": "REST API", "color": "var(--yellow)", "icon": "insomnia", "desc": "Architectural style for creating interoperable web services." },
+    { "name": "GitHub", "color": "var(--bg)", "icon": "github", "desc": "The platform where open source and collaboration live." }
+  ]
+}

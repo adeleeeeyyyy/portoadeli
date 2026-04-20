@@ -44,11 +44,19 @@ const fetchJSON = (url) => {
       process.exit(1);
     }
 
+    let organization = null;
+    if (profile.company) {
+      const orgName = profile.company.replace('@', '').trim();
+      console.log(`Fetching organization data for ${orgName}...`);
+      organization = await fetchJSON(`https://api.github.com/orgs/${orgName}`);
+    }
+
     const outputData = {
       timestamp: new Date().toISOString(),
       profile: profile,
       repos: repos || [],
-      events: events || []
+      events: events || [],
+      organization: organization
     };
 
     fs.writeFileSync(OUT_FILE, JSON.stringify(outputData, null, 2));

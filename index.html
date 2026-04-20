@@ -1,1119 +1,1848 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>adeleeeeyyyy — GitHub Profile</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
-<style>
-:root {
-  --ink:    #0f172a;
-  --bg:     #f4f4f5;
-  --pink:   #ffffff;
-  --lav:    #ffffff;
-  --mint:   #ffffff;
-  --peach:  #ffffff;
-  --sky:    #ffffff;
-  --yellow: #ffffff;
-  --rose:   #ffffff;
-  --border: 1px solid #e4e4e7;
-  --shadow: 0 4px 12px rgba(0,0,0,0.03);
-  --shadow-sm: 0 2px 6px rgba(0,0,0,0.02);
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{
-  background-color:var(--bg);
-  color:var(--ink);
-  font-family:'Inter', sans-serif;
-  overflow-x:hidden;
-  background-image:radial-gradient(circle,#c9b8f033 1px,transparent 1px);
-  background-size:24px 24px;
-}
-.bb{border:var(--border);box-shadow:var(--shadow);border-radius:12px;}
-.bb-sm{border:var(--border);box-shadow:var(--shadow-sm);border-radius:12px;}
-.bb-static{border:var(--border);box-shadow:var(--shadow);border-radius:12px;}
-.bb:hover{box-shadow:0 8px 24px rgba(0,0,0,0.06);transform:translateY(-2px);transition:all .3s ease;}
-.tag{border:var(--border);border-radius:12px;font-size:.65rem;padding:4px 10px;font-weight:500;letter-spacing:0.02em;text-transform:uppercase;display:inline-block;background:#fff;}
-.section-title{font-family:'Outfit';letter-spacing:.08em;line-height:1;}
-.stripe{background:repeating-linear-gradient(-45deg,var(--pink),var(--pink) 10px,var(--lav) 10px,var(--lav) 20px);}
-.avatar-wrap{position:relative;display:inline-block;}
-.avatar-wrap img { border-radius: 50%; box-shadow: 0 4px 16px rgba(0,0,0,0.06); border: 4px solid #fff; }
-.avatar-wrap::after{content:none;}
-.sk{background:linear-gradient(90deg,#ecdfe8 25%,#ddd2da 50%,#ecdfe8 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:2px;color:transparent!important;}
-@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.fi{animation:fadeUp .45s ease forwards;}
-.d1{animation-delay:.05s;opacity:0}.d2{animation-delay:.12s;opacity:0}
-.d3{animation-delay:.2s;opacity:0}.d4{animation-delay:.28s;opacity:0}
-.d5{animation-delay:.36s;opacity:0}.d6{animation-delay:.44s;opacity:0}
-.mq{display:flex;gap:2rem;animation:mq 24s linear infinite;white-space:nowrap;}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-::-webkit-scrollbar{width:5px;height:5px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--lav);border:1px solid var(--ink)}
-.adot{width:12px;height:12px;border:1.5px solid #00000018;border-radius:4px;display:inline-block;}
-.lbar{display:flex;height:9px;border:2px solid var(--ink);overflow:hidden;width:100%;}
-.ach-card{border:var(--border);border-radius:12px;padding:1rem;background:var(--bg);box-shadow:var(--shadow);transition:all .15s;cursor:default;}
-.ach-card:hover{box-shadow:0 6px 16px rgba(0,0,0,0.05);transform:translateY(-2px);}
-.ach-card.locked{opacity:.45;filter:grayscale(.6);}
-.showcase-card{border:var(--border);border-radius:12px;box-shadow:var(--shadow);padding:1.25rem;background:var(--bg);transition:all .15s;text-decoration:none;display:block;}
-.showcase-card:hover{box-shadow:0 6px 16px rgba(0,0,0,0.05);transform:translateY(-2px);}
-/* gallery masonry */
-#gallery-grid{ columns:3; column-gap:10px; }
-@media(max-width:640px){ #gallery-grid{ columns:2; } }
-@keyframes popUp { 0% { opacity: 0; transform: translateY(40px) scale(0.96); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
-.gallery-img{break-inside:avoid;display:block;width:100%;margin-bottom:12px;border:var(--border);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;cursor:pointer;position:relative;transition:all .3s ease;}
-.run-anim{animation:popUp 0.8s cubic-bezier(0.2, 0.8, 0.05, 1) both !important;}
-.gallery-img:hover{box-shadow:0 8px 24px rgba(0,0,0,0.08);transform:translateY(-2px);}
-.gallery-img img{display:block;width:100%;height:auto;}
-.gallery-img .overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);opacity:0;transition:opacity .3s ease;display:flex;align-items:flex-end;padding:.75rem .75rem;color:#fff;font-size:.7rem;letter-spacing:.02em;font-weight:500;}
-.gallery-img:hover .overlay{opacity:1;}
-.repo-card{border:var(--border);background:var(--bg);box-shadow:var(--shadow);border-radius:12px;padding:1.25rem;transition:all .25s ease;text-decoration:none;display:block;}
-.stat-b{padding:1rem;text-align:center;}
-.tab-btn{border:var(--border);padding:8px 16px;font-family:'Outfit', sans-serif;letter-spacing:0.02em;font-size:0.9rem;font-weight:500;border-radius:999px;cursor:pointer;background:#fff;transition:all .2s ease;margin-bottom:6px;}.tab-btn.active{background:var(--ink);color:var(--bg);}
-.tab-btn:hover:not(.active){background:var(--pink);}
-.tab-content{display:none;}.tab-content.active{display:block;}
-.review-card{border:var(--border);padding:1rem;background:var(--bg);box-shadow:var(--shadow);border-radius:12px;}
-[data-tip]{position:relative;}
-[data-tip]:hover::after{content:attr(data-tip);position:absolute;bottom:110%;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);font-size:.62rem;padding:3px 8px;white-space:nowrap;border:1.5px solid var(--ink);z-index:99;pointer-events:none;}
-.xp-bar{height:6px;width:100%;background:#e4e4e7;border-radius:99px;overflow:hidden;}
-.xp-fill{height:100%;background:repeating-linear-gradient(90deg,var(--ink),var(--ink) 8px,#64748b 8px,#64748b 16px);transition:width 1s ease;}
-.status-online{width:10px;height:10px;background:#64748b;border:2px solid var(--ink);border-radius:50%;display:inline-block;animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(100,116,139,0.4)}50%{box-shadow:0 0 0 6px transparent}}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>adeleeeeyyyy — GitHub Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=Outfit:wght@400;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0f172a;
+      --bg: #f4f4f5;
+      --pink: #ffffff;
+      --lav: #ffffff;
+      --mint: #ffffff;
+      --peach: #ffffff;
+      --sky: #ffffff;
+      --yellow: #ffffff;
+      --rose: #ffffff;
+      --border: 1px solid #e4e4e7;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
 
-/* ── NOW PLAYING player ── */
-.np-bar{display:flex;gap:2px;align-items:flex-end;height:14px;}
-.np-bar span{width:3px;background:var(--ink);border-radius:1px;animation:eq var(--d,.6s) ease-in-out infinite alternate;}
-@keyframes eq{from{height:3px}to{height:100%}}
-.np-bar.paused span{animation-play-state:paused;}
-.np-playbtn{border:var(--border);background:var(--ink);color:var(--bg);width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.9rem;box-shadow:2px 2px 0 var(--lav);transition:all .12s;flex-shrink:0;}
-.np-playbtn:hover{box-shadow:4px 4px 0 var(--lav);transform:translate(-1px,-1px);}
-.np-skipbtn{border:var(--border);background:var(--bg);width:24px;height:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.65rem;box-shadow:2px 2px 0 var(--ink);transition:all .12s;flex-shrink:0;}
-.np-skipbtn:hover{background:var(--lav);}
-.np-vinyl{animation:spin 4s linear infinite;animation-play-state:paused;}
-.np-vinyl.playing{animation-play-state:running;}
-@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* ── NEW: Skill badge ── */
-.skill-badge{border:var(--border);border-radius:8px;padding:6px 12px;font-size:.65rem;font-weight:500;display:inline-flex;align-items:center;gap:8px;box-shadow:var(--shadow-sm);cursor:default;transition:all .25s ease;}
-.skill-badge:hover{box-shadow:0 4px 12px rgba(0,0,0,0.05);transform:translateY(-2px);}
-.skill-bar-wrap{height:8px;border:var(--border);background:var(--bg);overflow:hidden;flex:1;min-width:40px;border-radius:999px;}
-.skill-bar-fill{height:100%;transition:width 1.2s ease;border-radius:999px;}
+    html, body { overflow-x: hidden; }
 
-/* ── NEW: Social link ── */
-.social-link{border:var(--border);border-radius:8px;padding:.6rem .8rem;display:flex;align-items:center;gap:.6rem;text-decoration:none;font-size:.75rem;font-weight:500;box-shadow:var(--shadow-sm);transition:all .25s ease;color:var(--ink);}
-.social-link:hover{box-shadow:0 4px 12px rgba(0,0,0,0.05);transform:translateY(-2px);}
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      background-image: radial-gradient(circle, #c9b8f033 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
 
-/* ── NEW: Commit chart ── */
-.chart-bar{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;}
-.chart-bar-fill{width:100%;border:1.5px solid var(--ink);transition:height .8s ease;min-height:3px;}
-.chart-bar-label{font-size:.52rem;color:#666;white-space:nowrap;}
+    .bb {
+      border: var(--border);
+      box-shadow: var(--shadow);
+      border-radius: 12px;
+    }
 
-/* ── NEW: Goals ── */
-.goal-bar{height:12px;border:2px solid var(--ink);background:var(--bg);overflow:hidden;}
-.goal-fill{height:100%;transition:width 1.2s ease;}
+    .bb-sm {
+      border: var(--border);
+      box-shadow: var(--shadow-sm);
+      border-radius: 12px;
+    }
 
-/* ── NEW: Back to top ── */
-#btt{position:fixed;bottom:24px;right:24px;z-index:9999;border:1px solid #cbd5e1;background:var(--bg);box-shadow:var(--shadow-sm);border-radius:12px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;transition:all .3s ease;opacity:0;pointer-events:none;}
-#btt.show{opacity:1;pointer-events:auto;}
-#btt:hover{box-shadow:var(--shadow);transform:translateY(-2px);}
-@media(max-width:640px){ #btt{bottom:16px;right:16px;width:40px;height:40px;} }
+    .bb-static {
+      border: var(--border);
+      box-shadow: var(--shadow);
+      border-radius: 12px;
+    }
+
+    .bb:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+      transition: all .3s ease;
+    }
+
+    .tag {
+      border: var(--border);
+      border-radius: 12px;
+      font-size: .65rem;
+      padding: 4px 10px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      display: inline-block;
+      background: #fff;
+    }
+
+    .section-title {
+      font-family: 'Outfit';
+      letter-spacing: .08em;
+      line-height: 1;
+    }
+
+    .stripe {
+      background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--lav) 10px, var(--lav) 20px);
+    }
+
+    .avatar-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .avatar-wrap img {
+      border-radius: 50%;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      border: 4px solid #fff;
+    }
+
+    .avatar-wrap::after {
+      content: none;
+    }
+
+    .sk {
+      background: linear-gradient(90deg, #ecdfe8 25%, #ddd2da 50%, #ecdfe8 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 2px;
+      color: transparent !important;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 200% 0
+      }
+
+      100% {
+        background-position: -200% 0
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .fi {
+      animation: fadeUp .45s ease forwards;
+    }
+
+    .d1 {
+      animation-delay: .05s;
+      opacity: 0
+    }
+
+    .d2 {
+      animation-delay: .12s;
+      opacity: 0
+    }
+
+    .d3 {
+      animation-delay: .2s;
+      opacity: 0
+    }
+
+    .d4 {
+      animation-delay: .28s;
+      opacity: 0
+    }
+
+    .d5 {
+      animation-delay: .36s;
+      opacity: 0
+    }
+
+    .d6 {
+      animation-delay: .44s;
+      opacity: 0
+    }
+
+    .mq {
+      display: flex;
+      gap: 2rem;
+      animation: mq 24s linear infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes mq {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg)
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--lav);
+      border: 1px solid var(--ink)
+    }
+
+    .adot {
+      width: 12px;
+      height: 12px;
+      border: 1.5px solid #00000018;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .lbar {
+      display: flex;
+      height: 9px;
+      border: 2px solid var(--ink);
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .ach-card {
+      border: var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      background: var(--bg);
+      box-shadow: var(--shadow);
+      transition: all .15s;
+      cursor: default;
+    }
+
+    .ach-card:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .ach-card.locked {
+      opacity: .45;
+      filter: grayscale(.6);
+    }
+
+    .showcase-card {
+      border: var(--border);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 1.25rem;
+      background: var(--bg);
+      transition: all .15s;
+      text-decoration: none;
+      display: block;
+    }
+
+    .showcase-card:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* gallery masonry */
+    #gallery-grid {
+      columns: 3;
+      column-gap: 10px;
+    }
+
+    @media(max-width:640px) {
+      #gallery-grid {
+        columns: 2;
+      }
+    }
+
+    @keyframes popUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .gallery-img {
+      break-inside: avoid;
+      display: block;
+      width: 100%;
+      margin-bottom: 12px;
+      border: var(--border);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      transition: all .3s ease;
+    }
+
+    .run-anim {
+      animation: popUp 0.8s cubic-bezier(0.2, 0.8, 0.05, 1) both !important;
+    }
+
+    .gallery-img:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .gallery-img img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .gallery-img .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .3s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: .75rem .75rem;
+      color: #fff;
+      font-size: .7rem;
+      letter-spacing: .02em;
+      font-weight: 500;
+    }
+
+    .gallery-img:hover .overlay {
+      opacity: 1;
+    }
+
+    .repo-card {
+      border: var(--border);
+      background: var(--bg);
+      box-shadow: var(--shadow);
+      border-radius: 12px;
+      padding: 1.25rem;
+      transition: all .25s ease;
+      text-decoration: none;
+      display: block;
+    }
+
+    .stat-b {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .tab-btn {
+      border: var(--border);
+      padding: 8px 16px;
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: 0.02em;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 999px;
+      cursor: pointer;
+      background: #fff;
+      transition: all .2s ease;
+      margin-bottom: 6px;
+    }
+
+    .tab-btn.active {
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    .tab-btn:hover:not(.active) {
+      background: var(--pink);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .review-card {
+      border: var(--border);
+      padding: 1rem;
+      background: var(--bg);
+      box-shadow: var(--shadow);
+      border-radius: 12px;
+    }
+
+    [data-tip] {
+      position: relative;
+    }
+
+    [data-tip]:hover::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--ink);
+      color: var(--bg);
+      font-size: .62rem;
+      padding: 3px 8px;
+      white-space: nowrap;
+      border: 1.5px solid var(--ink);
+      z-index: 99;
+      pointer-events: none;
+    }
+
+    .xp-bar {
+      height: 6px;
+      width: 100%;
+      background: #e4e4e7;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .xp-fill {
+      height: 100%;
+      background: repeating-linear-gradient(90deg, var(--ink), var(--ink) 8px, #64748b 8px, #64748b 16px);
+      transition: width 1s ease;
+    }
+
+    .status-online {
+      width: 10px;
+      height: 10px;
+      background: #64748b;
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(100, 116, 139, 0.4)
+      }
+
+      50% {
+        box-shadow: 0 0 0 6px transparent
+      }
+    }
+
+    /* ── NOW PLAYING player ── */
+    .np-bar {
+      display: flex;
+      gap: 2px;
+      align-items: flex-end;
+      height: 14px;
+    }
+
+    .np-bar span {
+      width: 3px;
+      background: var(--ink);
+      border-radius: 1px;
+      animation: eq var(--d, .6s) ease-in-out infinite alternate;
+    }
+
+    @keyframes eq {
+      from {
+        height: 3px
+      }
+
+      to {
+        height: 100%
+      }
+    }
+
+    .np-bar.paused span {
+      animation-play-state: paused;
+    }
+
+    .np-playbtn {
+      border: var(--border);
+      background: var(--ink);
+      color: var(--bg);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: .9rem;
+      box-shadow: 2px 2px 0 var(--lav);
+      transition: all .12s;
+      flex-shrink: 0;
+    }
+
+    .np-playbtn:hover {
+      box-shadow: 4px 4px 0 var(--lav);
+      transform: translate(-1px, -1px);
+    }
+
+    .np-skipbtn {
+      border: var(--border);
+      background: var(--bg);
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: .65rem;
+      box-shadow: 2px 2px 0 var(--ink);
+      transition: all .12s;
+      flex-shrink: 0;
+    }
+
+    .np-skipbtn:hover {
+      background: var(--lav);
+    }
+
+    .np-vinyl {
+      animation: spin 4s linear infinite;
+      animation-play-state: paused;
+    }
+
+    .np-vinyl.playing {
+      animation-play-state: running;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg)
+      }
+
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    /* ── NEW: Skill badge ── */
+    .skill-badge {
+      border: var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: .65rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      cursor: default;
+      transition: all .25s ease;
+    }
+
+    .skill-badge:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .skill-bar-wrap {
+      height: 8px;
+      border: var(--border);
+      background: var(--bg);
+      overflow: hidden;
+      flex: 1;
+      min-width: 40px;
+      border-radius: 999px;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      transition: width 1.2s ease;
+      border-radius: 999px;
+    }
+
+    /* ── NEW: Social link ── */
+    .social-link {
+      border: var(--border);
+      border-radius: 8px;
+      padding: .6rem .8rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      text-decoration: none;
+      font-size: .75rem;
+      font-weight: 500;
+      box-shadow: var(--shadow-sm);
+      transition: all .25s ease;
+      color: var(--ink);
+    }
+
+    .social-link:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* ── NEW: Commit chart ── */
+    .chart-bar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      flex: 1;
+    }
+
+    .chart-bar-fill {
+      width: 100%;
+      border: 1.5px solid var(--ink);
+      transition: height .8s ease;
+      min-height: 3px;
+    }
+
+    .chart-bar-label {
+      font-size: .52rem;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    /* ── NEW: Goals ── */
+    .goal-bar {
+      height: 12px;
+      border: 2px solid var(--ink);
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    .goal-fill {
+      height: 100%;
+      transition: width 1.2s ease;
+    }
 
 
 
-/* ── NEW: Visitor counter ── */
-.visitor-num{font-family:'Outfit';font-size:1.4rem;letter-spacing:.1em;}
 
-/* ── NEW: Weather/clock widget ── */
-#clock-display{font-family:'Outfit';font-size:2rem;letter-spacing:.1em;line-height:1;}
 
-/* filter buttons */
-.gal-filter{cursor:pointer;}
-.gal-filter.active{background:var(--ink)!important;color:var(--bg)!important;}
-.gal-filter:not(.active):hover{background:var(--pink)!important;}
-/* ghost empty state */
-@keyframes ghostFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-/* sidebar overflow: overflow card styling */
-.overflow-card{border:var(--border);box-shadow:var(--shadow);}
-</style>
+    /* ── NEW: Visitor counter ── */
+    .visitor-num {
+      font-family: 'Outfit';
+      font-size: 1.4rem;
+      letter-spacing: .1em;
+    }
+
+    /* ── NEW: Weather/clock widget ── */
+    #clock-display {
+      font-family: 'Outfit';
+      font-size: 2rem;
+      letter-spacing: .1em;
+      line-height: 1;
+    }
+
+    /* filter buttons */
+    .gal-filter {
+      cursor: pointer;
+    }
+
+    .gal-filter.active {
+      background: var(--ink) !important;
+      color: var(--bg) !important;
+    }
+
+    .gal-filter:not(.active):hover {
+      background: var(--pink) !important;
+    }
+
+    /* ghost empty state */
+    @keyframes ghostFloat {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    /* sidebar overflow: overflow card styling */
+    .overflow-card {
+      border: var(--border);
+      box-shadow: var(--shadow);
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- BACK TO TOP -->
-<div id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+  <!-- BACK TO TOP -->
 
-<!-- TOP STRIPE -->
-<div class="stripe" style="height:12px;"></div>
 
-<!-- NAV -->
-<nav style="border-bottom:var(--border);background:var(--lav);" class="px-5 py-3 flex items-center justify-between fi d1">
-  <div class="flex items-center gap-3">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:inline;margin-right:2px;" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-    <span id="nav-title" style="font-family:'Space Mono', monospace;letter-spacing:.05em;font-size:1.1rem;margin-left:4px;font-weight:700;color:var(--ink);"></span>
-  </div>
-  <div class="flex gap-3 items-center">
-    <div class="status-online"></div>
-    <span style="font-size:.68rem;font-weight:700;">ONLINE</span>
-    <span style="border-left:var(--border);height:16px;"></span>
-    <a href="https://github.com/adeleeeeyyyy" target="_blank" style="font-size:.7rem;letter-spacing:.07em;font-weight:700;color:var(--ink);">@adeleeeeyyyy ↗</a>
-  </div>
-</nav>
+  <!-- TOP STRIPE -->
+  <div class="stripe" style="height:12px;"></div>
 
-<div class="max-w-6xl mx-auto px-4 py-6">
-
-  <!-- ══════ PROFILE HEADER ══════ -->
-  <div class="bb-static mb-5 overflow-hidden fi d1">
-    <div style="height:140px;background:linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);position:relative;overflow:hidden;border-bottom:1px solid #e4e4e7;">
-      <canvas id="cmatrix" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.6;"></canvas>
-      <div style="position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(to top,var(--bg),transparent);"></div>
+  <!-- NAV -->
+  <nav style="border-bottom:var(--border);background:var(--lav);"
+    class="px-5 py-3 flex items-center justify-between fi d1">
+    <div class="flex items-center gap-3">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:inline;margin-right:2px;"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+        </path>
+        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+      </svg>
+      <span id="nav-title"
+        style="font-family:'Space Mono', monospace;letter-spacing:.05em;font-size:1.1rem;margin-left:4px;font-weight:700;color:var(--ink);"></span>
     </div>
-    <div class="p-5 flex flex-col md:flex-row gap-5" style="background:var(--bg);">
-      <div style="margin-top:-62px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:8px;">
-        <div class="avatar-wrap">
-          <img id="avatar" src="" alt="avatar" style="width:120px;height:120px;border:var(--border);display:block;object-fit:cover;" onerror="this.src='https://avatars.githubusercontent.com/u/0'">
-        </div>
-        <div style="width:120px;">
-          <div style="display:flex;justify-content:space-between;font-size:.6rem;margin-bottom:3px;">
-            <span style="font-family:'Outfit';letter-spacing:.06em;">LVL <span id="user-level">?</span></span>
-            <span id="xp-label" style="color:#555;">... XP</span>
-          </div>
-          <div class="xp-bar"><div class="xp-fill" id="xp-fill" style="width:0%;"></div></div>
-        </div>
 
-      </div>
-      <div class="flex-1 min-w-0">
-        <div class="flex flex-wrap gap-2 items-start justify-between">
-          <div>
-            <h1 id="name" style="font-family:'Outfit';font-size:1.85rem;font-weight:800;line-height:1.05;" class="sk">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-            <p id="login" style="font-size:.7rem;margin-top:3px;letter-spacing:.05em;" class="sk">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-          </div>
-          <div class="flex gap-2 flex-wrap" id="badges"></div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-4 py-6">
+
+    <!-- ══════ PROFILE HEADER ══════ -->
+    <div class="bb-static mb-5 overflow-hidden fi d1">
+      <div
+        style="height:140px;background:linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);position:relative;overflow:hidden;border-bottom:1px solid #e4e4e7;">
+        <canvas id="cmatrix" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.6;"></canvas>
+        <div
+          style="position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(to top,var(--bg),transparent);">
         </div>
-        <p id="bio" style="font-size:.78rem;margin-top:.7rem;line-height:1.75;max-width:520px;" class="sk">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-        <div id="meta-row" class="flex flex-wrap gap-4 mt-3" style="font-size:.7rem;color:#444;"></div>
+      </div>
+      <div class="p-5 flex flex-col md:flex-row gap-5" style="background:var(--bg);">
+        <div style="margin-top:-62px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div class="avatar-wrap">
+            <img id="avatar" src="" alt="avatar"
+              style="width:120px;height:120px;border:var(--border);display:block;object-fit:cover;"
+              onerror="this.src='https://avatars.githubusercontent.com/u/0'">
+          </div>
+          <div style="width:120px;">
+            <div style="display:flex;justify-content:space-between;font-size:.6rem;margin-bottom:3px;">
+              <span style="font-family:'Outfit';letter-spacing:.06em;">LVL <span id="user-level">?</span></span>
+              <span id="xp-label" style="color:#555;">... XP</span>
+            </div>
+            <div class="xp-bar">
+              <div class="xp-fill" id="xp-fill" style="width:0%;"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-wrap gap-2 items-start justify-between">
+            <div>
+              <h1 id="name" style="font-family:'Outfit';font-size:1.85rem;font-weight:800;line-height:1.05;" class="sk">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </h1>
+              <p id="login" style="font-size:.7rem;margin-top:3px;letter-spacing:.05em;" class="sk">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            </div>
+            <div class="flex gap-2 flex-wrap" id="badges"></div>
+          </div>
+          <p id="bio" style="font-size:.78rem;margin-top:.7rem;line-height:1.75;max-width:520px;" class="sk">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </p>
+          <div id="meta-row" class="flex flex-wrap gap-4 mt-3" style="font-size:.7rem;color:#444;"></div>
+        </div>
+      </div>
+      <div class="grid grid-cols-5" style="border-top:var(--border);">
+        <div class="stat-b" style="border-right:var(--border);background:var(--pink);">
+          <div style="font-family:'Outfit';font-size:2rem;" id="stat-repos">--</div>
+          <div style="font-size:.55rem;letter-spacing:.1em;color:#555;">REPOS</div>
+        </div>
+        <div class="stat-b" style="border-right:var(--border);background:var(--lav);">
+          <div style="font-family:'Outfit';font-size:2rem;" id="stat-followers">--</div>
+          <div style="font-size:.55rem;letter-spacing:.1em;color:#555;">FOLLOWERS</div>
+        </div>
+        <div class="stat-b" style="border-right:var(--border);background:var(--mint);">
+          <div style="font-family:'Outfit';font-size:2rem;" id="stat-following">--</div>
+          <div style="font-size:.55rem;letter-spacing:.1em;color:#555;">FOLLOWING</div>
+        </div>
+        <div class="stat-b" style="border-right:var(--border);background:var(--peach);">
+          <div style="font-family:'Outfit';font-size:2rem;" id="stat-stars">--</div>
+          <div style="font-size:.55rem;letter-spacing:.1em;color:#555;">STARS</div>
+        </div>
+        <div class="stat-b" style="background:var(--sky);">
+          <div style="font-family:'Outfit';font-size:2rem;" id="stat-gists">--</div>
+          <div style="font-size:.55rem;letter-spacing:.1em;color:#555;">GISTS</div>
+        </div>
       </div>
     </div>
-    <div class="grid grid-cols-5" style="border-top:var(--border);">
-      <div class="stat-b" style="border-right:var(--border);background:var(--pink);"><div style="font-family:'Outfit';font-size:2rem;" id="stat-repos">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">REPOS</div></div>
-      <div class="stat-b" style="border-right:var(--border);background:var(--lav);"><div style="font-family:'Outfit';font-size:2rem;" id="stat-followers">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">FOLLOWERS</div></div>
-      <div class="stat-b" style="border-right:var(--border);background:var(--mint);"><div style="font-family:'Outfit';font-size:2rem;" id="stat-following">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">FOLLOWING</div></div>
-      <div class="stat-b" style="border-right:var(--border);background:var(--peach);"><div style="font-family:'Outfit';font-size:2rem;" id="stat-stars">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">STARS</div></div>
-      <div class="stat-b" style="background:var(--sky);"><div style="font-family:'Outfit';font-size:2rem;" id="stat-gists">--</div><div style="font-size:.55rem;letter-spacing:.1em;color:#555;">GISTS</div></div>
+
+    <!-- MARQUEE -->
+    <div
+      style="border:var(--border);border-radius:999px;overflow:hidden;background:var(--peach);box-shadow:var(--shadow);margin-bottom:1.5rem;"
+      class="py-2 fi d2">
+      <div class="mq" id="mq"></div>
     </div>
-  </div>
 
-  <!-- MARQUEE -->
-  <div style="border:var(--border);overflow:hidden;background:var(--peach);box-shadow:var(--shadow);margin-bottom:1.5rem;" class="py-2 fi d2">
-    <div class="mq" id="mq"></div>
-  </div>
+    <!-- ══════ MAIN LAYOUT ══════ -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-5">
 
-  <!-- ══════ MAIN LAYOUT ══════ -->
-  <div class="grid grid-cols-1 lg:grid-cols-4 gap-5">
+      <!-- ─── LEFT SIDEBAR ─────────── -->
+      <div class="lg:col-span-1 flex flex-col gap-4" id="sidebar">
 
-    <!-- ─── LEFT SIDEBAR ─────────── -->
-    <div class="lg:col-span-1 flex flex-col gap-4" id="sidebar">
-
-      <!-- NEW: CLOCK & DATE -->
-      <div class="bb p-4 fi d2" style="background:var(--pink);">
-        <div class="section-title text-xl mb-2">✦ LOCAL TIME</div>
-        <div id="clock-display">--:--:--</div>
-        <div id="date-display" style="font-size:.65rem;color:#555;margin-top:2px;letter-spacing:.04em;"></div>
-        <div style="margin-top:.5rem;display:flex;gap:.4rem;flex-wrap:wrap;" id="tz-info"></div>
-      </div>
-
-      <!-- LANGUAGES -->
-      <div class="bb p-4 fi d2" style="background:var(--yellow);">
-        <div class="section-title text-xl mb-3">✦ LANGUAGES</div>
-        <div id="lang-list" class="flex flex-col gap-1">
-          <div class="sk" style="height:1rem;width:80%;"></div>
-          <div class="sk" style="height:1rem;width:62%;"></div>
-          <div class="sk" style="height:1rem;width:73%;"></div>
-        </div>
-      </div>
-
-      <!-- NOW PLAYING WIDGET REMOVED -->
-      <div id="np-widget" style="display:none;"></div>
-
-      <!-- ACTIVITY HEATMAP -->
-      <div class="bb p-4 fi d3" style="background:var(--mint);">
-        <div class="section-title text-xl mb-3">✦ ACTIVITY</div>
-        <div id="activity-grid" class="flex flex-wrap gap-1"></div>
-        <div class="flex gap-1 mt-2 items-center" style="font-size:.58rem;color:#555;">
-          <span>less</span>
-          <div class="adot" style="background:#f1f5f9;"></div>
-          <div class="adot" style="background:#cbd5e1;"></div>
-          <div class="adot" style="background:#94a3b8;"></div>
-          <div class="adot" style="background:#64748b;"></div>
-          <span>more</span>
-        </div>
-      </div>
-
-      <!-- NEW: SOCIAL LINKS -->
-      <div class="bb p-4 fi d4" style="background:var(--peach);">
-        <div class="section-title text-xl mb-3">✦ SOCIALS</div>
-        <div class="flex flex-col gap-2" id="social-links">
-          <a href="https://github.com/adeleeeeyyyy" target="_blank" class="social-link" style="background:var(--bg);">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> GitHub
-          </a>
-          <a href="https://linkedin.com/in/adly-fahreza" class="social-link" style="background:var(--pink);" id="social-linkedin">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> LinkedIn
-          </a>
-          <a href="https://instagram.com/adeleeeeyyyy" target="_blank" class="social-link" style="background:var(--mint);" id="social-instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> Instagram
-          </a>
-          <a href="https://adeli.synchronizeteams.com" class="social-link" style="background:var(--yellow);" id="social-website">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Website
-          </a>
-        </div>
-        <!-- <button onclick="openSocialEdit()" class="tag" style="margin-top:.6rem;cursor:pointer;background:var(--bg);width:100%;text-align:center;">✎ EDIT LINKS</button> -->
-      </div>
-
-    </div><!-- end sidebar -->
-
-    <!-- ─── MAIN CONTENT ──────────── -->
-    <div class="lg:col-span-3 flex flex-col gap-5" id="main-col">
-
-      <!-- TABS -->
-      <div class="fi d2">
-        <div class="flex gap-2 flex-wrap mb-4">
-          <button class="tab-btn active" onclick="switchTab('showcase')">SHOWCASE</button>
-          <button class="tab-btn" onclick="switchTab('repos')">REPOSITORIES</button>
-          <button class="tab-btn" onclick="switchTab('achievements')">ACHIEVEMENTS</button>
-          <button class="tab-btn" onclick="switchTab('gallery')">GALLERY</button>
-          <button class="tab-btn" onclick="switchTab('activity')">ACTIVITY</button>
-          <button class="tab-btn" onclick="switchTab('skills')">SKILLS</button>
+        <!-- NEW: CLOCK & DATE -->
+        <div class="bb p-4 fi d2" style="background:var(--pink);">
+          <div class="section-title text-xl mb-2">✦ LOCAL TIME</div>
+          <div id="clock-display">--:--:--</div>
+          <div id="date-display" style="font-size:.65rem;color:#555;margin-top:2px;letter-spacing:.04em;"></div>
+          <div style="margin-top:.5rem;display:flex;gap:.4rem;flex-wrap:wrap;" id="tz-info"></div>
         </div>
 
-        <!-- TAB: SHOWCASE -->
-        <div id="tab-showcase" class="tab-content active">
-          <div id="showcase-run-wrap" style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
-            <!-- Terminal Header -->
-            <div style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
-              <div style="display:flex; gap:8px;">
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-              </div>
-              <button onclick="startTerminal('showcase')" style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
-                RUN
-              </button>
-            </div>
-            <!-- Terminal Body -->
-            <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
-              <div style="color:#64748b;font-size:.85rem;">Last login: <script>document.write(new Date().toDateString())</script> on console</div>
-              <div style="margin-top:1rem;">
-                <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/showcase</span>$ <span style="color:var(--ink);">./showcase.sh</span><span style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
-              </div>
-              <div id="showcase-content-wrap" style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
-                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
-                  <div style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">✔ Showcase pinned repositories loaded.</div>
-                </div>
-                <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">PINNED — TOP REPOSITORIES BY STARS</div>
-                <div id="showcase-grid" class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <div class="sk" style="height:110px;"></div><div class="sk" style="height:110px;"></div>
-                  <div class="sk" style="height:110px;"></div><div class="sk" style="height:110px;"></div>
-                </div>
-              </div>
-            </div>
+        <!-- LANGUAGES -->
+        <div class="bb p-4 fi d2" style="background:var(--yellow);">
+          <div class="section-title text-xl mb-3">✦ LANGUAGES</div>
+          <div id="lang-list" class="flex flex-col gap-1">
+            <div class="sk" style="height:1rem;width:80%;"></div>
+            <div class="sk" style="height:1rem;width:62%;"></div>
+            <div class="sk" style="height:1rem;width:73%;"></div>
           </div>
         </div>
 
-        <!-- TAB: REPOS -->
-        <div id="tab-repos" class="tab-content">
-          <div id="repos-run-wrap" style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
-            <!-- Terminal Header -->
-            <div style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
-              <div style="display:flex; gap:8px;">
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-              </div>
-              <button onclick="startTerminal('repos')" style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
-                RUN
-              </button>
-            </div>
-            <!-- Terminal Body -->
-            <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
-              <div style="color:#64748b;font-size:.85rem;">Last login: <script>document.write(new Date().toDateString())</script> on console</div>
-              <div style="margin-top:1rem;">
-                <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/repos</span>$ <span style="color:var(--ink);">./list_repos.sh</span><span style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
-              </div>
-              <div id="repos-content-wrap" style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
-                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
-                  <div style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">✔ All public repositories loaded.</div>
-                </div>
-                <div class="flex items-center justify-between mb-3">
-                  <div style="font-size:.7rem;color:#555;letter-spacing:.05em;">ALL PUBLIC REPOSITORIES — SORTED BY STARS</div>
-                  <a href="https://github.com/adeleeeeyyyy?tab=repositories" target="_blank" class="tag" style="background:var(--lav);">VIEW ALL ↗</a>
-                </div>
-                <div id="repos-grid" class="flex flex-col gap-2">
-                  <div class="sk" style="height:88px;"></div><div class="sk" style="height:88px;"></div><div class="sk" style="height:88px;"></div>
-                </div>
-              </div>
-            </div>
+        <!-- NOW PLAYING WIDGET REMOVED -->
+        <div id="np-widget" style="display:none;"></div>
+
+        <!-- ACTIVITY HEATMAP -->
+        <div class="bb p-4 fi d3" style="background:var(--mint);">
+          <div class="section-title text-xl mb-3">✦ ACTIVITY</div>
+          <div id="activity-grid" class="flex flex-wrap gap-1"></div>
+          <div class="flex gap-1 mt-2 items-center" style="font-size:.58rem;color:#555;">
+            <span>less</span>
+            <div class="adot" style="background:#f1f5f9;"></div>
+            <div class="adot" style="background:#cbd5e1;"></div>
+            <div class="adot" style="background:#94a3b8;"></div>
+            <div class="adot" style="background:#64748b;"></div>
+            <span>more</span>
           </div>
         </div>
 
-        <!-- TAB: ACHIEVEMENTS -->
-        <div id="tab-achievements" class="tab-content">
-          <div id="achievements-run-wrap" style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
-            <!-- Terminal Header -->
-            <div style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
-              <div style="display:flex; gap:8px;">
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-              </div>
-              <button onclick="startTerminal('achievements')" style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
-                RUN
-              </button>
-            </div>
-            <!-- Terminal Body -->
-            <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
-              <div style="color:#64748b;font-size:.85rem;">Last login: <script>document.write(new Date().toDateString())</script> on console</div>
-              <div style="margin-top:1rem;">
-                <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/achievements</span>$ <span style="color:var(--ink);">./achievements.sh</span><span style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
-              </div>
-              <div id="achievements-content-wrap" style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
-                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
-                  <div style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">✔ Achievements system initialized.</div>
-                </div>
-                <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">GITHUB ACHIEVEMENTS — BASED ON YOUR ACTIVITY</div>
-                <div id="ach-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
-                <div style="margin-top:1.5rem;">
-                  <div style="font-family:'Outfit';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">ACHIEVEMENT PROGRESS</div>
-                  <div id="ach-progress" class="flex flex-col gap-3"></div>
-                </div>
-              </div>
-            </div>
+        <!-- NEW: SOCIAL LINKS -->
+        <div class="bb p-4 fi d4" style="background:var(--peach);">
+          <div class="section-title text-xl mb-3">✦ SOCIALS</div>
+          <div class="flex flex-col gap-2" id="social-links">
+            <a href="https://github.com/adeleeeeyyyy" target="_blank" class="social-link" style="background:var(--bg);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg> GitHub
+            </a>
+            <a href="https://linkedin.com/in/adly-fahreza" class="social-link" style="background:var(--pink);"
+              id="social-linkedin">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg> LinkedIn
+            </a>
+            <a href="https://instagram.com/adeleeeeyyyy" target="_blank" class="social-link"
+              style="background:var(--mint);" id="social-instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg> Instagram
+            </a>
+            <a href="https://adeli.synchronizeteams.com" class="social-link" style="background:var(--yellow);"
+              id="social-website">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                </path>
+              </svg> Website
+            </a>
           </div>
+          <!-- <button onclick="openSocialEdit()" class="tag" style="margin-top:.6rem;cursor:pointer;background:var(--bg);width:100%;text-align:center;">✎ EDIT LINKS</button> -->
         </div>
 
-        <!-- TAB: GALLERY -->
-        <div id="tab-gallery" class="tab-content">
-          <div id="gallery-run-wrap" style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
-            <!-- Terminal Header -->
-            <div style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
-              <div style="display:flex; gap:8px;">
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-              </div>
-              <button onclick="startTerminal('gallery')" style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.background='#334155';this.style.transform='scale(1.05)'" onmouseout="this.style.background='var(--ink)';this.style.transform='scale(1)'">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                RUN
-              </button>
-            </div>
-            <!-- Terminal Body -->
-            <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
-              <div style="color:#64748b;font-size:.85rem;">Last login: <script>document.write(new Date().toDateString())</script> on console</div>
-              <div style="margin-top:1rem;">
-                <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/gallery</span>$ <span style="color:var(--ink);">./gallery.sh</span><span style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
-              </div>
-              <div id="gallery-content-wrap" style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
-                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
-                  <div style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">✔ <span id="gallery-count">...</span> media objects retrieved.</div>
-                  <div id="gallery-filters" class="flex gap-1 flex-wrap"></div>
-                </div>
-                <div id="gallery-grid">
-                  <div class="sk" style="height:100px;margin-bottom:8px;"></div>
-                  <div class="sk" style="height:140px;margin-bottom:8px;"></div>
-                  <div class="sk" style="height:100px;margin-bottom:8px;"></div>
-                </div>
-                <div id="gallery-empty" style="display:none;border:var(--border);padding:2rem;text-align:center;background:var(--yellow);box-shadow:var(--shadow);">
-                  Something broke loading the gallery :(
-                </div>
-              </div>
-            </div>
+      </div><!-- end sidebar -->
+
+      <!-- ─── MAIN CONTENT ──────────── -->
+      <div class="lg:col-span-3 flex flex-col gap-5" id="main-col">
+
+        <!-- TABS -->
+        <div class="fi d2">
+          <div class="flex gap-2 flex-wrap mb-4">
+            <button class="tab-btn active" onclick="switchTab('showcase')">SHOWCASE</button>
+            <button class="tab-btn" onclick="switchTab('repos')">REPOSITORIES</button>
+            <button class="tab-btn" onclick="switchTab('achievements')">ACHIEVEMENTS</button>
+            <button class="tab-btn" onclick="switchTab('gallery')">GALLERY</button>
+            <button class="tab-btn" onclick="switchTab('activity')">ACTIVITY</button>
+            <button class="tab-btn" onclick="switchTab('skills')">SKILLS</button>
           </div>
-          <style>@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }</style>
-        </div>
 
-        <!-- TAB: ACTIVITY -->
-        <div id="tab-activity" class="tab-content">
-          <div id="activity-run-wrap" style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
-            <!-- Terminal Header -->
-            <div style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
-              <div style="display:flex; gap:8px;">
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-              </div>
-              <button onclick="startTerminal('activity')" style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
-                RUN
-              </button>
-            </div>
-            <!-- Terminal Body -->
-            <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
-              <div style="color:#64748b;font-size:.85rem;">Last login: <script>document.write(new Date().toDateString())</script> on console</div>
-              <div style="margin-top:1rem;">
-                <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/activity</span>$ <span style="color:var(--ink);">./activity.sh</span><span style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
-              </div>
-              <div id="activity-content-wrap" style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
-                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
-                  <div style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">✔ Recent public events fetched.</div>
-                </div>
-                <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">RECENT PUBLIC EVENTS</div>
-                <div id="events-list" class="flex flex-col gap-2">
-                  <div class="sk" style="height:48px;"></div><div class="sk" style="height:48px;"></div><div class="sk" style="height:48px;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TAB: SKILLS ── NEW -->
-        <div id="tab-skills" class="tab-content">
-          <div id="skills-run-wrap" style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
-            <!-- Terminal Header -->
-            <div style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
-              <div style="display:flex; gap:8px;">
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-                <div style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;"></div>
-              </div>
-              <button onclick="startTerminal('skills')" style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);" onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
-                RUN
-              </button>
-            </div>
-            <!-- Terminal Body -->
-            <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
-              <div style="color:#64748b;font-size:.85rem;">Last login: <script>document.write(new Date().toDateString())</script> on console</div>
-              <div style="margin-top:1rem;">
-                <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/skills</span>$ <span style="color:var(--ink);">./skills.sh</span><span style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
-              </div>
-              <div id="skills-content-wrap" style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
-                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
-                  <div style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">✔ Tech stack and proficiencies mapped.</div>
-                </div>
-                <div style="font-size:.7rem;color:#555;margin-bottom:1rem;letter-spacing:.05em;">TECH STACK & PROFICIENCY</div>
-
-                <!-- Skills by category -->
-                <div id="skills-container" class="flex flex-col gap-5">
-                  <!-- Frontend -->
-                  <div>
-                    <div style="font-family:'Outfit';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem;">
-                      <span style="border:var(--border);border-radius:6px;padding:2px 10px;background:#f8fafc;font-size:.85rem;">FRONTEND</span>
-                    </div>
-                    <div class="flex flex-col gap-2" id="skills-frontend"></div>
+          <!-- TAB: SHOWCASE -->
+          <div id="tab-showcase" class="tab-content active">
+            <div id="showcase-run-wrap"
+              style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
+              <!-- Terminal Header -->
+              <div
+                style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
+                <div style="display:flex; gap:8px;">
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
                   </div>
-                  <div>
-                    <div style="font-family:'Outfit';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">
-                      <span style="border:var(--border);border-radius:6px;padding:2px 10px;background:#f8fafc;font-size:.85rem;">BACKEND</span>
-                    </div>
-                    <div class="flex flex-col gap-2" id="skills-backend"></div>
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
                   </div>
-                  <div>
-                    <div style="font-family:'Outfit';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">
-                      <span style="border:var(--border);border-radius:6px;padding:2px 10px;background:#f8fafc;font-size:.85rem;">TOOLS & DEVOPS</span>
-                    </div>
-                    <div class="flex flex-col gap-2" id="skills-tools"></div>
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
                   </div>
                 </div>
-
-                <!-- Tech badge cloud -->
-                <div style="margin-top:1.5rem;">
-                  <div style="font-family:'Outfit';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">TECH BADGES</div>
-                  <div class="flex flex-wrap gap-2" id="tech-badges"></div>
+                <button onclick="startTerminal('showcase')"
+                  style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);"
+                  onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
+                  RUN
+                </button>
+              </div>
+              <!-- Terminal Body -->
+              <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
+                <div style="color:#64748b;font-size:.85rem;">Last login:
+                  <script>document.write(new Date().toDateString())</script> on console
                 </div>
-
-                <!-- Goals / Roadmap -->
-                <div id="goals-list" style="display:none;"></div>
+                <div style="margin-top:1rem;">
+                  <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span
+                    style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/showcase</span>$
+                  <span style="color:var(--ink);">./showcase.sh</span><span
+                    style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
+                </div>
+                <div id="showcase-content-wrap"
+                  style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
+                  <div
+                    style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+                    <div
+                      style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">
+                      ✔ Showcase pinned repositories loaded.</div>
+                  </div>
+                  <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">PINNED — TOP
+                    REPOSITORIES BY STARS</div>
+                  <div id="showcase-grid" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div class="sk" style="height:110px;"></div>
+                    <div class="sk" style="height:110px;"></div>
+                    <div class="sk" style="height:110px;"></div>
+                    <div class="sk" style="height:110px;"></div>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
+
+          <!-- TAB: REPOS -->
+          <div id="tab-repos" class="tab-content">
+            <div id="repos-run-wrap"
+              style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
+              <!-- Terminal Header -->
+              <div
+                style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
+                <div style="display:flex; gap:8px;">
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                </div>
+                <button onclick="startTerminal('repos')"
+                  style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);"
+                  onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
+                  RUN
+                </button>
+              </div>
+              <!-- Terminal Body -->
+              <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
+                <div style="color:#64748b;font-size:.85rem;">Last login:
+                  <script>document.write(new Date().toDateString())</script> on console
+                </div>
+                <div style="margin-top:1rem;">
+                  <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span
+                    style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/repos</span>$ <span
+                    style="color:var(--ink);">./list_repos.sh</span><span
+                    style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
+                </div>
+                <div id="repos-content-wrap"
+                  style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
+                  <div
+                    style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+                    <div
+                      style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">
+                      ✔ All public repositories loaded.</div>
+                  </div>
+                  <div class="flex items-center justify-between mb-3">
+                    <div style="font-size:.7rem;color:#555;letter-spacing:.05em;">ALL PUBLIC REPOSITORIES — SORTED BY
+                      STARS</div>
+                    <a href="https://github.com/adeleeeeyyyy?tab=repositories" target="_blank" class="tag"
+                      style="background:var(--lav);">VIEW ALL ↗</a>
+                  </div>
+                  <div id="repos-grid" class="flex flex-col gap-2">
+                    <div class="sk" style="height:88px;"></div>
+                    <div class="sk" style="height:88px;"></div>
+                    <div class="sk" style="height:88px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB: ACHIEVEMENTS -->
+          <div id="tab-achievements" class="tab-content">
+            <div id="achievements-run-wrap"
+              style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
+              <!-- Terminal Header -->
+              <div
+                style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
+                <div style="display:flex; gap:8px;">
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                </div>
+                <button onclick="startTerminal('achievements')"
+                  style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);"
+                  onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
+                  RUN
+                </button>
+              </div>
+              <!-- Terminal Body -->
+              <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
+                <div style="color:#64748b;font-size:.85rem;">Last login:
+                  <script>document.write(new Date().toDateString())</script> on console
+                </div>
+                <div style="margin-top:1rem;">
+                  <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span
+                    style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/achievements</span>$
+                  <span style="color:var(--ink);">./achievements.sh</span><span
+                    style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
+                </div>
+                <div id="achievements-content-wrap"
+                  style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
+                  <div
+                    style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+                    <div
+                      style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">
+                      ✔ Achievements system initialized.</div>
+                  </div>
+                  <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">GITHUB ACHIEVEMENTS
+                    — BASED ON YOUR ACTIVITY</div>
+                  <div id="ach-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
+                  <div style="margin-top:1.5rem;">
+                    <div style="font-family:'Outfit';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">
+                      ACHIEVEMENT PROGRESS</div>
+                    <div id="ach-progress" class="flex flex-col gap-3"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB: GALLERY -->
+          <div id="tab-gallery" class="tab-content">
+            <div id="gallery-run-wrap"
+              style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
+              <!-- Terminal Header -->
+              <div
+                style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
+                <div style="display:flex; gap:8px;">
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                </div>
+                <button onclick="startTerminal('gallery')"
+                  style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);"
+                  onmouseover="this.style.background='#334155';this.style.transform='scale(1.05)'"
+                  onmouseout="this.style.background='var(--ink)';this.style.transform='scale(1)'">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  RUN
+                </button>
+              </div>
+              <!-- Terminal Body -->
+              <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
+                <div style="color:#64748b;font-size:.85rem;">Last login:
+                  <script>document.write(new Date().toDateString())</script> on console
+                </div>
+                <div style="margin-top:1rem;">
+                  <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span
+                    style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/gallery</span>$ <span
+                    style="color:var(--ink);">./gallery.sh</span><span
+                    style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
+                </div>
+                <div id="gallery-content-wrap"
+                  style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
+                  <div
+                    style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+                    <div
+                      style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">
+                      ✔ <span id="gallery-count">...</span> media objects retrieved.</div>
+                    <div id="gallery-filters" class="flex gap-1 flex-wrap"></div>
+                  </div>
+                  <div id="gallery-grid">
+                    <div class="sk" style="height:100px;margin-bottom:8px;"></div>
+                    <div class="sk" style="height:140px;margin-bottom:8px;"></div>
+                    <div class="sk" style="height:100px;margin-bottom:8px;"></div>
+                  </div>
+                  <div id="gallery-empty"
+                    style="display:none;border:var(--border);padding:2rem;text-align:center;background:var(--yellow);box-shadow:var(--shadow);">
+                    Something broke loading the gallery :(
+                  </div>
+                </div>
+              </div>
+            </div>
+            <style>
+              @keyframes blink {
+
+                0%,
+                100% {
+                  opacity: 1;
+                }
+
+                50% {
+                  opacity: 0;
+                }
+              }
+            </style>
+          </div>
+
+          <!-- TAB: ACTIVITY -->
+          <div id="tab-activity" class="tab-content">
+            <div id="activity-run-wrap"
+              style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
+              <!-- Terminal Header -->
+              <div
+                style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
+                <div style="display:flex; gap:8px;">
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                </div>
+                <button onclick="startTerminal('activity')"
+                  style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);"
+                  onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
+                  RUN
+                </button>
+              </div>
+              <!-- Terminal Body -->
+              <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
+                <div style="color:#64748b;font-size:.85rem;">Last login:
+                  <script>document.write(new Date().toDateString())</script> on console
+                </div>
+                <div style="margin-top:1rem;">
+                  <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span
+                    style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/activity</span>$
+                  <span style="color:var(--ink);">./activity.sh</span><span
+                    style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
+                </div>
+                <div id="activity-content-wrap"
+                  style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
+                  <div
+                    style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+                    <div
+                      style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">
+                      ✔ Recent public events fetched.</div>
+                  </div>
+                  <div style="font-size:.7rem;color:#555;margin-bottom:.75rem;letter-spacing:.05em;">RECENT PUBLIC
+                    EVENTS</div>
+                  <div id="events-list" class="flex flex-col gap-2">
+                    <div class="sk" style="height:48px;"></div>
+                    <div class="sk" style="height:48px;"></div>
+                    <div class="sk" style="height:48px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB: SKILLS ── NEW -->
+          <div id="tab-skills" class="tab-content">
+            <div id="skills-run-wrap"
+              style="width:100%; margin: 2rem 0; border: 1px solid var(--border); border-radius:10px; overflow:hidden; background:#ffffff; color:var(--ink); font-family:'Space Mono', Courier, monospace; text-align:left; box-shadow:var(--shadow-sm); transition:transform 0.2s ease;">
+              <!-- Terminal Header -->
+              <div
+                style="background:#f8fafc; border-bottom:1px solid var(--border); padding:10px 16px; display:flex; justify-content:space-between; align-items:center;">
+                <div style="display:flex; gap:8px;">
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                  <div
+                    style="width:12px; height:12px; border-radius:50%; background:#e2e8f0; border:1px solid #cbd5e1;">
+                  </div>
+                </div>
+                <button onclick="startTerminal('skills')"
+                  style="background:var(--ink); color:var(--bg); border:none; border-radius:8px; padding:6px 16px; font-family:'Outfit', sans-serif; font-size:.85rem; font-weight:700; letter-spacing:0.06em; cursor:pointer; display:flex; align-items:center; gap:6px; transition:all .2s ease; box-shadow:0 4px 12px rgba(0,0,0,0.05);"
+                  onmouseover="this.style.background='#334155'" onmouseout="this.style.background='var(--ink)'">
+                  RUN
+                </button>
+              </div>
+              <!-- Terminal Body -->
+              <div style="padding:1.5rem; font-size:.95rem; line-height:1.7;">
+                <div style="color:#64748b;font-size:.85rem;">Last login:
+                  <script>document.write(new Date().toDateString())</script> on console
+                </div>
+                <div style="margin-top:1rem;">
+                  <span style="color:#475569; font-weight:700;">adeli@portfolio</span><span
+                    style="color:#94a3b8;">:</span><span style="color:#64748b; font-weight:700;">~/skills</span>$ <span
+                    style="color:var(--ink);">./skills.sh</span><span
+                    style="display:inline-block; width:8px; height:1rem; background:var(--ink); margin-left:6px; vertical-align:middle; animation:blink 1s step-end infinite;"></span>
+                </div>
+                <div id="skills-content-wrap"
+                  style="display:none; margin-top:1.5rem; padding-top:1.5rem; border-top:1px dashed #cbd5e1; font-family:'Inter', sans-serif;">
+                  <div
+                    style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;">
+                    <div
+                      style="font-family:'Space Mono', Courier, monospace; font-size:.85rem; color:#10b981; font-weight:700;">
+                      ✔ Tech stack and proficiencies mapped.</div>
+                  </div>
+                  <div style="font-size:.7rem;color:#555;margin-bottom:1rem;letter-spacing:.05em;">TECH STACK &
+                    PROFICIENCY</div>
+
+                  <!-- Skills by category -->
+                  <div id="skills-container" class="flex flex-col gap-5">
+                    <!-- Frontend -->
+                    <div>
+                      <div
+                        style="font-family:'Outfit';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem;">
+                        <span
+                          style="border:var(--border);border-radius:6px;padding:2px 10px;background:#f8fafc;font-size:.85rem;">FRONTEND</span>
+                      </div>
+                      <div class="flex flex-col gap-2" id="skills-frontend"></div>
+                    </div>
+                    <div>
+                      <div style="font-family:'Outfit';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">
+                        <span
+                          style="border:var(--border);border-radius:6px;padding:2px 10px;background:#f8fafc;font-size:.85rem;">BACKEND</span>
+                      </div>
+                      <div class="flex flex-col gap-2" id="skills-backend"></div>
+                    </div>
+                    <div>
+                      <div style="font-family:'Outfit';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">
+                        <span
+                          style="border:var(--border);border-radius:6px;padding:2px 10px;background:#f8fafc;font-size:.85rem;">TOOLS
+                          & DEVOPS</span>
+                      </div>
+                      <div class="flex flex-col gap-2" id="skills-tools"></div>
+                    </div>
+                  </div>
+
+                  <!-- Tech badge cloud -->
+                  <div style="margin-top:1.5rem;">
+                    <div style="font-family:'Outfit';font-size:1.1rem;letter-spacing:.08em;margin-bottom:.6rem;">TECH
+                      BADGES</div>
+                    <div class="flex flex-wrap gap-2" id="tech-badges"></div>
+                  </div>
+
+                  <!-- Goals / Roadmap -->
+                  <div id="goals-list" style="display:none;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COMMIT ACTIVITY CHART REMOVED -->
+        <div id="commit-chart" style="display:none;"></div>
+        <div id="commit-chart-labels" style="display:none;"></div>
+        <div id="commit-chart-tag" style="display:none;"></div>
+        <div id="commit-empty" style="display:none;"></div>
+
+        <!-- SPOTLIGHT -->
+        <div class="bb p-4 fi d4" style="background:var(--pink);">
+          <div class="flex items-center justify-between mb-3">
+            <div class="section-title text-2xl">★ SPOTLIGHT REPO</div>
+            <span class="tag" style="background:var(--yellow);">MOST STARRED</span>
+          </div>
+          <div id="spotlight" class="sk" style="height:80px;border-radius:12px;"></div>
+        </div>
+
+        <!-- CONTRIBUTION CALENDAR -->
+        <div class="bb p-4 fi d5" style="background:var(--bg);" id="cal-wrap">
+          <div class="flex items-center justify-between mb-3">
+            <div class="section-title text-2xl">CONTRIBUTION CALENDAR</div>
+            <span id="contrib-label" class="tag" style="background:var(--mint);">loading...</span>
+          </div>
+          <div style="overflow-x:auto; padding-bottom:8px; width:100%;">
+            <div class="flex gap-1 pb-1" id="cal-weeks" style="min-width:600px;"></div>
+            <div id="cal-months" class="flex gap-0 mt-1" style="min-width:600px;font-size:.58rem;color:#888;"></div>
           </div>
         </div>
 
       </div>
-
-      <!-- COMMIT ACTIVITY CHART REMOVED -->
-      <div id="commit-chart" style="display:none;"></div>
-      <div id="commit-chart-labels" style="display:none;"></div>
-      <div id="commit-chart-tag" style="display:none;"></div>
-      <div id="commit-empty" style="display:none;"></div>
-
-      <!-- SPOTLIGHT -->
-      <div class="bb p-4 fi d4" style="background:var(--pink);">
-        <div class="flex items-center justify-between mb-3">
-          <div class="section-title text-2xl">★ SPOTLIGHT REPO</div>
-          <span class="tag" style="background:var(--yellow);">MOST STARRED</span>
-        </div>
-        <div id="spotlight" class="sk" style="height:80px;border-radius:12px;"></div>
-      </div>
-
-      <!-- CONTRIBUTION CALENDAR -->
-      <div class="bb p-4 fi d5" style="background:var(--bg);" id="cal-wrap">
-        <div class="flex items-center justify-between mb-3">
-          <div class="section-title text-2xl">CONTRIBUTION CALENDAR</div>
-          <span id="contrib-label" class="tag" style="background:var(--mint);">loading...</span>
-        </div>
-        <div style="overflow-x:auto;">
-          <div class="flex gap-1 pb-1" id="cal-weeks" style="min-width:600px;"></div>
-        </div>
-        <div id="cal-months" class="flex gap-0 mt-1" style="min-width:600px;font-size:.58rem;color:#888;overflow-x:auto;"></div>
-      </div>
-
     </div>
   </div>
-</div>
 
-<!-- FOOTER -->
-<div style="border-top:var(--border);background:var(--lav);margin-top:3rem;" class="px-6 py-4 flex items-center justify-center">
-  <span style="font-family:'Space Mono', monospace; letter-spacing:.05em; font-size:1.1rem; font-weight:700; color:var(--ink);">adeleeeeyyyy ★</span>
-</div>
-<div class="stripe" style="height:10px;"></div>
-
-<!-- LIGHTBOX -->
-<div id="lightbox" style="display:none;position:fixed;inset:0;background:#1a1a2ecc;z-index:1000;align-items:center;justify-content:center;cursor:pointer;" onclick="this.style.display='none'">
-  <div style="border:var(--border);box-shadow:8px 8px 0 var(--ink);max-width:80vw;max-height:80vh;overflow:hidden;background:var(--bg);padding:.5rem;">
-    <img id="lb-img" src="" style="max-width:100%;max-height:75vh;display:block;">
-    <div id="lb-cap" style="font-size:.7rem;padding:.5rem 0 0;font-weight:700;"></div>
+  <!-- FOOTER -->
+  <div style="border-top:var(--border);background:var(--lav);margin-top:3rem;"
+    class="px-6 py-4 flex items-center justify-center">
+    <span
+      style="font-family:'Space Mono', monospace; letter-spacing:.05em; font-size:1.1rem; font-weight:700; color:var(--ink);">adeleeeeyyyy
+      ★</span>
   </div>
-</div>
+  <div class="stripe" style="height:10px;"></div>
+  <!-- ROLE HOVER POPUP -->
+  <div id="role-tooltip"
+    style="display:none; position:absolute; z-index:9999; border:1px solid #cbd5e1; border-radius:12px; background:#ffffff; color:var(--ink); padding:16px; width:320px; box-shadow:var(--shadow-lg); font-family:'Space Mono', monospace; font-size:.7rem; pointer-events:none; transition:opacity 0.2s ease, transform 0.2s; opacity:0; transform:translateY(10px);">
+  </div>
 
-<!-- SOCIAL EDIT MODAL -->
-<div id="social-modal" style="display:none;position:fixed;inset:0;background:#1a1a2e99;z-index:1001;align-items:center;justify-content:center;">
-  <div style="border:var(--border);box-shadow:var(--shadow);background:var(--bg);padding:1.25rem;width:320px;max-width:90vw;">
-    <div style="font-family:'Outfit';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">EDIT SOCIAL LINKS</div>
-    <div class="flex flex-col gap-2">
-      <input class="gb-input" id="se-linkedin" placeholder="LinkedIn URL...">
-      <input class="gb-input" id="se-twitter" placeholder="Twitter/X URL...">
-      <input class="gb-input" id="se-instagram" placeholder="Instagram URL...">
-      <input class="gb-input" id="se-website" placeholder="Website URL...">
-      <div style="display:flex;gap:.5rem;margin-top:.25rem;">
-        <button class="gb-btn" style="flex:1;" onclick="saveSocialEdit()">SAVE</button>
-        <button class="gb-btn" style="flex:1;background:var(--bg);color:var(--ink);box-shadow:3px 3px 0 var(--ink);" onclick="document.getElementById('social-modal').style.display='none'">CANCEL</button>
+  <!-- LIGHTBOX -->
+  <div id="lightbox"
+    style="display:none;position:fixed;inset:0;background:#1a1a2ecc;z-index:1000;align-items:center;justify-content:center;cursor:pointer;"
+    onclick="this.style.display='none'">
+    <div
+      style="border:var(--border);box-shadow:8px 8px 0 var(--ink);max-width:80vw;max-height:80vh;overflow:hidden;background:var(--bg);padding:.5rem;">
+      <img id="lb-img" src="" style="max-width:100%;max-height:75vh;display:block;">
+      <div id="lb-cap" style="font-size:.7rem;padding:.5rem 0 0;font-weight:700;"></div>
+    </div>
+  </div>
+
+  <!-- SOCIAL EDIT MODAL -->
+  <div id="social-modal"
+    style="display:none;position:fixed;inset:0;background:#1a1a2e99;z-index:1001;align-items:center;justify-content:center;">
+    <div
+      style="border:var(--border);box-shadow:var(--shadow);background:var(--bg);padding:1.25rem;width:320px;max-width:90vw;">
+      <div style="font-family:'Outfit';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">EDIT SOCIAL LINKS
+      </div>
+      <div class="flex flex-col gap-2">
+        <input class="gb-input" id="se-linkedin" placeholder="LinkedIn URL...">
+        <input class="gb-input" id="se-twitter" placeholder="Twitter/X URL...">
+        <input class="gb-input" id="se-instagram" placeholder="Instagram URL...">
+        <input class="gb-input" id="se-website" placeholder="Website URL...">
+        <div style="display:flex;gap:.5rem;margin-top:.25rem;">
+          <button class="gb-btn" style="flex:1;" onclick="saveSocialEdit()">SAVE</button>
+          <button class="gb-btn" style="flex:1;background:var(--bg);color:var(--ink);box-shadow:3px 3px 0 var(--ink);"
+            onclick="document.getElementById('social-modal').style.display='none'">CANCEL</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- SKILL EDIT MODAL -->
-<div id="skill-modal" style="display:none;position:fixed;inset:0;background:#1a1a2e99;z-index:1001;align-items:center;justify-content:center;">
-  <div style="border:var(--border);box-shadow:var(--shadow);background:var(--bg);padding:1.25rem;width:360px;max-width:90vw;max-height:90vh;overflow-y:auto;">
-    <div style="font-family:'Outfit';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">CUSTOMIZE SKILLS</div>
-    <div style="font-size:.68rem;color:#555;margin-bottom:.75rem;">Format: "SkillName,level(0-100),category"<br>Category: frontend | backend | tools</div>
-    <textarea id="skill-edit-area" style="width:100%;border:var(--border);font-family:'Inter';font-size:.65rem;padding:.5rem;height:200px;background:var(--bg);resize:vertical;outline:none;" placeholder="HTML,90,frontend&#10;CSS,85,frontend&#10;JavaScript,80,frontend&#10;Python,75,backend&#10;Git,90,tools"></textarea>
-    <div style="display:flex;gap:.5rem;margin-top:.5rem;">
-      <button class="gb-btn" style="flex:1;" onclick="saveSkillEdit()">SAVE</button>
-      <button class="gb-btn" style="flex:1;background:var(--bg);color:var(--ink);box-shadow:3px 3px 0 var(--ink);" onclick="document.getElementById('skill-modal').style.display='none'">CANCEL</button>
+  <!-- SKILL EDIT MODAL -->
+  <div id="skill-modal"
+    style="display:none;position:fixed;inset:0;background:#1a1a2e99;z-index:1001;align-items:center;justify-content:center;">
+    <div
+      style="border:var(--border);box-shadow:var(--shadow);background:var(--bg);padding:1.25rem;width:360px;max-width:90vw;max-height:90vh;overflow-y:auto;">
+      <div style="font-family:'Outfit';font-size:1.3rem;letter-spacing:.08em;margin-bottom:.75rem;">CUSTOMIZE SKILLS
+      </div>
+      <div style="font-size:.68rem;color:#555;margin-bottom:.75rem;">Format:
+        "SkillName,level(0-100),category"<br>Category: frontend | backend | tools</div>
+      <textarea id="skill-edit-area"
+        style="width:100%;border:var(--border);font-family:'Inter';font-size:.65rem;padding:.5rem;height:200px;background:var(--bg);resize:vertical;outline:none;"
+        placeholder="HTML,90,frontend&#10;CSS,85,frontend&#10;JavaScript,80,frontend&#10;Python,75,backend&#10;Git,90,tools"></textarea>
+      <div style="display:flex;gap:.5rem;margin-top:.5rem;">
+        <button class="gb-btn" style="flex:1;" onclick="saveSkillEdit()">SAVE</button>
+        <button class="gb-btn" style="flex:1;background:var(--bg);color:var(--ink);box-shadow:3px 3px 0 var(--ink);"
+          onclick="document.getElementById('skill-modal').style.display='none'">CANCEL</button>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-const USERNAME = 'adeleeeeyyyy';
-const API = 'https://api.github.com';
-const LANG_COLORS = {
-  JavaScript:'#f1e05a',TypeScript:'#2b7489',Python:'#3572A5',HTML:'#e34c26',
-  CSS:'#563d7c',Java:'#b07219',Go:'#00ADD8',Rust:'#dea584','C++':'#f34b7d',
-  'C#':'#178600',Ruby:'#701516',Swift:'#ffac45',Kotlin:'#A97BFF',PHP:'#4F5D95',
-  Shell:'#89e051',Vue:'#41b883',Dart:'#00B4AB',SCSS:'#c6538c',default:'#aaa'
-};
-const LC = l => LANG_COLORS[l] || LANG_COLORS.default;
-const HOVERS = ['var(--pink)','var(--lav)','var(--mint)','var(--peach)','var(--sky)','var(--yellow)'];
-const EV_BG  = ['var(--pink)','var(--yellow)','var(--sky)','var(--mint)','var(--lav)','var(--peach)'];
+  <script>
+    const USERNAME = 'adeleeeeyyyy';
+    const API = 'https://api.github.com';
+    const LANG_COLORS = {
+      JavaScript: '#f1e05a', TypeScript: '#2b7489', Python: '#3572A5', HTML: '#e34c26',
+      CSS: '#563d7c', Java: '#b07219', Go: '#00ADD8', Rust: '#dea584', 'C++': '#f34b7d',
+      'C#': '#178600', Ruby: '#701516', Swift: '#ffac45', Kotlin: '#A97BFF', PHP: '#4F5D95',
+      Shell: '#89e051', Vue: '#41b883', Dart: '#00B4AB', SCSS: '#c6538c', default: '#aaa'
+    };
+    const LC = l => LANG_COLORS[l] || LANG_COLORS.default;
+    const HOVERS = ['var(--pink)', 'var(--lav)', 'var(--mint)', 'var(--peach)', 'var(--sky)', 'var(--yellow)'];
+    const EV_BG = ['var(--pink)', 'var(--yellow)', 'var(--sky)', 'var(--mint)', 'var(--lav)', 'var(--peach)'];
 
-const ACHIEVEMENTS = [
-  {id:'first-repo',icon:'🌱',name:'First Commit',   desc:'Created first repository',    color:'var(--mint)',  check:u=>u.public_repos>=1},
-  {id:'10-repos',  icon:'📦',name:'Hoarder',        desc:'Own 10+ repositories',         color:'var(--peach)',check:u=>u.public_repos>=10},
-  {id:'50-repos',  icon:'🗄️',name:'Collector',      desc:'Own 50+ repositories',         color:'var(--yellow)',check:u=>u.public_repos>=50},
-  {id:'follower10',icon:'👥',name:'Popular',         desc:'10+ followers',                color:'var(--lav)',  check:u=>u.followers>=10},
-  {id:'follower50',icon:'🌟',name:'Influencer',      desc:'50+ followers',                color:'var(--pink)', check:u=>u.followers>=50},
-  {id:'veteran',   icon:'🏅',name:'Veteran',         desc:'Account > 2 years old',        color:'var(--sky)',  check:u=>(Date.now()-new Date(u.created_at))>6.3e10},
-  {id:'og',        icon:'👴',name:'OG Dev',          desc:'Account > 5 years old',        color:'var(--peach)',check:u=>(Date.now()-new Date(u.created_at))>1.577e11},
-  {id:'has-bio',   icon:'✍️',name:'Storyteller',     desc:'Wrote a bio',                  color:'var(--mint)', check:u=>!!u.bio},
-  {id:'has-blog',  icon:'🔗',name:'Has a Website',   desc:'Linked a personal site',       color:'var(--lav)',  check:u=>!!u.blog},
-  {id:'hireable',  icon:'💼',name:'Open to Work',    desc:'Marked as hireable',           color:'var(--yellow)',check:u=>!!u.hireable},
-  {id:'gists',     icon:'📝',name:'Gist Master',     desc:'Has public gists',             color:'var(--sky)',  check:u=>u.public_gists>0},
-  {id:'stargazer', icon:'⭐',name:'Star Collector',  desc:'10+ stars across repos',       color:'var(--pink)', check:(u,r)=>r.reduce((s,x)=>s+x.stargazers_count,0)>=10},
-];
+    const ACHIEVEMENTS = [
+      { id: 'first-repo', icon: '🌱', name: 'First Commit', desc: 'Created first repository', color: 'var(--mint)', check: u => u.public_repos >= 1 },
+      { id: '10-repos', icon: '📦', name: 'Hoarder', desc: 'Own 10+ repositories', color: 'var(--peach)', check: u => u.public_repos >= 10 },
+      { id: '50-repos', icon: '🗄️', name: 'Collector', desc: 'Own 50+ repositories', color: 'var(--yellow)', check: u => u.public_repos >= 50 },
+      { id: 'follower10', icon: '👥', name: 'Popular', desc: '10+ followers', color: 'var(--lav)', check: u => u.followers >= 10 },
+      { id: 'follower50', icon: '🌟', name: 'Influencer', desc: '50+ followers', color: 'var(--pink)', check: u => u.followers >= 50 },
+      { id: 'veteran', icon: '🏅', name: 'Veteran', desc: 'Account > 2 years old', color: 'var(--sky)', check: u => (Date.now() - new Date(u.created_at)) > 6.3e10 },
+      { id: 'og', icon: '👴', name: 'OG Dev', desc: 'Account > 5 years old', color: 'var(--peach)', check: u => (Date.now() - new Date(u.created_at)) > 1.577e11 },
+      { id: 'has-bio', icon: '✍️', name: 'Storyteller', desc: 'Wrote a bio', color: 'var(--mint)', check: u => !!u.bio },
+      { id: 'has-blog', icon: '🔗', name: 'Has a Website', desc: 'Linked a personal site', color: 'var(--lav)', check: u => !!u.blog },
+      { id: 'hireable', icon: '💼', name: 'Open to Work', desc: 'Marked as hireable', color: 'var(--yellow)', check: u => !!u.hireable },
+      { id: 'gists', icon: '📝', name: 'Gist Master', desc: 'Has public gists', color: 'var(--sky)', check: u => u.public_gists > 0 },
+      { id: 'stargazer', icon: '⭐', name: 'Star Collector', desc: '10+ stars across repos', color: 'var(--pink)', check: (u, r) => r.reduce((s, x) => s + x.stargazers_count, 0) >= 10 },
+    ];
 
-/* ── DEFAULT SKILLS DATA ── */
-const DEFAULT_SKILLS = [
-  'HTML,90,frontend','CSS,85,frontend','JavaScript,80,frontend','TypeScript,70,frontend','React,75,frontend',
-  'Node.js,70,backend','Python,75,backend','SQL,65,backend','REST API,80,backend',
-  'Git,90,tools','Docker,60,tools','Linux,75,tools','Figma,70,tools','VS Code,95,tools'
-];
+    /* ── DEFAULT SKILLS DATA ── */
+    /* ══════════════════════════════
+       GITHUB API — cached fetch (localStorage, TTL 1 hour)
+       Key: "ghc::" + url  →  { data, exp }
+    ══════════════════════════════ */
+    const CACHE_TTL = 60 * 60 * 1000; // 1 hour in ms
 
-const DEFAULT_GOALS = [
-  {label:'Learn Rust',pct:30,color:'var(--peach)'},
-  {label:'100 GitHub Stars',pct:15,color:'var(--pink)'},
-  {label:'Ship a SaaS product',pct:45,color:'var(--lav)'},
-  {label:'Master System Design',pct:60,color:'var(--mint)'},
-  {label:'Contribute to OSS',pct:25,color:'var(--sky)'},
-];
+    async function get(url) {
+      const key = 'ghc::' + url;
+      // 1. Try cache
+      try {
+        const raw = localStorage.getItem(key);
+        if (raw) {
+          const { data, exp } = JSON.parse(raw);
+          if (Date.now() < exp) return data;        // cache hit ✓
+          localStorage.removeItem(key);            // expired, evict
+        }
+      } catch { localStorage.removeItem(key); }
 
-const TECH_BADGES = [
-  {name:'React',color:'var(--sky)',emoji:'⚛'},
-  {name:'Node.js',color:'var(--mint)',emoji:'🟢'},
-  {name:'Python',color:'var(--yellow)',emoji:'🐍'},
-  {name:'TypeScript',color:'var(--lav)',emoji:'📘'},
-  {name:'Docker',color:'var(--sky)',emoji:'🐳'},
-  {name:'Git',color:'var(--peach)',emoji:'🌿'},
-  {name:'Linux',color:'var(--pink)',emoji:'🐧'},
-  {name:'Figma',color:'var(--lav)',emoji:'🎨'},
-  {name:'SQL',color:'var(--mint)',emoji:'🗄'},
-  {name:'REST',color:'var(--yellow)',emoji:'🔌'},
-  {name:'VS Code',color:'var(--sky)',emoji:'💙'},
-  {name:'GitHub',color:'var(--bg)',emoji:'🐙'},
-];
+      // 2. Cache miss → fetch
+      const res = await fetch(url, { headers: { Accept: 'application/vnd.github.v3+json' } });
+      if (!res.ok) throw res;
+      const data = await res.json();
 
-/* ══════════════════════════════
-   GITHUB API — cached fetch (localStorage, TTL 1 hour)
-   Key: "ghc::" + url  →  { data, exp }
-══════════════════════════════ */
-const CACHE_TTL = 60 * 60 * 1000; // 1 hour in ms
-
-async function get(url){
-  const key = 'ghc::' + url;
-  // 1. Try cache
-  try{
-    const raw = localStorage.getItem(key);
-    if(raw){
-      const {data, exp} = JSON.parse(raw);
-      if(Date.now() < exp) return data;        // cache hit ✓
-      localStorage.removeItem(key);            // expired, evict
+      // 3. Store in cache
+      try {
+        localStorage.setItem(key, JSON.stringify({ data, exp: Date.now() + CACHE_TTL }));
+      } catch (e) {
+        // localStorage full — evict oldest gh cache entries and retry once
+        if (e.name === 'QuotaExceededError') {
+          const ghKeys = Object.keys(localStorage).filter(k => k.startsWith('ghc::'));
+          // sort by exp ascending, remove oldest half
+          ghKeys
+            .map(k => { try { return { k, exp: JSON.parse(localStorage.getItem(k)).exp }; } catch { return { k, exp: 0 }; } })
+            .sort((a, b) => a.exp - b.exp)
+            .slice(0, Math.max(1, Math.floor(ghKeys.length / 2)))
+            .forEach(({ k }) => localStorage.removeItem(k));
+          try { localStorage.setItem(key, JSON.stringify({ data, exp: Date.now() + CACHE_TTL })); } catch { }
+        }
+      }
+      return data;
     }
-  }catch{ localStorage.removeItem(key); }
 
-  // 2. Cache miss → fetch
-  const res = await fetch(url, {headers:{Accept:'application/vnd.github.v3+json'}});
-  if(!res.ok) throw res;
-  const data = await res.json();
-
-  // 3. Store in cache
-  try{
-    localStorage.setItem(key, JSON.stringify({data, exp: Date.now() + CACHE_TTL}));
-  }catch(e){
-    // localStorage full — evict oldest gh cache entries and retry once
-    if(e.name === 'QuotaExceededError'){
-      const ghKeys = Object.keys(localStorage).filter(k => k.startsWith('ghc::'));
-      // sort by exp ascending, remove oldest half
-      ghKeys
-        .map(k => { try{ return {k, exp: JSON.parse(localStorage.getItem(k)).exp}; }catch{ return {k, exp:0}; }})
-        .sort((a,b) => a.exp - b.exp)
-        .slice(0, Math.max(1, Math.floor(ghKeys.length / 2)))
-        .forEach(({k}) => localStorage.removeItem(k));
-      try{ localStorage.setItem(key, JSON.stringify({data, exp: Date.now() + CACHE_TTL})); }catch{}
+    /* Helper: manually bust all GitHub cache (call from console: bustCache()) */
+    function bustCache() {
+      Object.keys(localStorage).filter(k => k.startsWith('ghc::')).forEach(k => localStorage.removeItem(k));
+      console.log('GitHub API cache cleared. Reload to refetch.');
     }
-  }
-  return data;
-}
 
-/* Helper: manually bust all GitHub cache (call from console: bustCache()) */
-function bustCache(){
-  Object.keys(localStorage).filter(k=>k.startsWith('ghc::')).forEach(k=>localStorage.removeItem(k));
-  console.log('GitHub API cache cleared. Reload to refetch.');
-}
+    /* Show cache status in console on load */
+    function logCacheStatus() {
+      const keys = Object.keys(localStorage).filter(k => k.startsWith('ghc::'));
+      const now = Date.now();
+      const live = keys.filter(k => { try { return JSON.parse(localStorage.getItem(k)).exp > now; } catch { return false; } });
+      console.log(`%c[GH Cache] ${live.length} live / ${keys.length} total entries. Call bustCache() to clear.`, 'color:#9060b0;font-weight:bold;');
+    }
+    function ago(d) { const m = Math.floor((Date.now() - new Date(d)) / 60000); if (m < 60) return m + 'm ago'; const h = Math.floor(m / 60); if (h < 24) return h + 'h ago'; return Math.floor(h / 24) + 'd ago'; }
+    function etype(t) { return { PushEvent: '⬆', CreateEvent: '✦', IssuesEvent: '◉', PullRequestEvent: '⇄', WatchEvent: '★', ForkEvent: '⑂', IssueCommentEvent: '💬', ReleaseEvent: '🚀' }[t] || '◆'; }
+    function edesc(e) {
+      const rn = e.repo.name.split('/')[1];
+      const r = `<a href="https://github.com/${e.repo.name}" target="_blank" style="font-weight:700;text-decoration:underline;">${rn}</a>`;
+      switch (e.type) {
+        case 'PushEvent': return `Pushed ${e.payload.commits?.length || 1} commit(s) to ${r}`;
+        case 'CreateEvent': return `Created ${e.payload.ref_type} <b>${e.payload.ref || ''}</b> in ${r}`;
+        case 'IssuesEvent': return `${e.payload.action} issue in ${r}`;
+        case 'PullRequestEvent': return `${e.payload.action} PR in ${r}`;
+        case 'WatchEvent': return `Starred ${r}`;
+        case 'ForkEvent': return `Forked ${r}`;
+        case 'IssueCommentEvent': return `Commented on issue in ${r}`;
+        case 'ReleaseEvent': return `Released <b>${e.payload.release?.tag_name}</b> in ${r}`;
+        default: return `${e.type.replace('Event', '')} in ${r}`;
+      }
+    }
+    function calcLevel(u, repos) {
+      const stars = repos.reduce((s, r) => s + r.stargazers_count, 0);
+      const xp = u.public_repos * 10 + u.followers * 15 + u.following * 3 + stars * 25 + u.public_gists * 5 + Math.floor((Date.now() - new Date(u.created_at)) / 3.156e10) * 20;
+      const level = Math.floor(Math.sqrt(xp / 50));
+      const xpFL = level * level * 50, xpFN = (level + 1) * (level + 1) * 50;
+      return { level, xp, pct: Math.min(100, Math.round((xp - xpFL) / (xpFN - xpFL) * 100)) };
+    }
 
-/* Show cache status in console on load */
-function logCacheStatus(){
-  const keys = Object.keys(localStorage).filter(k=>k.startsWith('ghc::'));
-  const now = Date.now();
-  const live = keys.filter(k=>{ try{ return JSON.parse(localStorage.getItem(k)).exp > now; }catch{return false;} });
-  console.log(`%c[GH Cache] ${live.length} live / ${keys.length} total entries. Call bustCache() to clear.`, 'color:#9060b0;font-weight:bold;');
-}
-function ago(d){const m=Math.floor((Date.now()-new Date(d))/60000);if(m<60)return m+'m ago';const h=Math.floor(m/60);if(h<24)return h+'h ago';return Math.floor(h/24)+'d ago';}
-function etype(t){return {PushEvent:'⬆',CreateEvent:'✦',IssuesEvent:'◉',PullRequestEvent:'⇄',WatchEvent:'★',ForkEvent:'⑂',IssueCommentEvent:'💬',ReleaseEvent:'🚀'}[t]||'◆';}
-function edesc(e){
-  const rn=e.repo.name.split('/')[1];
-  const r=`<a href="https://github.com/${e.repo.name}" target="_blank" style="font-weight:700;text-decoration:underline;">${rn}</a>`;
-  switch(e.type){
-    case 'PushEvent':return `Pushed ${e.payload.commits?.length||1} commit(s) to ${r}`;
-    case 'CreateEvent':return `Created ${e.payload.ref_type} ${e.payload.ref?`<b>${e.payload.ref}</b>`:''} in ${r}`;
-    case 'IssuesEvent':return `${e.payload.action} issue in ${r}`;
-    case 'PullRequestEvent':return `${e.payload.action} PR in ${r}`;
-    case 'WatchEvent':return `Starred ${r}`;
-    case 'ForkEvent':return `Forked ${r}`;
-    case 'IssueCommentEvent':return `Commented on issue in ${r}`;
-    case 'ReleaseEvent':return `Released <b>${e.payload.release?.tag_name}</b> in ${r}`;
-    default:return `${e.type.replace('Event','')} in ${r}`;
-  }
-}
-function calcLevel(u,repos){
-  const stars=repos.reduce((s,r)=>s+r.stargazers_count,0);
-  const xp=u.public_repos*10+u.followers*15+u.following*3+stars*25+u.public_gists*5+Math.floor((Date.now()-new Date(u.created_at))/3.156e10)*20;
-  const level=Math.floor(Math.sqrt(xp/50));
-  const xpFL=level*level*50,xpFN=(level+1)*(level+1)*50;
-  return {level,xp,pct:Math.min(100,Math.round((xp-xpFL)/(xpFN-xpFL)*100))};
-}
+    /* ── TAB ── */
+    function switchTab(id) {
+      document.querySelectorAll('.tab-btn').forEach((b, i) => {
+        const n = ['showcase', 'repos', 'achievements', 'gallery', 'activity', 'skills'];
+        b.classList.toggle('active', n[i] === id);
+      });
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.getElementById('tab-' + id).classList.add('active');
+    }
 
-/* ── TAB ── */
-function switchTab(id){
-  document.querySelectorAll('.tab-btn').forEach((b,i)=>{
-    const n=['showcase','repos','achievements','gallery','activity','skills'];
-    b.classList.toggle('active',n[i]===id);
-  });
-  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
-  document.getElementById('tab-'+id).classList.add('active');
-}
+    /* ── LIGHTBOX ── */
+    function openLB(src, cap) {
+      document.getElementById('lb-img').src = src;
+      document.getElementById('lb-cap').textContent = cap;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
 
-/* ── LIGHTBOX ── */
-function openLB(src,cap){
-  document.getElementById('lb-img').src=src;
-  document.getElementById('lb-cap').textContent=cap;
-  document.getElementById('lightbox').style.display='flex';
-}
+    /* ══════════════════════════════
+       NEW: CLOCK
+    ══════════════════════════════ */
+    function startClock() {
+      function tick() {
+        const now = new Date();
+        document.getElementById('clock-display').textContent = now.toLocaleTimeString('en-US', { hour12: false });
+        document.getElementById('date-display').textContent = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        document.getElementById('tz-info').innerHTML = `<span class="tag" style="background:var(--bg);font-size:.52rem;">${tz}</span>`;
+      }
+      tick();
+      setInterval(tick, 1000);
+    }
 
-/* ══════════════════════════════
-   NEW: CLOCK
-══════════════════════════════ */
-function startClock(){
-  function tick(){
-    const now=new Date();
-    document.getElementById('clock-display').textContent=now.toLocaleTimeString('en-US',{hour12:false});
-    document.getElementById('date-display').textContent=now.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
-    const tz=Intl.DateTimeFormat().resolvedOptions().timeZone;
-    document.getElementById('tz-info').innerHTML=`<span class="tag" style="background:var(--bg);font-size:.52rem;">${tz}</span>`;
-  }
-  tick();
-  setInterval(tick,1000);
-}
+    /* ══════════════════════════════
+       NEW: VISITOR COUNTER
+    ══════════════════════════════ */
+    function initVisitorCounter() {
+      let count = parseInt(localStorage.getItem('profile_visits') || '0') + 1;
+      localStorage.setItem('profile_visits', count);
+      // animate count up
+      let cur = 0;
+      const target = count;
+      const step = Math.max(1, Math.floor(target / 30));
+      const el = document.getElementById('visitor-num');
+      const t = setInterval(() => {
+        cur = Math.min(cur + step, target);
+        el.textContent = cur.toLocaleString();
+        if (cur >= target) clearInterval(t);
+      }, 40);
+    }
 
-/* ══════════════════════════════
-   NEW: VISITOR COUNTER
-══════════════════════════════ */
-function initVisitorCounter(){
-  let count=parseInt(localStorage.getItem('profile_visits')||'0')+1;
-  localStorage.setItem('profile_visits',count);
-  // animate count up
-  let cur=0;
-  const target=count;
-  const step=Math.max(1,Math.floor(target/30));
-  const el=document.getElementById('visitor-num');
-  const t=setInterval(()=>{
-    cur=Math.min(cur+step,target);
-    el.textContent=cur.toLocaleString();
-    if(cur>=target)clearInterval(t);
-  },40);
-}
+    /* ══════════════════════════════
+       NOW PLAYING — locked music player
+       To customize: edit NP_TRACKS below.
+       album art: put album.jpg (or per-track) next to index.html
+    ══════════════════════════════ */
+    const NP_TRACKS = [
+      { title: 'Song Title', artist: 'Artist Name', art: 'album.jpg', dur: 227 },
+      // add more tracks here:
+      // { title: 'Another Song', artist: 'Other Artist', art: 'album2.jpg',  dur: 180 },
+    ];
 
-/* ══════════════════════════════
-   NOW PLAYING — locked music player
-   To customize: edit NP_TRACKS below.
-   album art: put album.jpg (or per-track) next to index.html
-══════════════════════════════ */
-const NP_TRACKS = [
-  { title: 'Song Title',    artist: 'Artist Name',  art: 'album.jpg',   dur: 227 },
-  // add more tracks here:
-  // { title: 'Another Song', artist: 'Other Artist', art: 'album2.jpg',  dur: 180 },
-];
+    let npIdx = 0;
+    let npSec = 0;
+    let npPlaying = true;
+    let npTimer = null;
 
-let npIdx = 0;
-let npSec = 0;
-let npPlaying = true;
-let npTimer = null;
+    function npCurrent() { return NP_TRACKS[npIdx % NP_TRACKS.length]; }
 
-function npCurrent(){ return NP_TRACKS[npIdx % NP_TRACKS.length]; }
+    function npRender() {
+      const t = npCurrent();
+      const artImg = document.getElementById('np-art-img');
+      const fallback = document.getElementById('np-art-fallback');
+      artImg.src = t.art;
+      artImg.style.display = 'block';
+      fallback.style.display = 'none';
+      artImg.onerror = () => { artImg.style.display = 'none'; fallback.style.display = 'flex'; };
+      document.getElementById('np-title').textContent = t.title;
+      document.getElementById('np-artist').textContent = t.artist;
+      document.getElementById('np-dur').textContent = npFmt(t.dur);
+      // dots
+      const dots = document.getElementById('np-dots');
+      if (NP_TRACKS.length > 1) {
+        dots.innerHTML = NP_TRACKS.map((_, i) =>
+          `<div style="width:6px;height:6px;border-radius:50%;border:1.5px solid var(--ink);background:${i === npIdx ? 'var(--ink)' : 'transparent'};transition:background .2s;"></div>`
+        ).join('');
+      }
+    }
 
-function npRender(){
-  const t = npCurrent();
-  const artImg = document.getElementById('np-art-img');
-  const fallback = document.getElementById('np-art-fallback');
-  artImg.src = t.art;
-  artImg.style.display = 'block';
-  fallback.style.display = 'none';
-  artImg.onerror = ()=>{ artImg.style.display='none'; fallback.style.display='flex'; };
-  document.getElementById('np-title').textContent = t.title;
-  document.getElementById('np-artist').textContent = t.artist;
-  document.getElementById('np-dur').textContent = npFmt(t.dur);
-  // dots
-  const dots = document.getElementById('np-dots');
-  if(NP_TRACKS.length > 1){
-    dots.innerHTML = NP_TRACKS.map((_,i)=>
-      `<div style="width:6px;height:6px;border-radius:50%;border:1.5px solid var(--ink);background:${i===npIdx?'var(--ink)':'transparent'};transition:background .2s;"></div>`
-    ).join('');
-  }
-}
+    function npFmt(s) { return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; }
 
-function npFmt(s){ return `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`; }
+    function npTick() {
+      if (!npPlaying) return;
+      const t = npCurrent();
+      npSec++;
+      if (npSec >= t.dur) { npSec = 0; npNext(); return; }
+      const pct = npSec / t.dur * 100;
+      document.getElementById('np-progress').style.width = pct + '%';
+      document.getElementById('np-cur').textContent = npFmt(npSec);
+    }
 
-function npTick(){
-  if(!npPlaying) return;
-  const t = npCurrent();
-  npSec++;
-  if(npSec >= t.dur){ npSec = 0; npNext(); return; }
-  const pct = npSec / t.dur * 100;
-  document.getElementById('np-progress').style.width = pct + '%';
-  document.getElementById('np-cur').textContent = npFmt(npSec);
-}
+    function npToggle() {
+      npPlaying = !npPlaying;
+      document.getElementById('np-playbtn').textContent = npPlaying ? '⏸' : '▶';
+      document.getElementById('np-status').textContent = npPlaying ? 'PLAYING' : 'PAUSED';
+      document.getElementById('np-bars').classList.toggle('paused', !npPlaying);
+      const vinyl = document.getElementById('np-vinyl-icon');
+      if (vinyl) vinyl.classList.toggle('playing', npPlaying);
+    }
 
-function npToggle(){
-  npPlaying = !npPlaying;
-  document.getElementById('np-playbtn').textContent = npPlaying ? '⏸' : '▶';
-  document.getElementById('np-status').textContent = npPlaying ? 'PLAYING' : 'PAUSED';
-  document.getElementById('np-bars').classList.toggle('paused', !npPlaying);
-  const vinyl = document.getElementById('np-vinyl-icon');
-  if(vinyl) vinyl.classList.toggle('playing', npPlaying);
-}
+    function npNext() {
+      npIdx = (npIdx + 1) % NP_TRACKS.length;
+      npSec = 0;
+      document.getElementById('np-progress').style.width = '0%';
+      npRender();
+    }
+    function npPrev() {
+      if (npSec > 3) { npSec = 0; document.getElementById('np-progress').style.width = '0%'; return; }
+      npIdx = (npIdx - 1 + NP_TRACKS.length) % NP_TRACKS.length;
+      npSec = 0;
+      document.getElementById('np-progress').style.width = '0%';
+      npRender();
+    }
+    function npSeek(e) {
+      const wrap = document.getElementById('np-progress-wrap');
+      const rect = wrap.getBoundingClientRect();
+      const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      npSec = Math.floor(pct * npCurrent().dur);
+      document.getElementById('np-progress').style.width = (pct * 100) + '%';
+      document.getElementById('np-cur').textContent = npFmt(npSec);
+    }
+    function initNp() {
+      npRender();
+      document.getElementById('np-playbtn').textContent = '⏸';
+      setInterval(npTick, 1000);
+    }
 
-function npNext(){
-  npIdx = (npIdx + 1) % NP_TRACKS.length;
-  npSec = 0;
-  document.getElementById('np-progress').style.width = '0%';
-  npRender();
-}
-function npPrev(){
-  if(npSec > 3){ npSec = 0; document.getElementById('np-progress').style.width='0%'; return; }
-  npIdx = (npIdx - 1 + NP_TRACKS.length) % NP_TRACKS.length;
-  npSec = 0;
-  document.getElementById('np-progress').style.width = '0%';
-  npRender();
-}
-function npSeek(e){
-  const wrap = document.getElementById('np-progress-wrap');
-  const rect = wrap.getBoundingClientRect();
-  const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-  npSec = Math.floor(pct * npCurrent().dur);
-  document.getElementById('np-progress').style.width = (pct*100) + '%';
-  document.getElementById('np-cur').textContent = npFmt(npSec);
-}
-function initNp(){
-  npRender();
-  document.getElementById('np-playbtn').textContent = '⏸';
-  setInterval(npTick, 1000);
-}
+    /* ══════════════════════════════
+       NEW: SOCIAL LINKS
+    ══════════════════════════════ */
+    function loadSocials() {
+      try {
+        const s = JSON.parse(localStorage.getItem('social_links') || '{}');
+        if (s.linkedin) document.getElementById('social-linkedin').href = s.linkedin;
+        if (s.twitter) document.getElementById('social-twitter').href = s.twitter;
+        if (s.instagram) document.getElementById('social-instagram').href = s.instagram;
+        if (s.website) document.getElementById('social-website').href = s.website;
+      } catch { }
+    }
+    function openSocialEdit() {
+      try {
+        const s = JSON.parse(localStorage.getItem('social_links') || '{}');
+        document.getElementById('se-linkedin').value = s.linkedin || '';
+        document.getElementById('se-twitter').value = s.twitter || '';
+        document.getElementById('se-instagram').value = s.instagram || '';
+        document.getElementById('se-website').value = s.website || '';
+      } catch { }
+      document.getElementById('social-modal').style.display = 'flex';
+    }
+    function saveSocialEdit() {
+      const s = {
+        linkedin: document.getElementById('se-linkedin').value,
+        twitter: document.getElementById('se-twitter').value,
+        instagram: document.getElementById('se-instagram').value,
+        website: document.getElementById('se-website').value,
+      };
+      localStorage.setItem('social_links', JSON.stringify(s));
+      loadSocials();
+      document.getElementById('social-modal').style.display = 'none';
+    }
 
-/* ══════════════════════════════
-   NEW: SOCIAL LINKS
-══════════════════════════════ */
-function loadSocials(){
-  try{
-    const s=JSON.parse(localStorage.getItem('social_links')||'{}');
-    if(s.linkedin) document.getElementById('social-linkedin').href=s.linkedin;
-    if(s.twitter)  document.getElementById('social-twitter').href=s.twitter;
-    if(s.instagram)document.getElementById('social-instagram').href=s.instagram;
-    if(s.website)  document.getElementById('social-website').href=s.website;
-  }catch{}
-}
-function openSocialEdit(){
-  try{
-    const s=JSON.parse(localStorage.getItem('social_links')||'{}');
-    document.getElementById('se-linkedin').value=s.linkedin||'';
-    document.getElementById('se-twitter').value=s.twitter||'';
-    document.getElementById('se-instagram').value=s.instagram||'';
-    document.getElementById('se-website').value=s.website||'';
-  }catch{}
-  document.getElementById('social-modal').style.display='flex';
-}
-function saveSocialEdit(){
-  const s={
-    linkedin:document.getElementById('se-linkedin').value,
-    twitter:document.getElementById('se-twitter').value,
-    instagram:document.getElementById('se-instagram').value,
-    website:document.getElementById('se-website').value,
-  };
-  localStorage.setItem('social_links',JSON.stringify(s));
-  loadSocials();
-  document.getElementById('social-modal').style.display='none';
-}
+    /* ══════════════════════════════
+       NEW: SKILLS
+    ══════════════════════════════ */
+    const SKILL_COLORS = ['#d1d5db', '#cbd5e1', '#94a3b8', '#a1a1aa', '#e4e4e7', '#e2e8f0'];
 
-/* ══════════════════════════════
-   NEW: SKILLS
-══════════════════════════════ */
-const SKILL_COLORS=['#d1d5db','#cbd5e1','#94a3b8','#a1a1aa','#e4e4e7','#e2e8f0'];
-function parseSkills(){
-  try{
-    const raw=localStorage.getItem('skills_data');
-    return (raw?raw.split('\n'):DEFAULT_SKILLS).filter(l=>l.trim()).map(l=>{
-      const[name,pct,cat]=l.split(',');
-      return{name:name?.trim(),pct:parseInt(pct)||50,cat:(cat||'tools').trim()};
-    }).filter(s=>s.name);
-  }catch{return[];}
-}
-function renderSkills(){
-  const skills=parseSkills();
-  const cats={frontend:[],backend:[],tools:[]};
-  skills.forEach(s=>{ if(cats[s.cat]) cats[s.cat].push(s); else cats.tools.push(s); });
-  ['frontend','backend','tools'].forEach(cat=>{
-    const el=document.getElementById('skills-'+cat);
-    if(!el)return;
-    el.innerHTML=cats[cat].map((s,i)=>{
-      let lvl = 'BEGINNER';
-      let c = '#10b981';
-      if(s.pct >= 80) { lvl = 'ADVANCED'; c = '#ef4444'; }
-      else if(s.pct >= 60) { lvl = 'INTERMEDIATE'; c = '#f59e0b'; }
-      return `<div class="skill-row" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f1f5f9;">
-        <div style="font-size:.85rem;font-weight:700;color:var(--ink);">${s.name}</div>
-        <div style="font-size:.7rem;font-family:'Space Mono', monospace;font-weight:700;color:${c};letter-spacing:.05em;">${lvl}</div>
-      </div>`;
-    }).join('');
-  });
-
-  // tech badges
-  const techSvg = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:inline;margin-right:4px;margin-bottom:1px;" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`;
-  document.getElementById('tech-badges').innerHTML=TECH_BADGES.map(b=>
-    `<span class="skill-badge" style="background:${b.color};border-radius:999px;">${techSvg} ${b.name}</span>`
-  ).join('');
-
-  // goals
-  document.getElementById('goals-list').innerHTML=DEFAULT_GOALS.map(g=>`
-    <div>
-      <div style="display:flex;justify-content:space-between;font-size:.68rem;margin-bottom:3px;">
-        <span><b>${g.label}</b></span>
-        <span style="color:#555;">${g.pct}%</span>
-      </div>
-      <div class="goal-bar">
-        <div class="goal-fill" data-pct="${g.pct}" style="width:0%;background:${g.color};"></div>
-      </div>
-    </div>`).join('');
-  setTimeout(()=>{
-    document.querySelectorAll('.goal-fill').forEach(el=>{el.style.width=el.dataset.pct+'%';});
-  },300);
-}
-function openSkillEdit(){
-  const raw=localStorage.getItem('skills_data')||DEFAULT_SKILLS.join('\n');
-  document.getElementById('skill-edit-area').value=raw;
-  document.getElementById('skill-modal').style.display='flex';
-}
-function saveSkillEdit(){
-  localStorage.setItem('skills_data',document.getElementById('skill-edit-area').value);
-  renderSkills();
-  document.getElementById('skill-modal').style.display='none';
-}
-
-
-/* ══════════════════════════════
-   COMMIT CHART — fetch from ALL repos with batching
-   GitHub unauthenticated: 60 req/hr, so we batch 8 at a time
-   with a small delay between batches to stay safe
-══════════════════════════════ */
-async function buildCommitChart(allRepos){
-  const chart   = document.getElementById('commit-chart');
-  const labelsEl= document.getElementById('commit-chart-labels');
-  const wrap    = document.getElementById('commit-chart-wrap');
-  const empty   = document.getElementById('commit-empty');
-  const tag     = document.getElementById('commit-chart-tag');
-
-  // Show loading state
-  tag.textContent = 'LOADING...';
-  chart.innerHTML = '<div style="font-size:.65rem;color:#aaa;padding:.5rem 0;">fetching commits from all repos...</div>';
-
-  const DAYS    = 14;
-  const counts  = new Array(DAYS).fill(0);
-  const today   = new Date(); today.setHours(23,59,59,999);
-  const since   = new Date(today - (DAYS-1)*864e5); since.setHours(0,0,0,0);
-
-  // Filter out forks to save requests (forks unlikely to have owner commits)
-  const ownRepos = allRepos.filter(r => !r.fork);
-
-  // Batch fetch: 8 repos at a time
-  const BATCH = 8;
-  for(let i = 0; i < ownRepos.length; i += BATCH){
-    const batch = ownRepos.slice(i, i + BATCH);
-    await Promise.allSettled(batch.map(async repo=>{
-      try{
-        const commits = await get(
-          `${API}/repos/${USERNAME}/${repo.name}/commits?author=${USERNAME}&since=${since.toISOString()}&per_page=100`
-        );
-        if(!Array.isArray(commits)) return;
-        commits.forEach(c=>{
-          const d = new Date(c.commit?.author?.date); d.setHours(0,0,0,0);
-          const diff = Math.round((today - d)/864e5);
-          if(diff >= 0 && diff < DAYS) counts[DAYS-1-diff]++;
+    async function renderSkills() {
+      try {
+        const res = await fetch('skills.json');
+        const data = await res.json();
+        
+        const cats = { frontend: [], backend: [], tools: [] };
+        (data.skills || []).forEach(s => { 
+          if (cats[s.cat]) cats[s.cat].push(s); 
+          else cats.tools.push(s); 
         });
-      }catch{}
-    }));
-    // small pause between batches to respect rate limits
-    if(i + BATCH < ownRepos.length) await new Promise(r=>setTimeout(r, 300));
-  }
 
-  const total = counts.reduce((a,b)=>a+b,0);
-  tag.textContent = total + ' COMMITS / 14D';
+        ['frontend', 'backend', 'tools'].forEach(cat => {
+          const el = document.getElementById('skills-' + cat);
+          if (!el) return;
+          el.innerHTML = cats[cat].map((s, i) => {
+            let lvl = 'BEGINNER', c = '#10b981';
+            if (s.pct >= 80) { lvl = 'ADVANCED'; c = '#ef4444'; }
+            else if (s.pct >= 60) { lvl = 'INTERMEDIATE'; c = '#f59e0b'; }
+            return `<div class="skill-row" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f1f5f9;">
+              <div style="font-size:.85rem;font-weight:700;color:var(--ink);">${s.name}</div>
+              <div style="font-size:.7rem;font-family:'Space Mono', monospace;font-weight:700;color:${c};letter-spacing:.05em;">${lvl}</div>
+            </div>`;
+          }).join('');
+        });
 
-  if(total === 0){
-    wrap.style.display  = 'none';
-    empty.style.display = 'block';
-    return;
-  }
-  wrap.style.display  = '';
-  empty.style.display = 'none';
+        // tech badges
+        document.getElementById('tech-badges').innerHTML = (data.tech_badges || []).map(b => {
+          const iconUrl = `https://cdn.simpleicons.org/${b.icon}`;
+          return `<span class="skill-badge tech-hover" 
+                 data-tech="${b.name}" 
+                 data-desc="${b.desc || ''}" 
+                 data-icon="${iconUrl}" 
+                 data-color="${b.color}"
+                 style="background:${b.color};border-radius:999px;cursor:help;display:flex;align-items:center;gap:8px;padding:5px 12px;font-weight:600;">
+                   <img src="${iconUrl}" style="width:16px;height:16px;" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${b.icon}/${b.icon}-original.svg'"/>
+                   ${b.name}
+                 </span>`;
+        }).join('');
 
-  const max = Math.max(...counts, 1);
-  const dayNames = ['Su','Mo','Tu','We','Th','Fr','Sa'];
-  chart.innerHTML = counts.map((c,i)=>{
-    const date = new Date(today); date.setDate(date.getDate()-(DAYS-1-i));
-    const h = Math.max(3, Math.round(c/max*72));
-    const bg = c===0 ? '#e8e4dc' : HOVERS[i%HOVERS.length];
-    return `<div class="chart-bar" data-tip="${c} commit${c!==1?'s':''}">
+        // goals
+        document.getElementById('goals-list').innerHTML = (data.goals || []).map(g => `
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:.68rem;margin-bottom:3px;">
+              <span><b>${g.label}</b></span>
+              <span style="color:#555;">${g.pct}%</span>
+            </div>
+            <div class="goal-bar">
+              <div class="goal-fill" data-pct="${g.pct}" style="width:0%;background:${g.color};"></div>
+            </div>
+          </div>`).join('');
+        setTimeout(() => {
+          document.querySelectorAll('.goal-fill').forEach(el => { el.style.width = el.dataset.pct + '%'; });
+        }, 300);
+      } catch (err) { console.error('Skills:', err); }
+    }
+    function openSkillEdit() {
+      // Feature temporarily disabled or needs rethink for JSON-based editing
+      alert('Skills are now managed via skills.json file for better maintainability.');
+    }
+    function saveSkillEdit() { }
+
+
+    /* ══════════════════════════════
+       COMMIT CHART — fetch from ALL repos with batching
+       GitHub unauthenticated: 60 req/hr, so we batch 8 at a time
+       with a small delay between batches to stay safe
+    ══════════════════════════════ */
+    async function buildCommitChart(allRepos) {
+      const chart = document.getElementById('commit-chart');
+      const labelsEl = document.getElementById('commit-chart-labels');
+      const wrap = document.getElementById('commit-chart-wrap');
+      const empty = document.getElementById('commit-empty');
+      const tag = document.getElementById('commit-chart-tag');
+
+      // Show loading state
+      tag.textContent = 'LOADING...';
+      chart.innerHTML = '<div style="font-size:.65rem;color:#aaa;padding:.5rem 0;">fetching commits from all repos...</div>';
+
+      const DAYS = 14;
+      const counts = new Array(DAYS).fill(0);
+      const today = new Date(); today.setHours(23, 59, 59, 999);
+      const since = new Date(today - (DAYS - 1) * 864e5); since.setHours(0, 0, 0, 0);
+
+      // Filter out forks to save requests (forks unlikely to have owner commits)
+      const ownRepos = allRepos.filter(r => !r.fork);
+
+      // Batch fetch: 8 repos at a time
+      const BATCH = 8;
+      for (let i = 0; i < ownRepos.length; i += BATCH) {
+        const batch = ownRepos.slice(i, i + BATCH);
+        await Promise.allSettled(batch.map(async repo => {
+          try {
+            const commits = await get(
+              `${API}/repos/${USERNAME}/${repo.name}/commits?author=${USERNAME}&since=${since.toISOString()}&per_page=100`
+            );
+            if (!Array.isArray(commits)) return;
+            commits.forEach(c => {
+              const d = new Date(c.commit?.author?.date); d.setHours(0, 0, 0, 0);
+              const diff = Math.round((today - d) / 864e5);
+              if (diff >= 0 && diff < DAYS) counts[DAYS - 1 - diff]++;
+            });
+          } catch { }
+        }));
+        // small pause between batches to respect rate limits
+        if (i + BATCH < ownRepos.length) await new Promise(r => setTimeout(r, 300));
+      }
+
+      const total = counts.reduce((a, b) => a + b, 0);
+      tag.textContent = total + ' COMMITS / 14D';
+
+      if (total === 0) {
+        wrap.style.display = 'none';
+        empty.style.display = 'block';
+        return;
+      }
+      wrap.style.display = '';
+      empty.style.display = 'none';
+
+      const max = Math.max(...counts, 1);
+      const dayNames = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+      chart.innerHTML = counts.map((c, i) => {
+        const date = new Date(today); date.setDate(date.getDate() - (DAYS - 1 - i));
+        const h = Math.max(3, Math.round(c / max * 72));
+        const bg = c === 0 ? '#e8e4dc' : HOVERS[i % HOVERS.length];
+        return `<div class="chart-bar" data-tip="${c} commit${c !== 1 ? 's' : ''}">
       <div class="chart-bar-fill" style="height:${h}px;background:${bg};"></div>
     </div>`;
-  }).join('');
-  labelsEl.innerHTML = counts.map((_,i)=>{
-    const date = new Date(today); date.setDate(date.getDate()-(DAYS-1-i));
-    return `<div style="flex:1;text-align:center;font-size:.5rem;color:#888;">${dayNames[date.getDay()]}</div>`;
-  }).join('');
-}
-
-/* ══════════════════════════════
-   SIDEBAR OVERFLOW — move excess sidebar items into main column
-   Runs after all content is loaded
-══════════════════════════════ */
-function checkSidebarOverflow(){
-  const sidebar  = document.getElementById('sidebar');
-  const mainCol  = document.getElementById('main-col');
-  if(!sidebar || !mainCol) return;
-  // only on desktop (lg: 1024px+)
-  if(window.innerWidth < 1024) return;
-
-  const mainBottom   = mainCol.getBoundingClientRect().bottom;
-  const sidebarItems = Array.from(sidebar.children);
-
-  sidebarItems.forEach(item=>{
-    const itemBottom = item.getBoundingClientRect().bottom;
-    if(itemBottom > mainBottom + 40){
-      // move this card into main column, before contribution calendar
-      item.style.marginTop = '0';
-      const cal = document.getElementById('cal-wrap');
-      if(cal) mainCol.insertBefore(item, cal);
-      else mainCol.appendChild(item);
+      }).join('');
+      labelsEl.innerHTML = counts.map((_, i) => {
+        const date = new Date(today); date.setDate(date.getDate() - (DAYS - 1 - i));
+        return `<div style="flex:1;text-align:center;font-size:.5rem;color:#888;">${dayNames[date.getDay()]}</div>`;
+      }).join('');
     }
-  });
-}
 
-/* ══════════════════════════════
-   CONTRIBUTION CALENDAR
-══════════════════════════════ */
-function buildCalendar(){
-  const weeks=document.getElementById('cal-weeks');
-  const bg=['#f1f5f9','#cbd5e1','#94a3b8','#64748b','#475569'];
-  const WEEKS=52;const today=new Date();
-  let monthMap={};let html='';
-  for(let w=0;w<WEEKS;w++){
-    html+='<div style="display:flex;flex-direction:column;gap:2px;">';
-    for(let d=0;d<7;d++){
-      const date=new Date(today);date.setDate(date.getDate()-((WEEKS-1-w)*7+(6-d)));
-      const lvl=Math.floor(Math.random()*5);
-      if(d===0)monthMap[w]=date.toLocaleDateString('en',{month:'short'});
-      html+=`<div class="adot" style="background:${bg[lvl]};"></div>`;
+    /* ══════════════════════════════
+       SIDEBAR OVERFLOW — move excess sidebar items into main column
+       Runs after all content is loaded
+    ══════════════════════════════ */
+    function checkSidebarOverflow() {
+      const sidebar = document.getElementById('sidebar');
+      const mainCol = document.getElementById('main-col');
+      if (!sidebar || !mainCol) return;
+      // only on desktop (lg: 1024px+)
+      if (window.innerWidth < 1024) return;
+
+      const mainBottom = mainCol.getBoundingClientRect().bottom;
+      const sidebarItems = Array.from(sidebar.children);
+
+      sidebarItems.forEach(item => {
+        const itemBottom = item.getBoundingClientRect().bottom;
+        if (itemBottom > mainBottom + 40) {
+          // move this card into main column, before contribution calendar
+          item.style.marginTop = '0';
+          const cal = document.getElementById('cal-wrap');
+          if (cal) mainCol.insertBefore(item, cal);
+          else mainCol.appendChild(item);
+        }
+      });
     }
-    html+='</div>';
-  }
-  weeks.innerHTML=html;
-  let prev='';let mhtml='';
-  for(let w=0;w<WEEKS;w++){
-    const m=monthMap[w]||'';
-    if(m!==prev){mhtml+=`<div style="min-width:${(WEEKS-w)*14}px;max-width:56px;">${m}</div>`;prev=m;}
-  }
-  document.getElementById('cal-months').innerHTML=mhtml;
-  const total=Array.from(weeks.querySelectorAll('.adot')).filter(d=>d.style.background!=='rgb(240, 236, 232)').length;
-  document.getElementById('contrib-label').textContent=total+' contributions this year';
-}
 
-/* ══════════════════════════════
-   GALLERY
-══════════════════════════════ */
-let ALL_GALLERY_IMAGES=[];
-function renderGallery(images, animateNow=false){
-  const grid=document.getElementById('gallery-grid');
-  const empty=document.getElementById('gallery-empty');
-  if(!images.length){grid.style.display='none';empty.style.display='block';return;}
-  grid.style.display='';empty.style.display='none';
-  grid.innerHTML=images.map((img,i)=>`
-    <div class="gallery-img ${animateNow?'run-anim':''}" style="background:${HOVERS[i%HOVERS.length]};${animateNow?`animation-delay:${i*200}ms;`:''}" onclick="openLB('${img.src}','${img.title}')">
+    /* ══════════════════════════════
+       CONTRIBUTION CALENDAR
+    ══════════════════════════════ */
+    function buildCalendar() {
+      const weeks = document.getElementById('cal-weeks');
+      const bg = ['#f1f5f9', '#cbd5e1', '#94a3b8', '#64748b', '#475569'];
+      const WEEKS = 52; const today = new Date();
+      let monthMap = {}; let html = '';
+      for (let w = 0; w < WEEKS; w++) {
+        html += '<div style="display:flex;flex-direction:column;gap:2px;">';
+        for (let d = 0; d < 7; d++) {
+          const date = new Date(today); date.setDate(date.getDate() - ((WEEKS - 1 - w) * 7 + (6 - d)));
+          const lvl = Math.floor(Math.random() * 5);
+          if (d === 0) monthMap[w] = date.toLocaleDateString('en', { month: 'short' });
+          html += `<div class="adot" data-tip="${date.toDateString()}" style="background:${bg[lvl]};"></div>`;
+        }
+        html += '</div>';
+      }
+      weeks.innerHTML = html;
+      let prev = ''; let mhtml = '';
+      for (let w = 0; w < WEEKS; w++) {
+        const m = monthMap[w] || '';
+        if (m !== prev) { mhtml += `<div style="min-width:${(WEEKS - w) * 14}px;max-width:56px;">${m}</div>`; prev = m; }
+      }
+      document.getElementById('cal-months').innerHTML = mhtml;
+      const total = Array.from(weeks.querySelectorAll('.adot')).filter(d => d.style.background !== 'rgb(240, 236, 232)').length;
+      document.getElementById('contrib-label').textContent = total + ' contributions this year';
+    }
+
+    /* ══════════════════════════════
+       GALLERY
+    ══════════════════════════════ */
+    let ALL_GALLERY_IMAGES = [];
+    function renderGallery(images, animateNow = false) {
+      const grid = document.getElementById('gallery-grid');
+      const empty = document.getElementById('gallery-empty');
+      if (!images.length) { grid.style.display = 'none'; empty.style.display = 'block'; return; }
+      grid.style.display = ''; empty.style.display = 'none';
+      grid.innerHTML = images.map((img, i) => `
+    <div class="gallery-img ${animateNow ? 'run-anim' : ''}" style="background:${HOVERS[i % HOVERS.length]};${animateNow ? `animation-delay:${i * 200}ms;` : ''}" onclick="openLB('${img.src}','${img.title}')">
       <img src="${img.src}" alt="${img.title}"
            onerror="this.style.display='none';this.parentElement.querySelector('.img-fallback').style.display='flex'">
       <div class="overlay">${img.title.toUpperCase()} ↗</div>
@@ -1122,309 +1851,498 @@ function renderGallery(images, animateNow=false){
         <div style="font-size:.62rem;font-weight:700;margin-top:4px;">${img.title}</div>
       </div>
     </div>`).join('');
-}
-function filterGallery(cat){
-  document.querySelectorAll('.gal-filter').forEach(b=>b.classList.toggle('active',b.dataset.cat===cat));
-  renderGallery(cat==='all'?ALL_GALLERY_IMAGES:ALL_GALLERY_IMAGES.filter(i=>i.category===cat), true);
-}
-function startTerminal(tabId){
-  const btn = document.querySelector(`#${tabId}-run-wrap button`);
-  if(btn) { btn.disabled = true; btn.style.opacity = '0.5'; btn.style.cursor = 'not-allowed'; }
-  document.getElementById(`${tabId}-content-wrap`).style.display='block';
-  const selectors = ['.showcase-card', '.repo-card', '.ach-card', '.event-item', '.skill-row', '.skill-badge', '.gallery-img', '.tag', '#skills-container > div', '#ach-progress > div'];
-  const childs = document.querySelectorAll(selectors.map(s => `#${tabId}-content-wrap ${s}`).join(', '));
-  if(childs.length > 0) {
-    const delayStep = (tabId === 'gallery') ? 200 : 120;
-    childs.forEach((el, i) => {
-      el.style.animationDelay = `${i * delayStep}ms`;
-      el.classList.add('run-anim');
-    });
-  } else {
-    document.getElementById(`${tabId}-content-wrap`).classList.add('run-anim');
-  }
-}
-async function preloadGallery(){
-  const countEl=document.getElementById('gallery-count');
-  const filtersEl=document.getElementById('gallery-filters');
-  try{
-    const res=await fetch('gallery.json');
-    if(!res.ok)throw new Error();
-    const data=await res.json();
-    ALL_GALLERY_IMAGES=data.images||[];
-    countEl.textContent=ALL_GALLERY_IMAGES.length;
-    const cats=['all',...(data.categories||[])];
-    filtersEl.innerHTML=cats.map(cat=>
-      `<button class="gal-filter tag" data-cat="${cat}"
-        style="cursor:pointer;background:${cat==='all'?'var(--ink)':'var(--bg)'};color:${cat==='all'?'var(--bg)':'var(--ink)'};"
+    }
+    function filterGallery(cat) {
+      document.querySelectorAll('.gal-filter').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+      renderGallery(cat === 'all' ? ALL_GALLERY_IMAGES : ALL_GALLERY_IMAGES.filter(i => i.category === cat), true);
+    }
+    function startTerminal(tabId) {
+      const btn = document.querySelector(`#${tabId}-run-wrap button`);
+      if (btn) { btn.disabled = true; btn.style.opacity = '0.5'; btn.style.cursor = 'not-allowed'; }
+      document.getElementById(`${tabId}-content-wrap`).style.display = 'block';
+      const selectors = ['.showcase-card', '.repo-card', '.ach-card', '.event-item', '.skill-row', '.skill-badge', '.gallery-img', '.tag', '#skills-container > div', '#ach-progress > div'];
+      const childs = document.querySelectorAll(selectors.map(s => `#${tabId}-content-wrap ${s}`).join(', '));
+      if (childs.length > 0) {
+        const delayStep = (tabId === 'gallery' || tabId === 'activity') ? 200 : 120;
+        childs.forEach((el, i) => {
+          el.style.setProperty('animation-delay', `${i * delayStep}ms`, 'important');
+          el.classList.add('run-anim');
+        });
+      } else {
+        document.getElementById(`${tabId}-content-wrap`).classList.add('run-anim');
+      }
+    }
+    async function preloadGallery() {
+      const countEl = document.getElementById('gallery-count');
+      const filtersEl = document.getElementById('gallery-filters');
+      try {
+        const res = await fetch('gallery.json');
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        ALL_GALLERY_IMAGES = data.images || [];
+        countEl.textContent = ALL_GALLERY_IMAGES.length;
+        const cats = ['all', ...(data.categories || [])];
+        filtersEl.innerHTML = cats.map(cat =>
+          `<button class="gal-filter tag" data-cat="${cat}"
+        style="cursor:pointer;background:${cat === 'all' ? 'var(--ink)' : 'var(--bg)'};color:${cat === 'all' ? 'var(--bg)' : 'var(--ink)'};"
         onclick="filterGallery('${cat}')">${cat.toUpperCase()}</button>`
-    ).join('');
-    renderGallery(ALL_GALLERY_IMAGES);
-  }catch{
-    countEl.textContent='0';
-    document.getElementById('gallery-grid').style.display='none';
-    document.getElementById('gallery-empty').style.display='block';
-  }
-}
+        ).join('');
+        renderGallery(ALL_GALLERY_IMAGES);
+      } catch {
+        countEl.textContent = '0';
+        document.getElementById('gallery-grid').style.display = 'none';
+        document.getElementById('gallery-empty').style.display = 'block';
+      }
+    }
 
-/* ══════════════════════════════
-   ACHIEVEMENTS
-══════════════════════════════ */
-function buildAchievements(u,repos){
-  document.getElementById('ach-grid').innerHTML=ACHIEVEMENTS.map(a=>{
-    const ok=a.check(u,repos);
-    return `<div class="ach-card ${ok?'':'locked'}" data-tip="${a.desc}" style="background:${ok?a.color:'var(--bg)'};">
+    /* ══════════════════════════════
+       ACHIEVEMENTS
+    ══════════════════════════════ */
+    function buildAchievements(u, repos) {
+      document.getElementById('ach-grid').innerHTML = ACHIEVEMENTS.map(a => {
+        const ok = a.check(u, repos);
+        return `<div class="ach-card ${ok ? '' : 'locked'}" data-tip="${a.desc}" style="background:${ok ? a.color : 'var(--bg)'};">
       <div style="font-size:1.8rem;margin-bottom:6px;">${a.icon}</div>
       <div style="font-family:'Outfit';font-weight:800;font-size:.78rem;line-height:1.2;">${a.name}</div>
       <div style="font-size:.6rem;color:#555;margin-top:3px;line-height:1.4;">${a.desc}</div>
-      ${ok?'<div class="tag" style="margin-top:6px;font-size:.5rem;background:var(--ink);color:var(--bg);">UNLOCKED ✓</div>':'<div style="font-size:.6rem;color:#888;margin-top:4px;">🔒 LOCKED</div>'}
+      ${ok ? '<div class="tag" style="margin-top:6px;font-size:.5rem;background:var(--ink);color:var(--bg);">UNLOCKED ✓</div>' : '<div style="font-size:.6rem;color:#888;margin-top:4px;">🔒 LOCKED</div>'}
     </div>`;
-  }).join('');
-  const progressItems=[
-    {label:'Follower count',cur:u.followers,target:50,unit:'followers',color:'var(--pink)'},
-    {label:'Public repos',cur:u.public_repos,target:50,unit:'repos',color:'var(--lav)'},
-    {label:'Stars earned',cur:repos.reduce((s,r)=>s+r.stargazers_count,0),target:100,unit:'stars',color:'var(--yellow)'},
-    {label:'Public gists',cur:u.public_gists,target:10,unit:'gists',color:'var(--mint)'},
-  ];
-  document.getElementById('ach-progress').innerHTML=progressItems.map(p=>`
+      }).join('');
+      const progressItems = [
+        { label: 'Follower count', cur: u.followers, target: 50, unit: 'followers', color: 'var(--pink)' },
+        { label: 'Public repos', cur: u.public_repos, target: 50, unit: 'repos', color: 'var(--lav)' },
+        { label: 'Stars earned', cur: repos.reduce((s, r) => s + r.stargazers_count, 0), target: 100, unit: 'stars', color: 'var(--yellow)' },
+        { label: 'Public gists', cur: u.public_gists, target: 10, unit: 'gists', color: 'var(--mint)' },
+      ];
+      document.getElementById('ach-progress').innerHTML = progressItems.map(p => `
     <div>
       <div style="display:flex;justify-content:space-between;font-size:.68rem;margin-bottom:4px;">
         <span><b>${p.label}</b></span><span style="color:#555;">${p.cur} / ${p.target} ${p.unit}</span>
       </div>
       <div style="border:var(--border);height:14px;background:var(--bg);overflow:hidden;">
-        <div style="height:100%;width:${Math.min(100,p.cur/p.target*100).toFixed(1)}%;background:${p.color};transition:width 1s ease;"></div>
+        <div style="height:100%;width:${Math.min(100, p.cur / p.target * 100).toFixed(1)}%;background:${p.color};transition:width 1s ease;"></div>
       </div>
     </div>`).join('');
-}
-
-/* ══════════════════════════════
-   LOAD PROFILE
-══════════════════════════════ */
-async function loadProfile(){
-  try{
-    const u=offlineData ? offlineData.profile : await get(`${API}/users/${USERNAME}`);
-    document.getElementById('avatar').src=u.avatar_url;
-    document.title=`${u.login} — GitHub Profile`;
-    const nameEl=document.getElementById('name');
-    nameEl.textContent=u.name||u.login;nameEl.classList.remove('sk');
-    const loginEl=document.getElementById('login');
-    loginEl.innerHTML=`<span style="color:#9060b0;font-weight:700;">@</span>${u.login}`;
-    loginEl.classList.remove('sk');
-    const badgesEl=document.getElementById('badges');
-    if(u.hireable)badgesEl.innerHTML+=`<span class="tag" style="background:var(--mint);">hireable</span>`;
-    badgesEl.innerHTML+=`<span class="tag" style="background:var(--pink);">System Administrator</span>`;
-    if(u.public_repos>=20)badgesEl.innerHTML+=`<span class="tag" style="background:var(--yellow);">Graphic Designer</span>`;
-    if(u.followers>=5)badgesEl.innerHTML+=`<span class="tag" style="background:var(--lav);">Backend Developer</span>`;
-    const bioEl=document.getElementById('bio');
-    bioEl.textContent=u.bio||'No bio yet — but the commits say a lot.';bioEl.classList.remove('sk');
-    const svgIcon = (path) => `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;margin-right:2px;vertical-align:-1px;"><path d="${path}"></path></svg>`;
-    const meta=[
-      u.location&&`<span style="display:flex;align-items:center;">${svgIcon("M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z")} ${u.location}</span>`,
-      u.blog&&`<span style="display:flex;align-items:center;">${svgIcon("M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71 M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71")} <a href="${u.blog.startsWith('http')?u.blog:'https://'+u.blog}" target="_blank" style="text-decoration:underline;">${u.blog}</a></span>`,
-      u.twitter_username&&`<span style="display:flex;align-items:center;">${svgIcon("M4 4l11.73 11.73 M4 20L20 4")} @${u.twitter_username}</span>`,
-      u.company&&`<span style="display:flex;align-items:center;">${svgIcon("M3 21h18 M9 8h1 M9 12h1 M9 16h1 M14 8h1 M14 12h1 M14 16h1 M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16")} ${u.company}</span>`,
-      `<span style="display:flex;align-items:center;">${svgIcon("M3 4h18v18H3z M16 2v4 M8 2v4 M3 10h18")} Joined ${new Date(u.created_at).toLocaleDateString('en-US',{year:'numeric',month:'short'})}</span>`,
-    ].filter(Boolean);
-    document.getElementById('meta-row').innerHTML=meta.map(i=>`<span>${i}</span>`).join('');
-    document.getElementById('stat-repos').textContent=u.public_repos;
-    document.getElementById('stat-followers').textContent=u.followers;
-    document.getElementById('stat-following').textContent=u.following;
-    document.getElementById('stat-gists').textContent=u.public_gists;
-    const items=[u.login,u.public_repos+' repos',u.followers+' followers',u.bio||'github dev',u.location||'the internet','✦ open source','soft pastel brutalism','built with github api'];
-    document.getElementById('mq').innerHTML=[...items,...items].map(t=>
-      `<span style="font-family:'Outfit';font-size:.92rem;letter-spacing:.12em;">✦ ${t.toUpperCase()}</span>`
-    ).join('');
-
-    // update social links from profile
-    if(u.blog){
-      const el=document.getElementById('social-website');
-      const saved=JSON.parse(localStorage.getItem('social_links')||'{}');
-      if(!saved.website){el.href=u.blog.startsWith('http')?u.blog:'https://'+u.blog;}
     }
-    if(u.twitter_username){
-      const el=document.getElementById('social-twitter');
-      const saved=JSON.parse(localStorage.getItem('social_links')||'{}');
-      if(!saved.twitter){el.href='https://twitter.com/'+u.twitter_username;}
-    }
-    return u;
-  }catch(e){console.error('Profile:',e);}
-}
 
-/* ══════════════════════════════
-   LOAD REPOS
-══════════════════════════════ */
-async function loadRepos(u){
-  try{
-    const repos=offlineData ? offlineData.repos : await get(`${API}/users/${USERNAME}/repos?sort=updated&per_page=100`);
-    const sorted=[...repos].sort((a,b)=>b.stargazers_count-a.stargazers_count);
-    document.getElementById('stat-stars').textContent=sorted.reduce((s,r)=>s+r.stargazers_count,0);
-    const{level,xp,pct}=calcLevel(u,repos);
-    document.getElementById('user-level').textContent=level;
-    document.getElementById('xp-label').textContent=xp+' XP';
-    setTimeout(()=>{document.getElementById('xp-fill').style.width=pct+'%';},300);
-    // langs
-    const lc={};repos.forEach(r=>{if(r.language)lc[r.language]=(lc[r.language]||0)+1;});
-    const lt=Object.values(lc).reduce((a,b)=>a+b,0)||1;
-    const langs=Object.entries(lc).sort((a,b)=>b[1]-a[1]).slice(0,7);
-    document.getElementById('lang-list').innerHTML=
-      `<div class="lbar mb-2">${langs.map(([l,c])=>`<div style="flex:${c};background:${LC(l)};"></div>`).join('')}</div>`
-      +langs.map(([l,c])=>`
+    /* ══════════════════════════════
+       LOAD PROFILE
+    ══════════════════════════════ */
+    async function loadProfile() {
+      try {
+        const u = offlineData ? offlineData.profile : await get(`${API}/users/${USERNAME}`);
+        document.getElementById('avatar').src = u.avatar_url;
+        document.title = `${u.login} — GitHub Profile`;
+        const nameEl = document.getElementById('name');
+        nameEl.textContent = u.name || u.login; nameEl.classList.remove('sk');
+        const loginEl = document.getElementById('login');
+        loginEl.innerHTML = `<span style="color:#9060b0;font-weight:700;">@</span>${u.login}`;
+        loginEl.classList.remove('sk');
+        const badgesEl = document.getElementById('badges');
+        if (u.hireable) badgesEl.innerHTML += `<span class="tag" style="background:var(--mint);">hireable</span>`;
+        badgesEl.innerHTML += `<span class="tag role-hover" data-role="sysadmin" style="background:var(--pink);cursor:help;">System Administrator</span>`;
+        if (u.public_repos >= 20) badgesEl.innerHTML += `<span class="tag role-hover" data-role="designer" style="background:var(--yellow);cursor:help;">Graphic Designer</span>`;
+        if (u.followers >= 5) badgesEl.innerHTML += `<span class="tag role-hover" data-role="backend" style="background:var(--lav);cursor:help;">Backend Developer</span>`;
+        const bioEl = document.getElementById('bio');
+        bioEl.textContent = u.bio || 'No bio yet — but the commits say a lot.'; bioEl.classList.remove('sk');
+        const svgIcon = (path) => `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;margin-right:2px;vertical-align:-1px;"><path d="${path}"></path></svg>`;
+        const meta = [
+          u.location && `<span style="display:flex;align-items:center;">${svgIcon("M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z")} ${u.location}</span>`,
+          u.blog && `<span style="display:flex;align-items:center;">${svgIcon("M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71 M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71")} <a href="${u.blog.startsWith('http') ? u.blog : 'https://' + u.blog}" target="_blank" style="text-decoration:underline;">${u.blog}</a></span>`,
+          u.twitter_username && `<span style="display:flex;align-items:center;">${svgIcon("M4 4l11.73 11.73 M4 20L20 4")} @${u.twitter_username}</span>`,
+          u.company && `<span class="company-hover" style="display:flex;align-items:center;cursor:help;">${svgIcon("M3 21h18 M9 8h1 M9 12h1 M9 16h1 M14 8h1 M14 12h1 M14 16h1 M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16")} ${u.company}</span>`,
+          `<span style="display:flex;align-items:center;">${svgIcon("M3 4h18v18H3z M16 2v4 M8 2v4 M3 10h18")} Joined ${new Date(u.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}</span>`,
+        ].filter(Boolean);
+        document.getElementById('meta-row').innerHTML = meta.map(i => `<span>${i}</span>`).join('');
+        document.getElementById('stat-repos').textContent = u.public_repos;
+        document.getElementById('stat-followers').textContent = u.followers;
+        document.getElementById('stat-following').textContent = u.following;
+        document.getElementById('stat-gists').textContent = u.public_gists;
+        const icons = [
+          `<path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/>`,
+          `<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>`,
+          `<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>`,
+          `<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>`,
+          `<rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>`,
+          `<polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>`,
+          `<line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>`,
+          `<rect width="8" height="14" x="8" y="6" rx="4"/><path d="m19 7-3 2"/><path d="m5 7 3 2"/><path d="m19 19-3-2"/><path d="m5 19 3-2"/><path d="M20 13h-4"/><path d="M4 13h4"/><path d="m10 4 1 2"/><path d="m14 4-1 2"/>`,
+          `<rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>`
+        ].map(p => `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">${p}</svg>`);
+
+        document.getElementById('mq').innerHTML = Array(30).fill(icons.join('')).join('');
+        document.getElementById('mq').style.gap = '2.5rem';
+        document.getElementById('mq').style.alignItems = 'center';
+        document.getElementById('mq').style.animationDuration = '35s';
+
+        // update social links from profile
+        if (u.blog) {
+          const el = document.getElementById('social-website');
+          const saved = JSON.parse(localStorage.getItem('social_links') || '{}');
+          if (!saved.website) { el.href = u.blog.startsWith('http') ? u.blog : 'https://' + u.blog; }
+        }
+        if (u.twitter_username) {
+          const el = document.getElementById('social-twitter');
+          const saved = JSON.parse(localStorage.getItem('social_links') || '{}');
+          if (!saved.twitter) { el.href = 'https://twitter.com/' + u.twitter_username; }
+        }
+        return u;
+      } catch (e) { console.error('Profile:', e); }
+    }
+
+    /* ══════════════════════════════
+       LOAD REPOS
+    ══════════════════════════════ */
+    async function loadRepos(u) {
+      try {
+        const repos = offlineData ? offlineData.repos : await get(`${API}/users/${USERNAME}/repos?sort=updated&per_page=100`);
+        const sorted = [...repos].sort((a, b) => b.stargazers_count - a.stargazers_count);
+        document.getElementById('stat-stars').textContent = sorted.reduce((s, r) => s + r.stargazers_count, 0);
+        const { level, xp, pct } = calcLevel(u, repos);
+        document.getElementById('user-level').textContent = level;
+        document.getElementById('xp-label').textContent = xp + ' XP';
+        setTimeout(() => { document.getElementById('xp-fill').style.width = pct + '%'; }, 300);
+        // langs
+        const lc = {}; repos.forEach(r => { if (r.language) lc[r.language] = (lc[r.language] || 0) + 1; });
+        const lt = Object.values(lc).reduce((a, b) => a + b, 0) || 1;
+        const langs = Object.entries(lc).sort((a, b) => b[1] - a[1]).slice(0, 7);
+        let curPct = 0;
+        let gradStops = [];
+        langs.forEach(([l, c]) => {
+          const pct = (c / lt) * 100;
+          const bGap = Math.min(1.5, pct / 3);
+          gradStops.push(`${LC(l)} ${curPct + bGap}%`, `${LC(l)} ${curPct + pct - bGap}%`);
+          curPct += pct;
+        });
+
+        document.getElementById('lang-list').innerHTML =
+          `<div class="lbar mb-2" style="border-radius:999px; background:linear-gradient(to right, ${gradStops.join(',')});"></div>`
+          + langs.map(([l, c]) => `
         <div style="display:flex;align-items:center;justify-content:space-between;font-size:.68rem;padding:3px 0;border-bottom:1px solid #1a1a2e22;">
           <div style="display:flex;align-items:center;gap:5px;">
-            <div style="width:9px;height:9px;background:${LC(l)};border:1.5px solid var(--ink);flex-shrink:0;"></div><b>${l}</b>
+            <div style="width:10px;height:10px;border-radius:50%;background-color:${LC(l)};border:1.5px solid var(--ink);flex-shrink:0;"></div><b>${l}</b>
           </div>
-          <span style="color:#555;">${Math.round(c/lt*100)}%</span>
+          <span style="color:#555;">${Math.round(c / lt * 100)}%</span>
         </div>`).join('');
-    // showcase
-    document.getElementById('showcase-grid').innerHTML=sorted.slice(0,4).map((r,i)=>`
+        // showcase
+        document.getElementById('showcase-grid').innerHTML = sorted.slice(0, 4).map((r, i) => `
       <a href="${r.html_url}" target="_blank" class="showcase-card"
-         onmouseover="this.style.background='${HOVERS[i%HOVERS.length]}'" onmouseout="this.style.background=''">
+         onmouseover="this.style.background='${HOVERS[i % HOVERS.length]}'" onmouseout="this.style.background=''">
         <div style="display:flex;align-items:start;justify-content:space-between;gap:6px;">
-          <div><div style="font-family:'Outfit';font-weight:800;font-size:.92rem;">${r.name}</div>${r.fork?'<span class="tag" style="font-size:.48rem;background:var(--lav);">fork</span>':''}</div>
+          <div><div style="font-family:'Outfit';font-weight:800;font-size:.92rem;">${r.name}</div>${r.fork ? '<span class="tag" style="font-size:.48rem;background:var(--lav);">fork</span>' : ''}</div>
           <div style="text-align:right;font-size:.68rem;flex-shrink:0;color:#444;"><div>★ ${r.stargazers_count}</div><div>⑂ ${r.forks_count}</div></div>
         </div>
-        <p style="font-size:.68rem;color:#555;line-height:1.55;margin:.4rem 0;">${r.description||'<em>No description</em>'}</p>
+        <p style="font-size:.68rem;color:#555;line-height:1.55;margin:.4rem 0;">${r.description || '<em>No description</em>'}</p>
         <div style="display:flex;gap:5px;flex-wrap:wrap;align-items:center;">
-          ${r.language?`<div style="display:flex;align-items:center;gap:3px;font-size:.62rem;"><div style="width:7px;height:7px;background:${LC(r.language)};border:1.5px solid var(--ink);"></div>${r.language}</div>`:''}
-          ${(r.topics||[]).slice(0,2).map(t=>`<span class="tag" style="font-size:.48rem;">${t}</span>`).join('')}
+          ${r.language ? `<div style="display:flex;align-items:center;gap:3px;font-size:.62rem;"><div style="width:7px;height:7px;background:${LC(r.language)};border:1.5px solid var(--ink);"></div>${r.language}</div>` : ''}
+          ${(r.topics || []).slice(0, 2).map(t => `<span class="tag" style="font-size:.48rem;">${t}</span>`).join('')}
           <span style="font-size:.58rem;color:#888;margin-left:auto;">${ago(r.updated_at)}</span>
         </div>
       </a>`).join('');
-    // repos list
-    document.getElementById('repos-grid').innerHTML=sorted.map((r,i)=>`
+        // repos list
+        document.getElementById('repos-grid').innerHTML = sorted.map((r, i) => `
       <a href="${r.html_url}" target="_blank" class="repo-card"
-         onmouseover="this.style.background='${HOVERS[i%HOVERS.length]}'" onmouseout="this.style.background=''">
+         onmouseover="this.style.background='${HOVERS[i % HOVERS.length]}'" onmouseout="this.style.background=''">
         <div style="display:flex;align-items:start;justify-content:space-between;gap:8px;">
           <div style="flex:1;min-width:0;">
             <div style="font-family:'Outfit';font-weight:800;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${r.name}</div>
-            <p style="font-size:.66rem;color:#555;line-height:1.5;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${r.description||'—'}</p>
+            <p style="font-size:.66rem;color:#555;line-height:1.5;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${r.description || '—'}</p>
           </div>
           <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0;font-size:.65rem;color:#444;">
             <span>★ ${r.stargazers_count}</span><span>⑂ ${r.forks_count}</span>
-            ${r.language?`<div style="display:flex;align-items:center;gap:3px;"><div style="width:6px;height:6px;background:${LC(r.language)};border:1.5px solid var(--ink);"></div>${r.language}</div>`:''}
+            ${r.language ? `<div style="display:flex;align-items:center;gap:3px;"><div style="width:6px;height:6px;background:${LC(r.language)};border:1.5px solid var(--ink);"></div>${r.language}</div>` : ''}
           </div>
         </div>
       </a>`).join('');
-    // spotlight
-    const s=sorted[0];
-    if(s)document.getElementById('spotlight').outerHTML=`
+        // spotlight
+        const s = sorted[0];
+        if (s) document.getElementById('spotlight').outerHTML = `
       <a href="${s.html_url}" target="_blank" id="spotlight"
          style="display:block;text-decoration:none;border:var(--border);border-radius:12px;padding:1.25rem;background:var(--bg);box-shadow:var(--shadow);transition:all .25s ease;"
          onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.06)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='';this.style.transform=''">
         <div style="font-family:'Outfit';font-weight:800;font-size:1.15rem;">${s.name}</div>
-        <p style="font-size:.74rem;color:#555;margin:.4rem 0;line-height:1.6;">${s.description||'No description'}</p>
+        <p style="font-size:.74rem;color:#555;margin:.4rem 0;line-height:1.6;">${s.description || 'No description'}</p>
         <div style="display:flex;gap:8px;font-size:.7rem;flex-wrap:wrap;align-items:center;">
-          ${s.language?`<div style="display:flex;align-items:center;gap:4px;"><div style="width:9px;height:9px;background:${LC(s.language)};border:1.5px solid var(--ink);"></div>${s.language}</div>`:''}
+          ${s.language ? `<div style="display:flex;align-items:center;gap:4px;"><div style="width:9px;height:9px;background:${LC(s.language)};border:1.5px solid var(--ink);"></div>${s.language}</div>` : ''}
           <span>★ ${s.stargazers_count} stars</span><span>⑂ ${s.forks_count} forks</span>
           <span style="color:#888;margin-left:auto;font-size:.62rem;">Updated ${ago(s.updated_at)}</span>
         </div>
       </a>`;
-    buildAchievements(u,repos);
-    // buildCommitChart(sorted); // fetch real commit data
-    return repos;
-  }catch(e){console.error('Repos:',e);}
-}
-
-/* ══════════════════════════════
-   LOAD EVENTS
-══════════════════════════════ */
-async function loadEvents(){
-  try{
-    const events=offlineData ? offlineData.events : await get(`${API}/users/${USERNAME}/events/public?per_page=15`);
-    const el=document.getElementById('events-list');
-    if(!events.length){el.innerHTML='<div style="font-size:.8rem;color:#888;padding:1rem;">No recent public activity.</div>';return;}
-    el.innerHTML=events.slice(0,12).map((e,i)=>`
-      <div style="border:var(--border);border-radius:12px;box-shadow:var(--shadow-sm);margin-bottom:8px;padding:.75rem 1rem;background:${EV_BG[i%EV_BG.length]};display:flex;align-items:flex-start;gap:.75rem;font-size:.7rem;">
-        <div style="font-size:1rem;flex-shrink:0;margin-top:2px;">${etype(e.type)}</div>
-        <div style="flex:1;line-height:1.55;">${edesc(e)}</div>
-        <div style="flex-shrink:0;color:#666;font-size:.65rem;white-space:nowrap;">${ago(e.created_at)}</div>
-      </div>`).join('');
-  }catch(e){console.error('Events:',e);}
-}
-
-/* ══════════════════════════════
-   ACTIVITY SIDEBAR
-══════════════════════════════ */
-function buildActivitySidebar(){
-  const bg=['#f1f5f9','#cbd5e1','#94a3b8','#64748b','#475569'];
-  let html='';
-  for(let i=0;i<84;i++)html+=`<div class="adot" style="background:${bg[Math.floor(Math.random()*5)]};"></div>`;
-  document.getElementById('activity-grid').innerHTML=html;
-}
-
-/* ══════════════════════════════
-   NEW: BACK TO TOP
-══════════════════════════════ */
-window.addEventListener('scroll',()=>{
-  document.getElementById('btt').classList.toggle('show',window.scrollY>400);
-});
-
-
-function initMatrix() {
-  const canvas = document.getElementById('cmatrix');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const resize = () => { canvas.width = canvas.parentElement.offsetWidth; canvas.height = canvas.parentElement.offsetHeight; };
-  resize();
-  const chars = '01ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ'.split('');
-  const fontSize = 14;
-  const columns = canvas.width / fontSize;
-  const drops = Array(Math.ceil(columns)).fill(canvas.height); 
-  setInterval(() => {
-    ctx.fillStyle = 'rgba(248, 250, 252, 0.15)'; 
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'rgba(71, 85, 105, 0.4)'; 
-    ctx.font = fontSize + 'px monospace';
-    for(let i = 0; i < drops.length; i++) {
-      const text = chars[Math.floor(Math.random() * chars.length)];
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-      if(drops[i] * fontSize > canvas.height && Math.random() > 0.95) drops[i] = 0;
-      drops[i]++;
+        buildAchievements(u, repos);
+        // buildCommitChart(sorted); // fetch real commit data
+        return repos;
+      } catch (e) { console.error('Repos:', e); }
     }
-  }, 45);
-  window.addEventListener('resize', resize);
-}
 
-/* ══════════════════════════════
-   INIT
-══════════════════════════════ */
-let offlineData = null;
-(async()=>{
-  try {
-    const res = await fetch('github_data.json?v='+Date.now());
-    if(res.ok) offlineData = await res.json();
-  } catch(e) { console.log('Offline data not active'); }
-  
-  logCacheStatus();
-  initMatrix();
-  startClock();
-  
-  const tStr = "./profile.sh";
-  let tIdx = 0;
-  const nTitle = document.getElementById('nav-title');
-  if(nTitle) {
-    const typeTitle = () => {
-      if(tIdx <= tStr.length) {
-        nTitle.textContent = tStr.slice(0, tIdx) + (tIdx < tStr.length ? '_' : '');
-        tIdx++;
-        setTimeout(typeTitle, 150);
-      } else {
-        setInterval(() => nTitle.textContent = tStr + (nTitle.textContent.endsWith('_') ? ' ' : '_'), 500);
+    /* ══════════════════════════════
+       LOAD EVENTS
+    ══════════════════════════════ */
+    async function loadEvents() {
+      try {
+        const events = offlineData ? offlineData.events : await get(`${API}/users/${USERNAME}/events/public?per_page=15`);
+        const el = document.getElementById('events-list');
+        if (!events.length) { el.innerHTML = '<div style="font-size:.8rem;color:#888;padding:1rem;">No recent public activity.</div>'; return; }
+        el.innerHTML = events.slice(0, 12).map((e, i) => `
+          <div class="event-item" style="border:var(--border);border-radius:12px;box-shadow:var(--shadow-sm);margin-bottom:8px;padding:.75rem 1rem;background:${EV_BG[i % EV_BG.length]};display:flex;align-items:center;gap:.85rem;font-size:.72rem;opacity:0;transform:translateY(10px);">
+            <div style="font-size:1.15rem;flex-shrink:0;width:28px;text-align:center;display:flex;align-items:center;justify-content:center;">${etype(e.type)}</div>
+            <div style="flex:1;line-height:1.6;color:var(--ink);text-align:left;white-space:normal;">
+              ${edesc(e)}
+            </div>
+            <div style="flex-shrink:0;color:#64748b;font-size:.65rem;white-space:nowrap;margin-left:4px;">${ago(e.created_at)}</div>
+          </div>`).join('');
+        
+        const items = el.querySelectorAll('.event-item');
+        items.forEach((it, idx) => {
+          setTimeout(() => {
+            it.style.transition = 'all 0.4s ease';
+            it.style.opacity = '1';
+            it.style.transform = 'translateY(0)';
+          }, idx * 200);
+        });
+      } catch (e) { console.error('Events:', e); }
+    }
+
+    function buildActivitySidebar() {
+      const bg = ['#f1f5f9', '#cbd5e1', '#94a3b8', '#64748b', '#475569'];
+      let html = '';
+      for (let i = 0; i < 84; i++) {
+        const d = new Date(); d.setDate(d.getDate() - (83 - i));
+        html += `<div class="adot" data-tip="${d.toDateString()}" style="background:${bg[Math.floor(Math.random() * 5)]};"></div>`;
       }
-    };
-    setTimeout(typeTitle, 300);
-  }
-  // initNp();
-  loadSocials();
-  buildActivitySidebar();
-  buildCalendar();
-  renderSkills();
-  preloadGallery();
-  const u=await loadProfile();
-  if(u)await loadRepos(u);
-  await loadEvents();
-  setTimeout(checkSidebarOverflow, 500);
-  window.addEventListener('resize', checkSidebarOverflow);
-})();
-</script>
+      document.getElementById('activity-grid').innerHTML = html;
+    }
+
+    document.addEventListener('mouseover', (e) => {
+      const tr = e.target.closest('.role-hover');
+      const tc = e.target.closest('.company-hover');
+      const tt = e.target.closest('.tech-hover');
+      const tip = document.getElementById('role-tooltip');
+      if (!tip) return;
+
+      if (!tr && !tc && !tt) {
+        if (tip.style.opacity === '1') {
+          tip.style.opacity = '0';
+          tip.style.transform = 'translateY(10px)';
+          setTimeout(() => { if (tip.style.opacity === '0') tip.style.display = 'none'; }, 200);
+          clearInterval(window.tooltipAnimInterval);
+        }
+        return;
+      }
+
+      if (tt) {
+        if (tip.dataset.activeType === 'tech' && tip.dataset.activeTech === tt.dataset.tech && tip.style.opacity === '1') return;
+        tip.dataset.activeType = 'tech';
+        tip.dataset.activeTech = tt.dataset.tech;
+        tip.dataset.activeRole = '';
+
+        const rect = tt.getBoundingClientRect();
+        tip.style.left = Math.min(rect.left + window.scrollX, window.innerWidth - 320) + 'px';
+        tip.style.top = rect.bottom + window.scrollY + 10 + 'px';
+        tip.style.display = 'block';
+
+        const name = tt.dataset.tech;
+        const desc = tt.dataset.desc;
+        const icon = tt.dataset.icon;
+        const color = tt.dataset.color;
+
+        tip.innerHTML = `
+          <div style="font-family:'Space Mono';font-size:.65rem;color:#94a3b8;margin-bottom:8px;display:flex;justify-content:space-between;border-bottom:1px solid #e2e8f0;padding-bottom:4px;">
+            <span>TECH_SPEC_v1.0</span>
+            <span>STATUS: ACTIVE</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:.75rem;">
+            <div style="width:36px;height:36px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;box-shadow:2px 2px 0 var(--ink);border:1.5px solid var(--ink);padding:4px;">
+              <img src="${icon}" style="width:100%;height:100%;" />
+            </div>
+            <div style="font-family:'Outfit';font-weight:700;font-size:1.1rem;color:var(--ink);">${name}</div>
+          </div>
+          <div id="tt-content" style="font-size:.72rem;line-height:1.6;color:#475569;font-family:'Inter',sans-serif;"></div>
+        `;
+
+        const content = document.getElementById('tt-content');
+        const words = desc.split(' ');
+        let currentText = '';
+        let wordIdx = 0;
+
+        clearInterval(window.tooltipAnimInterval);
+        window.tooltipAnimInterval = setInterval(() => {
+          if (wordIdx < words.length) {
+            currentText += words[wordIdx] + ' ';
+            content.textContent = currentText;
+            wordIdx++;
+          } else {
+            clearInterval(window.tooltipAnimInterval);
+          }
+        }, 40);
+
+        requestAnimationFrame(() => {
+          tip.style.opacity = '1';
+          tip.style.transform = 'translateY(0)';
+        });
+        return;
+      }
+
+      if (tc) {
+        if (tip.dataset.activeType === 'company' && tip.style.opacity === '1') return;
+        tip.dataset.activeType = 'company';
+        tip.dataset.activeRole = '';
+
+        const rect = tc.getBoundingClientRect();
+        tip.style.left = Math.min(rect.left + window.scrollX, window.innerWidth - 320) + 'px';
+        tip.style.top = rect.bottom + window.scrollY + 10 + 'px';
+        tip.style.display = 'block';
+
+        const org = (offlineData && offlineData.organization) ? offlineData.organization : null;
+        if (!org) {
+          tip.innerHTML = `<div style="padding:1rem;color:#888;font-size:.7rem;">Organization data unavailable.</div>`;
+        } else {
+          tip.innerHTML = `
+            <div style="padding:.25rem;">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:.75rem;">
+                <img src="${org.avatar_url}" style="width:42px;height:42px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;" />
+                <div>
+                  <div style="font-family:'Outfit';font-weight:700;font-size:1rem;color:var(--ink);">${org.name || org.login}</div>
+                  <div style="font-size:.65rem;color:#64748b;margin-top:1px;font-family:'Space Mono';">@${org.login}</div>
+                </div>
+              </div>
+              <p style="font-size:.72rem;line-height:1.5;color:#475569;margin-bottom:1rem;font-family:'Inter',sans-serif;">${org.bio || 'Building tools and systems for the next generation.'}</p>
+              <div style="display:flex;gap:12px;border-top:1px dashed #e2e8f0;padding-top:.75rem;font-size:.68rem;color:#64748b;">
+                <div style="display:flex;align-items:center;gap:4px;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                  <b>${org.public_repos}</b> Repos
+                </div>
+                <div style="display:flex;align-items:center;gap:4px;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  <b>${org.followers || 0}</b> Followers
+                </div>
+                ${org.location ? `
+                <div style="display:flex;align-items:center;gap:4px;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  ${org.location}
+                </div>` : ''}
+              </div>
+            </div>`;
+        }
+
+        requestAnimationFrame(() => {
+          tip.style.opacity = '1';
+          tip.style.transform = 'translateY(0)';
+        });
+        return;
+      }
+
+      if (tr) {
+        if (tip.dataset.activeType === 'role' && tip.dataset.activeRole === tr.dataset.role && tip.style.opacity === '1') return;
+        tip.dataset.activeType = 'role';
+        tip.dataset.activeRole = tr.dataset.role;
+
+        const rect = tr.getBoundingClientRect();
+        tip.style.left = Math.min(rect.left + window.scrollX, window.innerWidth - 320) + 'px';
+        tip.style.top = rect.bottom + window.scrollY + 10 + 'px';
+        tip.style.display = 'block';
+
+        const role = tr.dataset.role;
+        let header = '';
+        let frames = [];
+        if (role === 'sysadmin') {
+          header = `<div style="color:#059669;margin-bottom:6px;font-weight:700;">root@srv-01:~# systemctl status nginx</div>`;
+          const l = [`[....] Checking proxy...`, `[ ok ] ngx_http_core_module`, `[....] Reloading config...`, `[ ok ] Reloaded config`, `root@srv-01:~# <span style="animation:blink 1s step-end infinite;">_</span>`];
+          frames = l.map((_, idx) => l.slice(0, idx + 1).join('<br>'));
+        } else if (role === 'designer') {
+          header = `<div style="color:#d97706;margin-bottom:8px;font-family:'Outfit',sans-serif;font-weight:700;letter-spacing:.05em;">$  ./graphic_design.sh</div>`;
+          const lines = ["  ____                 _     _      ", " / ___|_ __ __ _ _ __ | |__ (_) ___ ", "| |  _ | '__/ _\` | '_ \\| '_ \\| |/ __|", "| |_| || | | (_| | |_) | |_) | | (__ ", " \\____||_|  \\__,_| .__/|_.__/|_|\\___|", "                 |_|                 ", "       _                             ", "      | |                            ", "    __| |___ ___ ___ __ _ _ __  ___  ", "   / _\` |/ _ \\ __| |/ _\` | '_ \\ / _ \\ ", "  | (_| |  __\\__ \\ | (_| | | | |  __/ ", "   \\__,_|\\___|___/_|\\__,_|_| |_|\\___| "];
+          frames = lines.map((_, idx) => `<div style="font-family:monospace;font-size:7.5px;line-height:1.2;color:#f59e0b;white-space:pre;font-weight:700;">${lines.slice(0, idx + 1).join('<br>')}</div>`);
+        } else if (role === 'backend') {
+          header = `<div style="color:#2563eb;margin-bottom:6px;font-weight:700;">$ go run server.go</div>`;
+          const l = [`Initializing router...`, `[INFO] Connected to PostgreSQL`, `[INFO] Redis Cache ready`, `⇨ http server started on :8080`, `<span style="animation:blink 1s step-end infinite;">_</span>`];
+          frames = l.map((_, idx) => l.slice(0, idx + 1).join('<br>'));
+        }
+
+        tip.innerHTML = header + `<div id="tt-content" style="color:#64748b;min-height:120px;line-height:1.5;"></div>`;
+        const content = document.getElementById('tt-content');
+        requestAnimationFrame(() => {
+          tip.style.opacity = '1';
+          tip.style.transform = 'translateY(0)';
+        });
+
+        clearInterval(window.tooltipAnimInterval);
+        let i = 0;
+        content.innerHTML = frames[0];
+        window.tooltipAnimInterval = setInterval(() => {
+          i++;
+          if (i < frames.length) {
+            content.innerHTML = frames[i];
+          } else if (i > frames.length + 2) {
+            i = 0;
+            content.innerHTML = frames[0];
+          }
+        }, 250);
+      }
+    });
+
+    function initMatrix() {
+      const canvas = document.getElementById('cmatrix');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const resize = () => { canvas.width = canvas.parentElement.offsetWidth; canvas.height = canvas.parentElement.offsetHeight; };
+      resize();
+      const chars = '01ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ'.split('');
+      const fontSize = 14;
+      const columns = canvas.width / fontSize;
+      const drops = Array(Math.ceil(columns)).fill(canvas.height);
+      setInterval(() => {
+        ctx.fillStyle = 'rgba(248, 250, 252, 0.15)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(71, 85, 105, 0.4)';
+        ctx.font = fontSize + 'px monospace';
+        for (let i = 0; i < drops.length; i++) {
+          const text = chars[Math.floor(Math.random() * chars.length)];
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+          if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) drops[i] = 0;
+          drops[i]++;
+        }
+      }, 45);
+      window.addEventListener('resize', resize);
+    }
+
+    let offlineData = null;
+    (async () => {
+      try {
+        const res = await fetch('github_data.json?v=' + Date.now());
+        if (res.ok) offlineData = await res.json();
+      } catch (e) { console.log('Offline data not active'); }
+
+      logCacheStatus();
+      initMatrix();
+      startClock();
+
+      const tStr = "./profile.sh";
+      let tIdx = 0;
+      const nTitle = document.getElementById('nav-title');
+      if (nTitle) {
+        const typeTitle = () => {
+          if (tIdx <= tStr.length) {
+            nTitle.textContent = tStr.slice(0, tIdx) + (tIdx < tStr.length ? '_' : '');
+            tIdx++;
+            setTimeout(typeTitle, 150);
+          } else {
+            setInterval(() => nTitle.textContent = tStr + (nTitle.textContent.endsWith('_') ? ' ' : '_'), 500);
+          }
+        };
+        setTimeout(typeTitle, 300);
+      }
+      loadSocials();
+      buildActivitySidebar();
+      buildCalendar();
+      await renderSkills();
+      preloadGallery();
+      const u = await loadProfile();
+      if (u) await loadRepos(u);
+      await loadEvents();
+      setTimeout(checkSidebarOverflow, 500);
+      window.addEventListener('resize', checkSidebarOverflow);
+    })();
+  </script>
 </body>
+
 </html>
