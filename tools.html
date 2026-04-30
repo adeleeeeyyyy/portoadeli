@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>adeleeeeyyyy — GitHub Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=Outfit:wght@400;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0f172a;
+      --bg: #f4f4f5;
+      --pink: #ffffff;
+      --lav: #ffffff;
+      --mint: #ffffff;
+      --peach: #ffffff;
+      --sky: #ffffff;
+      --yellow: #ffffff;
+      --rose: #ffffff;
+      --border: 1px solid #e4e4e7;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      background-image: radial-gradient(circle, #c9b8f033 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .bb {
+      border: var(--border);
+      box-shadow: var(--shadow);
+      border-radius: 12px;
+    }
+
+    .bb-sm {
+      border: var(--border);
+      box-shadow: var(--shadow-sm);
+      border-radius: 12px;
+    }
+
+    .bb-static {
+      border: var(--border);
+      box-shadow: var(--shadow);
+      border-radius: 12px;
+    }
+
+    .bb:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+      transition: all .3s ease;
+    }
+
+    .tag {
+      border: var(--border);
+      border-radius: 12px;
+      font-size: .65rem;
+      padding: 4px 10px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      display: inline-block;
+      background: #fff;
+    }
+
+    .section-title {
+      font-family: 'Outfit';
+      letter-spacing: .08em;
+      line-height: 1;
+    }
+
+    .stripe {
+      background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--lav) 10px, var(--lav) 20px);
+    }
+
+    .avatar-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .avatar-wrap img {
+      border-radius: 50%;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      border: 4px solid #fff;
+    }
+
+    .avatar-wrap::after {
+      content: none;
+    }
+
+    .sk {
+      background: linear-gradient(90deg, #ecdfe8 25%, #ddd2da 50%, #ecdfe8 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 2px;
+      color: transparent !important;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 200% 0
+      }
+
+      100% {
+        background-position: -200% 0
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .fi {
+      animation: fadeUp .45s ease forwards;
+    }
+
+    .d1 {
+      animation-delay: .05s;
+      opacity: 0
+    }
+
+    .d2 {
+      animation-delay: .12s;
+      opacity: 0
+    }
+
+    .d3 {
+      animation-delay: .2s;
+      opacity: 0
+    }
+
+    .d4 {
+      animation-delay: .28s;
+      opacity: 0
+    }
+
+    .d5 {
+      animation-delay: .36s;
+      opacity: 0
+    }
+
+    .d6 {
+      animation-delay: .44s;
+      opacity: 0
+    }
+
+    .mq {
+      display: flex;
+      gap: 2rem;
+      animation: mq 24s linear infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes mq {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg)
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--lav);
+      border: 1px solid var(--ink)
+    }
+
+    .adot {
+      width: 12px;
+      height: 12px;
+      border: 1.5px solid #00000018;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .lbar {
+      display: flex;
+      height: 9px;
+      border: 2px solid var(--ink);
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .ach-card {
+      border: var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      background: var(--bg);
+      box-shadow: var(--shadow);
+      transition: all .15s;
+      cursor: default;
+    }
+
+    .ach-card:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .ach-card.locked {
+      opacity: .45;
+      filter: grayscale(.6);
+    }
+
+    .showcase-card {
+      border: var(--border);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 1.25rem;
+      background: var(--bg);
+      transition: all .15s;
+      text-decoration: none;
+      display: block;
+    }
+
+    .showcase-card:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* gallery masonry */
+    #gallery-grid {
+      columns: 3;
+      column-gap: 10px;
+    }
+
+    @media(max-width:640px) {
+      #gallery-grid {
+        columns: 2;
+      }
+    }
+
+    @keyframes popUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .gallery-img {
+      break-inside: avoid;
+      display: block;
+      width: 100%;
+      margin-bottom: 12px;
+      border: var(--border);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      transition: all .3s ease;
+    }
+
+    .run-anim {
+      animation: popUp 0.8s cubic-bezier(0.2, 0.8, 0.05, 1) both !important;
+    }
+
+    .gallery-img:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .gallery-img img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .gallery-img .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .3s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: .75rem .75rem;
+      color: #fff;
+      font-size: .7rem;
+      letter-spacing: .02em;
+      font-weight: 500;
+    }
+
+    .gallery-img:hover .overlay {
+      opacity: 1;
+    }
+
+    .repo-card {
+      border: var(--border);
+      background: var(--bg);
+      box-shadow: var(--shadow);
+      border-radius: 12px;
+      padding: 1.25rem;
+      transition: all .25s ease;
+      text-decoration: none;
+      display: block;
+    }
+
+    .stat-b {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .tab-btn {
+      border: var(--border);
+      padding: 0 20px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: 0.1em;
+      font-size: 0.72rem;
+      font-weight: 800;
+      border-radius: 999px;
+      cursor: pointer;
+      background: #fff;
+      transition: all .25s ease;
+      margin-bottom: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tab-btn span {
+      display: inline-block;
+      position: relative;
+      height: 38px;
+      line-height: 38px;
+      transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+      transition-delay: inherit;
+    }
+
+    .tab-btn span::after {
+      content: attr(data-letter);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tab-btn:hover span {
+      transform: translateY(-100%);
+    }
+
+    .tab-btn:hover:not(.active) {
+      background: var(--pink);
+    }
+
+    .tab-btn.active {
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    .tab-btn.active:hover span {
+      transform: translateY(-100%);
+    }
+
+    .tab-btn.active span::after {
+      color: var(--bg);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .review-card {
+      border: var(--border);
+      padding: 1rem;
+      background: var(--bg);
+      box-shadow: var(--shadow);
+      border-radius: 12px;
+    }
+
+    [data-tip] {
+      position: relative;
+    }
+
+    [data-tip]:hover::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--ink);
+      color: var(--bg);
+      font-size: .62rem;
+      padding: 3px 8px;
+      white-space: nowrap;
+      border: 1.5px solid var(--ink);
+      z-index: 99;
+      pointer-events: none;
+    }
+
+    .xp-bar {
+      height: 6px;
+      width: 100%;
+      background: #e4e4e7;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .xp-fill {
+      height: 100%;
+      background: repeating-linear-gradient(90deg, var(--ink), var(--ink) 8px, #64748b 8px, #64748b 16px);
+      transition: width 1s ease;
+    }
+
+    .status-online {
+      width: 10px;
+      height: 10px;
+      background: #64748b;
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(100, 116, 139, 0.4)
+      }
+
+      50% {
+        box-shadow: 0 0 0 6px transparent
+      }
+    }
+
+    /* ── NOW PLAYING player ── */
+    .np-bar {
+      display: flex;
+      gap: 2px;
+      align-items: flex-end;
+      height: 14px;
+    }
+
+    .np-bar span {
+      width: 3px;
+      background: var(--ink);
+      border-radius: 1px;
+      animation: eq var(--d, .6s) ease-in-out infinite alternate;
+    }
+
+    @keyframes eq {
+      from {
+        height: 3px
+      }
+
+      to {
+        height: 100%
+      }
+    }
+
+    .np-bar.paused span {
+      animation-play-state: paused;
+    }
+
+    .np-playbtn {
+      border: var(--border);
+      background: var(--ink);
+      color: var(--bg);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: .9rem;
+      box-shadow: 2px 2px 0 var(--lav);
+      transition: all .12s;
+      flex-shrink: 0;
+    }
+
+    .np-playbtn:hover {
+      box-shadow: 4px 4px 0 var(--lav);
+      transform: translate(-1px, -1px);
+    }
+
+    .np-skipbtn {
+      border: var(--border);
+      background: var(--bg);
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: .65rem;
+      box-shadow: 2px 2px 0 var(--ink);
+      transition: all .12s;
+      flex-shrink: 0;
+    }
+
+    .np-skipbtn:hover {
+      background: var(--lav);
+    }
+
+    .np-vinyl {
+      animation: spin 4s linear infinite;
+      animation-play-state: paused;
+    }
+
+    .np-vinyl.playing {
+      animation-play-state: running;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg)
+      }
+
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    /* ── NEW: Skill badge ── */
+    .skill-badge {
+      border: var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: .65rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      cursor: default;
+      transition: all .25s ease;
+    }
+
+    .skill-badge:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .skill-bar-wrap {
+      height: 8px;
+      border: var(--border);
+      background: var(--bg);
+      overflow: hidden;
+      flex: 1;
+      min-width: 40px;
+      border-radius: 999px;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      transition: width 1.2s ease;
+      border-radius: 999px;
+    }
+
+    /* ── NEW: Social link ── */
+    .social-link {
+      border: var(--border);
+      border-radius: 8px;
+      padding: .6rem .8rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      text-decoration: none;
+      font-size: .75rem;
+      font-weight: 500;
+      box-shadow: var(--shadow-sm);
+      transition: all .25s ease;
+      color: var(--ink);
+    }
+
+    .social-link:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* ── NEW: Commit chart ── */
+    .chart-bar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      flex: 1;
+    }
+
+    .chart-bar-fill {
+      width: 100%;
+      border: 1.5px solid var(--ink);
+      transition: height .8s ease;
+      min-height: 3px;
+    }
+
+    .chart-bar-label {
+      font-size: .52rem;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    /* ── NEW: Goals ── */
+    .goal-bar {
+      height: 12px;
+      border: 2px solid var(--ink);
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    .goal-fill {
+      height: 100%;
+      transition: width 1.2s ease;
+    }
+
+
+
+
+
+    /* ── NEW: Visitor counter ── */
+    .visitor-num {
+      font-family: 'Outfit';
+      font-size: 1.4rem;
+      letter-spacing: .1em;
+    }
+
+    /* ── NEW: Weather/clock widget ── */
+    #clock-display {
+      font-family: 'Outfit';
+      font-size: 2rem;
+      letter-spacing: .1em;
+      line-height: 1;
+    }
+
+    /* filter buttons */
+    .gal-filter {
+      cursor: pointer;
+    }
+
+    .gal-filter.active {
+      background: var(--ink) !important;
+      color: var(--bg) !important;
+    }
+
+    .gal-filter:not(.active):hover {
+      background: var(--pink) !important;
+    }
+
+    /* ghost empty state */
+    @keyframes ghostFloat {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    /* sidebar overflow: overflow card styling */
+    .overflow-card {
+      border: var(--border);
+      box-shadow: var(--shadow);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BACK TO TOP -->
+
+
+  <!-- TOP STRIPE -->
+  <div class="stripe" style="height:12px;"></div>
+
+  <!-- NAV -->
+  <nav style="border-bottom:var(--border);background:var(--lav);"
+    class="px-5 py-3 flex items-center justify-between fi d1">
+    <div class="flex items-center gap-3">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:inline;margin-right:2px;"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path
+          d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+        </path>
+        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+      </svg>
+      <span id="nav-title"
+        style="font-family:'Space Mono', monospace;letter-spacing:.05em;font-size:1.1rem;margin-left:4px;font-weight:700;color:var(--ink);"></span>
+    </div>
+    <div class="flex items-center gap-4" style="font-family:'Space Mono', monospace;font-size:0.85rem;font-weight:700;">
+      <a href="index.html" style="text-decoration:none;color:var(--ink);">HOME</a>
+      <a href="tools.html" style="text-decoration:none;color:var(--ink);">TOOLS</a>
+    </div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-4 py-6">
+    <!-- TOOLS HEADER -->
+    <div class="bb-static mb-5 overflow-hidden fi d1" style="background:var(--bg); padding: 2rem;">
+      <h1 style="font-family:'Outfit';font-size:2.5rem;font-weight:800;line-height:1.05;">WORKSPACE TOOLS</h1>
+      <p style="font-size:.9rem;margin-top:.5rem;color:#555;">A collection of utilities for System Administration,
+        Graphic Design, and Backend Development.</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="fi d2">
+      <div class="flex gap-2 flex-wrap mb-4">
+        <button class="tab-btn active" onclick="switchToolsTab('sysadmin')">SYSADMIN</button>
+        <button class="tab-btn" onclick="switchToolsTab('graphic')">GRAPHIC DESIGN</button>
+        <button class="tab-btn" onclick="switchToolsTab('backend')">BACKEND</button>
+      </div>
+
+      <!-- SYSADMIN TAB: RAID VISUALIZER -->
+      <div id="tab-sysadmin" class="tab-content active">
+        <div class="bb p-5" style="background:var(--pink);">
+          <div class="section-title text-xl mb-3">✦ RAID HDD VISUALIZER</div>
+          <div class="flex flex-col md:flex-row gap-5">
+
+            <!-- Controls -->
+            <div class="flex-1" style="min-width: 250px;">
+              <label style="font-size:0.8rem; font-weight:700;">RAID Level</label>
+              <select id="raid-level" class="tag"
+                style="width:100%; margin-bottom:1rem; font-size:1rem; padding:8px; border:var(--border);"
+                onchange="updateRaid()">
+                <option value="0">RAID 0 (Striping)</option>
+                <option value="1">RAID 1 (Mirroring)</option>
+                <option value="5" selected>RAID 5 (Parity)</option>
+                <option value="6">RAID 6 (Double Parity)</option>
+                <option value="10">RAID 10 (Stripe of Mirrors)</option>
+              </select>
+
+              <label style="font-size:0.8rem; font-weight:700;">Number of Drives</label>
+              <input type="number" id="drive-count" value="4" min="2" max="24" class="tag"
+                style="width:100%; margin-bottom:1rem; font-size:1rem; padding:8px; border:var(--border);"
+                onchange="updateRaid()" />
+
+              <label style="font-size:0.8rem; font-weight:700;">Size per Drive (TB)</label>
+              <input type="number" id="drive-size" value="2" min="1" max="22" class="tag"
+                style="width:100%; margin-bottom:1rem; font-size:1rem; padding:8px; border:var(--border);"
+                onchange="updateRaid()" />
+
+              <div class="p-3 bb-sm" style="background:var(--bg); margin-top:1rem;">
+                <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                  <span style="font-size:0.8rem; color:#555;">Raw Capacity:</span>
+                  <span id="raw-cap" style="font-weight:700;">8 TB</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                  <span style="font-size:0.8rem; color:#555;">Usable Capacity:</span>
+                  <span id="usable-cap" style="font-weight:700; color:#10b981;">6 TB</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                  <span style="font-size:0.8rem; color:#555;">Fault Tolerance:</span>
+                  <span id="fault-tol" style="font-weight:700; color:#ef4444;">1 Drive</span>
+                </div>
+              </div>
+              <p id="raid-desc" style="font-size:0.75rem; color:#444; margin-top:1rem; line-height:1.5;">RAID 5 requires
+                at least 3 drives. It stripes data and parity across all drives, allowing for 1 drive failure without
+                data loss.</p>
+
+              <div class="bb p-3 mt-3"
+                style="background:#0f172a; color:#f8fafc; font-family:'Space Mono', monospace; font-size:0.75rem; overflow-x:auto;">
+                <div style="color:#64748b; margin-bottom:4px; font-weight:700;"># mdadm configuration</div>
+                <div id="raid-command" style="white-space:nowrap;"></div>
+              </div>
+            </div>
+
+            <!-- Visualization -->
+            <div class="flex-2" style="flex:2;">
+              <div id="raid-visual" class="grid gap-2"
+                style="grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));">
+                <!-- Drives generated by JS -->
+              </div>
+
+              <div class="mt-4 flex gap-3 text-xs justify-center flex-wrap">
+                <div class="flex items-center gap-1">
+                  <div style="width:12px;height:12px;background:#3b82f6;border:1px solid var(--ink);"></div> Data
+                </div>
+                <div class="flex items-center gap-1">
+                  <div style="width:12px;height:12px;background:#f59e0b;border:1px solid var(--ink);"></div> Parity
+                </div>
+                <div class="flex items-center gap-1">
+                  <div style="width:12px;height:12px;background:#10b981;border:1px solid var(--ink);"></div> Mirror
+                </div>
+                <div class="flex items-center gap-1">
+                  <div style="width:12px;height:12px;background:#ef4444;border:1px solid var(--ink);"></div> Unused /
+                  Invalid
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- GRAPHIC DESIGN TAB -->
+      <div id="tab-graphic" class="tab-content" style="display:none;">
+        <div class="bb p-5" style="background:var(--yellow);">
+          <div class="section-title text-xl mb-3">✦ COLOR PALETTE GENERATOR</div>
+
+          <div class="flex flex-col lg:flex-row gap-5">
+            <!-- Left: Controls -->
+            <div class="flex-1" style="min-width:250px;">
+              <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom:1rem;">
+                <p style="font-size:0.8rem; color:#555; margin:0;">Pick colors to generate a coherent theme. The preview
+                  updates instantly.</p>
+                <button id="btn-random" onclick="randomPalette()" class="btn-random"><span class="dice">🎲</span>
+                  Randomize</button>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 mb-4">
+                <div>
+                  <label style="font-size:0.75rem; font-weight:700;">Primary</label>
+                  <input type="color" id="cp-primary" value="#3b82f6"
+                    class="w-full h-10 border-2 border-slate-900 rounded cursor-pointer" oninput="updatePalette()">
+                </div>
+                <div>
+                  <label style="font-size:0.75rem; font-weight:700;">Secondary</label>
+                  <input type="color" id="cp-secondary" value="#8b5cf6"
+                    class="w-full h-10 border-2 border-slate-900 rounded cursor-pointer" oninput="updatePalette()">
+                </div>
+                <div>
+                  <label style="font-size:0.75rem; font-weight:700;">Accent</label>
+                  <input type="color" id="cp-accent" value="#f59e0b"
+                    class="w-full h-10 border-2 border-slate-900 rounded cursor-pointer" oninput="updatePalette()">
+                </div>
+                <div>
+                  <label style="font-size:0.75rem; font-weight:700;">Background</label>
+                  <input type="color" id="cp-bg" value="#f8fafc"
+                    class="w-full h-10 border-2 border-slate-900 rounded cursor-pointer" oninput="updatePalette()">
+                </div>
+                <div class="col-span-2">
+                  <label style="font-size:0.75rem; font-weight:700;">Text / Ink</label>
+                  <input type="color" id="cp-text" value="#0f172a"
+                    class="w-full h-10 border-2 border-slate-900 rounded cursor-pointer" oninput="updatePalette()">
+                </div>
+              </div>
+
+              <!-- Tailwind Config Snippet -->
+              <div class="bb-sm p-3"
+                style="background:#1e293b; color:#f8fafc; font-family:'Space Mono', monospace; font-size:0.7rem; overflow-x:auto;">
+                <div style="color:#94a3b8; margin-bottom:6px; font-weight:700;">// tailwind.config.js</div>
+                <pre id="tw-config" style="margin:0;"></pre>
+              </div>
+            </div>
+
+            <!-- Right: Live Preview -->
+            <div class="flex-2 p-0 overflow-hidden"
+              style="flex:2; border: 1px solid rgba(0,0,0,0.08); border-radius:16px; box-shadow: 0 10px 30px -5px rgba(0,0,0,0.05); position:relative;">
+              <div
+                style="background:#f1f5f9; color:#64748b; font-size:0.6rem; padding:6px 12px; font-weight:700; border-bottom: 1px solid rgba(0,0,0,0.05); text-transform:uppercase; letter-spacing:0.05em;">
+                Live Preview</div>
+
+              <!-- Mock Website Container -->
+              <div id="mock-site"
+                style="--m-primary:#3b82f6; --m-secondary:#8b5cf6; --m-accent:#f59e0b; --m-bg:#f8fafc; --m-text:#0f172a; background:var(--m-bg); color:var(--m-text); min-height: 350px; font-family:'Inter', sans-serif; transition: background 0.3s, color 0.3s;">
+
+                <!-- Mock Nav -->
+                <div style="padding:1.2rem; display:flex; justify-content:space-between; align-items:center;">
+                  <div style="font-weight:800; font-size:1.1rem; letter-spacing:-0.02em;">Brand.</div>
+                  <div style="display:flex; gap:1.5rem; font-size:0.8rem; font-weight:500; opacity:0.8;">
+                    <span>Home</span><span>About</span><span>Contact</span>
+                  </div>
+                </div>
+
+                <!-- Mock Hero -->
+                <div style="padding:3rem 1.5rem; text-align:center;">
+                  <h1
+                    style="font-size:2.2rem; font-weight:800; line-height:1.15; margin-bottom:1rem; letter-spacing:-0.02em;">
+                    Build Faster with Tailored Colors</h1>
+                  <p style="font-size:0.95rem; max-width:70%; margin:0 auto 2rem auto; opacity:0.6; line-height:1.6;">
+                    Visualize your design language instantly before writing a single line of CSS. Minimalist, clean, and
+                    modern.</p>
+                  <button
+                    style="background:var(--m-primary); color:var(--m-bg); border:none; padding:0.75rem 1.75rem; font-weight:600; font-size:0.9rem; border-radius:99px; cursor:pointer; box-shadow: 0 4px 14px 0 var(--m-primary); opacity:0.9; transition: background 0.3s;">Get
+                    Started</button>
+                  <button
+                    style="background:transparent; color:var(--m-text); border:1px solid var(--m-text); opacity:0.6; padding:0.75rem 1.75rem; font-weight:600; font-size:0.9rem; border-radius:99px; cursor:pointer; margin-left:0.75rem;">Learn
+                    More</button>
+                </div>
+
+                <!-- Mock Features -->
+                <div
+                  style="padding:2rem 1.5rem; display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; background:rgba(0,0,0,0.02); border-top:1px solid rgba(0,0,0,0.03);">
+                  <div
+                    style="flex:1; min-width:140px; background:var(--m-bg); padding:1.5rem; border-radius:12px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.02);">
+                    <div
+                      style="width:36px; height:36px; background:var(--m-accent); border-radius:8px; margin-bottom:1rem; display:flex; align-items:center; justify-content:center; opacity:0.9;">
+                      <div style="width:12px; height:12px; background:var(--m-bg); border-radius:50%;"></div>
+                    </div>
+                    <div style="font-weight:700; font-size:1rem; margin-bottom:0.5rem; color:var(--m-text);">Design
+                    </div>
+                    <div style="font-size:0.8rem; opacity:0.6; line-height:1.5;">Beautiful mockups instantly with soft
+                      shadows and clean typography.</div>
+                  </div>
+                  <div
+                    style="flex:1; min-width:140px; background:var(--m-bg); padding:1.5rem; border-radius:12px; box-shadow: 0 8px 24px rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.02);">
+                    <div
+                      style="width:36px; height:36px; background:var(--m-secondary); border-radius:8px; margin-bottom:1rem; display:flex; align-items:center; justify-content:center; opacity:0.9;">
+                      <div style="width:12px; height:12px; border:2px solid var(--m-bg); border-radius:3px;"></div>
+                    </div>
+                    <div style="font-weight:700; font-size:1rem; margin-bottom:0.5rem; color:var(--m-text);">Develop
+                    </div>
+                    <div style="font-size:0.8rem; opacity:0.6; line-height:1.5;">Export configurations fast and
+                      integrate perfectly with Tailwind.</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- BACKEND TAB -->
+      <div id="tab-backend" class="tab-content" style="display:none;">
+        <div class="bb p-5" style="background:var(--mint);">
+          <div class="section-title text-xl mb-3">✦ API TESTER</div>
+          <p style="font-size:0.8rem; color:#555; margin-bottom:1rem;">A lightweight, browser-based API client. Note:
+            Subject to CORS policies.</p>
+
+          <div class="flex flex-col gap-4">
+
+            <!-- Request Section -->
+            <div class="p-5"
+              style="background:#fff; border: 1px solid rgba(0,0,0,0.08); border-radius:12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+
+              <!-- URL Bar -->
+              <div class="flex gap-2 mb-4">
+                <select id="api-method"
+                  style="padding:10px 16px; border-radius:8px; border:1px solid #cbd5e1; font-weight:800; background:#f8fafc; cursor:pointer; outline:none; font-family:'Space Mono', monospace;">
+                  <option value="GET">GET</option>
+                  <option value="POST">POST</option>
+                  <option value="PUT">PUT</option>
+                  <option value="PATCH">PATCH</option>
+                  <option value="DELETE">DELETE</option>
+                </select>
+                <input type="text" id="api-url" placeholder="https://jsonplaceholder.typicode.com/todos/1"
+                  style="flex:1; padding:10px 16px; border-radius:8px; border:1px solid #cbd5e1; font-family:'Space Mono', monospace; font-size:0.9rem; outline:none;">
+                <button onclick="sendApiRequest()"
+                  style="background:var(--ink); color:var(--bg); padding:0 24px; font-weight:800; border:none; border-radius:8px; cursor:pointer; transition:transform 0.1s;">SEND</button>
+              </div>
+
+              <!-- Tabs & Body -->
+              <div>
+                <div class="flex gap-4 mb-2" style="border-bottom:1px solid #e2e8f0; padding-bottom:8px;">
+                  <span style="font-size:0.8rem; font-weight:800; color:var(--ink); cursor:pointer;">JSON Body</span>
+                </div>
+                <textarea id="api-body" placeholder="{&#10;  &#34;key&#34;: &#34;value&#34;&#10;}"
+                  style="width:100%; height:120px; padding:12px; border-radius:8px; border:1px solid #cbd5e1; font-family:'Space Mono', monospace; font-size:0.8rem; resize:vertical; background:#f8fafc; outline:none;"></textarea>
+              </div>
+
+            </div>
+
+            <!-- Response Section -->
+            <div class="p-0 overflow-hidden"
+              style="border: 1px solid rgba(0,0,0,0.08); border-radius:12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+              <!-- Response Header -->
+              <div
+                style="background:#f1f5f9; padding:10px 16px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(0,0,0,0.05);">
+                <div style="font-weight:800; font-size:0.8rem; color:#64748b;">RESPONSE</div>
+                <div class="flex gap-4"
+                  style="font-size:0.75rem; font-family:'Space Mono', monospace; font-weight:700;">
+                  <span style="color:#64748b;">Status: <span id="api-status" style="color:#10b981;">---</span></span>
+                  <span style="color:#64748b;">Time: <span id="api-time" style="color:var(--ink);">---</span></span>
+                </div>
+              </div>
+
+              <!-- Response Body -->
+              <div style="background:#0f172a; padding:16px; overflow-x:auto; max-height:400px; overflow-y:auto;">
+                <pre id="api-response"
+                  style="margin:0; font-family:'Space Mono', monospace; font-size:0.8rem; color:#a5b4fc; white-space:pre-wrap; word-wrap:break-word;">Hit 'SEND' to see the response here...</pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <style>
+    @keyframes popIn {
+      0% {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes dropData {
+      0% {
+        transform: translate(-50%, -30px);
+        opacity: 1;
+      }
+
+      60% {
+        transform: translate(-50%, 80px);
+        opacity: 1;
+      }
+
+      80% {
+        transform: translate(-50%, 100px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translate(-50%, 100px);
+        opacity: 0;
+      }
+    }
+
+    .btn-random {
+      background: var(--ink);
+      color: var(--bg);
+      border: none;
+      padding: 8px 16px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      border-radius: 99px;
+      cursor: pointer;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-random:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.3);
+      background: #334155;
+    }
+
+    .btn-random:active {
+      transform: translateY(0) scale(0.95);
+    }
+
+    .btn-random .dice {
+      display: inline-block;
+    }
+
+    .btn-random.spin .dice {
+      animation: spinDice 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes spinDice {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+
+      50% {
+        transform: rotate(180deg) scale(1.4);
+      }
+
+      100% {
+        transform: rotate(360deg) scale(1);
+      }
+    }
+  </style>
+
+  <script>
+    function switchToolsTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+      document.getElementById('tab-' + tabId).style.display = 'block';
+    }
+
+    function updateRaid() {
+      const level = parseInt(document.getElementById('raid-level').value);
+      const countInput = document.getElementById('drive-count');
+      let count = parseInt(countInput.value);
+      const size = parseFloat(document.getElementById('drive-size').value);
+
+      const visual = document.getElementById('raid-visual');
+      const rawEl = document.getElementById('raw-cap');
+      const usableEl = document.getElementById('usable-cap');
+      const faultEl = document.getElementById('fault-tol');
+      const descEl = document.getElementById('raid-desc');
+
+      // Constraints
+      let minDrives = 2;
+      let evenRequired = false;
+
+      if (level === 0) { minDrives = 2; descEl.textContent = "RAID 0 (Striping): High performance, but NO fault tolerance. If one drive fails, all data is lost."; }
+      else if (level === 1) { minDrives = 2; countInput.value = 2; count = 2; descEl.textContent = "RAID 1 (Mirroring): Data is duplicated. High read performance and fault tolerance of 1 drive."; }
+      else if (level === 5) { minDrives = 3; descEl.textContent = "RAID 5 (Parity): Requires at least 3 drives. Good balance of performance and space. 1 drive fault tolerance."; }
+      else if (level === 6) { minDrives = 4; descEl.textContent = "RAID 6 (Double Parity): Requires at least 4 drives. 2 drive fault tolerance."; }
+      else if (level === 10) { minDrives = 4; evenRequired = true; descEl.textContent = "RAID 10: Requires at least 4 drives (even number). Combines striping and mirroring for high performance and fault tolerance."; }
+
+      if (count < minDrives) { count = minDrives; countInput.value = count; }
+      if (evenRequired && count % 2 !== 0) { count++; countInput.value = count; }
+
+      const raw = count * size;
+      let usable = 0;
+      let fault = 0;
+      let blocks = []; // 'd' data, 'p' parity, 'm' mirror, 'u' unused
+
+      if (level === 0) {
+        usable = raw;
+        fault = 0;
+        for (let i = 0; i < count; i++) blocks.push('d');
+      } else if (level === 1) {
+        usable = size;
+        fault = 1;
+        blocks.push('d');
+        blocks.push('m');
+      } else if (level === 5) {
+        usable = (count - 1) * size;
+        fault = 1;
+        for (let i = 0; i < count; i++) blocks.push(i === count - 1 ? 'p' : 'd'); // simplified visualization
+      } else if (level === 6) {
+        usable = (count - 2) * size;
+        fault = 2;
+        for (let i = 0; i < count; i++) blocks.push(i >= count - 2 ? 'p' : 'd');
+      } else if (level === 10) {
+        usable = (count / 2) * size;
+        fault = 1;
+        for (let i = 0; i < count; i++) blocks.push(i % 2 === 0 ? 'd' : 'm');
+      }
+
+      rawEl.textContent = raw.toFixed(1) + ' TB';
+      usableEl.textContent = usable.toFixed(1) + ' TB';
+      faultEl.textContent = fault + ' Drive' + (fault !== 1 ? 's' : '');
+
+      // Generate mdadm command
+      let devString = '';
+      let driveLetters = 'bcdefghijklmnopqrstuvwxyz';
+      for (let i = 0; i < count; i++) {
+        devString += ' /dev/sd' + driveLetters[i % driveLetters.length];
+      }
+      document.getElementById('raid-command').textContent = `mdadm --create --verbose /dev/md0 --level=${level} --raid-devices=${count}${devString}`;
+
+      // Render Visual
+      visual.innerHTML = '';
+      for (let i = 0; i < count; i++) {
+        let color = '#e2e8f0'; // default unused
+        let type = blocks[i] || 'u';
+        let delay = i * 0.3; // Staggered drop
+
+        if (level === 1) delay = 0; // Both drives same time
+        if (level === 10) delay = Math.floor(i / 2) * 0.4; // Mirrors sync
+
+        if (type === 'd') color = '#3b82f6';
+        if (type === 'p') color = '#f59e0b';
+        if (type === 'm') color = '#10b981';
+
+        let animHtml = type !== 'u' ? `<div style="position:absolute; top:0; left:50%; width:24px; height:6px; background:${color}; border-radius:2px; border:1px solid rgba(0,0,0,0.2); animation: dropData 1.5s infinite ease-in; animation-delay: ${delay}s; z-index:5;"></div>` : '';
+
+        visual.innerHTML += `
+          <div class="bb-static" style="background:#fff; display:flex; flex-direction:column; align-items:center; padding:10px 5px; height:140px; position:relative; overflow:hidden; border:var(--border);">
+            ${animHtml}
+            <div style="width:80%; height:8px; background:#cbd5e1; border-radius:4px; margin-bottom:8px; z-index:10; position:relative;"></div>
+            <div style="width:80%; flex:1; border:1px solid #cbd5e1; display:flex; flex-direction:column; z-index:10; position:relative; background:#f8fafc;">
+              <div style="flex:1; background:${color}; opacity:0.8; margin:2px;"></div>
+              <div style="flex:1; background:${color}; opacity:0.6; margin:2px;"></div>
+              <div style="flex:1; background:${color}; opacity:0.4; margin:2px;"></div>
+            </div>
+            <div style="font-size:0.6rem; font-weight:700; margin-top:5px; font-family:'Space Mono', monospace; z-index:10; position:relative;">HDD ${i + 1}</div>
+          </div>
+        `;
+      }
+    }
+
+    function randomPalette() {
+      const btn = document.getElementById('btn-random');
+      if (btn) {
+        btn.classList.remove('spin');
+        void btn.offsetWidth; // trigger reflow to restart animation
+        btn.classList.add('spin');
+      }
+      const palettes = [
+        { p: '#3b82f6', s: '#8b5cf6', a: '#f59e0b', bg: '#f8fafc', t: '#0f172a' },
+        { p: '#10b981', s: '#059669', a: '#ef4444', bg: '#ecfdf5', t: '#064e3b' },
+        { p: '#f43f5e', s: '#e11d48', a: '#f59e0b', bg: '#fff1f2', t: '#4c0519' },
+        { p: '#6366f1', s: '#4f46e5', a: '#ec4899', bg: '#eef2ff', t: '#312e81' },
+        { p: '#0ea5e9', s: '#0284c7', a: '#f97316', bg: '#f0f9ff', t: '#0c4a6e' },
+        { p: '#8b5cf6', s: '#7c3aed', a: '#14b8a6', bg: '#f5f3ff', t: '#2e1065' },
+        { p: '#14b8a6', s: '#0f766e', a: '#f59e0b', bg: '#f0fdfa', t: '#134e4a' },
+        { p: '#f97316', s: '#ea580c', a: '#3b82f6', bg: '#fff7ed', t: '#7c2d12' }
+      ];
+      const rand = palettes[Math.floor(Math.random() * palettes.length)];
+      document.getElementById('cp-primary').value = rand.p;
+      document.getElementById('cp-secondary').value = rand.s;
+      document.getElementById('cp-accent').value = rand.a;
+      document.getElementById('cp-bg').value = rand.bg;
+      document.getElementById('cp-text').value = rand.t;
+      updatePalette();
+    }
+
+    function updatePalette() {
+      const p = document.getElementById('cp-primary').value;
+      const s = document.getElementById('cp-secondary').value;
+      const a = document.getElementById('cp-accent').value;
+      const bg = document.getElementById('cp-bg').value;
+      const t = document.getElementById('cp-text').value;
+
+      const mock = document.getElementById('mock-site');
+      if (mock) {
+        mock.style.setProperty('--m-primary', p);
+        mock.style.setProperty('--m-secondary', s);
+        mock.style.setProperty('--m-accent', a);
+        mock.style.setProperty('--m-bg', bg);
+        mock.style.setProperty('--m-text', t);
+      }
+
+      const configStr = `module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '${p}',
+        secondary: '${s}',
+        accent: '${a}',
+        background: '${bg}',
+        text: '${t}',
+      }
+    }
+  }
+}`;
+      const confEl = document.getElementById('tw-config');
+      if (confEl) confEl.textContent = configStr;
+    }
+
+    // API Tester Logic
+    async function sendApiRequest() {
+      const url = document.getElementById('api-url').value;
+      const method = document.getElementById('api-method').value;
+      const body = document.getElementById('api-body').value;
+      const statusEl = document.getElementById('api-status');
+      const timeEl = document.getElementById('api-time');
+      const responseEl = document.getElementById('api-response');
+
+      if (!url) {
+        responseEl.textContent = "Error: Please enter a URL.";
+        responseEl.style.color = "#ef4444";
+        return;
+      }
+
+      responseEl.textContent = "Loading...";
+      responseEl.style.color = "#94a3b8";
+      statusEl.textContent = "---";
+      timeEl.textContent = "---";
+
+      const options = {
+        method: method,
+        headers: {}
+      };
+
+      if (['POST', 'PUT', 'PATCH'].includes(method) && body) {
+        try {
+          JSON.parse(body);
+          options.headers['Content-Type'] = 'application/json';
+        } catch (e) { }
+        options.body = body;
+      }
+
+      const startTime = performance.now();
+
+      try {
+        const response = await fetch(url, options);
+        const endTime = performance.now();
+
+        statusEl.textContent = `${response.status} ${response.statusText}`;
+        statusEl.style.color = response.ok ? '#10b981' : '#ef4444';
+        timeEl.textContent = `${Math.round(endTime - startTime)} ms`;
+
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+          const json = await response.json();
+          responseEl.textContent = JSON.stringify(json, null, 2);
+          responseEl.style.color = "#a5b4fc";
+        } else {
+          const text = await response.text();
+          responseEl.textContent = text;
+          responseEl.style.color = "#f8fafc";
+        }
+
+      } catch (error) {
+        const endTime = performance.now();
+        timeEl.textContent = `${Math.round(endTime - startTime)} ms`;
+        statusEl.textContent = "ERROR";
+        statusEl.style.color = "#ef4444";
+
+        responseEl.textContent = `Fetch Error: ${error.message}\n\nNote: This is often caused by CORS (Cross-Origin Resource Sharing) restrictions on the target server.`;
+        responseEl.style.color = "#ef4444";
+      }
+    }
+
+    // Initialize
+    updateRaid();
+    updatePalette();
+    document.title = "adeleeeeyyyy — Tools";
+  </script>
+</body>
+
+</html>
