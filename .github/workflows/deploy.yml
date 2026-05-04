@@ -1,0 +1,23 @@
+name: Deploy porto adeli
+
+on: 
+  push:
+    branches:
+      - ini
+
+jobs: 
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: porto adeli
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: deploy
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /www/wwwroot/portoadeli
+            git pull origin ini
+            ~/.bun/bin/bun run build
+            cp -r dist/* ../adeli.synchronizeteams.com
