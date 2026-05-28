@@ -18,11 +18,11 @@ export default function AnimatedNav() {
       </div>
       
       <div className="flex items-center gap-6" style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.85rem", fontWeight: 700 }}>
-        <a href="/" className="flex items-center gap-1.5 text-[#111111] no-underline hover:opacity-70 transition-opacity group">
+        <a href="/" className="nav-link group">
           <House className="w-4 h-4 transition-transform group-hover:scale-110" strokeWidth={2} />
           HOME
         </a>
-        <a href="/tools" className="flex items-center gap-1.5 text-[#111111] no-underline hover:opacity-70 transition-opacity group">
+        <a href="/tools" className="nav-link group">
           <Cpu className="w-4 h-4 transition-transform group-hover:scale-110" strokeWidth={2} />
           TOOLS
         </a>

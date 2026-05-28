@@ -8,6 +8,15 @@ db.exec(`
     date TEXT PRIMARY KEY,
     count INTEGER DEFAULT 0
   );
+  
+  CREATE TABLE IF NOT EXISTS contacts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    subject TEXT,
+    message TEXT NOT NULL,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+  );
 `);
 
 // Prepared Statements
@@ -22,6 +31,14 @@ const getVisitsForDate = db.prepare(`
 
 const getGrandTotal = db.prepare(`
   SELECT SUM(count) as total FROM visits
+`);
+
+const insertContact = db.prepare(`
+  INSERT INTO contacts (name, email, subject, message) VALUES (?, ?, ?, ?)
+`);
+
+const getContacts = db.prepare(`
+  SELECT id, name, email, subject, message, timestamp FROM contacts ORDER BY id DESC
 `);
 
 // Helper to get local date string YYYY-MM-DD
@@ -92,6 +109,47 @@ const server = createServer((req, res) => {
       
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ success: true, totalVisits, data }));
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: err.message }));
+    }
+  } else if (url.pathname === '/api/contact' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const payload = JSON.parse(body);
+        const { name, email, subject, message } = payload;
+        
+        if (!name || !email || !message) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Name, email, and message are required' }));
+          return;
+        }
+
+        insertContact.run(name, email, subject || '', message);
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, message: 'Message sent successfully!' }));
+      } catch (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: err.message }));
+      }
+    });
+  } else if (url.pathname === '/api/contacts' && req.method === 'GET') {
+    const secret = url.searchParams.get('secret');
+    const EXPECTED_SECRET = 'adlyadmin2026';
+
+    if (secret !== EXPECTED_SECRET) {
+      res.writeHead(401, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Unauthorized' }));
+      return;
+    }
+
+    try {
+      const rows = getContacts.all();
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ success: true, contacts: rows }));
     } catch (err) {
       res.writeHead(500, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ error: err.message }));

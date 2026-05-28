@@ -49,13 +49,20 @@ const { title = "adeleeeeyyyy — GitHub Profile" } = Astro.props;
       --sky: #e1f5fe;
     }
 
-    html, body { overflow-x: hidden; }
+    html, body {
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
     body {
       background-color: var(--canvas);
       color: var(--ink);
       font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     /* Nike minimal elements - flat, no shadows, no rounding on tiles */
@@ -145,6 +152,16 @@ const { title = "adeleeeeyyyy — GitHub Profile" } = Astro.props;
 
     .fi {
       animation: fadeUp .45s ease forwards;
+    }
+
+    .cv-fade {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .cv-fade.active {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .d1 { animation-delay: .05s; opacity: 0 }
@@ -338,7 +355,7 @@ const { title = "adeleeeeyyyy — GitHub Profile" } = Astro.props;
       cursor: pointer;
       background: var(--canvas);
       color: var(--ink);
-      transition: all .2s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       margin-bottom: 8px;
       position: relative;
     }
@@ -346,12 +363,122 @@ const { title = "adeleeeeyyyy — GitHub Profile" } = Astro.props;
     .tab-btn:hover:not(.active) {
       background: var(--soft-cloud);
       border-color: var(--ink);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(17, 17, 17, 0.08);
+    }
+
+    .tab-btn:active:not(.active) {
+      transform: translateY(0);
     }
 
     .tab-btn.active {
       background: var(--ink);
       color: var(--canvas);
       border-color: var(--ink);
+      box-shadow: 0 4px 12px rgba(17, 17, 17, 0.15);
+    }
+
+    /* Premium global nav link underdraw animation */
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ink);
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: #707072;
+      transform: translateY(-1px);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: var(--ink);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* Premium Spring Popup Modals */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26, 26, 46, 0.4);
+      backdrop-filter: blur(0px);
+      z-index: 1001;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), backdrop-filter 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .modal-overlay.active {
+      opacity: 1;
+      backdrop-filter: blur(4px);
+    }
+    
+    .modal-content {
+      border: var(--border);
+      border-radius: 12px;
+      background: var(--bg);
+      padding: 2rem;
+      width: 400px;
+      max-width: 90vw;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      transform: scale(0.92) translateY(12px);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .modal-overlay.active .modal-content {
+      transform: scale(1) translateY(0);
+    }
+
+    /* Morphing Submit Button success state */
+    .submit-morphed {
+      background: #e0f7ee !important;
+      color: #10b981 !important;
+      border-color: #10b981 !important;
+      flex: none !important;
+      width: 100% !important;
+      height: 140px !important;
+      border-radius: 12px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: default !important;
+      pointer-events: none !important;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15) !important;
+      transform: scale(1) !important;
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    @keyframes drawCheck {
+      from { stroke-dashoffset: 20; stroke-dasharray: 20; opacity: 0; }
+      to { stroke-dashoffset: 0; stroke-dasharray: 20; opacity: 1; }
     }
 
     @keyframes tabFadeIn {
@@ -697,9 +824,14 @@ const { title = "adeleeeeyyyy — GitHub Profile" } = Astro.props;
   <!-- NAV -->
   <AnimatedNav client:load />
 
-  <slot />
+  <main style="flex: 1 0 auto; width: 100%;">
+    <slot />
+  </main>
 
-
-
+  <!-- GLOBAL FOOTER -->
+  <footer style="border-top: var(--border); background: var(--lav); width: 100%; flex-shrink: 0;" class="px-6 py-4 flex items-center justify-center">
+    <span style="font-family:'Space Mono', monospace; letter-spacing:.05em; font-size:1.1rem; font-weight:700; color:var(--ink);">adeleeeeyyyy ★</span>
+  </footer>
+  <div class="stripe" style="height:10px; flex-shrink: 0;"></div>
 </body>
 </html>

@@ -11,7 +11,7 @@ const githubDataJSON = JSON.stringify(githubData);
   <div class="max-w-6xl mx-auto px-4 py-8">
 
     <!-- ══════ EDITORIAL CAMPAIGN HERO & PROFILE HEADER ══════ -->
-    <div class="bb-static mb-8 overflow-hidden fi d1 bg-white">
+    <div id="main-portfolio-card" class="bb-static mb-8 overflow-hidden fi d1 bg-white">
       {/* 2-Column editorial hero banner */}
       <div class="grid grid-cols-1 md:grid-cols-3 min-h-[300px] border-b border-[#cacacb]">
         {/* Left Side: Campaign Text block */}
@@ -57,11 +57,13 @@ const githubDataJSON = JSON.stringify(githubData);
               #OPENTOWORK
             </div>
             <div style="display:flex; gap:8px; width:100%;">
-              <a href="mailto:adelyfahreza@gmail.com" 
-                 style="flex:1; display:inline-block; border: 1.5px solid #111111; background:#111111; color:#ffffff; padding: 8px 12px; font-semibold:700; font-size:10px; rounded-lg:8px; border-radius:6px; text-decoration:none; transition:all 0.2s ease; text-align:center; uppercase:true; tracking-wider:true; font-family:'Space Mono', monospace;">
+              <a href="#" onclick="openContactModal(event)" 
+                 style="flex:1; display:inline-block; border: 1.5px solid #111111; background:#111111; color:#ffffff; padding: 8px 12px; font-semibold:700; font-size:10px; rounded-lg:8px; border-radius:6px; text-decoration:none; transition:all 0.2s ease; text-align:center; uppercase:true; tracking-wider:true; font-family:'Space Mono', monospace;"
+                 onmouseover="this.style.background='transparent'; this.style.color='#111111';"
+                 onmouseout="this.style.background='#111111'; this.style.color='#ffffff';">
                 GET IN TOUCH
               </a>
-              <a href="/resume.pdf" target="_blank"
+              <a href="#" onclick="toggleCV(event)" id="see-cv-btn"
                  style="flex:1; display:inline-block; border: 1.5px solid #cacacb; background:transparent; color:#707072; padding: 8px 12px; font-semibold:700; font-size:10px; rounded-lg:8px; border-radius:6px; text-decoration:none; transition:all 0.2s ease; text-align:center; uppercase:true; tracking-wider:true; font-family:'Space Mono', monospace;"
                  onmouseover="this.style.borderColor='#111111'; this.style.color='#111111';"
                  onmouseout="this.style.borderColor='#cacacb'; this.style.color='#707072';">
@@ -114,10 +116,11 @@ const githubDataJSON = JSON.stringify(githubData);
       </div>
     </div>
 
-    <!-- MARQUEE -->
-    <div
-      style="border:var(--border);border-radius:12px;overflow:hidden;background:#ffffff;box-shadow:none;margin-bottom:2rem;"
-      class="py-3 fi d2">
+    <div id="content-below-hero">
+      <!-- MARQUEE -->
+      <div
+        style="border:var(--border);border-radius:12px;overflow:hidden;background:#ffffff;box-shadow:none;margin-bottom:2rem;"
+        class="py-3 fi d2">
       <div class="mq" id="mq"></div>
     </div>
 
@@ -595,14 +598,214 @@ const githubDataJSON = JSON.stringify(githubData);
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <div style="border-top:var(--border);background:var(--lav);margin-top:3rem;"
-    class="px-6 py-4 flex items-center justify-center">
-    <span
-      style="font-family:'Space Mono', monospace; letter-spacing:.05em; font-size:1.1rem; font-weight:700; color:var(--ink);">adeleeeeyyyy
-      ★</span>
-  </div>
-  <div class="stripe" style="height:10px;"></div>
+  </div> <!-- Close content-below-hero -->
+
+  <!-- CV RENDER PANEL -->
+  <div id="cv-rendering-container" style="display: none; border: var(--border); border-radius: 12px; background: white; margin-bottom: 2rem; box-shadow: none;" class="bb-static p-8 md:p-12 text-[#111111] relative overflow-hidden">
+      <!-- CV Back Button & Header Actions -->
+      <div class="flex justify-between items-center border-b border-[#cacacb] pb-6 mb-8 flex-wrap gap-4">
+        <button onclick="toggleCV(event)" style="display:flex; align-items:center; gap:8px; border:1.5px solid #111111; background:#111111; color:#ffffff; padding:8px 16px; font-family:'Space Mono', monospace; font-size:11px; font-weight:700; border-radius:6px; cursor:pointer; transition:all 0.2s ease;" onmouseover="this.style.background='transparent'; this.style.color='#111111';" onmouseout="this.style.background='#111111'; this.style.color='#ffffff';">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          BACK TO PORTFOLIO
+        </button>
+        <div style="font-family:'Space Mono', monospace; font-size:11px; color:#707072; font-weight:700;">
+          CURRICULUM VITAE // 2026
+        </div>
+      </div>
+
+      <!-- CV Header -->
+      <div style="margin-bottom: 3rem;">
+        <h1 style="font-family:'Bebas Neue', sans-serif; font-size: 72px; line-height: 0.85; text-transform: uppercase; font-weight: 500; color: #111111; letter-spacing: -0.01em;">
+          ADLY FAHREZA
+        </h1>
+        <p style="font-family:'Space Mono', monospace; font-size: 13px; color: #111111; font-weight: 700; margin-top: 6px; letter-spacing: 0.02em;">
+          BACKEND DEVELOPER & SYSTEM ADMINISTRATOR
+        </p>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 mt-4 text-[11px] font-semibold text-[#707072] uppercase tracking-wide">
+          <span style="display:flex; align-items:center; gap:6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#707072]"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Jakarta, Indonesia
+          </span>
+          <span style="display:flex; align-items:center; gap:6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#707072]"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            adly@synchronizeteams.com
+          </span>
+          <span style="display:flex; align-items:center; gap:6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#707072]"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            085179518681
+          </span>
+          <span style="display:flex; align-items:center; gap:6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#707072]"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            <a href="https://adeli.tech" target="_blank" style="text-decoration:underline;">adeli.tech</a>
+          </span>
+          <span style="display:flex; align-items:center; gap:6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#707072]"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            <a href="https://github.com/adeleeeeyyyy" target="_blank" style="text-decoration:underline;">github.com/adeleeeeyyyy</a>
+          </span>
+        </div>
+      </div>
+
+      <!-- 2-Column CV Body -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 border-t border-[#cacacb] pt-8">
+        <!-- Left Column: Skills, Education, Certifications -->
+        <div class="lg:col-span-1 flex flex-col gap-8">
+          
+          <!-- TECHNICAL SKILLS -->
+          <div>
+            <div style="font-family:'Bebas Neue'; font-size:1.8rem; border-bottom: 2px solid #111111; padding-bottom: 4px; margin-bottom: 1rem; color:#111111;">
+              TECHNICAL SKILLS
+            </div>
+            <div class="flex flex-col gap-4">
+              <div>
+                <span style="font-family:'Space Mono', monospace; font-size:10px; font-weight:700; text-transform:uppercase; color:#707072; display:flex; align-items:center; gap:6px; margin-bottom: 4px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#707072]"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                  Backend Development
+                </span>
+                <p style="font-size:13px; line-height:1.5; color:#111111; font-weight:500;">Go (Fiber), PHP (Laravel), RESTful API Design, Microservices Architecture, System Design.</p>
+              </div>
+              <div>
+                <span style="font-family:'Space Mono', monospace; font-size:10px; font-weight:700; text-transform:uppercase; color:#707072; display:flex; align-items:center; gap:6px; margin-bottom: 4px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#707072]"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                  DevOps & SysAdmin
+                </span>
+                <p style="font-size:13px; line-height:1.5; color:#111111; font-weight:500;">Linux Administration, Dell PowerEdge, Proxmox VE hypervisors, GCP, Docker containerization, Beszel monitoring telemetry.</p>
+              </div>
+              <div>
+                <span style="font-family:'Space Mono', monospace; font-size:10px; font-weight:700; text-transform:uppercase; color:#707072; display:flex; align-items:center; gap:6px; margin-bottom: 4px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#707072]"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                  Web Servers & Proxies
+                </span>
+                <p style="font-size:13px; line-height:1.5; color:#111111; font-weight:500;">Nginx, Caddy reverse proxies, Apache HTTP Server, OpenLiteSpeed.</p>
+              </div>
+              <div>
+                <span style="font-family:'Space Mono', monospace; font-size:10px; font-weight:700; text-transform:uppercase; color:#707072; display:flex; align-items:center; gap:6px; margin-bottom: 4px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#707072]"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+                  Databases & Caching
+                </span>
+                <p style="font-size:13px; line-height:1.5; color:#111111; font-weight:500;">PostgreSQL, MySQL, MongoDB, SQLite, Redis (In-Memory structures).</p>
+              </div>
+              <div>
+                <span style="font-family:'Space Mono', monospace; font-size:10px; font-weight:700; text-transform:uppercase; color:#707072; display:flex; align-items:center; gap:6px; margin-bottom: 4px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#707072]"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                  Tools & Workflows
+                </span>
+                <p style="font-size:13px; line-height:1.5; color:#111111; font-weight:500;">Git, GitHub Architecture, Postman CLI testing, Linux bash scripting.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- EDUCATION -->
+          <div>
+            <div style="font-family:'Bebas Neue'; font-size:1.8rem; border-bottom: 2px solid #111111; padding-bottom: 4px; margin-bottom: 1rem; color:#111111;">
+              EDUCATION
+            </div>
+            <div>
+              <h3 style="font-family:'Inter'; font-weight:700; font-size:14px; color:#111111;">SMK Plus Pelita Nusantara</h3>
+              <p style="font-size:12px; color:#707072; font-weight:600; margin-top:2px;">Software Engineering (RPL) | 2023 – 2026</p>
+              <p style="font-size:12px; line-height:1.5; color:#4b5563; margin-top:6px; font-weight:500;">
+                <b>Coursework:</b> Databases (Relational/Non-Relational), OOP, Data Structures, Networks, Shell Scripting, Server Admin.
+              </p>
+            </div>
+          </div>
+
+          <!-- CERTIFICATIONS & BADGES -->
+          <div>
+            <div style="font-family:'Bebas Neue'; font-size:1.8rem; border-bottom: 2px solid #111111; padding-bottom: 4px; margin-bottom: 1rem; color:#111111;">
+              CREDENTIALS & BADGES
+            </div>
+            <div class="flex flex-col gap-4">
+              <div>
+                <h4 style="font-family:'Inter'; font-weight:700; font-size:12px; color:#111111;">Google Cloud Qwiklabs Credentials</h4>
+                <ul style="font-size:11px; color:#4b5563; margin-top:4px; list-style-type:square; padding-left:16px; font-weight:500; display:flex; flex-direction:column; gap:2px;">
+                  <li>Implement Cloud Security Fundamentals</li>
+                  <li>Secure Software Delivery & Google Cloud Compute</li>
+                  <li>Monitor and Log with Google Cloud Observability</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-family:'Inter'; font-weight:700; font-size:12px; color:#111111;">Technical Programs</h4>
+                <ul style="font-size:11px; color:#4b5563; margin-top:4px; list-style-type:square; padding-left:16px; font-weight:500; display:flex; flex-direction:column; gap:2px;">
+                  <li><b>JuaraGCP Season 12 Participant</b> (Google Cloud Skills Boost, Jan 2026)</li>
+                  <li><b>JuaraVibeCoding Event Attendee</b> (Cloud, Deployment, Coding, May 2026)</li>
+                  <li><b>Google Developer Program</b> (Verified Member, Jan 2026)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Professional Experience, Projects -->
+        <div class="lg:col-span-2 flex flex-col gap-8">
+          
+          <!-- PROFESSIONAL EXPERIENCE -->
+          <div>
+            <div style="font-family:'Bebas Neue'; font-size:1.8rem; border-bottom: 2px solid #111111; padding-bottom: 4px; margin-bottom: 1rem; color:#111111;">
+              PROFESSIONAL EXPERIENCE
+            </div>
+            <div class="flex flex-col gap-8">
+              <!-- Experience item 1 -->
+              <div>
+                <div class="flex justify-between items-start flex-wrap gap-2">
+                  <div>
+                    <h3 style="font-family:'Inter'; font-weight:700; font-size:16px; color:#111111;">devaccto <span style="font-weight:500; color:#707072; font-size:12px;">| On-site</span></h3>
+                    <p style="font-family:'Space Mono', monospace; font-size:11px; font-weight:700; color:#111111; margin-top:2px;">BACKEND DEVELOPER & SYSTEM ADMINISTRATOR</p>
+                  </div>
+                  <div style="font-family:'Space Mono', monospace; font-size:11px; font-weight:700; color:#707072;">
+                    2023 – 2026
+                  </div>
+                </div>
+                <ul style="font-size:13px; line-height:1.6; color:#4b5563; margin-top:8px; list-style-type:disc; padding-left:20px; font-weight:500; display:flex; flex-direction:column; gap:6px;">
+                  <li>Engineered, secured, and maintained production-grade RESTful APIs utilizing <b>Go (Fiber)</b> and <b>Laravel</b> frameworks to power multiple scalable business applications.</li>
+                  <li>Managed and configured physical enterprise infrastructure on-site, directly administering <b>Dell PowerEdge</b> rack servers using <b>Proxmox VE</b> for virtualization.</li>
+                  <li>Executed continuous deployment workflows, successfully migrating local web environments to public production infrastructure using <b>Bare-Metal VPS</b> and <b>GCP</b>.</li>
+                  <li>Optimized web server performance, query handling, and SSL/TLS routing security by deploying and configuring <b>Nginx</b> and <b>Caddy</b> as reverse proxies.</li>
+                  <li>Designed database schemas using <b>PostgreSQL</b> and <b>MongoDB</b>, reducing query execution times for data-heavy system modules.</li>
+                </ul>
+              </div>
+
+              <!-- Experience item 2 -->
+              <div>
+                <div class="flex justify-between items-start flex-wrap gap-2">
+                  <div>
+                    <h3 style="font-family:'Inter'; font-weight:700; font-size:16px; color:#111111;">SynchronizeTeams <span style="font-weight:500; color:#707072; font-size:12px;">| Remote</span></h3>
+                    <p style="font-family:'Space Mono', monospace; font-size:11px; font-weight:700; color:#111111; margin-top:2px;">BACKEND DEVELOPER & SYSTEM ADMINISTRATOR</p>
+                  </div>
+                  <div style="font-family:'Space Mono', monospace; font-size:11px; font-weight:700; color:#707072;">
+                    2023 – 2026
+                  </div>
+                </div>
+                <ul style="font-size:13px; line-height:1.6; color:#4b5563; margin-top:8px; list-style-type:disc; padding-left:20px; font-weight:500; display:flex; flex-direction:column; gap:6px;">
+                  <li>Architected and managed core backend infrastructure for <b>Synconomics</b>, an ERP platform designed for small-to-medium enterprises.</li>
+                  <li>Integrated <b>Gemini API (3.1)</b> services to drive intelligent business workflow automations and AI-assisted data analysis.</li>
+                  <li>Containerized application stacks utilizing <b>Docker</b> to ensure cross-platform local-to-production consistency.</li>
+                  <li>Implemented <b>Redis</b> caching layers to mitigate database bottlenecks and optimize overall application microservice latency.</li>
+                  <li>Established real-time infrastructure telemetry using <b>Beszel monitoring</b> to ensure high availability and proactive server fault detection.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECTS -->
+          <div>
+            <div style="font-family:'Bebas Neue'; font-size:1.8rem; border-bottom: 2px solid #111111; padding-bottom: 4px; margin-bottom: 1rem; color:#111111;">
+              PROJECTS
+            </div>
+            <div>
+              <h3 style="font-family:'Inter'; font-weight:700; font-size:15px; color:#111111;">Online Student Council Election (OSIS) Web Application</h3>
+              <p style="font-family:'Space Mono', monospace; font-size:11px; font-weight:700; color:#10b981; margin-top:2px;">LEAD BACKEND DEVELOPER & SYSADMIN</p>
+              <ul style="font-size:13px; line-height:1.6; color:#4b5563; margin-top:6px; list-style-type:disc; padding-left:20px; font-weight:500; display:flex; flex-direction:column; gap:4px;">
+                <li>Developed a highly secure voting platform leveraging strict server-side validation and cryptography principles to guarantee election data integrity.</li>
+                <li>Configured localized production server environments, accommodating <b>over 1,000 active concurrent users</b> during the live election timeline with zero system downtime.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> <!-- Close cv-rendering-container -->
+
   <!-- ROLE HOVER POPUP -->
   <div id="role-tooltip"
     style="display:none; position:absolute; z-index:9999; border:1px solid #cbd5e1; border-radius:12px; background:#ffffff; color:var(--ink); padding:16px; width:320px; box-shadow:var(--shadow-lg); font-family:'Space Mono', monospace; font-size:.7rem; pointer-events:none; transition:opacity 0.2s ease, transform 0.2s; opacity:0; transform:translateY(10px);">
@@ -616,6 +819,46 @@ const githubDataJSON = JSON.stringify(githubData);
       style="border:var(--border);box-shadow:8px 8px 0 var(--ink);max-width:80vw;max-height:80vh;overflow:hidden;background:var(--bg);padding:.5rem;">
       <img id="lb-img" src="" style="max-width:100%;max-height:75vh;display:block;">
       <div id="lb-cap" style="font-size:.7rem;padding:.5rem 0 0;font-weight:700;"></div>
+    </div>
+  </div>
+
+  <!-- CONTACT POPUP MODAL -->
+  <div id="contact-modal" class="modal-overlay">
+    <div class="modal-content" id="contact-modal-body" style="transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), height 0.5s cubic-bezier(0.25, 1, 0.5, 1), padding 0.5s cubic-bezier(0.25, 1, 0.5, 1); overflow: hidden; height: 550px; box-sizing: border-box;">
+      <div id="contact-modal-inner" style="transition: all 0.3s ease; opacity: 1; transform: translateY(0); height: 100%;">
+        <div style="font-family:'Bebas Neue';font-size:2rem;letter-spacing:.02em;margin-bottom:0.25rem;color:var(--ink);">GET IN TOUCH</div>
+        <div style="font-family:'Space Mono',monospace;font-size:11px;color:#707072;margin-bottom:1.5rem;font-weight:700;">LEAVE A MESSAGE AND I'LL GET BACK TO YOU.</div>
+        
+        <form id="contact-form" onsubmit="submitContactForm(event)" class="flex flex-col gap-4">
+          <div>
+            <label style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#707072;display:block;margin-bottom:4px;text-transform:uppercase;">Name *</label>
+            <input class="gb-input w-full" id="contact-name" required placeholder="Your name..." style="border:1.5px solid #cacacb; border-radius:6px; padding:8px 12px; font-size:13px; font-family:'Inter', sans-serif;">
+          </div>
+          
+          <div>
+            <label style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#707072;display:block;margin-bottom:4px;text-transform:uppercase;">Email *</label>
+            <input class="gb-input w-full" type="email" id="contact-email" required placeholder="your.email@example.com..." style="border:1.5px solid #cacacb; border-radius:6px; padding:8px 12px; font-size:13px; font-family:'Inter', sans-serif;">
+          </div>
+          
+          <div>
+            <label style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#707072;display:block;margin-bottom:4px;text-transform:uppercase;">Subject</label>
+            <input class="gb-input w-full" id="contact-subject" placeholder="What is this about?..." style="border:1.5px solid #cacacb; border-radius:6px; padding:8px 12px; font-size:13px; font-family:'Inter', sans-serif;">
+          </div>
+          
+          <div>
+            <label style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#707072;display:block;margin-bottom:4px;text-transform:uppercase;">Message *</label>
+            <textarea class="gb-input w-full" id="contact-message" required rows="4" placeholder="Your message here..." style="border:1.5px solid #cacacb; border-radius:6px; padding:8px 12px; font-size:13px; font-family:'Inter', sans-serif; resize:none;"></textarea>
+          </div>
+          
+          <div id="contact-form-status" style="display:none; font-family:'Space Mono',monospace; font-size:11px; font-weight:700; text-align:center; padding:8px; border-radius:6px;"></div>
+          
+          <div style="display:flex;gap:.5rem;margin-top:1.5rem;">
+            <button type="submit" class="gb-btn" style="flex:1; background:#111111; color:#ffffff; font-weight:700; border-radius:6px; height:38px; cursor:pointer; font-family:'Space Mono', monospace; font-size:11px; transition:all 0.2s ease; border: 1.5px solid #111111;" onmouseover="this.style.background='transparent'; this.style.color='#111111'; this.style.borderColor='#111111';" onmouseout="this.style.background='#111111'; this.style.color='#ffffff';">SEND MESSAGE</button>
+            <button type="button" class="gb-btn" style="flex:1;background:transparent;color:#707072;border:1.5px solid #cacacb;font-weight:700;border-radius:6px;height:38px;cursor:pointer;font-family:'Space Mono', monospace;font-size:11px;transition:all 0.2s ease;" onmouseover="this.style.borderColor='#111111'; this.style.color='#111111';" onmouseout="this.style.borderColor='#cacacb'; this.style.color='#707072';"
+              onclick="closeContactModal()">CANCEL</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 
@@ -661,6 +904,179 @@ const githubDataJSON = JSON.stringify(githubData);
   </div>
 
   <script is:inline>
+    function toggleCV(e) {
+      if (e) e.preventDefault();
+      const mainCard = document.getElementById('main-portfolio-card');
+      const contentBelow = document.getElementById('content-below-hero');
+      const cvContainer = document.getElementById('cv-rendering-container');
+      const btn = document.getElementById('see-cv-btn');
+      
+      if (cvContainer.style.display === 'none') {
+        // Enforce scroll protection: completely hide all home elements
+        if (mainCard) mainCard.style.display = 'none';
+        if (contentBelow) contentBelow.style.display = 'none';
+        
+        cvContainer.style.display = 'block';
+        cvContainer.classList.add('cv-fade');
+        cvContainer.offsetHeight; // Force reflow
+        cvContainer.classList.add('active');
+        if (btn) btn.textContent = 'CLOSE CV';
+        
+        // Instant top reset since CV container is now at the very top of the body
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      } else {
+        // Restore layout on strict BACK button click
+        cvContainer.classList.remove('active');
+        setTimeout(() => {
+          cvContainer.style.display = 'none';
+          if (mainCard) mainCard.style.display = 'block';
+          if (contentBelow) contentBelow.style.display = 'block';
+          if (btn) btn.textContent = 'SEE CV';
+          
+          // Smooth scroll back to top of portfolio card
+          setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+            if (mainCard) mainCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 50);
+        }, 350);
+      }
+    }
+    window.toggleCV = toggleCV;
+
+    let originalContactModalHTML = '';
+
+    function openContactModal(e) {
+      if (e) e.preventDefault();
+      const modal = document.getElementById('contact-modal');
+      const modalBody = document.getElementById('contact-modal-body');
+      
+      if (!originalContactModalHTML && modalBody) {
+        originalContactModalHTML = modalBody.innerHTML;
+      } else if (modalBody && originalContactModalHTML) {
+        modalBody.innerHTML = originalContactModalHTML;
+      }
+
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('contact-form-status');
+      if (form) form.reset();
+      if (status) status.style.display = 'none';
+      
+      if (modalBody) {
+        modalBody.style.height = '550px';
+        modalBody.style.padding = '2rem';
+      }
+      
+      if (modal) {
+        modal.style.display = 'flex';
+        modal.offsetHeight; // Force reflow
+        modal.classList.add('active');
+      }
+    }
+
+    function closeContactModal() {
+      const modal = document.getElementById('contact-modal');
+      if (modal) {
+        modal.classList.remove('active');
+        setTimeout(() => {
+          modal.style.display = 'none';
+        }, 300);
+      }
+    }
+
+    async function submitContactForm(e) {
+      if (e) e.preventDefault();
+      
+      const name = document.getElementById('contact-name').value;
+      const email = document.getElementById('contact-email').value;
+      const subject = document.getElementById('contact-subject').value;
+      const message = document.getElementById('contact-message').value;
+      const modalBody = document.getElementById('contact-modal-body');
+      const innerContent = document.getElementById('contact-modal-inner');
+      
+      // 1. Shrink upwards transition sequence
+      if (innerContent) {
+        innerContent.style.opacity = '0';
+        innerContent.style.transform = 'translateY(-15px)';
+      }
+      
+      setTimeout(() => {
+        if (modalBody) {
+          modalBody.style.height = '76px';
+          modalBody.style.padding = '1rem 2rem';
+          modalBody.innerHTML = `
+            <div id="contact-loading-inner" style="display:flex; align-items:center; justify-content:center; gap:10px; font-family:'Space Mono', monospace; font-size:11px; font-weight:700; color:#111111; animation: scaleIn 0.3s ease; height: 100%;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation: spin 1s linear infinite;"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+              SENDING SECURE MESSAGE...
+            </div>
+          `;
+        }
+      }, 250);
+      
+      try {
+        const response = await fetch('http://localhost:3005/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ name, email, subject, message })
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
+          // Wait at least a small delay to make the shrink/expand loop look deliberate and premium!
+          setTimeout(() => {
+            // 2. Expand back downwards and display checkmark animation
+            if (modalBody) {
+              modalBody.style.height = '200px';
+              modalBody.style.padding = '2rem';
+              modalBody.innerHTML = `
+                <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height: 100%; animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;">
+                  <div style="width:50px; height:50px; border-radius:50%; border:2px solid #10b981; display:flex; align-items:center; justify-content:center; color:#10b981; margin-bottom:1rem; position:relative;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation: drawCheck 0.4s ease-out 0.15s both;"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <div style="font-family:'Bebas Neue'; font-size:2rem; color:#111111; text-transform:uppercase; letter-spacing:0.02em; line-height: 0.9;">MESSAGE SENT!</div>
+                  <div style="font-family:'Space Mono', monospace; font-size:11px; color:#707072; margin-top:6px; font-weight:700;">THANK YOU. I'LL RESPOND SHORTLY.</div>
+                </div>
+              `;
+            }
+            
+            setTimeout(() => {
+              closeContactModal();
+            }, 2400);
+          }, 800);
+          
+        } else {
+          throw new Error(result.error || 'Failed to submit');
+        }
+      } catch (err) {
+        // Recover original form state on error
+        setTimeout(() => {
+          if (modalBody) {
+            modalBody.style.height = '550px';
+            modalBody.style.padding = '2rem';
+            if (originalContactModalHTML) {
+              modalBody.innerHTML = originalContactModalHTML;
+            }
+            // Show error in status
+            setTimeout(() => {
+              const errStatus = document.getElementById('contact-form-status');
+              if (errStatus) {
+                errStatus.style.display = 'block';
+                errStatus.style.background = '#fffde7';
+                errStatus.style.color = '#d30005';
+                errStatus.textContent = `ERROR: ${err.message}`;
+              }
+            }, 500);
+          }
+        }, 600);
+      }
+    }
+
+    window.openContactModal = openContactModal;
+    window.closeContactModal = closeContactModal;
+    window.submitContactForm = submitContactForm;
+
     const USERNAME = 'adeleeeeyyyy';
     const API = 'https://api.github.com';
     const LANG_COLORS = {
