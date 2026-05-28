@@ -3,18 +3,23 @@ import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="adeleeeeyyyy — Tools">
 
-
-  <div class="max-w-6xl mx-auto px-4 py-6">
+  <div class="max-w-6xl mx-auto px-4 py-8">
     <!-- TOOLS HEADER -->
-    <div class="bb-static mb-5 overflow-hidden fi d1" style="background:var(--bg); padding: 2rem;">
-      <h1 style="font-family:'Outfit';font-size:2.5rem;font-weight:800;line-height:1.05;">WORKSPACE TOOLS</h1>
-      <p style="font-size:.9rem;margin-top:.5rem;color:#555;">A collection of utilities for System Administration,
-        Graphic Design, and Backend Development.</p>
+    <div class="bb-static mb-8 overflow-hidden fi d1 bg-[#111111] text-white p-8 md:p-12 relative">
+      <div class="absolute top-4 left-4 border border-white/20 text-white/40 text-[9px] font-mono tracking-widest uppercase">
+        WORKSPACE TOOLS // VERSION 2.0
+      </div>
+      <h1 style="font-family:'Bebas Neue', sans-serif; font-size: 64px; line-height: 0.9; text-transform: uppercase; font-weight: 500; letter-spacing: -0.01em;" class="mt-4">
+        WORKSPACE UTILITIES
+      </h1>
+      <p style="font-size:.85rem;margin-top:.5rem;color:#cacacb;max-width:560px;font-weight:500;line-height:1.6;">
+        A high-fidelity collection of engineering utilities designed for System Administration, Graphic Design, and Backend Development.
+      </p>
     </div>
 
     <!-- TABS -->
     <div class="fi d2">
-      <div class="flex gap-2 flex-wrap mb-4">
+      <div class="flex gap-2 flex-wrap mb-6">
         <button class="tab-btn active" onclick="switchToolsTab('sysadmin')">SYSADMIN</button>
         <button class="tab-btn" onclick="switchToolsTab('graphic')">GRAPHIC DESIGN</button>
         <button class="tab-btn" onclick="switchToolsTab('backend')">BACKEND</button>
@@ -22,78 +27,83 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- SYSADMIN TAB: RAID VISUALIZER -->
       <div id="tab-sysadmin" class="tab-content active">
-        <div class="bb p-5" style="background:var(--pink);">
-          <div class="section-title text-xl mb-3">✦ RAID HDD VISUALIZER</div>
-          <div class="flex flex-col md:flex-row gap-5">
+        <div class="bb p-6 md:p-8 bg-white text-[#111111]">
+          <div class="section-title text-2xl mb-4 font-bold tracking-tight">✦ RAID HDD VISUALIZER</div>
+          <div class="flex flex-col md:flex-row gap-8">
 
             <!-- Controls -->
             <div class="flex-1" style="min-width: 250px;">
-              <label style="font-size:0.8rem; font-weight:700;">RAID Level</label>
-              <select id="raid-level" class="tag"
-                style="width:100%; margin-bottom:1rem; font-size:1rem; padding:8px; border:var(--border);"
-                onchange="updateRaid()">
-                <option value="0">RAID 0 (Striping)</option>
-                <option value="1">RAID 1 (Mirroring)</option>
-                <option value="5" selected>RAID 5 (Parity)</option>
-                <option value="6">RAID 6 (Double Parity)</option>
-                <option value="10">RAID 10 (Stripe of Mirrors)</option>
-              </select>
+              <div class="mb-4">
+                <label style="font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#707072;">RAID Level</label>
+                <select id="raid-level" class="tag w-full"
+                  style="margin-top:4px; font-size:.8rem; padding:10px 14px; border:1px solid var(--hairline); background:var(--soft-cloud); border-radius:30px; font-weight:700;"
+                  onchange="updateRaid()">
+                  <option value="0">RAID 0 (Striping)</option>
+                  <option value="1">RAID 1 (Mirroring)</option>
+                  <option value="5" selected>RAID 5 (Parity)</option>
+                  <option value="6">RAID 6 (Double Parity)</option>
+                  <option value="10">RAID 10 (Stripe of Mirrors)</option>
+                </select>
+              </div>
 
-              <label style="font-size:0.8rem; font-weight:700;">Number of Drives</label>
-              <input type="number" id="drive-count" value="4" min="2" max="24" class="tag"
-                style="width:100%; margin-bottom:1rem; font-size:1rem; padding:8px; border:var(--border);"
-                onchange="updateRaid()" />
+              <div class="mb-4">
+                <label style="font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#707072;">Number of Drives</label>
+                <input type="number" id="drive-count" value="4" min="2" max="24" class="tag w-full"
+                  style="margin-top:4px; font-size:.8rem; padding:10px 14px; border:1px solid var(--hairline); background:var(--soft-cloud); border-radius:30px; font-weight:700;"
+                  onchange="updateRaid()" />
+              </div>
 
-              <label style="font-size:0.8rem; font-weight:700;">Size per Drive (TB)</label>
-              <input type="number" id="drive-size" value="2" min="1" max="22" class="tag"
-                style="width:100%; margin-bottom:1rem; font-size:1rem; padding:8px; border:var(--border);"
-                onchange="updateRaid()" />
+              <div class="mb-4">
+                <label style="font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#707072;">Size per Drive (TB)</label>
+                <input type="number" id="drive-size" value="2" min="1" max="22" class="tag w-full"
+                  style="margin-top:4px; font-size:.8rem; padding:10px 14px; border:1px solid var(--hairline); background:var(--soft-cloud); border-radius:30px; font-weight:700;"
+                  onchange="updateRaid()" />
+              </div>
 
-              <div class="p-3 bb-sm" style="background:var(--bg); margin-top:1rem;">
-                <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
-                  <span style="font-size:0.8rem; color:#555;">Raw Capacity:</span>
-                  <span id="raw-cap" style="font-weight:700;">8 TB</span>
+              <div class="p-4 bg-[#f5f5f5] border border-[#cacacb] mb-4">
+                <div style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:0.75rem; font-weight:600;">
+                  <span style="color:#707072; text-transform:uppercase;">Raw Capacity:</span>
+                  <span id="raw-cap" style="color:#111111;">8 TB</span>
                 </div>
-                <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
-                  <span style="font-size:0.8rem; color:#555;">Usable Capacity:</span>
-                  <span id="usable-cap" style="font-weight:700; color:#10b981;">6 TB</span>
+                <div style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:0.75rem; font-weight:600;">
+                  <span style="color:#707072; text-transform:uppercase;">Usable Capacity:</span>
+                  <span id="usable-cap" style="color:#111111;">6 TB</span>
                 </div>
-                <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
-                  <span style="font-size:0.8rem; color:#555;">Fault Tolerance:</span>
-                  <span id="fault-tol" style="font-weight:700; color:#ef4444;">1 Drive</span>
+                <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:600;">
+                  <span style="color:#707072; text-transform:uppercase;">Fault Tolerance:</span>
+                  <span id="fault-tol" style="color:#111111;">1 Drive</span>
                 </div>
               </div>
-              <p id="raid-desc" style="font-size:0.75rem; color:#444; margin-top:1rem; line-height:1.5;">RAID 5 requires
+              <p id="raid-desc" style="font-size:0.72rem; color:#707072; margin-top:1rem; line-height:1.6; font-weight:500;">RAID 5 requires
                 at least 3 drives. It stripes data and parity across all drives, allowing for 1 drive failure without
                 data loss.</p>
 
-              <div class="bb p-3 mt-3"
-                style="background:#0f172a; color:#f8fafc; font-family:'Space Mono', monospace; font-size:0.75rem; overflow-x:auto;">
-                <div style="color:#64748b; margin-bottom:4px; font-weight:700;"># mdadm configuration</div>
-                <div id="raid-command" style="white-space:nowrap;"></div>
+              <div class="bb p-4 mt-4"
+                style="background:#111111; color:#ffffff; font-family:monospace; font-size:0.7rem; overflow-x:auto; border-radius:0px;">
+                <div style="color:#cacacb; margin-bottom:4px; font-weight:700;"># mdadm configuration</div>
+                <div id="raid-command" style="white-space:nowrap; color:#ffffff;"></div>
               </div>
             </div>
 
             <!-- Visualization -->
             <div class="flex-2" style="flex:2;">
-              <div id="raid-visual" class="grid gap-2"
-                style="grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));">
+              <div id="raid-visual" class="grid gap-3"
+                style="grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));">
                 <!-- Drives generated by JS -->
               </div>
 
-              <div class="mt-4 flex gap-3 text-xs justify-center flex-wrap">
-                <div class="flex items-center gap-1">
+              <div class="mt-6 flex gap-4 text-[10px] font-bold text-[#707072] uppercase tracking-wider justify-center flex-wrap">
+                <div class="flex items-center gap-2">
                   <div style="width:12px;height:12px;background:#3b82f6;border:1px solid var(--ink);"></div> Data
                 </div>
-                <div class="flex items-center gap-1">
+                <div class="flex items-center gap-2">
                   <div style="width:12px;height:12px;background:#f59e0b;border:1px solid var(--ink);"></div> Parity
                 </div>
-                <div class="flex items-center gap-1">
+                <div class="flex items-center gap-2">
                   <div style="width:12px;height:12px;background:#10b981;border:1px solid var(--ink);"></div> Mirror
                 </div>
-                <div class="flex items-center gap-1">
-                  <div style="width:12px;height:12px;background:#ef4444;border:1px solid var(--ink);"></div> Unused /
-                  Invalid
+                <div class="flex items-center gap-2">
+                  <div style="width:12px;height:12px;background:#ef4444;border:1px solid var(--ink);"></div> Unused
                 </div>
               </div>
             </div>
@@ -104,60 +114,58 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- GRAPHIC DESIGN TAB -->
       <div id="tab-graphic" class="tab-content" style="display:none;">
-        <div class="bb p-5" style="background:var(--yellow);">
-          <div class="section-title text-xl mb-3">✦ COLOR PALETTE GENERATOR</div>
+        <div class="bb p-6 md:p-8 bg-white text-[#111111]">
+          <div class="section-title text-2xl mb-4 font-bold tracking-tight">✦ COLOR PALETTE GENERATOR</div>
 
-          <div class="flex flex-col lg:flex-row gap-5">
+          <div class="flex flex-col lg:flex-row gap-8">
             <!-- Left: Controls -->
             <div class="flex-1" style="min-width:250px;">
-              <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom:1rem;">
-                <p style="font-size:0.8rem; color:#555; margin:0;">Pick colors to generate a coherent theme. The preview
-                  updates instantly.</p>
-                <button id="btn-random" onclick="randomPalette()" class="btn-random"><span class="dice">🎲</span>
-                  Randomize</button>
+              <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom:1rem; gap:12px;">
+                <p style="font-size:0.75rem; color:#707072; margin:0; font-weight:500; line-height:1.6;">Pick colors to generate a coherent design system theme. The live preview updates instantly.</p>
+                <button id="btn-random" onclick="randomPalette()" class="btn-random">🎲 RANDOMIZE</button>
               </div>
 
               <div class="grid grid-cols-2 gap-3 mb-4">
                 <div>
-                  <label style="font-size:0.75rem; font-weight:700;">Primary</label>
+                  <label style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#707072;">Primary</label>
                   <input type="color" id="cp-primary" value="#3b82f6"
-                    class="w-full h-10 border-2 border-slate-900 rounded cursor-pointer" oninput="updatePalette()">
+                    class="w-full h-10 border border-[#cacacb] cursor-pointer" oninput="updatePalette()">
                 </div>
                 <div>
-                  <label style="font-size:0.75rem; font-weight:700;">Secondary</label>
+                  <label style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#707072;">Secondary</label>
                   <input type="color" id="cp-secondary" value="#8b5cf6"
-                    class="w-full h-10 border-2 border-slate-900 rounded cursor-pointer" oninput="updatePalette()">
+                    class="w-full h-10 border border-[#cacacb] cursor-pointer" oninput="updatePalette()">
                 </div>
                 <div>
-                  <label style="font-size:0.75rem; font-weight:700;">Accent</label>
+                  <label style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#707072;">Accent</label>
                   <input type="color" id="cp-accent" value="#f59e0b"
-                    class="w-full h-10 border-2 border-slate-900 rounded cursor-pointer" oninput="updatePalette()">
+                    class="w-full h-10 border border-[#cacacb] cursor-pointer" oninput="updatePalette()">
                 </div>
                 <div>
-                  <label style="font-size:0.75rem; font-weight:700;">Background</label>
+                  <label style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#707072;">Background</label>
                   <input type="color" id="cp-bg" value="#f8fafc"
-                    class="w-full h-10 border-2 border-slate-900 rounded cursor-pointer" oninput="updatePalette()">
+                    class="w-full h-10 border border-[#cacacb] cursor-pointer" oninput="updatePalette()">
                 </div>
                 <div class="col-span-2">
-                  <label style="font-size:0.75rem; font-weight:700;">Text / Ink</label>
+                  <label style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#707072;">Text / Ink</label>
                   <input type="color" id="cp-text" value="#0f172a"
-                    class="w-full h-10 border-2 border-slate-900 rounded cursor-pointer" oninput="updatePalette()">
+                    class="w-full h-10 border border-[#cacacb] cursor-pointer" oninput="updatePalette()">
                 </div>
               </div>
 
               <!-- Tailwind Config Snippet -->
-              <div class="bb-sm p-3"
-                style="background:#1e293b; color:#f8fafc; font-family:'Space Mono', monospace; font-size:0.7rem; overflow-x:auto;">
-                <div style="color:#94a3b8; margin-bottom:6px; font-weight:700;">// tailwind.config.js</div>
+              <div class="bb-sm p-4"
+                style="background:#111111; color:#ffffff; font-family:monospace; font-size:0.68rem; overflow-x:auto; border-radius:0px;">
+                <div style="color:#cacacb; margin-bottom:6px; font-weight:700;">// tailwind.config.js</div>
                 <pre id="tw-config" style="margin:0;"></pre>
               </div>
             </div>
 
             <!-- Right: Live Preview -->
-            <div class="flex-2 p-0 overflow-hidden"
-              style="flex:2; border: 1px solid rgba(0,0,0,0.08); border-radius:16px; box-shadow: 0 10px 30px -5px rgba(0,0,0,0.05); position:relative;">
+            <div class="flex-2 p-0 overflow-hidden bg-[#f5f5f5] border border-[#cacacb]"
+              style="flex:2; border-radius:0px; position:relative;">
               <div
-                style="background:#f1f5f9; color:#64748b; font-size:0.6rem; padding:6px 12px; font-weight:700; border-bottom: 1px solid rgba(0,0,0,0.05); text-transform:uppercase; letter-spacing:0.05em;">
+                style="background:#ffffff; color:#111111; font-size:0.6rem; padding:8px 16px; font-weight:700; border-bottom: 1px solid var(--hairline); text-transform:uppercase; letter-spacing:0.08em;">
                 Live Preview</div>
 
               <!-- Mock Website Container -->
@@ -165,7 +173,7 @@ import Layout from '../layouts/Layout.astro';
                 style="--m-primary:#3b82f6; --m-secondary:#8b5cf6; --m-accent:#f59e0b; --m-bg:#f8fafc; --m-text:#0f172a; background:var(--m-bg); color:var(--m-text); min-height: 350px; font-family:'Inter', sans-serif; transition: background 0.3s, color 0.3s;">
 
                 <!-- Mock Nav -->
-                <div style="padding:1.2rem; display:flex; justify-content:space-between; align-items:center;">
+                <div style="padding:1.5rem; display:flex; justify-content:space-between; align-items:center;">
                   <div style="font-weight:800; font-size:1.1rem; letter-spacing:-0.02em;">Brand.</div>
                   <div style="display:flex; gap:1.5rem; font-size:0.8rem; font-weight:500; opacity:0.8;">
                     <span>Home</span><span>About</span><span>Contact</span>
@@ -224,21 +232,19 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- BACKEND TAB -->
       <div id="tab-backend" class="tab-content" style="display:none;">
-        <div class="bb p-5" style="background:var(--mint);">
-          <div class="section-title text-xl mb-3">✦ API TESTER</div>
-          <p style="font-size:0.8rem; color:#555; margin-bottom:1rem;">A lightweight, browser-based API client. Note:
-            Subject to CORS policies.</p>
+        <div class="bb p-6 md:p-8 bg-white text-[#111111]">
+          <div class="section-title text-2xl mb-4 font-bold tracking-tight">✦ API TESTER</div>
+          <p style="font-size:0.75rem; color:#707072; margin-bottom:1.5rem; font-weight:500;">A lightweight, browser-based API client. Note: Subject to CORS policies.</p>
 
           <div class="flex flex-col gap-4">
 
             <!-- Request Section -->
-            <div class="p-5"
-              style="background:#fff; border: 1px solid rgba(0,0,0,0.08); border-radius:12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+            <div class="p-6 bg-[#f5f5f5] border border-[#cacacb]">
 
               <!-- URL Bar -->
-              <div class="flex gap-2 mb-4">
+              <div class="flex flex-col md:flex-row gap-3 mb-4">
                 <select id="api-method"
-                  style="padding:10px 16px; border-radius:8px; border:1px solid #cbd5e1; font-weight:800; background:#f8fafc; cursor:pointer; outline:none; font-family:'Space Mono', monospace;">
+                  style="padding:10px 16px; border:1px solid var(--hairline); font-weight:800; background:#ffffff; cursor:pointer; outline:none; font-family:monospace; border-radius:30px; font-size:0.8rem;">
                   <option value="GET">GET</option>
                   <option value="POST">POST</option>
                   <option value="PUT">PUT</option>
@@ -246,40 +252,39 @@ import Layout from '../layouts/Layout.astro';
                   <option value="DELETE">DELETE</option>
                 </select>
                 <input type="text" id="api-url" placeholder="https://jsonplaceholder.typicode.com/todos/1"
-                  style="flex:1; padding:10px 16px; border-radius:8px; border:1px solid #cbd5e1; font-family:'Space Mono', monospace; font-size:0.9rem; outline:none;">
+                  style="flex:1; padding:10px 16px; border:1px solid var(--hairline); font-family:monospace; font-size:0.8rem; outline:none; border-radius:30px;">
                 <button onclick="sendApiRequest()"
-                  style="background:var(--ink); color:var(--bg); padding:0 24px; font-weight:800; border:none; border-radius:8px; cursor:pointer; transition:transform 0.1s;">SEND</button>
+                  style="background:var(--ink); color:var(--canvas); padding:10px 28px; font-weight:800; border:none; border-radius:30px; cursor:pointer; font-size:0.8rem; transition:transform 0.1s;">SEND</button>
               </div>
 
               <!-- Tabs & Body -->
               <div>
-                <div class="flex gap-4 mb-2" style="border-bottom:1px solid #e2e8f0; padding-bottom:8px;">
-                  <span style="font-size:0.8rem; font-weight:800; color:var(--ink); cursor:pointer;">JSON Body</span>
+                <div class="flex gap-4 mb-2" style="border-bottom:1px solid var(--hairline); padding-bottom:8px;">
+                  <span style="font-size:0.7rem; font-weight:800; color:var(--ink); text-transform:uppercase; letter-spacing:0.05em;">JSON Request Body</span>
                 </div>
                 <textarea id="api-body" placeholder="{&#10;  &#34;key&#34;: &#34;value&#34;&#10;}"
-                  style="width:100%; height:120px; padding:12px; border-radius:8px; border:1px solid #cbd5e1; font-family:'Space Mono', monospace; font-size:0.8rem; resize:vertical; background:#f8fafc; outline:none;"></textarea>
+                  style="width:100%; height:120px; padding:12px; border:1px solid var(--hairline); font-family:monospace; font-size:0.75rem; resize:vertical; background:#ffffff; outline:none; border-radius:0px;"></textarea>
               </div>
 
             </div>
 
             <!-- Response Section -->
-            <div class="p-0 overflow-hidden"
-              style="border: 1px solid rgba(0,0,0,0.08); border-radius:12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+            <div class="p-0 overflow-hidden border border-[#cacacb]">
               <!-- Response Header -->
               <div
-                style="background:#f1f5f9; padding:10px 16px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(0,0,0,0.05);">
-                <div style="font-weight:800; font-size:0.8rem; color:#64748b;">RESPONSE</div>
+                style="background:#ffffff; padding:10px 16px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--hairline);">
+                <div style="font-weight:800; font-size:0.7rem; color:#707072; text-transform:uppercase; letter-spacing:0.05em;">Response Payload</div>
                 <div class="flex gap-4"
-                  style="font-size:0.75rem; font-family:'Space Mono', monospace; font-weight:700;">
-                  <span style="color:#64748b;">Status: <span id="api-status" style="color:#10b981;">---</span></span>
-                  <span style="color:#64748b;">Time: <span id="api-time" style="color:var(--ink);">---</span></span>
+                  style="font-size:0.7rem; font-family:monospace; font-weight:700;">
+                  <span style="color:#707072;">STATUS: <span id="api-status" style="color:#10b981;">---</span></span>
+                  <span style="color:#707072;">TIME: <span id="api-time" style="color:var(--ink);">---</span></span>
                 </div>
               </div>
 
               <!-- Response Body -->
-              <div style="background:#0f172a; padding:16px; overflow-x:auto; max-height:400px; overflow-y:auto;">
+              <div style="background:#111111; padding:16px; overflow-x:auto; max-height:400px; overflow-y:auto;">
                 <pre id="api-response"
-                  style="margin:0; font-family:'Space Mono', monospace; font-size:0.8rem; color:#a5b4fc; white-space:pre-wrap; word-wrap:break-word;">Hit 'SEND' to see the response here...</pre>
+                  style="margin:0; font-family:monospace; font-size:0.75rem; color:#a5b4fc; white-space:pre-wrap; word-wrap:break-word;">Hit 'SEND' to see the response here...</pre>
               </div>
             </div>
 

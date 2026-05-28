@@ -3,7 +3,7 @@ const https = require('https');
 const path = require('path');
 
 const USERNAME = 'adeleeeeyyyy';
-const OUT_FILE = path.join(__dirname, 'github_data.json');
+const OUT_FILE = path.join(__dirname, 'public', 'github_data.json');
 
 const fetchJSON = (url) => {
   return new Promise((resolve, reject) => {
