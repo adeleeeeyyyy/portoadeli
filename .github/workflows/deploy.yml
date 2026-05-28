@@ -20,4 +20,4 @@ jobs:
             cd /www/wwwroot/portoadeli
             git pull origin ini
             ~/.bun/bin/bun run build
-            cp -r dist/* ../adeli.synchronizeteams.com
+            cp -r dist/* ../adeli.tech
