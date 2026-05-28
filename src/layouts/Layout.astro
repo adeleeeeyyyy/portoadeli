@@ -447,6 +447,65 @@ const { title = "adeleeeeyyyy — GitHub Profile" } = Astro.props;
       transform: scale(1) translateY(0);
     }
 
+    /* Bulletproof 0px Gap and No-Rounded corners when CV is active */
+    body.cv-page-active main {
+      margin: 0px !important;
+      padding: 0px !important;
+    }
+    body.cv-page-active #portfolio-container {
+      padding: 0px !important;
+      margin: 0px auto !important;
+    }
+    body.cv-page-active #cv-rendering-container {
+      margin-top: 0px !important;
+      border-radius: 0px !important;
+    }
+
+    /* Staggered Render Animations for CV */
+    @keyframes cvFadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cv-animate-item {
+      opacity: 0;
+    }
+
+    body.cv-page-active .cv-animate-item {
+      animation: cvFadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    /* Stagger delays up to 10 items */
+    body.cv-page-active .cv-animate-item:nth-child(1) { animation-delay: 0.05s; }
+    body.cv-page-active .cv-animate-item:nth-child(2) { animation-delay: 0.1s; }
+    body.cv-page-active .cv-animate-item:nth-child(3) { animation-delay: 0.15s; }
+    body.cv-page-active .cv-animate-item:nth-child(4) { animation-delay: 0.2s; }
+    body.cv-page-active .cv-animate-item:nth-child(5) { animation-delay: 0.25s; }
+    body.cv-page-active .cv-animate-item:nth-child(6) { animation-delay: 0.3s; }
+    body.cv-page-active .cv-animate-item:nth-child(7) { animation-delay: 0.35s; }
+    body.cv-page-active .cv-animate-item:nth-child(8) { animation-delay: 0.4s; }
+
+    /* Ultra-premium Left-Accent Hover effect for CV items */
+    .cv-hover-card {
+      border-left: 3px solid transparent;
+      padding: 8px 16px;
+      margin-left: -16px;
+      margin-right: -16px;
+      border-radius: 6px;
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .cv-hover-card:hover {
+      background: #f8fafc;
+      border-left-color: #111111;
+      transform: translateX(4px);
+    }
+
     /* Morphing Submit Button success state */
     .submit-morphed {
       background: #e0f7ee !important;
