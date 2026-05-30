@@ -6,7 +6,7 @@ import githubData from '../../public/github_data.json';
 const githubDataJSON = JSON.stringify(githubData);
 const apiUrl = import.meta.env.PUBLIC_API_URL || 'http://localhost:3005';
 ---
-<Layout title="adeleeeeyyyy — GitHub Profile">
+<Layout title="Adly Fahreza - Personal Web">
   <script is:inline set:html={`window.githubData = ${githubDataJSON};`}></script>
   <script is:inline define:vars={{ apiUrl }}>
     window.PUBLIC_API_URL = apiUrl;
@@ -1721,7 +1721,7 @@ const apiUrl = import.meta.env.PUBLIC_API_URL || 'http://localhost:3005';
       try {
         const u = offlineData ? offlineData.profile : await get(`${API}/users/${USERNAME}`);
         document.getElementById('avatar').src = u.avatar_url;
-        document.title = `${u.login} — GitHub Profile`;
+        document.title = "Adly Fahreza - Personal Web";
         const nameEl = document.getElementById('name');
         nameEl.textContent = u.name || u.login; nameEl.classList.remove('sk');
         const loginEl = document.getElementById('login');
