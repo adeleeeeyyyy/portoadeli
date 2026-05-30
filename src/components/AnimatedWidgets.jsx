@@ -22,7 +22,8 @@ export default function AnimatedWidgets() {
 
   // Visitor Counter
   useEffect(() => {
-    fetch('http://localhost:3005/api/visit', { method: 'POST' })
+    const API_URL = import.meta.env.PUBLIC_API_URL || 'http://localhost:3005';
+    fetch(`${API_URL}/api/visit`, { method: 'POST' })
       .then(res => res.json())
       .then(json => {
         if (json.success && typeof json.totalVisits === 'number') {

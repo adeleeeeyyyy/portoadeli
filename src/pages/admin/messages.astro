@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+const apiUrl = import.meta.env.PUBLIC_API_URL || 'http://localhost:3005';
 ---
 <Layout title="adeleeeeyyyy — Admin Messages">
 
@@ -85,7 +86,12 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </div>
 
+  <script is:inline define:vars={{ apiUrl }}>
+    window.PUBLIC_API_URL = apiUrl;
+  </script>
+
   <script is:inline>
+    const API_URL = window.PUBLIC_API_URL || 'http://localhost:3005';
     const EXPECTED_SECRET = 'adlyadmin2026';
 
     function checkAuth() {
@@ -139,7 +145,7 @@ import Layout from '../../layouts/Layout.astro';
       if (tbody) tbody.innerHTML = '';
 
       try {
-        const response = await fetch(`http://localhost:3005/api/contacts?secret=${secret}`);
+        const response = await fetch(`${API_URL}/api/contacts?secret=${secret}`);
         if (!response.ok) {
           throw new Error('Unauthorized or failed to retrieve messages');
         }

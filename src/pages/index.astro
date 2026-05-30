@@ -4,9 +4,13 @@ import AnimatedWidgets from '../components/AnimatedWidgets.jsx';
 import AnimatedSocials from '../components/AnimatedSocials.jsx';
 import githubData from '../../public/github_data.json';
 const githubDataJSON = JSON.stringify(githubData);
+const apiUrl = import.meta.env.PUBLIC_API_URL || 'http://localhost:3005';
 ---
 <Layout title="adeleeeeyyyy — GitHub Profile">
   <script is:inline set:html={`window.githubData = ${githubDataJSON};`}></script>
+  <script is:inline define:vars={{ apiUrl }}>
+    window.PUBLIC_API_URL = apiUrl;
+  </script>
 
   <div id="portfolio-container" class="max-w-6xl mx-auto px-4 py-8">
 
@@ -904,6 +908,8 @@ const githubDataJSON = JSON.stringify(githubData);
   </div>
 
   <script is:inline>
+    const API_URL = window.PUBLIC_API_URL || 'http://localhost:3005';
+
     function toggleCV(e) {
       if (e) e.preventDefault();
       const mainCard = document.getElementById('main-portfolio-card');
@@ -1040,7 +1046,7 @@ const githubDataJSON = JSON.stringify(githubData);
       }, 250);
       
       try {
-        const response = await fetch('http://localhost:3005/api/contact', {
+        const response = await fetch(`${API_URL}/api/contact`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -1883,7 +1889,7 @@ const githubDataJSON = JSON.stringify(githubData);
 
     async function loadVisitsChart() {
       try {
-        const res = await fetch('http://localhost:3005/api/visits');
+        const res = await fetch(`${API_URL}/api/visits`);
         const json = await res.json();
         if (!json.success || !json.data) throw new Error("Failed to load visit data");
         

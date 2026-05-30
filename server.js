@@ -74,9 +74,14 @@ function getLast7DaysData() {
 
 const server = createServer((req, res) => {
   // Add CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  const origin = req.headers.origin;
+  const allowedOrigin = process.env.CORS_ORIGIN || origin || '*';
+  res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+  if (allowedOrigin !== '*') {
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+  }
 
   if (req.method === 'OPTIONS') {
     res.writeHead(204);
@@ -160,7 +165,7 @@ const server = createServer((req, res) => {
   }
 });
 
-const PORT = 3005;
-server.listen(PORT, () => {
-  console.log(`🚀 Visited SQLite Server running on http://localhost:${PORT}`);
+const PORT = process.env.PORT || 3005;
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 Visited SQLite Server running on http://0.0.0.0:${PORT}`);
 });
