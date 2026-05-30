@@ -1,5 +1,40 @@
 import { createServer } from 'node:http';
-import { DatabaseSync } from 'node:sqlite';
+
+// Polyfill node:sqlite DatabaseSync using bun:sqlite when running in Bun
+let DatabaseSync;
+try {
+  const { DatabaseSync: NodeDatabaseSync } = await import('node:sqlite');
+  DatabaseSync = NodeDatabaseSync;
+} catch (e) {
+  try {
+    const { Database } = await import('bun:sqlite');
+    DatabaseSync = class BunDatabaseSync {
+      constructor(filename) {
+        this.db = new Database(filename);
+      }
+      exec(sql) {
+        this.db.exec(sql);
+      }
+      prepare(sql) {
+        const query = this.db.query(sql);
+        return {
+          run(...args) {
+            query.run(...args);
+          },
+          get(...args) {
+            return query.get(...args);
+          },
+          all(...args) {
+            return query.all(...args);
+          }
+        };
+      }
+    };
+  } catch (err) {
+    console.error('Failed to load SQLite module (neither node:sqlite nor bun:sqlite are available).');
+    throw err;
+  }
+}
 
 // Initialize SQLite database
 const db = new DatabaseSync('visits.db');
