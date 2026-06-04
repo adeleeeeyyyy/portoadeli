@@ -2275,8 +2275,8 @@ const apiUrl = import.meta.env.PUBLIC_API_URL || 'http://localhost:3005';
         if (!json.success || !json.data) throw new Error("Failed to load visit data");
         
         const data = json.data;
-        const totalVisits = data.reduce((acc, curr) => acc + curr.count, 0);
-        document.getElementById('visits-sum-label').textContent = `${totalVisits} visits last 7 days`;
+        const totalVisits = json.totalVisits !== undefined ? json.totalVisits : data.reduce((acc, curr) => acc + curr.count, 0);
+        document.getElementById('visits-sum-label').textContent = `${totalVisits} total visits`;
         
         const maxCount = Math.max(...data.map(d => d.count), 1);
         
