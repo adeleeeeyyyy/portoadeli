@@ -13,11 +13,11 @@
 
 ## Technical Skills
 
-* **Backend Development:** Go (Fiber), PHP (Laravel), RESTful API Design, Microservices Architecture, System Design.
-* **DevOps & SysAdmin:** Linux Administration, On-Premise Infrastructure Management (Dell PowerEdge), Hypervisor Configuration (Proxmox VE), Cloud Computing (Google Cloud Platform), Containerization (Docker), Telemetry & Infrastructure Monitoring (Beszel).
+* **Backend Development:** Go (Fiber), PHP (Laravel), RESTful API Design, Microservices Architecture, E-Commerce Systems, AI API Integration.
+* **DevOps & SysAdmin:** Linux Administration, On-Premise Infrastructure Management (Dell PowerEdge), Hypervisor Configuration (Proxmox VE), Cloud Computing (Google Cloud Platform), Containerization (Docker), Telemetry & Infrastructure Monitoring (Beszel), Production VPS Deployment.
 * **Web Servers & Proxies:** Nginx, Caddy, Apache HTTP Server, OpenLiteSpeed.
 * **Databases & Caching:** PostgreSQL, MySQL, MongoDB, SQLite, Redis (In-Memory Data Structures).
-* **Tools & Workflows:** Git, GitHub Architecture, Postman, Linux CLI, Unit Testing, Local Server Environments.
+* **Tools & Workflows:** Git, GitHub Collaboration, Postman, Linux CLI, Database Indexing, Query Optimization.
 
 ---
 
@@ -39,18 +39,30 @@
 * Implemented **Redis** caching layers to mitigate database bottlenecks, accelerate response delivery, and optimize overall application microservice architecture latency.
 * Established a comprehensive real-time infrastructure telemetry and alerting matrix using **Beszel monitoring tools** to ensure persistent high availability and proactive server fault detection.
 
+### PT Samudra Biru Digital Indonesia | Internship
+*Backend Developer* | **August 2024 – February 2025**
+* Developed and architected hundreds of core RESTful API endpoints for a large-scale E-Commerce platform using **Laravel**, facilitating seamless data exchange across services.
+* Engineered critical monolithic modules including user authentication, shopping cart management, product catalogs, and multi-store administration workflows.
+* Collaborated actively within a technical team environment utilizing **GitHub** for version control, code reviews, and structured branching workflows.
+* Optimized relational database performance by implementing **Database Indexing** and applying **Eager Loading (`with()`)** strategies, effectively eliminating N+1 query problems and reducing latency.
+
 ---
 
 ## Projects
 
-### Online Student Council Election (OSIS) Web Application
-*Lead Backend Developer & SysAdmin*
+### Synconomics ERP | Lead Backend Developer & SysAdmin
+*Status: Active (Production Deployment)*
+* Designed and deployed an advanced Enterprise Resource Planning (ERP) platform optimized for SME business automation, featuring an AI-driven global business analysis engine powered by **Gemini API (3.1)**.
+* Containerized the entire application ecosystem using **Docker** and successfully orchestrated the production deployment onto a public **Virtual Private Server (VPS)** to maintain live system availability.
+* Awarded **Runner-Up** in the organizational website development championship for outstanding system architecture design, innovation, and technical implementation excellence.
+
+### Online Student Council Election (OSIS) Web Application | Lead Backend Developer & SysAdmin
 * Developed a highly secure, digital voting platform leveraging strict server-side validation and cryptography principles to guarantee absolute election data integrity.
 * Configured and hardened localized production server environments, successfully accommodating **over 1,000 active concurrent users** during the live election timeline with zero system downtime.
 
 ---
 
-<h2>Certifications & Technical Badges</h2>
+## Certifications & Technical Badges
 
 ### Google Cloud Qwiklabs Professional Credentials | Issued 2026
 * Implement Cloud Security Fundamentals on Google Cloud • *Technical Badge*
