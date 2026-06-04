@@ -1,0 +1,117 @@
+{
+  "projects": [
+    {
+      "name": "Synconomics ERP",
+      "role": "Backend Developer & SysAdmin",
+      "status": "Active",
+      "desc": "An advanced enterprise resource planning (ERP) platform designed to streamline business automation for SMEs, featuring AI workflow integrations.",
+      "tech": ["Go", "Nuxt.js", "Gemini API", "Redis", "Docker", "Beszel"],
+      "details": [
+        "Architected and managed the core backend infrastructure.",
+        "Integrated Gemini API (3.1) services to drive intelligent business workflow automations.",
+        "Containerized application stacks utilizing Docker and implemented Redis caching layers.",
+        "Established real-time infrastructure telemetry using Beszel monitoring."
+      ],
+      "color": "var(--mint)",
+      "link": "https://github.com/adeleeeeyyyy",
+      "architecture": {
+        "title": "Synconomics ERP System Architecture",
+        "users": { "label": "USERS", "sublabel": "Public & Staff Users", "logo": "https://img.icons8.com/color/48/conference-call.png" },
+        "edge": { "label": "EDGE & SECURITY", "sublabel": "Cloudflare", "desc": "DNS, CDN, WAF Protection", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" },
+        "lb": { "label": "LOAD BALANCER", "sublabel": "NGINX", "desc": "Reverse Proxy & SSL Offload", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" },
+        "apps": [
+          { "label": "WEB FRONTEND", "sublabel": "Nuxt.js", "desc": "Nuxt 4 Client Portal", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg" },
+          { "label": "API BACKEND", "sublabel": "Go Fiber", "desc": "High-perf Core Services", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" }
+        ],
+        "data": { "label": "DATA LAYER", "sublabel": "PostgreSQL & Redis", "desc": "Primary DB + Cache Layer", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", "sublogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+        "devops": [
+          { "name": "Docker", "desc": "Microservices Containerization", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+          { "name": "Beszel", "desc": "Infrastructure Telemetry", "logo": "https://img.icons8.com/color/48/activity-history.png" }
+        ]
+      }
+    },
+    {
+      "name": "OSIS Online Voting System",
+      "role": "Lead Backend Developer & SysAdmin",
+      "status": "Completed",
+      "desc": "A highly secure digital voting platform for student council elections with strict validation and server hardening.",
+      "tech": ["PHP", "Laravel", "MySQL", "Nginx", "React"],
+      "details": [
+        "Developed a secure voting platform leveraging strict server-side validation and cryptographic integrity.",
+        "Hardened local production server environments, supporting over 1,000 concurrent users with zero downtime."
+      ],
+      "color": "var(--lav)",
+      "link": "https://github.com/adeleeeeyyyy",
+      "architecture": {
+        "title": "OSIS Voting System Architecture",
+        "users": { "label": "VOTERS", "sublabel": "Students & Teachers", "logo": "https://img.icons8.com/color/48/checked-user-male.png" },
+        "edge": { "label": "EDGE & SECURITY", "sublabel": "Hardened Firewall", "desc": "DDoS Mitigation & Rate Limit", "logo": "https://img.icons8.com/color/48/shield.png" },
+        "lb": { "label": "LOAD BALANCER", "sublabel": "NGINX Proxy", "desc": "HTTPS & SSL Termination", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" },
+        "apps": [
+          { "label": "API BACKEND", "sublabel": "PHP Laravel", "desc": "Voting Logic & Validation", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" }
+        ],
+        "data": { "label": "DATA LAYER", "sublabel": "MySQL Database", "desc": "Encrypted Election Storage", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        "devops": [
+          { "name": "Bare-Metal VPS", "desc": "On-Prem Linux Deployment", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
+          { "name": "Git Workflow", "desc": "Version Control & Releases", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" }
+        ]
+      }
+    },
+    {
+      "name": "Enterprise Infrastructure Virtualization",
+      "role": "System Administrator",
+      "status": "Active",
+      "desc": "On-premise physical enterprise server clustering and virtualization using Proxmox VE and hardware management.",
+      "tech": ["Proxmox VE", "Dell PowerEdge", "Linux", "Caddy", "Nginx"],
+      "details": [
+        "Managed physical Dell PowerEdge rack servers directly.",
+        "Configured Proxmox VE hypervisors for advanced resource virtualization.",
+        "Optimized reverse proxies using Nginx and Caddy to secure SSL/TLS routing."
+      ],
+      "color": "var(--peach)",
+      "link": "https://github.com/adeleeeeyyyy",
+      "architecture": {
+        "title": "Enterprise Virtualization Architecture",
+        "users": { "label": "OPERATORS", "sublabel": "SysAdmins / DevOps", "logo": "https://img.icons8.com/color/48/admin-settings-male.png" },
+        "edge": { "label": "ROUTING GATEWAY", "sublabel": "Caddy Proxy", "desc": "Automated SSL & Security", "logo": "https://img.icons8.com/color/48/lock.png" },
+        "lb": { "label": "VIRTUAL NETWORK", "sublabel": "Software SDN", "desc": "VLAN & Security Groups", "logo": "https://img.icons8.com/color/48/lan.png" },
+        "apps": [
+          { "label": "HYPERVISOR", "sublabel": "Proxmox VE", "desc": "Dell PowerEdge Virt Cluster", "logo": "https://img.icons8.com/color/48/virtual-machine.png" }
+        ],
+        "data": { "label": "STORAGE LAYER", "sublabel": "Ceph Storage Cluster", "desc": "Redundant Block Storage", "logo": "https://img.icons8.com/color/48/database.png" },
+        "devops": [
+          { "name": "Linux Admin", "desc": "System Level Hardening", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
+          { "name": "Beszel", "desc": "Proactive Node Telemetry", "logo": "https://img.icons8.com/color/48/activity-history.png" }
+        ]
+      }
+    },
+    {
+      "name": "SyncQL",
+      "role": "Lead Fullstack Developer",
+      "status": "Active",
+      "desc": "A lightweight web-based database client and synchronization portal built with Nuxt 4 and optimized for reactive SQLite database interactions.",
+      "tech": ["Nuxt.js", "SQLite", "Docker", "Git"],
+      "details": [
+        "Architected a reactive fullstack database client using Nuxt 4 portal layout.",
+        "Engineered high-performance SQLite database connection pooling.",
+        "Implemented containerized deployment pipelines using Docker."
+      ],
+      "color": "var(--sky)",
+      "link": "https://github.com/adeleeeeyyyy/SyncQL",
+      "architecture": {
+        "title": "SyncQL System Architecture",
+        "users": { "label": "USERS", "sublabel": "Developers & Clients", "logo": "https://img.icons8.com/color/48/conference-call.png" },
+        "edge": { "label": "EDGE & SECURITY", "sublabel": "Cloudflare", "desc": "DNS Routing & Security WAF", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" },
+        "lb": { "label": "LOAD BALANCER", "sublabel": "NGINX", "desc": "Reverse Proxy Routing", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" },
+        "apps": [
+          { "label": "WEB APP", "sublabel": "Nuxt.js", "desc": "Nuxt 4 Client Portal", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg" }
+        ],
+        "data": { "label": "DATA LAYER", "sublabel": "SQLite DB", "desc": "Lightweight SQL DB", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
+        "devops": [
+          { "name": "Docker", "desc": "Microservices Containerization", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+          { "name": "Git Workflow", "desc": "Version Control & Releases", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" }
+        ]
+      }
+    }
+  ]
+}

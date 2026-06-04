@@ -9,7 +9,6 @@
  *   node generate_gallery.js
  *   node generate_gallery.js --folder my_photos --out data/gallery.json
  */
-
 const fs   = require('fs');
 const path = require('path');
 
