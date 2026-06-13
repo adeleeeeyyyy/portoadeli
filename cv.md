@@ -23,7 +23,14 @@
 
 ## Professional Experience
 
-### devaccto | On-site
+### PT Samudra Biru Digital Indonesia | Internship
+*Backend Developer* | **August 2024 – February 2025**
+* Developed and architected hundreds of core RESTful API endpoints for a large-scale E-Commerce platform using **Laravel**, facilitating seamless data exchange across services.
+* Engineered critical monolithic modules including user authentication, shopping cart management, product catalogs, and multi-store administration workflows.
+* Collaborated actively within a technical team environment utilizing **GitHub** for version control, code reviews, and structured branching workflows.
+* Optimized relational database performance by implementing **Database Indexing** and applying **Eager Loading (`with()`)** strategies, effectively eliminating N+1 query problems and reducing latency.
+
+### DEVACCTO | On-site
 *Backend Developer & System Administrator* | **2023 – 2026**
 * Engineered, secured, and maintained production-grade RESTful APIs utilizing **Go (Fiber)** and **Laravel** frameworks to power multiple core scalable business applications.
 * Managed and configured physical enterprise infrastructure on-site, directly administering **Dell PowerEdge** rack servers using **Proxmox VE** for advanced type-1 hypervisor resource virtualization.
@@ -39,13 +46,6 @@
 * Implemented **Redis** caching layers to mitigate database bottlenecks, accelerate response delivery, and optimize overall application microservice architecture latency.
 * Established a comprehensive real-time infrastructure telemetry and alerting matrix using **Beszel monitoring tools** to ensure persistent high availability and proactive server fault detection.
 
-### PT Samudra Biru Digital Indonesia | Internship
-*Backend Developer* | **August 2024 – February 2025**
-* Developed and architected hundreds of core RESTful API endpoints for a large-scale E-Commerce platform using **Laravel**, facilitating seamless data exchange across services.
-* Engineered critical monolithic modules including user authentication, shopping cart management, product catalogs, and multi-store administration workflows.
-* Collaborated actively within a technical team environment utilizing **GitHub** for version control, code reviews, and structured branching workflows.
-* Optimized relational database performance by implementing **Database Indexing** and applying **Eager Loading (`with()`)** strategies, effectively eliminating N+1 query problems and reducing latency.
-
 ---
 
 ## Projects
@@ -59,6 +59,13 @@
 ### Online Student Council Election (OSIS) Web Application | Lead Backend Developer & SysAdmin
 * Developed a highly secure, digital voting platform leveraging strict server-side validation and cryptography principles to guarantee absolute election data integrity.
 * Configured and hardened localized production server environments, successfully accommodating **over 1,000 active concurrent users** during the live election timeline with zero system downtime.
+
+### SyncQL | Frontend Developer
+*Status: Active*
+* Contributed to SyncQL, an online SQL editor under the SynchronizesTeams organization.
+* Built with Nuxt.js and Vue 3 with full TypeScript support for a modern development experience.
+* Deployed at syncql.synchronizeteams.com with a production-ready Nuxt build pipeline.
+* Managed frontend state and API integration for real-time SQL query execution.
 
 ---
 

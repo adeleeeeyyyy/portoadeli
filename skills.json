@@ -9,6 +9,7 @@
     { "name": "Python", "pct": 75, "cat": "backend" },
     { "name": "SQL", "pct": 65, "cat": "backend" },
     { "name": "REST API", "pct": 80, "cat": "backend" },
+    { "name": "Go Fiber", "pct": 80, "cat": "backend" },
     { "name": "Git", "pct": 90, "cat": "tools" },
     { "name": "Docker", "pct": 60, "cat": "tools" },
     { "name": "Linux", "pct": 75, "cat": "tools" },

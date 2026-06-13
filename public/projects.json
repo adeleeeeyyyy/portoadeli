@@ -13,22 +13,7 @@
         "Established real-time infrastructure telemetry using Beszel monitoring."
       ],
       "color": "var(--mint)",
-      "link": "https://github.com/adeleeeeyyyy",
-      "architecture": {
-        "title": "Synconomics ERP System Architecture",
-        "users": { "label": "USERS", "sublabel": "Public & Staff Users", "logo": "https://img.icons8.com/color/48/conference-call.png" },
-        "edge": { "label": "EDGE & SECURITY", "sublabel": "Cloudflare", "desc": "DNS, CDN, WAF Protection", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" },
-        "lb": { "label": "LOAD BALANCER", "sublabel": "NGINX", "desc": "Reverse Proxy & SSL Offload", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" },
-        "apps": [
-          { "label": "WEB FRONTEND", "sublabel": "Nuxt.js", "desc": "Nuxt 4 Client Portal", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg" },
-          { "label": "API BACKEND", "sublabel": "Go Fiber", "desc": "High-perf Core Services", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" }
-        ],
-        "data": { "label": "DATA LAYER", "sublabel": "PostgreSQL & Redis", "desc": "Primary DB + Cache Layer", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", "sublogo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
-        "devops": [
-          { "name": "Docker", "desc": "Microservices Containerization", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-          { "name": "Beszel", "desc": "Infrastructure Telemetry", "logo": "https://img.icons8.com/color/48/activity-history.png" }
-        ]
-      }
+      "link": "https://github.com/adeleeeeyyyy"
     },
     {
       "name": "OSIS Online Voting System",
@@ -41,21 +26,7 @@
         "Hardened local production server environments, supporting over 1,000 concurrent users with zero downtime."
       ],
       "color": "var(--lav)",
-      "link": "https://github.com/adeleeeeyyyy",
-      "architecture": {
-        "title": "OSIS Voting System Architecture",
-        "users": { "label": "VOTERS", "sublabel": "Students & Teachers", "logo": "https://img.icons8.com/color/48/checked-user-male.png" },
-        "edge": { "label": "EDGE & SECURITY", "sublabel": "Hardened Firewall", "desc": "DDoS Mitigation & Rate Limit", "logo": "https://img.icons8.com/color/48/shield.png" },
-        "lb": { "label": "LOAD BALANCER", "sublabel": "NGINX Proxy", "desc": "HTTPS & SSL Termination", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" },
-        "apps": [
-          { "label": "API BACKEND", "sublabel": "PHP Laravel", "desc": "Voting Logic & Validation", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" }
-        ],
-        "data": { "label": "DATA LAYER", "sublabel": "MySQL Database", "desc": "Encrypted Election Storage", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-        "devops": [
-          { "name": "Bare-Metal VPS", "desc": "On-Prem Linux Deployment", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
-          { "name": "Git Workflow", "desc": "Version Control & Releases", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" }
-        ]
-      }
+      "link": "https://github.com/adeleeeeyyyy"
     },
     {
       "name": "Enterprise Infrastructure Virtualization",
@@ -69,49 +40,67 @@
         "Optimized reverse proxies using Nginx and Caddy to secure SSL/TLS routing."
       ],
       "color": "var(--peach)",
-      "link": "https://github.com/adeleeeeyyyy",
-      "architecture": {
-        "title": "Enterprise Virtualization Architecture",
-        "users": { "label": "OPERATORS", "sublabel": "SysAdmins / DevOps", "logo": "https://img.icons8.com/color/48/admin-settings-male.png" },
-        "edge": { "label": "ROUTING GATEWAY", "sublabel": "Caddy Proxy", "desc": "Automated SSL & Security", "logo": "https://img.icons8.com/color/48/lock.png" },
-        "lb": { "label": "VIRTUAL NETWORK", "sublabel": "Software SDN", "desc": "VLAN & Security Groups", "logo": "https://img.icons8.com/color/48/lan.png" },
-        "apps": [
-          { "label": "HYPERVISOR", "sublabel": "Proxmox VE", "desc": "Dell PowerEdge Virt Cluster", "logo": "https://img.icons8.com/color/48/virtual-machine.png" }
-        ],
-        "data": { "label": "STORAGE LAYER", "sublabel": "Ceph Storage Cluster", "desc": "Redundant Block Storage", "logo": "https://img.icons8.com/color/48/database.png" },
-        "devops": [
-          { "name": "Linux Admin", "desc": "System Level Hardening", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
-          { "name": "Beszel", "desc": "Proactive Node Telemetry", "logo": "https://img.icons8.com/color/48/activity-history.png" }
-        ]
-      }
+      "link": "https://github.com/adeleeeeyyyy"
     },
     {
       "name": "SyncQL",
-      "role": "Lead Fullstack Developer",
+      "role": "Frontend Developer",
       "status": "Active",
-      "desc": "A lightweight web-based database client and synchronization portal built with Nuxt 4 and optimized for reactive SQLite database interactions.",
-      "tech": ["Nuxt.js", "SQLite", "Docker", "Git"],
+      "desc": "An online SQL editor built by SynchronizesTeams, featuring a collaborative web-based interface for writing and executing SQL queries in the browser.",
+      "tech": ["Nuxt.js", "Vue", "TypeScript", "CSS", "Bun"],
       "details": [
-        "Architected a reactive fullstack database client using Nuxt 4 portal layout.",
-        "Engineered high-performance SQLite database connection pooling.",
-        "Implemented containerized deployment pipelines using Docker."
+        "Contributed to SyncQL, an online SQL editor under the SynchronizesTeams organization.",
+        "Built with Nuxt.js and Vue 3 with full TypeScript support for a modern development experience.",
+        "Deployed at syncql.synchronizeteams.com with a production-ready Nuxt build pipeline.",
+        "Managed frontend state and API integration for real-time SQL query execution."
       ],
       "color": "var(--sky)",
-      "link": "https://github.com/adeleeeeyyyy/SyncQL",
-      "architecture": {
-        "title": "SyncQL System Architecture",
-        "users": { "label": "USERS", "sublabel": "Developers & Clients", "logo": "https://img.icons8.com/color/48/conference-call.png" },
-        "edge": { "label": "EDGE & SECURITY", "sublabel": "Cloudflare", "desc": "DNS Routing & Security WAF", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" },
-        "lb": { "label": "LOAD BALANCER", "sublabel": "NGINX", "desc": "Reverse Proxy Routing", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" },
-        "apps": [
-          { "label": "WEB APP", "sublabel": "Nuxt.js", "desc": "Nuxt 4 Client Portal", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg" }
-        ],
-        "data": { "label": "DATA LAYER", "sublabel": "SQLite DB", "desc": "Lightweight SQL DB", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
-        "devops": [
-          { "name": "Docker", "desc": "Microservices Containerization", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-          { "name": "Git Workflow", "desc": "Version Control & Releases", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" }
-        ]
-      }
+      "link": "https://github.com/adeleeeeyyyy/SyncQL"
+    },
+    {
+      "name": "API-Hug",
+      "role": "Solo Developer",
+      "status": "Completed",
+      "desc": "A lightweight Go CLI tool for stress testing and comparing API performance between two environments (e.g., Local vs. Production). Sends concurrent requests and generates detailed reports.",
+      "tech": ["Go", "Goroutines", "CLI", "HTML", "JSON"],
+      "details": [
+        "Built a concurrent load testing tool using goroutines to send HTTP requests simultaneously.",
+        "Implemented side-by-side environment comparison (Local vs. Server) with comprehensive metrics.",
+        "Added JSON and styled HTML export functionality for automated reporting and dashboards.",
+        "Recorded metrics including Total Requests, Success/Failure Rates, and Min/Max/Avg Response Times."
+      ],
+      "color": "var(--pink)",
+      "link": "https://github.com/adeleeeeyyyy/API-Hug"
+    },
+    {
+      "name": "GoCard",
+      "role": "Solo Developer",
+      "status": "Completed",
+      "desc": "A professional, high-performance Go CLI tool that generates stunning Neo-Brutalism style HTML repository cards for GitHub projects, complete with README previews and dev icons.",
+      "tech": ["Go", "Cobra CLI", "GitHub API", "HTML", "Lucide Icons", "Devicon"],
+      "details": [
+        "Built a CLI tool using Go and Cobra to generate Neo-Brutalism styled repository cards.",
+        "Integrated the GitHub API to dynamically fetch repository data and README content.",
+        "Implemented server-side HTML rendering with Lucide Icons and Devicon for visual polish.",
+        "Supported optional PNG export via headless Chrome and custom output filename flags."
+      ],
+      "color": "var(--yellow)",
+      "link": "https://github.com/adeleeeeyyyy/GoCard"
+    },
+    {
+      "name": "portoadeli",
+      "role": "Solo Developer",
+      "status": "Active",
+      "desc": "Personal portfolio website showcasing projects, skills, and contact information. Built with vanilla HTML and TailwindCSS, deployed at adeli.tech.",
+      "tech": ["Astro", "TailwindCSS", "JavaScript"],
+      "details": [
+        "Designed and built a personal portfolio site using HTML and TailwindCSS from scratch.",
+        "Deployed on Vercel with a custom domain at adeli.tech.",
+        "Structured with modular pages directory and static asset management.",
+        "Configured custom .htaccess rules and 404 error handling for clean URL routing."
+      ],
+      "color": "var(--mint)",
+      "link": "https://github.com/adeleeeeyyyy/portoadeli"
     }
   ]
 }

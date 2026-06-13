@@ -90,7 +90,6 @@ const { title = "Adly Fahreza - Personal Web" } = Astro.props;
       transform: none;
     }
 
-    /* Perfect pill-shaped elements for tags and buttons */
     .tag {
       border: var(--border);
       border-radius: 9999px;
@@ -103,6 +102,13 @@ const { title = "Adly Fahreza - Personal Web" } = Astro.props;
       background: var(--soft-cloud);
       color: var(--ink);
       transition: all 0.2s ease;
+    }
+
+    @media (max-width: 640px) {
+      .tag {
+        font-size: .52rem;
+        padding: 4px 10px;
+      }
     }
     
     .tag:hover {
@@ -361,6 +367,15 @@ const { title = "Adly Fahreza - Personal Web" } = Astro.props;
       position: relative;
     }
 
+    @media (max-width: 640px) {
+      .tab-btn {
+        padding: 0 16px;
+        height: 32px;
+        font-size: 0.65rem;
+        margin-bottom: 6px;
+      }
+    }
+
     .tab-btn:hover:not(.active) {
       background: var(--soft-cloud);
       border-color: var(--ink);
@@ -492,19 +507,8 @@ const { title = "Adly Fahreza - Personal Web" } = Astro.props;
     body.cv-page-active .cv-animate-item:nth-child(7) { animation-delay: 0.35s; }
     body.cv-page-active .cv-animate-item:nth-child(8) { animation-delay: 0.4s; }
 
-    /* Ultra-premium Left-Accent Hover effect for CV items */
     .cv-hover-card {
-      border-left: 3px solid transparent;
-      padding: 8px 16px;
-      margin-left: -16px;
-      margin-right: -16px;
-      border-radius: 6px;
-      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-    .cv-hover-card:hover {
-      background: #f8fafc;
-      border-left-color: #111111;
-      transform: translateX(4px);
+      padding: 6px 0;
     }
 
     /* Morphing Submit Button success state */

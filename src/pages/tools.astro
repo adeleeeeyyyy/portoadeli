@@ -5,11 +5,11 @@ import Layout from '../layouts/Layout.astro';
 
   <div class="max-w-6xl mx-auto px-4 py-8">
     <!-- TOOLS HEADER -->
-    <div class="bb-static mb-8 overflow-hidden fi d1 bg-[#111111] text-white p-8 md:p-12 relative">
+    <div class="bb-static mb-8 overflow-hidden fi d1 bg-[#111111] text-white pt-10 pb-6 px-6 sm:p-8 md:p-12 relative">
       <div class="absolute top-4 left-4 border border-white/20 text-white/40 text-[9px] font-mono tracking-widest uppercase">
         WORKSPACE TOOLS // VERSION 2.0
       </div>
-      <h1 style="font-family:'Bebas Neue', sans-serif; font-size: 64px; line-height: 0.9; text-transform: uppercase; font-weight: 500; letter-spacing: -0.01em;" class="mt-4">
+      <h1 class="text-[36px] sm:text-[48px] md:text-[64px] mt-4" style="font-family:'Bebas Neue', sans-serif; line-height: 0.9; text-transform: uppercase; font-weight: 500; letter-spacing: -0.01em;">
         WORKSPACE UTILITIES
       </h1>
       <p style="font-size:.85rem;margin-top:.5rem;color:#cacacb;max-width:560px;font-weight:500;line-height:1.6;">
@@ -19,7 +19,7 @@ import Layout from '../layouts/Layout.astro';
 
     <!-- TABS -->
     <div class="fi d2">
-      <div class="flex gap-2 flex-wrap mb-6">
+      <div class="flex gap-1.5 flex-wrap justify-center lg:justify-start mb-6">
         <button class="tab-btn active" onclick="switchToolsTab('sysadmin')">SYSADMIN</button>
         <button class="tab-btn" onclick="switchToolsTab('graphic')">GRAPHIC DESIGN</button>
         <button class="tab-btn" onclick="switchToolsTab('backend')">BACKEND</button>
