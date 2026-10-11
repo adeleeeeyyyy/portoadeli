@@ -1,0 +1,35 @@
+---
+import { experience } from '../data/site';
+---
+
+<section id="experience" data-od-id="experience" class="border-t border-line bg-paper-2/60">
+  <div class="mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
+    <div class="grid gap-12 md:grid-cols-[1fr_2fr] md:gap-20">
+      <div data-reveal class="md:sticky md:top-24 md:self-start">
+        <h2 class="font-mono text-xs uppercase tracking-widest text-ink-2">$ cat experience.log</h2>
+        <p class="mt-4 font-display text-3xl leading-tight">The runbook so far</p>
+      </div>
+      <ol class="divide-y divide-line border-y border-line">
+        {
+          experience.map((job) => (
+            <li data-reveal class="relative py-10">
+              <p class="font-mono text-xs uppercase tracking-widest text-ink-2">{job.period}</p>
+              <h3 class="mt-3 font-display text-2xl">
+                {job.role}
+                <span class="text-ink-2"> · {job.org}</span>
+              </h3>
+              <ul class="mt-4 space-y-2 text-ink-2">
+                {job.summary.map((point) => (
+                  <li class="flex gap-3">
+                    <span aria-hidden="true" class="mt-1 font-mono text-xs text-ink-2/70">└─</span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>

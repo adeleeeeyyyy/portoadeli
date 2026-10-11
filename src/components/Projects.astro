@@ -1,0 +1,533 @@
+---
+import { projects } from '../data/site';
+---
+
+<section id="projects" data-od-id="projects" class="border-t border-line bg-paper-2/60">
+  <div class="mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
+    <div data-reveal class="mb-14 flex flex-wrap items-baseline justify-between gap-4">
+      <h2 class="font-mono text-xs uppercase tracking-widest text-ink-2">$ ls ~/projects</h2>
+      <p class="font-display text-3xl">Off-hours machines</p>
+    </div>
+
+    <div data-reveal class="grid items-center gap-10 border border-line bg-paper md:grid-cols-2 md:gap-0">
+      <div class="relative order-2 aspect-square md:order-1 md:aspect-auto md:h-[26rem]">
+        <canvas id="server-canvas" class="h-full w-full cursor-grab active:cursor-grabbing"></canvas>
+        <p class="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 font-mono text-[0.6875rem] uppercase tracking-widest text-ink-2/70">
+          drag to inspect
+        </p>
+      </div>
+
+      <div class="project-copy relative order-1 grid min-w-0 p-7 sm:p-10 md:order-2">
+        {
+          projects.map((project, i) => (
+            <div class="proj-slide flex min-w-0 flex-col" data-index={i}>
+              <h3 class="font-mono text-xl font-medium sm:text-2xl">
+                {project.name}
+
+              </h3>
+              <p class="mt-4 flex-1 leading-relaxed text-ink-2">{project.desc}</p>
+              <ul class="mt-6 flex flex-wrap gap-2 font-mono text-xs text-ink-2">
+                {project.tech.map((t) => (
+                  <li class="border border-line bg-paper-2 px-2 py-1">{t}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+
+        <div class="project-controls mt-7 flex flex-wrap items-center justify-end gap-4">
+          <span id="proj-counter" class="font-mono text-xs text-ink-2">01 / 0{projects.length}</span>
+          <button id="proj-prev" class="flex h-11 w-11 items-center justify-center border border-line transition-colors hover:border-ink hover:text-accent" aria-label="previous project">
+            <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5" /></svg>
+          </button>
+          <button id="proj-next" class="flex h-11 w-11 items-center justify-center border border-line transition-colors hover:border-ink hover:text-accent" aria-label="next project">
+            <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 3 5 5-5 5" /></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<noscript>
+  <style is:inline>
+    .project-copy .proj-slide { visibility: visible; grid-area: auto; }
+    .project-copy { gap: 2rem; }
+    .project-controls, #server-canvas + p { display: none; }
+  </style>
+</noscript>
+
+<script>
+  import * as THREE from 'three';
+  import { visibleLoop } from '../scripts/visible-loop';
+  import { gsap } from 'gsap';
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const canvas = document.getElementById('server-canvas') as HTMLCanvasElement;
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 60);
+
+  const line = (opacity: number) =>
+    new THREE.LineBasicMaterial({ color: 0x1c1917, transparent: true, opacity });
+  const edge = (w: number, h: number, d: number, mat: THREE.LineBasicMaterial) =>
+    new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(w, h, d)), mat);
+  const wire = line(0.35);
+  const wireFine = line(0.6);
+
+  // rack inventory mirrors the hardware in the experience section, top to bottom.
+  // face: distinctive front-panel layout per chassis family
+  const specs = [
+    { vendor: 'Dell', model: 'R620', cols: 4, org: 'ID-Networkers', face: 'dell-lcd' },
+    { vendor: 'Dell', model: 'R630', cols: 5, org: 'SynchronizeTeams', face: 'dell-lcd' },
+    { vendor: 'Dell', model: 'R640', cols: 5, org: 'ID-Networkers', face: 'dell-lcd' },
+    { vendor: 'Dell', model: 'R670', cols: 5, org: 'ID-Networkers', face: 'dell-lcd' },
+    { vendor: 'HP', model: 'DL360p G8', cols: 4, org: 'ID-Networkers', face: 'hp' },
+    { vendor: 'Fujitsu', model: 'RX4770 M1', cols: 6, org: 'ID-Networkers', face: 'fujitsu' },
+    { vendor: 'Dell', model: 'R610', cols: 3, org: 'Devaccto RPL', face: 'dell-old' },
+  ];
+
+  const SH = 0.34; // server height (taller than 1U so the face reads)
+  const GAP = 0.16; // visible gap between servers
+  const U = SH + GAP; // rack pitch
+  const H = specs.length * U + 0.12;
+  const rack = new THREE.Group();
+
+  // open cage frame
+  rack.add(edge(2.7, H, 2.3, line(0.28)));
+
+  // cyber HUD panel: dark plate, accent corner brackets, typed model name,
+  // org line, sweeping scanline — redrawn each frame while visible
+  const ACCENT = '#e4572e';
+  const makePanel = (vendor: string, model: string, org: string) => {
+    const c = document.createElement('canvas');
+    c.width = 512;
+    c.height = 160;
+    const ctx = c.getContext('2d')!;
+    const tex = new THREE.CanvasTexture(c);
+    const sprite = new THREE.Sprite(
+      new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false }),
+    );
+    sprite.scale.set(0.62, 0.19, 1);
+    sprite.visible = false;
+    (sprite.material as THREE.SpriteMaterial).opacity = 0;
+
+    const draw = (t: number) => {
+      ctx.clearRect(0, 0, 512, 160);
+      ctx.fillStyle = 'rgba(28,25,23,0.92)';
+      ctx.fillRect(0, 0, 512, 160);
+
+      ctx.strokeStyle = 'rgba(250,247,242,0.3)';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(1, 1, 510, 158);
+
+      // accent corner brackets
+      ctx.strokeStyle = ACCENT;
+      ctx.lineWidth = 4;
+      const L = 26;
+      const corners: [number, number, number, number][] = [
+        [8, 8, 1, 1], [504, 8, -1, 1], [8, 152, 1, -1], [504, 152, -1, -1],
+      ];
+      for (const [x, y, dx, dy] of corners) {
+        ctx.beginPath();
+        ctx.moveTo(x + dx * L, y);
+        ctx.lineTo(x, y);
+        ctx.lineTo(x, y + dy * L);
+        ctx.stroke();
+      }
+
+      // typed vendor + model name + blinking block cursor
+      const full = `${vendor} ${model}`;
+      const chars = Math.min(full.length, Math.floor(t * 18));
+      const typed = '> ' + full.slice(0, chars);
+      ctx.font = '700 44px ui-monospace, Menlo, monospace';
+      ctx.fillStyle = '#faf7f2';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'alphabetic';
+      ctx.fillText(typed, 34, 72);
+      if (chars < full.length || Math.floor(t * 2.5) % 2 === 0) {
+        ctx.fillRect(34 + ctx.measureText(typed).width + 8, 42, 18, 34);
+      }
+
+      // org line, revealed after typing finishes
+      ctx.font = '400 26px ui-monospace, Menlo, monospace';
+      ctx.fillStyle = 'rgba(250,247,242,0.65)';
+      ctx.fillText('@ ' + org, 34, 122);
+
+      // sweeping scanline
+      const sy = ((t * 90) % 210) - 25;
+      const g = ctx.createLinearGradient(0, sy - 18, 0, sy + 18);
+      g.addColorStop(0, 'rgba(228,87,46,0)');
+      g.addColorStop(0.5, 'rgba(228,87,46,0.16)');
+      g.addColorStop(1, 'rgba(228,87,46,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(2, sy - 18, 508, 36);
+
+      tex.needsUpdate = true;
+    };
+    return { sprite, draw };
+  };
+
+  const servers: THREE.Group[] = [];
+  const sysLeds: THREE.MeshBasicMaterial[] = [];
+  const driveLeds: THREE.MeshBasicMaterial[] = [];
+  const panels: { sprite: THREE.Sprite; draw: (t: number) => void; t0: number; leader: THREE.LineBasicMaterial; dot: THREE.MeshBasicMaterial }[] = [];
+
+  specs.forEach((spec, i) => {
+    const s = new THREE.Group();
+    const y = H / 2 - U / 2 - 0.06 - i * U;
+
+    s.add(edge(2.4, SH, 2.2, wire));
+
+    // front: 2×cols drive bays + per-drive activity LEDs
+    const pitch = 0.24;
+    for (let row = 0; row < 2; row++) {
+      const by = 0.09 - row * 0.15;
+      for (let col = 0; col < spec.cols; col++) {
+        const bz = -0.8 + col * pitch;
+        const bay = edge(0.05, 0.12, 0.2, wireFine);
+        bay.position.set(1.21, by, bz);
+        s.add(bay);
+
+        const driveLedMat = new THREE.MeshBasicMaterial({ color: 0xe4572e, transparent: true, opacity: 0.7 });
+        const driveLed = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.02, 0.02), driveLedMat);
+        driveLed.position.set(1.225, by - 0.035, bz - 0.07);
+        s.add(driveLed);
+        driveLeds.push(driveLedMat);
+      }
+    }
+
+    // per-family front-panel details right of the bays
+    const tailZ = -0.8 + spec.cols * pitch + 0.24;
+    const sysLedMat = new THREE.MeshBasicMaterial({ color: 0xe4572e, transparent: true, opacity: 0.35 });
+    sysLeds.push(sysLedMat);
+    const sysLed = new THREE.Mesh(new THREE.BoxGeometry(0.035, 0.035, 0.035), sysLedMat);
+    sysLed.position.set(1.21, -0.06, tailZ + 0.18);
+    s.add(sysLed);
+
+    if (spec.face === 'dell-lcd') {
+      // Dell 13G+: LCD status screen flanked by two buttons
+      const lcd = edge(0.05, 0.2, 0.24, wireFine);
+      lcd.position.set(1.21, 0, tailZ);
+      s.add(lcd);
+      const lcdScreen = new THREE.Mesh(
+        new THREE.BoxGeometry(0.02, 0.12, 0.16),
+        new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.35 }),
+      );
+      lcdScreen.position.set(1.225, 0, tailZ);
+      s.add(lcdScreen);
+      for (const dz of [-0.15, 0.15]) {
+        const btn = edge(0.03, 0.04, 0.04, wireFine);
+        btn.position.set(1.215, 0, tailZ + dz);
+        s.add(btn);
+      }
+    } else if (spec.face === 'hp') {
+      // DL360p: "hp" logo zone, slim infoPanel display, angled UID button
+      const logo = edge(0.02, 0.1, 0.26, wireFine);
+      logo.position.set(1.21, 0.1, tailZ);
+      s.add(logo);
+      const info = edge(0.05, 0.08, 0.2, wireFine);
+      info.position.set(1.21, -0.04, tailZ);
+      s.add(info);
+      const uid = new THREE.Mesh(
+        new THREE.BoxGeometry(0.03, 0.03, 0.05),
+        new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.6 }),
+      );
+      uid.position.set(1.21, 0.02, tailZ + 0.18);
+      s.add(uid);
+    } else if (spec.face === 'fujitsu') {
+      // RX4770 M1: wide status LCD strip + two stacked USB
+      const strip = edge(0.05, 0.1, 0.34, wireFine);
+      strip.position.set(1.21, 0.08, tailZ);
+      s.add(strip);
+      const fsc = new THREE.Mesh(
+        new THREE.BoxGeometry(0.02, 0.06, 0.24),
+        new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.25 }),
+      );
+      fsc.position.set(1.225, 0.08, tailZ);
+      s.add(fsc);
+      for (const dy of [0.02, -0.05]) {
+        const usb = edge(0.04, 0.035, 0.1, wireFine);
+        usb.position.set(1.21, dy, tailZ + 0.28);
+        s.add(usb);
+      }
+    } else {
+      // dell-old (R610): no LCD, just a pair of small diagnostic LEDs + VGA
+      for (const dz of [0.0, 0.1]) {
+        const diag = new THREE.Mesh(
+          new THREE.BoxGeometry(0.025, 0.025, 0.025),
+          new THREE.MeshBasicMaterial({ color: 0xe4572e, transparent: true, opacity: 0.5 }),
+        );
+        diag.position.set(1.21, 0.06, tailZ + dz);
+        s.add(diag);
+      }
+      const vga = edge(0.04, 0.08, 0.12, wireFine);
+      vga.position.set(1.21, -0.06, tailZ + 0.05);
+      s.add(vga);
+    }
+
+    const ear = edge(0.06, 0.44, 0.16, wireFine);
+    ear.position.set(1.23, 0, -0.98);
+    s.add(ear);
+
+    // cyber HUD panel + leader line to the server face,
+    // both only shown when this server's project is selected.
+    // panel floats above-right of the chassis so it never covers the face;
+    // the line makes an S-curve from the panel edge down to the drive bays,
+    // capped with a small HUD dot at both ends
+    const panel = makePanel(spec.vendor, spec.model, spec.org);
+    panel.sprite.position.set(1.42, 0.3, 0.75);
+    const leaderMat = new THREE.LineBasicMaterial({ color: 0xe4572e, transparent: true, opacity: 0 });
+    const leader = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints(
+        new THREE.CatmullRomCurve3([
+          new THREE.Vector3(1.42, 0.2, 0.75),  // under the panel
+          new THREE.Vector3(1.38, 0.12, 0.45), // S-curve
+          new THREE.Vector3(1.28, 0.06, 0.0),
+          new THREE.Vector3(1.21, 0.02, -0.3), // lands on the drive bays
+        ]).getPoints(20),
+      ),
+      leaderMat,
+    );
+    const dotMat = new THREE.MeshBasicMaterial({ color: 0xe4572e, transparent: true, opacity: 0 });
+    for (const [dx, dy, dz] of [
+      [1.42, 0.2, 0.75],
+      [1.21, 0.02, -0.3],
+    ] as const) {
+      const dot = new THREE.Mesh(new THREE.SphereGeometry(0.018, 10, 10), dotMat);
+      dot.position.set(dx, dy, dz);
+      s.add(dot);
+    }
+    s.add(leader);
+    panels.push({ ...panel, t0: 0, leader: leaderMat, dot: dotMat });
+    s.add(panel.sprite);
+
+    // rear: twin PSUs + vent + NICs
+    for (const z of [-0.55, -0.15]) {
+      const psu = edge(0.08, 0.26, 0.36, wireFine);
+      psu.position.set(-1.22, 0, z);
+      s.add(psu);
+    }
+    const vent = edge(0.05, 0.22, 0.7, wireFine);
+    vent.position.set(-1.21, 0, 0.85);
+    s.add(vent);
+    const nic = edge(0.06, 0.06, 0.26, wireFine);
+    nic.position.set(-1.22, -0.01, 0.38);
+    s.add(nic);
+
+    // side rails
+    for (const z of [-1.02, 1.02]) {
+      const rail = edge(2.44, 0.04, 0.02, wireFine);
+      rail.position.set(0, 0, z);
+      s.add(rail);
+    }
+
+    s.position.y = y;
+    rack.add(s);
+    servers.push(s);
+  });
+
+  rack.rotation.y = -0.45;
+  scene.add(rack);
+
+  const clock = new THREE.Clock();
+  let focused = -1;
+
+  // --- camera: idle = whole rack, project selected = fly to that server's face ---
+  const UP = new THREE.Vector3(0, 1, 0);
+  const camTarget = new THREE.Vector3(0, 0, 0);
+  let camTween: gsap.core.Tween | null = null;
+
+  const setView = (pos: THREE.Vector3, target: THREE.Vector3) => {
+    camTween?.kill();
+    const p = pos.clone().applyAxisAngle(UP, rack.rotation.y);
+    const t = target.clone().applyAxisAngle(UP, rack.rotation.y);
+    if (reduced) {
+      camera.position.copy(p);
+      camTarget.copy(t);
+      camera.lookAt(camTarget);
+      return;
+    }
+    camTween = gsap.to(camera.position, {
+      x: p.x, y: p.y, z: p.z, duration: 1.0, ease: 'power2.inOut',
+    });
+    gsap.to(camTarget, {
+      x: t.x, y: t.y, z: t.z, duration: 1.0, ease: 'power2.inOut',
+      onUpdate: () => camera.lookAt(camTarget),
+    });
+  };
+
+  let panelDelay: gsap.core.Tween | null = null;
+
+  const hidePanels = (animate: boolean, onDone?: () => void) => {
+    panelDelay?.kill();
+    const active = panels.filter((p) => p.sprite.visible);
+    if (!active.length) {
+      onDone?.();
+      return;
+    }
+    if (reduced || !animate) {
+      active.forEach((p) => {
+        gsap.killTweensOf([p.sprite.scale, p.sprite.material, p.leader, p.dot]);
+        p.sprite.visible = false;
+        (p.sprite.material as THREE.SpriteMaterial).opacity = 0;
+        p.leader.opacity = 0;
+        p.dot.opacity = 0;
+      });
+      onDone?.();
+      return;
+    }
+    // collapse: scale down + fade out, leader line and dots drain away
+    active.forEach((p) => {
+      gsap.killTweensOf([p.sprite.scale, p.sprite.material, p.leader, p.dot]);
+      gsap.to(p.sprite.scale, { x: 0.4, y: 0.125, duration: 0.3, ease: 'power2.in' });
+      gsap.to([p.sprite.material, p.leader, p.dot], { opacity: 0, duration: 0.3, ease: 'power2.in' });
+    });
+    gsap.delayedCall(0.3, () => {
+      active.forEach((p) => (p.sprite.visible = false));
+      onDone?.();
+    });
+  };
+
+  const showRack = () => {
+    sysLeds.forEach((m) => (m.opacity = 0.35));
+    hidePanels(false);
+    focused = -1;
+    setView(new THREE.Vector3(5.4, 0.9, 6.4), new THREE.Vector3(0, 0, 0));
+  };
+
+  const focusServer = (i: number) => {
+    sysLeds.forEach((m, j) => (m.opacity = j === i ? 1 : 0.15));
+    focused = i;
+    const y = servers[i].position.y;
+    setView(new THREE.Vector3(3.8, y, 2.0), new THREE.Vector3(1.05, y, -0.1));
+
+    // old panel collapses, new one fades/scales in after the camera has landed
+    const reveal = () => {
+      const p = panels[i];
+      p.sprite.visible = true;
+      p.t0 = clock.getElapsedTime();
+      p.draw(reduced ? 999 : 0);
+      if (reduced) {
+        (p.sprite.material as THREE.SpriteMaterial).opacity = 1;
+        p.leader.opacity = 0.9;
+        p.dot.opacity = 1;
+        return;
+      }
+      const mat = p.sprite.material as THREE.SpriteMaterial;
+      gsap.fromTo(p.sprite.scale, { x: 0.4, y: 0.125 }, { x: 0.62, y: 0.19, duration: 0.5, ease: 'back.out(1.7)' });
+      gsap.fromTo(mat, { opacity: 0 }, { opacity: 1, duration: 0.4, ease: 'power2.out' });
+      gsap.fromTo(p.leader, { opacity: 0 }, { opacity: 0.9, duration: 0.4, delay: 0.15, ease: 'power2.out' });
+      // HUD dots blink on at each end of the line
+      gsap.fromTo(p.dot, { opacity: 0 }, {
+        opacity: 1, duration: 0.25, delay: 0.3, ease: 'power2.out',
+        repeat: 3, yoyo: true, repeatDelay: 0.12,
+      });
+    };
+    hidePanels(true, () => {
+      if (reduced) reveal();
+      else panelDelay = gsap.delayedCall(1.0, reveal);
+    });
+  };
+
+  showRack();
+
+  const resize = () => {
+    const { clientWidth: w, clientHeight: h } = canvas;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  };
+  resize();
+  window.addEventListener('resize', resize);
+
+  // drag to rotate the whole rack
+  let dragging = false;
+  let lastX = 0;
+  let velY = 0;
+  canvas.addEventListener('pointerdown', (e) => {
+    dragging = true;
+    lastX = e.clientX;
+    canvas.setPointerCapture(e.pointerId);
+  });
+  canvas.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    const dx = e.clientX - lastX;
+    lastX = e.clientX;
+    rack.rotation.y += dx * 0.011;
+    velY = dx * 0.011;
+  });
+  const stop = () => (dragging = false);
+  canvas.addEventListener('pointerup', stop);
+  canvas.addEventListener('pointercancel', stop);
+
+  visibleLoop(renderer, canvas, () => {
+    if (!dragging) {
+      rack.rotation.y += velY;
+      velY *= 0.94;
+    }
+    if (!reduced) {
+      const t = clock.getElapsedTime();
+      driveLeds.forEach((mat, idx) => {
+        mat.opacity = Math.sin(t * 10 + idx * 4.3) > 0.2 ? 0.9 : 0.15;
+      });
+      if (focused >= 0) panels[focused].draw(t - panels[focused].t0);
+    }
+    renderer.render(scene, camera);
+  });
+
+  // --- carousel: slide swap + camera fly-to ---
+  const slides = Array.from(document.querySelectorAll<HTMLElement>('.proj-slide'));
+  const counter = document.getElementById('proj-counter')!;
+  let current = 0; // idle state: whole rack visible, slide 0 on top
+  let animating = false;
+
+  const show = (next: number) => {
+    if (animating || next === current) return;
+    animating = true;
+    focusServer(next);
+    const out = slides[current];
+    const inc = slides[next];
+    current = next;
+    counter.textContent = `${String(next + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+
+    gsap
+      .timeline({
+        defaults: { duration: reduced ? 0 : 0.4, ease: 'power2.inOut' },
+        onComplete: () => (animating = false),
+      })
+      .to(out, { opacity: 0, x: -24 }, 0)
+      .set(out, { visibility: 'hidden' })
+      .set(inc, { visibility: 'visible', opacity: 0, x: 24 }, 0)
+      .to(inc, { opacity: 1, x: 0 }, 0.05);
+    out.inert = true;
+    inc.inert = false;
+    out.setAttribute('aria-hidden', 'true');
+    inc.setAttribute('aria-hidden', 'false');
+  };
+
+  const goTo = (delta: number) => show((current + delta + slides.length) % slides.length);
+  document.getElementById('proj-prev')!.addEventListener('click', () => goTo(-1));
+  document.getElementById('proj-next')!.addEventListener('click', () => goTo(1));
+
+  // arrow keys switch projects while the section is on screen
+  let inView = false;
+  new IntersectionObserver(([e]) => (inView = e.isIntersecting)).observe(canvas);
+  document.addEventListener('keydown', (e) => {
+    if (!inView || e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    e.preventDefault();
+    goTo(e.key === 'ArrowLeft' ? -1 : 1);
+  });
+
+  slides.forEach((s, i) => {
+    s.setAttribute('aria-hidden', String(i > 0));
+    s.inert = i > 0;
+    if (i > 0) {
+      s.style.visibility = 'hidden';
+      s.style.opacity = '0';
+    }
+  });
+</script>

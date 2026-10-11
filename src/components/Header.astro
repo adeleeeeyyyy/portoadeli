@@ -1,0 +1,24 @@
+---
+import { site } from '../data/site';
+---
+
+<header class="fixed inset-x-0 top-0 z-50 border-b border-line bg-paper/85 backdrop-blur">
+  <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
+    <a href="#top" class="font-mono text-sm font-medium tracking-tight">
+      {site.hostname}<span class="text-accent">:~$</span>
+    </a>
+    <ul class="hidden items-center gap-7 font-mono text-xs uppercase tracking-widest text-ink-2 md:flex">
+      <li><a href="#whoami" class="hover:text-ink">whoami</a></li>
+      <li><a href="#experience" class="hover:text-ink">experience</a></li>
+      <li><a href="#stack" class="hover:text-ink">stack</a></li>
+      <li><a href="#projects" class="hover:text-ink">projects</a></li>
+      <li><a href="#contact" class="hover:text-ink">contact</a></li>
+    </ul>
+    <a
+      href="#contact"
+      class="font-mono text-xs uppercase tracking-widest text-ink-2 hover:text-ink md:hidden"
+    >
+      contact
+    </a>
+  </nav>
+</header>

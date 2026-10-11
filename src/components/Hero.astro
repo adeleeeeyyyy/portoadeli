@@ -1,0 +1,404 @@
+---
+import { site } from '../data/site';
+---
+
+<section id="top" data-od-id="hero" class="relative overflow-hidden pt-16">
+  <canvas id="hero-canvas" class="pointer-events-none absolute inset-y-0 right-0 h-full w-full opacity-60 md:w-2/3" aria-hidden="true"></canvas>
+
+  <div class="relative mx-auto flex min-h-[calc(100svh-4rem)] max-w-6xl flex-col justify-center px-5 py-16 sm:px-8">
+    <p data-reveal class="mb-6 flex items-center gap-2.5 font-mono text-sm text-ink-2">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60"></span>
+        <span class="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
+      </span>
+      all systems operational
+    </p>
+
+    <h1 data-reveal class="max-w-4xl font-display text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.02] font-semibold tracking-tight">
+      Tailored your <em class="italic">systems</em> for specific workflows and needs.
+    </h1>
+
+    <p data-reveal class="mt-7 max-w-xl text-lg leading-relaxed text-ink-2">
+      {site.name} — {site.role.toLowerCase()}. Based in {site.location}.
+    </p>
+
+    <div data-reveal class="mt-10 max-w-xl">
+      <div class="overflow-hidden rounded-lg border border-ink/20 bg-ink text-sm text-paper-2 shadow-[6px_6px_0_0_var(--color-line)]">
+        <div class="flex items-center gap-1.5 border-b border-paper/10 px-4 py-2.5">
+          <span class="h-2.5 w-2.5 rounded-full bg-paper/25"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-paper/25"></span>
+          <span class="h-2.5 w-2.5 rounded-full bg-paper/25"></span>
+          <span class="ml-2 font-mono text-xs text-paper/50">~ {site.handle}</span>
+        </div>
+        <pre id="terminal" class="min-h-[7.75rem] overflow-x-auto p-4 font-mono text-[0.8125rem] leading-relaxed"><code id="terminal-body" class="block whitespace-pre">$ whoami
+system administrator: linux, networks, uptime</code></pre>
+      </div>
+    </div>
+
+    <p data-reveal class="mt-10 font-mono text-xs text-ink-2">
+      press <kbd class="rounded border border-line bg-paper-2 px-1.5 py-0.5">c</kbd> to contact · scroll for the runbook
+    </p>
+  </div>
+</section>
+
+<script>
+  import * as THREE from 'three';
+  import { visibleLoop } from '../scripts/visible-loop';
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement;
+
+  if (!reduced && canvas) {
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+    camera.position.z = 6.2;
+
+    const ink = 0x1c1917;
+    const accent = 0xe4572e;
+    const lineMat = (opacity: number, color = ink) =>
+      new THREE.LineBasicMaterial({ color, transparent: true, opacity });
+
+    const edge = (w: number, h: number, d: number, mat: THREE.LineBasicMaterial) =>
+      new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(w, h, d)), mat);
+
+    const wireFrame = lineMat(0.3);
+    const wireFine = lineMat(0.5);
+    const wireInner = lineMat(0.4);
+
+    const group = new THREE.Group();
+
+    // 1. Rack Cabinet Outer Framework (Server Rack Frame)
+    const RACK_W = 1.45;
+    const RACK_H = 3.2;
+    const RACK_D = 1.35;
+
+    const cabinet = edge(RACK_W, RACK_H, RACK_D, wireFrame);
+    group.add(cabinet);
+
+    // Top roof fan tray & vent outline
+    const topCap = edge(RACK_W * 0.9, 0.07, RACK_D * 0.9, wireFine);
+    topCap.position.y = RACK_H / 2 + 0.035;
+    group.add(topCap);
+
+    for (let f = -1; f <= 1; f++) {
+      const fanGeo = edge(0.28, 0.02, 0.28, wireInner);
+      fanGeo.position.set(f * 0.36, RACK_H / 2 + 0.035, 0);
+      group.add(fanGeo);
+    }
+
+    // Bottom pedestal
+    const basePedestal = edge(RACK_W * 0.96, 0.1, RACK_D * 0.96, wireFine);
+    basePedestal.position.y = -RACK_H / 2 - 0.05;
+    group.add(basePedestal);
+
+    // 4 Corner vertical mounting posts
+    const postX = RACK_W / 2 - 0.07;
+    const postZ = RACK_D / 2 - 0.07;
+    const postCoords = [
+      [-postX, -postZ],
+      [postX, -postZ],
+      [-postX, postZ],
+      [postX, postZ],
+    ];
+
+    for (const [px, pz] of postCoords) {
+      const post = edge(0.045, RACK_H - 0.08, 0.045, wireFine);
+      post.position.set(px, 0, pz);
+      group.add(post);
+    }
+
+    // Front & rear door frames
+    const frontDoor = edge(RACK_W * 0.96, RACK_H * 0.96, 0.02, lineMat(0.18));
+    frontDoor.position.set(0, 0, RACK_D / 2);
+    group.add(frontDoor);
+
+    const rearDoor = edge(RACK_W * 0.96, RACK_H * 0.96, 0.02, lineMat(0.18));
+    rearDoor.position.set(0, 0, -RACK_D / 2);
+    group.add(rearDoor);
+
+    // 2. Mounted Rack Units & Servers
+    const driveLeds: THREE.MeshBasicMaterial[] = [];
+    const linkLeds: THREE.MeshBasicMaterial[] = [];
+
+    const addServerUnit = (
+      yPos: number,
+      uHeight: number,
+      type: 'patch' | 'switch' | 'server1u' | 'server2u' | 'blade' | 'ups',
+    ) => {
+      const unitW = RACK_W * 0.88;
+      const unitD = RACK_D * 0.85;
+      const unit = edge(unitW, uHeight, unitD, wireFine);
+      unit.position.set(0, yPos, 0);
+      group.add(unit);
+
+      // Mounting ear brackets
+      for (const sideX of [-unitW / 2 - 0.025, unitW / 2 + 0.025]) {
+        const ear = edge(0.035, uHeight * 0.85, 0.07, wireFine);
+        ear.position.set(sideX, yPos, unitD / 2 - 0.035);
+        group.add(ear);
+      }
+
+      const frontZ = unitD / 2 + 0.01;
+
+      if (type === 'patch') {
+        for (let p = -5; p <= 5; p++) {
+          const port = edge(0.055, uHeight * 0.45, 0.02, wireInner);
+          port.position.set(p * 0.085, yPos, frontZ);
+          group.add(port);
+        }
+      } else if (type === 'switch') {
+        for (let r = 0; r < 2; r++) {
+          for (let col = -5; col <= 5; col++) {
+            const px = col * 0.085;
+            const py = yPos + (r === 0 ? 0.018 : -0.018);
+            const port = edge(0.05, 0.03, 0.02, wireInner);
+            port.position.set(px, py, frontZ);
+            group.add(port);
+
+            if (col % 2 === 0 && r === 0) {
+              const ledMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.8 });
+              const led = new THREE.Mesh(new THREE.BoxGeometry(0.015, 0.015, 0.015), ledMat);
+              led.position.set(px, py + 0.022, frontZ + 0.005);
+              group.add(led);
+              linkLeds.push(ledMat);
+            }
+          }
+        }
+      } else if (type === 'server1u') {
+        for (let col = 0; col < 6; col++) {
+          const bx = -0.42 + col * 0.14;
+          const bay = edge(0.12, uHeight * 0.7, 0.02, wireInner);
+          bay.position.set(bx, yPos, frontZ);
+          group.add(bay);
+
+          const ledMat = new THREE.MeshBasicMaterial({ color: accent, transparent: true, opacity: 0.8 });
+          const led = new THREE.Mesh(new THREE.BoxGeometry(0.015, 0.015, 0.015), ledMat);
+          led.position.set(bx + 0.04, yPos - 0.02, frontZ + 0.005);
+          group.add(led);
+          driveLeds.push(ledMat);
+        }
+        const pwr = edge(0.035, 0.035, 0.02, wireFine);
+        pwr.position.set(0.48, yPos, frontZ);
+        group.add(pwr);
+      } else if (type === 'server2u') {
+        for (let r = 0; r < 2; r++) {
+          for (let col = 0; col < 6; col++) {
+            const bx = -0.42 + col * 0.14;
+            const by = yPos + (r === 0 ? 0.048 : -0.048);
+            const bay = edge(0.12, 0.075, 0.02, wireInner);
+            bay.position.set(bx, by, frontZ);
+            group.add(bay);
+
+            const ledMat = new THREE.MeshBasicMaterial({ color: accent, transparent: true, opacity: 0.8 });
+            const led = new THREE.Mesh(new THREE.BoxGeometry(0.015, 0.015, 0.015), ledMat);
+            led.position.set(bx + 0.038, by - 0.022, frontZ + 0.005);
+            group.add(led);
+            driveLeds.push(ledMat);
+          }
+        }
+      } else if (type === 'blade') {
+        for (let b = 0; b < 4; b++) {
+          const bx = -0.36 + b * 0.24;
+          const blade = edge(0.2, uHeight * 0.85, 0.02, wireInner);
+          blade.position.set(bx, yPos, frontZ);
+          group.add(blade);
+
+          const handle = edge(0.02, 0.09, 0.03, wireFine);
+          handle.position.set(bx + 0.07, yPos, frontZ + 0.01);
+          group.add(handle);
+
+          const ledMat = new THREE.MeshBasicMaterial({ color: accent, transparent: true, opacity: 0.85 });
+          const led = new THREE.Mesh(new THREE.BoxGeometry(0.018, 0.018, 0.018), ledMat);
+          led.position.set(bx - 0.065, yPos + 0.075, frontZ + 0.005);
+          group.add(led);
+          driveLeds.push(ledMat);
+        }
+      } else if (type === 'ups') {
+        const lcd = edge(0.2, 0.11, 0.02, wireFine);
+        lcd.position.set(-0.32, yPos, frontZ);
+        group.add(lcd);
+
+        for (let bat = 0; bat < 3; bat++) {
+          const bx = 0.02 + bat * 0.2;
+          const battery = edge(0.16, uHeight * 0.7, 0.02, wireInner);
+          battery.position.set(bx, yPos, frontZ);
+          group.add(battery);
+        }
+        const ledMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.9 });
+        const led = new THREE.Mesh(new THREE.BoxGeometry(0.018, 0.018, 0.018), ledMat);
+        led.position.set(-0.38, yPos + 0.07, frontZ + 0.005);
+        group.add(led);
+        linkLeds.push(ledMat);
+      }
+
+      // Rear Panel Ports & Power Connectors
+      const rearZ = -unitD / 2 - 0.01;
+
+      if (type === 'server1u' || type === 'server2u' || type === 'blade' || type === 'switch') {
+        for (let eth = 0; eth < 4; eth++) {
+          const ex = -0.36 + eth * 0.08;
+          const port = edge(0.055, 0.035, 0.02, wireInner);
+          port.position.set(ex, yPos, rearZ);
+          group.add(port);
+
+          if (eth % 2 === 0) {
+            const ledMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.85 });
+            const led = new THREE.Mesh(new THREE.BoxGeometry(0.014, 0.014, 0.014), ledMat);
+            led.position.set(ex + 0.018, yPos + 0.018, rearZ - 0.005);
+            group.add(led);
+            linkLeds.push(ledMat);
+          }
+        }
+
+        for (let sfp = 0; sfp < 2; sfp++) {
+          const sx = 0.04 + sfp * 0.09;
+          const cage = edge(0.07, 0.04, 0.02, wireInner);
+          cage.position.set(sx, yPos, rearZ);
+          group.add(cage);
+        }
+
+        for (const psuX of [0.32, 0.43]) {
+          const psu = edge(0.085, uHeight * 0.75, 0.02, wireFine);
+          psu.position.set(psuX, yPos, rearZ);
+          group.add(psu);
+
+          const fanGrill = edge(0.05, 0.05, 0.01, wireInner);
+          fanGrill.position.set(psuX, yPos, rearZ - 0.005);
+          group.add(fanGrill);
+        }
+      } else if (type === 'ups') {
+        for (let pwr = 0; pwr < 6; pwr++) {
+          const px = -0.38 + pwr * 0.13;
+          const outlet = edge(0.075, 0.075, 0.02, wireInner);
+          outlet.position.set(px, yPos, rearZ);
+          group.add(outlet);
+        }
+      }
+    };
+
+    addServerUnit(1.28, 0.09, 'patch');
+    addServerUnit(1.16, 0.09, 'switch');
+    addServerUnit(1.01, 0.09, 'server1u');
+    addServerUnit(0.87, 0.09, 'server1u');
+    addServerUnit(0.63, 0.21, 'server2u');
+    addServerUnit(0.3, 0.3, 'blade');
+    addServerUnit(-0.09, 0.21, 'server2u');
+    addServerUnit(-0.4, 0.21, 'server2u');
+    addServerUnit(-0.72, 0.26, 'ups');
+    addServerUnit(-1.1, 0.3, 'ups');
+
+    // 3. Realistic Organic & Messy Cables (Kabel-kabel Semrawut)
+    const cableMat = lineMat(0.4, ink);
+    const accentCableMat = lineMat(0.4, accent);
+    const dimCableMat = lineMat(0.28, 0x78716c);
+    const cyanCableMat = lineMat(0.38, 0x38bdf8);
+
+    const addCable = (pts: [number, number, number][], mat: THREE.LineBasicMaterial) => {
+      const curve = new THREE.CatmullRomCurve3(pts.map((p) => new THREE.Vector3(...p)));
+      const geo = new THREE.BufferGeometry().setFromPoints(curve.getPoints(24));
+      group.add(new THREE.Line(geo, mat));
+    };
+
+    // Front Patch Cables with droop & slack
+    addCable([[0.25, 1.28, 0.58], [0.34, 1.18, 0.72], [0.18, 1.16, 0.58]], accentCableMat);
+    addCable([[-0.15, 1.28, 0.58], [-0.24, 1.17, 0.68], [-0.08, 1.16, 0.58]], cableMat);
+    addCable([[-0.35, 1.28, 0.58], [-0.48, 0.98, 0.74], [-0.36, 0.87, 0.58]], cableMat);
+    addCable([[0.35, 1.16, 0.58], [0.54, 0.88, 0.7], [0.42, 0.63, 0.58]], cyanCableMat);
+    addCable([[-0.25, 1.16, 0.58], [-0.52, 0.48, 0.76], [-0.28, 0.3, 0.58]], accentCableMat);
+    addCable([[0.1, 1.16, 0.58], [0.46, 0.18, 0.72], [0.32, -0.09, 0.58]], cableMat);
+
+    // Diagonal messy slack loops
+    addCable([[0.15, 0.63, 0.58], [0.32, 0.34, 0.78], [0.08, 0.08, 0.66], [-0.18, -0.09, 0.58]], dimCableMat);
+    addCable([[-0.12, 0.3, 0.58], [-0.38, -0.12, 0.76], [-0.14, -0.38, 0.64], [0.22, -0.4, 0.58]], cableMat);
+
+    // Rear Power Cables & Management Wire Loops
+    addCable([[-0.32, 1.01, -0.58], [-0.54, 0.78, -0.74], [-0.5, 0.18, -0.76], [-0.38, -0.72, -0.58]], cableMat);
+    addCable([[0.32, 0.87, -0.58], [0.56, 0.38, -0.76], [0.52, -0.32, -0.74], [0.18, -1.1, -0.58]], accentCableMat);
+    addCable([[-0.28, 0.63, -0.58], [-0.5, 0.28, -0.78], [-0.54, -0.52, -0.76], [-0.24, -1.1, -0.58]], dimCableMat);
+    addCable([[0.28, 0.3, -0.58], [0.54, -0.12, -0.76], [0.46, -0.62, -0.74], [0.08, -0.72, -0.58]], cableMat);
+    addCable([[-0.36, -0.09, -0.58], [-0.56, -0.42, -0.78], [-0.44, -0.92, -0.72], [-0.12, -1.1, -0.58]], cyanCableMat);
+
+    group.rotation.set(0.2, -0.45, 0);
+    group.position.x = 1.25;
+    scene.add(group);
+
+    const resize = () => {
+      const { clientWidth: w, clientHeight: h } = canvas;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      group.position.x = w >= 768 ? 1.25 : 0;
+      group.scale.setScalar(w >= 768 ? 0.85 : 0.62);
+    };
+    resize();
+    window.addEventListener('resize', resize);
+
+    let px = 0;
+    let py = 0;
+    window.addEventListener('pointermove', (e) => {
+      px = (e.clientX / window.innerWidth) * 2 - 1;
+      py = (e.clientY / window.innerHeight) * 2 - 1;
+    });
+
+    const clock = new THREE.Clock();
+    visibleLoop(renderer, canvas, () => {
+      const t = clock.getElapsedTime();
+      group.rotation.y += 0.0022;
+
+      const targetX = 0.2 + py * 0.12;
+      const targetZ = px * 0.08;
+      group.rotation.x += (targetX - group.rotation.x) * 0.03;
+      group.rotation.z += (targetZ - group.rotation.z) * 0.03;
+
+      driveLeds.forEach((mat, idx) => {
+        mat.opacity = Math.sin(t * 8 + idx * 3.7) > 0.15 ? 0.85 : 0.2;
+      });
+      linkLeds.forEach((mat, idx) => {
+        mat.opacity = 0.4 + Math.sin(t * 5 + idx * 2.1) * 0.45;
+      });
+
+      renderer.render(scene, camera);
+    });
+  }
+
+  const body = document.getElementById('terminal-body');
+  const script = [
+    { text: '$ whoami\n', cls: 'cmd' },
+    { text: 'systems administrator — linux, networks, uptime\n\n', cls: 'out' },
+    { text: '$ uptime\n', cls: 'cmd' },
+    { text: ' 09:41  up 247 days, load: 0.02 0.05 0.01\n', cls: 'out' },
+  ];
+
+  if (body) {
+    body.textContent = '';
+    if (reduced) {
+      body.textContent = script.map((l) => l.text).join('');
+    } else {
+      let line = 0;
+      let char = 0;
+      const tick = () => {
+        if (line >= script.length) return;
+        const { text, cls } = script[line];
+        if (char === 0) {
+          const span = document.createElement('span');
+          span.className = cls === 'cmd' ? 'text-paper' : 'text-paper/70';
+          body.appendChild(span);
+        }
+        const target = body.lastElementChild!;
+        target.textContent += text[char];
+        char++;
+        if (char >= text.length) {
+          line++;
+          char = 0;
+          setTimeout(tick, cls === 'cmd' ? 150 : 350);
+        } else {
+          setTimeout(tick, cls === 'cmd' ? 34 : 6);
+        }
+      };
+      setTimeout(tick, 600);
+    }
+  }
+</script>

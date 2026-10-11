@@ -1,0 +1,35 @@
+---
+import { site } from '../data/site';
+---
+
+<section id="whoami" data-od-id="whoami" class="border-t border-line">
+  <div class="mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
+    <div class="grid gap-12 md:grid-cols-[1fr_2fr] md:gap-20">
+      <div data-reveal>
+        <h2 class="font-mono text-xs uppercase tracking-widest text-ink-2">$ whoami</h2>
+      </div>
+      <div>
+        <p data-reveal class="font-display text-2xl leading-snug sm:text-3xl">
+          {site.intro}
+        </p>
+        <p data-reveal class="mt-6 max-w-2xl leading-relaxed text-ink-2">
+          {site.about}
+        </p>
+        <dl data-reveal class="mt-10 grid grid-cols-1 gap-6 border-t border-line pt-8 font-mono text-sm sm:grid-cols-3">
+          <div>
+            <dt class="text-xs uppercase tracking-widest text-ink-2">location</dt>
+            <dd class="mt-1.5">{site.location}</dd>
+          </div>
+          <div>
+            <dt class="text-xs uppercase tracking-widest text-ink-2">certified</dt>
+            <dd class="mt-1.5">MikroTik MTCNA · MTCRE</dd>
+          </div>
+          <div>
+            <dt class="text-xs uppercase tracking-widest text-ink-2">status</dt>
+            <dd class="mt-1.5">open to interesting ops work</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>

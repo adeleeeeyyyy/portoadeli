@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #faf7f2;
+  --color-paper-2: #f1ede5;
+  --color-ink: #1c1917;
+  --color-ink-2: #57534e;
+  --color-line: #e2dcd0;
+  --color-accent: #e4572e;
+
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: auto;
+  scroll-padding-top: 5rem;
+}
+
+.project-copy { grid-template-columns: minmax(0, 1fr); }
+.proj-slide { grid-area: 1 / 1; overflow-wrap: anywhere; }
+.proj-slide:not([data-index="0"]) { visibility: hidden; }
+.project-controls { grid-area: 2 / 1; }
+body { overflow-wrap: anywhere; }
+.grid > *, .flex > * { min-width: 0; }
+nav { gap: 1rem; }
+nav a { align-items: center; min-height: 44px; padding-block: 12px; }
+#contact a[href^="mailto:"] { overflow-wrap: anywhere; }
+:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
+#server-canvas { touch-action: pan-y; }
+
+
+body {
+  @apply bg-paper font-body text-ink antialiased;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(new-app)",
+      "Bash(npm create *)",
+      "Bash(npm pkg *)",
+      "Bash(npm install)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(ls *)",
+      "Bash(node *)"
+    ]
+  },
+  "$version": 4
+}
