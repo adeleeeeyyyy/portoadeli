@@ -22,7 +22,7 @@ import { site } from '../data/site';
          so it never sits behind the text. Desktop keeps the full-height backdrop canvas. -->
     <canvas
       id="hero-canvas-mobile"
-      class="pointer-events-none mt-8 block h-[min(38svh,20rem)] w-full opacity-60 md:hidden"
+      class="pointer-events-none -mb-2 -mt-2 block h-[min(46svh,26rem)] w-full opacity-60 md:hidden"
       aria-hidden="true"></canvas>
 
     <p data-reveal class="mt-7 max-w-xl text-lg leading-relaxed text-ink-2">
@@ -111,7 +111,6 @@ system administrator: linux, networks, uptime</code></pre>
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
     camera.position.z = 6.2;
-
     const ink = 0x1c1917;
     const accent = 0xe4572e;
     const lineMat = (opacity: number, color = ink) =>
@@ -393,17 +392,65 @@ system administrator: linux, networks, uptime</code></pre>
       const { clientWidth: w, clientHeight: h } = canvas;
       renderer.setSize(w, h, false);
       camera.aspect = w / h;
+      const mobileSlot = canvas.id === 'hero-canvas-mobile';
+      if (mobileSlot && w > 0) {
+        // Frame the rack from its real geometry instead of hand-derived extents: the
+        // rack spins on Y and is tilted 0.2 on X, and pointer parallax adds up to 0.08
+        // on Z, so sample the whole rotation range and take the worst-case silhouette.
+        // Keeping the camera FURTHER away is what shrinks the rack, hence the divisor.
+        const mobileFill = 0.88;
+        const silhouette = (() => {
+          const saved = group.rotation.clone();
+          group.rotation.set(0, 0, 0);
+          group.updateMatrixWorld(true);
+          const box = new THREE.Box3().setFromObject(group);
+          group.rotation.copy(saved);
+          const tilt = 0.2;
+          const zRot = 0.08;
+          const cosT = Math.cos(tilt), sinT = Math.sin(tilt);
+          const cosZ = Math.cos(zRot), sinZ = Math.sin(zRot);
+          let maxX = 0, maxY = 0;
+          for (let i = 0; i < 24; i++) {
+            const th = (i / 24) * Math.PI * 2;
+            const c = Math.cos(th), s = Math.sin(th);
+            for (const x of [box.min.x, box.max.x]) {
+              for (const y of [box.min.y, box.max.y]) {
+                for (const z of [box.min.z, box.max.z]) {
+                  const rx = x * c + z * s;
+                  const rz = -x * s + z * c;
+                  const ry = y * cosT - rz * sinT;
+                  maxX = Math.max(maxX, Math.abs(rx * cosZ - ry * sinZ));
+                  maxY = Math.max(maxY, Math.abs(ry * cosZ + rx * sinZ));
+                }
+              }
+            }
+          }
+          return { maxX, maxY };
+        })();
+        const halfTan = Math.tan((camera.fov * Math.PI) / 180 / 2);
+        const distV = silhouette.maxY / (mobileFill * halfTan);
+        const distH = silhouette.maxX / (mobileFill * halfTan * camera.aspect);
+        camera.position.z = Math.max(distV, distH);
+        group.scale.setScalar(1);
+        group.position.x = 0;
+      } else {
+        group.position.x = w >= 768 ? 1.25 : 0;
+        group.scale.setScalar(w >= 768 ? 0.85 : 0.62);
+      }
       camera.updateProjectionMatrix();
-      group.position.x = w >= 768 ? 1.25 : 0;
-      group.scale.setScalar(w >= 768 ? 0.85 : 0.62);
     };
     currentResize = resize;
     resize();
     window.addEventListener('resize', resize);
+    window.addEventListener('load', resize);
     window.addEventListener('resize', syncDesktopCanvas);
     desktopQuery.addEventListener('change', syncDesktopCanvas);
-    if (heroSection && 'ResizeObserver' in window) {
-      new ResizeObserver(() => resize()).observe(heroSection);
+    // The canvas box can settle after first paint (stylesheet application, font swap,
+    // svh units resolving), so observe the canvas and the section themselves instead
+    // of trusting the size measured at script-execution time.
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(() => resize()).observe(canvas);
+      if (heroSection) new ResizeObserver(() => resize()).observe(heroSection);
     }
 
     let px = 0;
@@ -414,7 +461,20 @@ system administrator: linux, networks, uptime</code></pre>
     });
 
     const clock = new THREE.Clock();
+    let lastW = 0;
+    let lastH = 0;
     visibleLoop(renderer, canvas, () => {
+      // The canvas box can settle after this script runs (stylesheet application, svh
+      // resolution, font swap), and ResizeObserver delivery is not guaranteed before
+      // the first frames. The render loop is the one place that always runs, so sync
+      // the drawing buffer to the CSS box here whenever it changes.
+      const cw = canvas.clientWidth;
+      const ch = canvas.clientHeight;
+      if (cw !== lastW || ch !== lastH) {
+        lastW = cw;
+        lastH = ch;
+        resize();
+      }
       const t = clock.getElapsedTime();
       group.rotation.y += 0.0022;
 
