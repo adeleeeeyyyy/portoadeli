@@ -3,11 +3,6 @@ import { site } from '../data/site';
 ---
 
 <section id="top" data-od-id="hero" class="relative overflow-hidden pt-16">
-  <canvas
-    id="hero-canvas"
-    class="pointer-events-none relative block h-[min(34svh,18rem)] w-full opacity-60 md:absolute md:inset-y-0 md:right-0 md:h-full md:w-2/3"
-    aria-hidden="true"></canvas>
-
   <div
     class="relative mx-auto flex max-w-6xl flex-col justify-center px-5 pb-16 pt-4 sm:px-8 md:min-h-[calc(100svh-4rem)] md:py-16"
   >
@@ -22,6 +17,13 @@ import { site } from '../data/site';
     <h1 data-reveal class="max-w-4xl font-display text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.02] font-semibold tracking-tight">
       Tailored your <em class="italic">systems</em> for specific workflows and needs.
     </h1>
+
+    <!-- Mobile only: the rack gets its own slot between the headline and the intro line,
+         so it never sits behind the text. Desktop keeps the full-height backdrop canvas. -->
+    <canvas
+      id="hero-canvas-mobile"
+      class="pointer-events-none mt-8 block h-[min(38svh,20rem)] w-full opacity-60 md:hidden"
+      aria-hidden="true"></canvas>
 
     <p data-reveal class="mt-7 max-w-xl text-lg leading-relaxed text-ink-2">
       {site.name} — {site.role.toLowerCase()}. Based in {site.location}.
@@ -51,11 +53,60 @@ system administrator: linux, networks, uptime</code></pre>
   import { visibleLoop } from '../scripts/visible-loop';
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement;
+
+  // The rack renders exactly once. Mobile uses the in-flow canvas that sits between
+  // the headline and the intro line; the desktop canvas is a hidden full-height
+  // backdrop above md, so on phones no canvas can ever stack behind the copy.
+  const mobileCanvas = document.getElementById('hero-canvas-mobile');
+
+  // `@apply hidden` lives in a Tailwind v4 layer, so a plain `.style.display = 'block'`
+  // wins without !important and costs no extra CSS in the bundle. It must be cleared
+  // above the md breakpoint, otherwise the mobile canvas would also render in flow
+  // on desktop (inline styles beat stylesheet utilities).
+  const mobileQuery = window.matchMedia('(max-width: 767.98px)');
+  const syncMobileCanvas = () => {
+    if (mobileCanvas) mobileCanvas.style.display = mobileQuery.matches ? 'block' : '';
+  };
+  syncMobileCanvas();
+  mobileQuery.addEventListener('change', syncMobileCanvas);
+
+  // The desktop backdrop canvas is created here instead of in markup: Tailwind v4
+  // layers every utility (`hidden`, `md:block`, `absolute`) and inlines them AFTER
+  // the component styles in dist/_astro/*.css, so a stylesheet fix loses on source
+  // order. Inline styles set from JS always win, and no extra CSS ships for it.
+  // The rack is mounted into whichever canvas the current breakpoint shows, once.
+  let currentResize: (() => void) | null = null;
+  const heroSection = document.getElementById('top');
+  const desktopQuery = window.matchMedia('(min-width: 768px)');
+  const desktopCanvas = document.createElement('canvas');
+  desktopCanvas.id = 'hero-canvas';
+  desktopCanvas.setAttribute('aria-hidden', 'true');
+  if (heroSection) heroSection.prepend(desktopCanvas);
+
+  const syncDesktopCanvas = () => {
+    const on = desktopQuery.matches;
+    desktopCanvas.style.display = on ? 'block' : 'none';
+    if (!on) return;
+    const sw = heroSection?.clientWidth ?? 0;
+    const sh = heroSection?.clientHeight ?? 0;
+    desktopCanvas.style.position = 'absolute';
+    desktopCanvas.style.top = '0';
+    desktopCanvas.style.right = '0';
+    desktopCanvas.style.width = `${Math.round((sw * 2) / 3)}px`;
+    desktopCanvas.style.height = `${sh}px`;
+    desktopCanvas.style.pointerEvents = 'none';
+    desktopCanvas.style.opacity = '0.6';
+    currentResize?.();
+  };
+
+  const desktopReady = desktopQuery.matches;
+  desktopCanvas.style.display = desktopReady ? 'block' : 'none';
+  const canvas = (desktopReady ? desktopCanvas : mobileCanvas) as HTMLCanvasElement | null;
 
   if (!reduced && canvas) {
     const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    if (canvas.id === 'hero-canvas') canvas.style.position = 'absolute';
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
@@ -331,6 +382,14 @@ system administrator: linux, networks, uptime</code></pre>
     scene.add(group);
 
     const resize = () => {
+      // The desktop canvas is position:absolute without a width utility, so its
+      // layout box collapses to the canvas intrinsic size (300x150); its CSS size is
+      // driven explicitly from the hero section, mirroring the original w-2/3 +
+      // inset-y-0 right-0 markup.
+      if (canvas.id === 'hero-canvas' && heroSection) {
+        canvas.style.width = `${Math.round((heroSection.clientWidth * 2) / 3)}px`;
+        canvas.style.height = `${heroSection.clientHeight}px`;
+      }
       const { clientWidth: w, clientHeight: h } = canvas;
       renderer.setSize(w, h, false);
       camera.aspect = w / h;
@@ -338,8 +397,14 @@ system administrator: linux, networks, uptime</code></pre>
       group.position.x = w >= 768 ? 1.25 : 0;
       group.scale.setScalar(w >= 768 ? 0.85 : 0.62);
     };
+    currentResize = resize;
     resize();
     window.addEventListener('resize', resize);
+    window.addEventListener('resize', syncDesktopCanvas);
+    desktopQuery.addEventListener('change', syncDesktopCanvas);
+    if (heroSection && 'ResizeObserver' in window) {
+      new ResizeObserver(() => resize()).observe(heroSection);
+    }
 
     let px = 0;
     let py = 0;
